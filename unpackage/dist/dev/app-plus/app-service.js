@@ -77,6 +77,496 @@ if (uni.restoreGlobal) {
   function resolveEasycom(component, easycom) {
     return typeof component === "string" ? easycom : component;
   }
+  const _export_sfc = (sfc, props) => {
+    const target = sfc.__vccOpts || sfc;
+    for (const [key, val] of props) {
+      target[key] = val;
+    }
+    return target;
+  };
+  const _sfc_main$W = {
+    name: "cmd-icon",
+    props: {
+      /**
+       * 自定义字体图标库前缀
+       */
+      prefixClass: {
+        type: String,
+        default: "cmd-icon"
+      },
+      /**
+       * 图标类型
+       */
+      type: String,
+      /**
+       * 图标颜色
+       */
+      color: {
+        type: String,
+        default: "#fff"
+      },
+      /**
+       * 图标大小
+       */
+      size: {
+        type: [Number, String],
+        default: "24"
+      }
+    },
+    computed: {
+      setStyle() {
+        return `color:${this.color};
+				font-size:${this.size}px;
+				line-height:${this.size}px`;
+      }
+    },
+    methods: {
+      $_click(e2) {
+        this.$emit("click", e2);
+      }
+    }
+  };
+  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass([$props.prefixClass, $props.prefixClass + "-" + $props.type]),
+        style: vue.normalizeStyle($options.setStyle),
+        onClick: _cache[0] || (_cache[0] = (...args) => $options.$_click && $options.$_click(...args))
+      },
+      null,
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_0$d = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-7cd7d81f"], ["__file", "D:/project/CoHub/CoHub/components/cmd-icon/cmd-icon.vue"]]);
+  const _sfc_main$V = {
+    name: "cmd-nav-bar",
+    components: {
+      cmdIcon: __easycom_0$d
+    },
+    props: {
+      /**
+       * 固定到页面顶部
+       */
+      fixed: {
+        type: Boolean,
+        default: true
+      },
+      fontWeight: {
+        type: String,
+        default: "bold"
+        // 默认字体粗细
+      },
+      /**
+       * 文字图标颜色
+       */
+      fontSize: {
+        type: String,
+        default: ""
+      },
+      fontColor: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 导航栏背景颜色
+       */
+      backgroundColor: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 导航栏标题
+       */
+      title: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 导航栏左侧返回按钮，默认点击返回上层
+       */
+      back: {
+        type: Boolean,
+        default: false
+      },
+      /**
+       * 左侧文字可同显返回按钮
+       */
+      leftText: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 左侧显示标题，不可显示左侧文字图标
+       */
+      leftTitle: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 右侧文字
+       */
+      rightText: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 右侧文字颜色
+       */
+      rightColor: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 图标一，不可与返回按钮,左侧标题同显
+       */
+      iconOne: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 图标二
+       */
+      iconTwo: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 图标三，须显有图标二
+       */
+      iconThree: {
+        type: String,
+        default: ""
+      },
+      /**
+       * 图标四，不可与右侧文字同显
+       */
+      iconFour: {
+        type: String,
+        default: ""
+      },
+      avatarUrl: {
+        type: String,
+        default: ""
+      }
+    },
+    computed: {
+      /**
+       * 设置中心标题
+       */
+      setCenterTitle() {
+        let centerTitle = "";
+        if (this.title) {
+          if (this.title.length > 8) {
+            centerTitle = this.title.slice(0, 6) + "...";
+          } else {
+            centerTitle = this.title;
+          }
+        }
+        return centerTitle;
+      },
+      /**
+       * 设置标题图标颜色
+       */
+      setFontColor() {
+        let fontColor = "#000";
+        if (this.fontColor) {
+          fontColor = this.fontColor;
+        }
+        return fontColor;
+      },
+      /**
+       * 设置背景颜色
+       */
+      setBackgroundColor() {
+        let backgroundColor = "#fff";
+        if (this.backgroundColor) {
+          backgroundColor = `background: ${this.backgroundColor};`;
+        }
+        return backgroundColor;
+      }
+    },
+    methods: {
+      /**
+       * 图标一点击事件
+       */
+      $_iconOneClick() {
+        if (this.back) {
+          uni.navigateBack();
+        } else {
+          this.$emit("iconOne");
+        }
+      },
+      /**
+       * 图标二点击事件
+       */
+      $_iconTwoClick() {
+        this.$emit("iconTwo");
+      },
+      /**
+       * 图标三点击事件
+       */
+      $_iconThreeClick() {
+        this.$emit("iconThree");
+      },
+      /**
+       * 图标四点击事件
+       */
+      $_iconFourClick() {
+        this.$emit("iconFour");
+      },
+      /**
+       * 左侧文字点击事件
+       */
+      $_leftTextClick() {
+        this.$emit("leftText");
+      },
+      /**
+       * 右侧文字点击事件
+       */
+      $_rightTextClick() {
+        this.$emit("rightText");
+      },
+      $_avatarClick() {
+        uni.navigateTo({
+          url: "/pages/ucenter/settings/settings"
+        });
+      }
+    }
+  };
+  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_cmd_icon = resolveEasycom(vue.resolveDynamicComponent("cmd-icon"), __easycom_0$d);
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass($props.fixed ? "cmd-nav-bar-fixed" : ""),
+        style: vue.normalizeStyle($options.setBackgroundColor)
+      },
+      [
+        vue.createElementVNode("view", { class: "status-bar" }),
+        vue.createElementVNode("view", { class: "cmd-nav-bar" }, [
+          vue.createElementVNode("view", { class: "cmd-nav-bar-left" }, [
+            $props.back && !$props.leftTitle || $props.iconOne && !$props.leftTitle ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 0,
+              onClick: _cache[0] || (_cache[0] = (...args) => $options.$_iconOneClick && $options.$_iconOneClick(...args)),
+              class: "cmd-nav-bar-left-icon"
+            }, [
+              vue.createVNode(_component_cmd_icon, {
+                type: $props.back ? "chevron-left" : $props.iconOne,
+                size: "50",
+                color: $options.setFontColor
+              }, null, 8, ["type", "color"])
+            ])) : vue.createCommentVNode("v-if", true),
+            vue.createElementVNode(
+              "text",
+              {
+                style: vue.normalizeStyle({ fontWeight: $props.fontWeight })
+              },
+              vue.toDisplayString($props.leftTitle),
+              5
+              /* TEXT, STYLE */
+            )
+          ]),
+          !$props.leftTitle ? (vue.openBlock(), vue.createElementBlock(
+            "view",
+            {
+              key: 0,
+              class: "cmd-nav-bar-title",
+              style: vue.normalizeStyle("color:" + $options.setFontColor)
+            },
+            vue.toDisplayString($options.setCenterTitle),
+            5
+            /* TEXT, STYLE */
+          )) : vue.createCommentVNode("v-if", true),
+          vue.createElementVNode("view", { class: "cmd-nav-bar-right" }, [
+            vue.createElementVNode("view", {
+              class: "avatar-container",
+              onClick: _cache[1] || (_cache[1] = (...args) => $options.$_avatarClick && $options.$_avatarClick(...args))
+            }, [
+              vue.createElementVNode("image", {
+                class: "avatar",
+                src: $props.avatarUrl
+              }, null, 8, ["src"])
+            ]),
+            $props.iconThree && $props.iconFour && !$props.rightText ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 0,
+              onClick: _cache[2] || (_cache[2] = (...args) => $options.$_iconFourClick && $options.$_iconFourClick(...args)),
+              class: "cmd-nav-bar-right-icon",
+              style: { "margin-left": "0" }
+            }, [
+              vue.createVNode(_component_cmd_icon, {
+                type: $props.iconFour,
+                size: "24",
+                color: $options.setFontColor
+              }, null, 8, ["type", "color"])
+            ])) : vue.createCommentVNode("v-if", true),
+            $props.iconTwo && $props.iconThree ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 1,
+              onClick: _cache[3] || (_cache[3] = (...args) => $options.$_iconThreeClick && $options.$_iconThreeClick(...args)),
+              class: "cmd-nav-bar-right-icon"
+            }, [
+              vue.createVNode(_component_cmd_icon, {
+                type: $props.iconThree,
+                size: "24",
+                color: $options.setFontColor
+              }, null, 8, ["type", "color"])
+            ])) : vue.createCommentVNode("v-if", true),
+            $props.iconTwo ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 2,
+              onClick: _cache[4] || (_cache[4] = (...args) => $options.$_iconTwoClick && $options.$_iconTwoClick(...args)),
+              class: "cmd-nav-bar-right-icon"
+            }, [
+              vue.createVNode(_component_cmd_icon, {
+                type: $props.iconTwo,
+                size: "24",
+                color: $options.setFontColor
+              }, null, 8, ["type", "color"])
+            ])) : vue.createCommentVNode("v-if", true),
+            $props.rightText ? (vue.openBlock(), vue.createElementBlock(
+              "text",
+              {
+                key: 3,
+                onClick: _cache[5] || (_cache[5] = (...args) => $options.$_rightTextClick && $options.$_rightTextClick(...args)),
+                class: "cmd-nav-bar-right-text",
+                style: vue.normalizeStyle($props.rightColor != "" ? "color:" + $props.rightColor : "color:" + $options.setFontColor)
+              },
+              vue.toDisplayString($props.rightText),
+              5
+              /* TEXT, STYLE */
+            )) : vue.createCommentVNode("v-if", true)
+          ])
+        ])
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const CmdNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-80f5af22"], ["__file", "D:/project/CoHub/CoHub/components/cmd-nav-bar/cmd-nav-bar.vue"]]);
+  const _sfc_main$U = {
+    components: {
+      CmdNavBar
+    },
+    data() {
+      return {
+        goodsList: [
+          {
+            id: 1,
+            image: "/static/pic/13.png",
+            name: "👋 Title for Collection 1"
+          },
+          {
+            id: 2,
+            image: "/static/pic/12.png",
+            name: "👋 Title for Collection 2"
+          }
+        ],
+        goodsNav: 1
+      };
+    },
+    onLoad() {
+    },
+    methods: {
+      selectTap(id) {
+        formatAppLog("log", "at pages/grid/grid.vue:77", "tap item id:" + JSON.stringify(id));
+        uni.navigateTo({
+          url: "/pages/webview/webview?url=https://www.baidu.com"
+        });
+      },
+      addGoods() {
+        formatAppLog("log", "at pages/grid/grid.vue:84", "tap add new Collections");
+      }
+    }
+  };
+  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      vue.Fragment,
+      null,
+      [
+        vue.createElementVNode("view", { class: "nav-bar-placeholder" }),
+        vue.createElementVNode("view", { class: "pages font-style" }, [
+          vue.createCommentVNode(" 收藏夹名 "),
+          vue.createElementVNode("view", { class: "goods-header-wrap" }, [
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["goods-header-item", { "goods-header-item-action": 1 == $data.goodsNav }])
+              },
+              "Folder Name",
+              2
+              /* CLASS */
+            )
+          ]),
+          vue.createCommentVNode(" 收藏夹名 "),
+          vue.createCommentVNode(" 收藏页面 "),
+          (vue.openBlock(true), vue.createElementBlock(
+            vue.Fragment,
+            null,
+            vue.renderList($data.goodsList, (item, index) => {
+              return vue.openBlock(), vue.createElementBlock("view", {
+                class: "goods-item-wrap",
+                onClick: ($event) => $options.selectTap(item.id)
+              }, [
+                vue.createElementVNode("image", {
+                  src: item.image,
+                  class: "goods-image"
+                }, null, 8, ["src"]),
+                vue.createElementVNode("view", { class: "goods-content-wrap" }, [
+                  vue.createElementVNode(
+                    "view",
+                    { class: "goods-name" },
+                    vue.toDisplayString(item.name),
+                    1
+                    /* TEXT */
+                  ),
+                  vue.createElementVNode("view", { class: "goods-stock-wrap" }, [
+                    vue.createElementVNode("view", { class: "goods-stock" }, "Main contents extracted from the collection.")
+                  ]),
+                  vue.createElementVNode("view", {
+                    class: "goods-option",
+                    onClick: _cache[0] || (_cache[0] = vue.withModifiers(() => {
+                    }, ["stop"]))
+                  }, [
+                    vue.createElementVNode("view", {
+                      class: "goods-option-item",
+                      onClick: ($event) => _ctx.editPrice(item.id)
+                    }, "# Tag1", 8, ["onClick"]),
+                    vue.createElementVNode("view", {
+                      class: "goods-option-item",
+                      onClick: ($event) => _ctx.editStock(item.id)
+                    }, "# Tag2", 8, ["onClick"]),
+                    vue.createElementVNode("view", {
+                      class: "goods-option-item",
+                      onClick: ($event) => _ctx.editStock(item.id)
+                    }, "# Tag3", 8, ["onClick"])
+                  ]),
+                  vue.createElementVNode("view", { class: "footer" }, [
+                    vue.createElementVNode("view", { class: "data" }, "2022/01/09")
+                  ])
+                ])
+              ], 8, ["onClick"]);
+            }),
+            256
+            /* UNKEYED_FRAGMENT */
+          )),
+          vue.createCommentVNode(" 收藏页面 "),
+          vue.createCommentVNode(" 添加 "),
+          vue.createElementVNode("view", { class: "publish-goods-wrap" }, [
+            vue.createElementVNode("view", {
+              class: "publish-goods-btn",
+              onClick: _cache[1] || (_cache[1] = ($event) => $options.addGoods())
+            }, "➕")
+          ]),
+          vue.createCommentVNode(" 添加 "),
+          vue.createCommentVNode(" 灰色背景部分 "),
+          vue.createElementVNode("div", { class: "gray-background" })
+        ])
+      ],
+      64
+      /* STABLE_FRAGMENT */
+    );
+  }
+  const PagesGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-22222d69"], ["__file", "D:/project/CoHub/CoHub/pages/grid/grid.vue"]]);
   const pages = [
     {
       path: "pages/list/list",
@@ -637,7 +1127,7 @@ if (uni.restoreGlobal) {
   function I(e2) {
     return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
   }
-  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "10.68.117.148",\n        "172.28.48.1"\n    ],\n    "debugPort": 9001,\n    "initialLaunchType": "local",\n    "servePort": 7001,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
+  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "172.20.10.14",\n        "172.28.48.1",\n        "172.24.64.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
   let O = "";
   try {
     O = "__UNI__8301740";
@@ -3037,1256 +3527,6 @@ ${i3}
     } }), bs(Bs), Bs.addInterceptor = N, Bs.removeInterceptor = D, Bs.interceptObject = F;
   })();
   var Ws = Bs;
-  const isObject$2 = (val) => val !== null && typeof val === "object";
-  const defaultDelimiters = ["{", "}"];
-  class BaseFormatter {
-    constructor() {
-      this._caches = /* @__PURE__ */ Object.create(null);
-    }
-    interpolate(message, values, delimiters = defaultDelimiters) {
-      if (!values) {
-        return [message];
-      }
-      let tokens = this._caches[message];
-      if (!tokens) {
-        tokens = parse$1(message, delimiters);
-        this._caches[message] = tokens;
-      }
-      return compile(tokens, values);
-    }
-  }
-  const RE_TOKEN_LIST_VALUE = /^(?:\d)+/;
-  const RE_TOKEN_NAMED_VALUE = /^(?:\w)+/;
-  function parse$1(format2, [startDelimiter, endDelimiter]) {
-    const tokens = [];
-    let position = 0;
-    let text = "";
-    while (position < format2.length) {
-      let char = format2[position++];
-      if (char === startDelimiter) {
-        if (text) {
-          tokens.push({ type: "text", value: text });
-        }
-        text = "";
-        let sub = "";
-        char = format2[position++];
-        while (char !== void 0 && char !== endDelimiter) {
-          sub += char;
-          char = format2[position++];
-        }
-        const isClosed = char === endDelimiter;
-        const type = RE_TOKEN_LIST_VALUE.test(sub) ? "list" : isClosed && RE_TOKEN_NAMED_VALUE.test(sub) ? "named" : "unknown";
-        tokens.push({ value: sub, type });
-      } else {
-        text += char;
-      }
-    }
-    text && tokens.push({ type: "text", value: text });
-    return tokens;
-  }
-  function compile(tokens, values) {
-    const compiled = [];
-    let index = 0;
-    const mode = Array.isArray(values) ? "list" : isObject$2(values) ? "named" : "unknown";
-    if (mode === "unknown") {
-      return compiled;
-    }
-    while (index < tokens.length) {
-      const token = tokens[index];
-      switch (token.type) {
-        case "text":
-          compiled.push(token.value);
-          break;
-        case "list":
-          compiled.push(values[parseInt(token.value, 10)]);
-          break;
-        case "named":
-          if (mode === "named") {
-            compiled.push(values[token.value]);
-          } else {
-            {
-              console.warn(`Type of token '${token.type}' and format of value '${mode}' don't match!`);
-            }
-          }
-          break;
-        case "unknown":
-          {
-            console.warn(`Detect 'unknown' type of token!`);
-          }
-          break;
-      }
-      index++;
-    }
-    return compiled;
-  }
-  const LOCALE_ZH_HANS = "zh-Hans";
-  const LOCALE_ZH_HANT = "zh-Hant";
-  const LOCALE_EN = "en";
-  const LOCALE_FR = "fr";
-  const LOCALE_ES = "es";
-  const hasOwnProperty$2 = Object.prototype.hasOwnProperty;
-  const hasOwn$2 = (val, key) => hasOwnProperty$2.call(val, key);
-  const defaultFormatter = new BaseFormatter();
-  function include(str, parts) {
-    return !!parts.find((part) => str.indexOf(part) !== -1);
-  }
-  function startsWith(str, parts) {
-    return parts.find((part) => str.indexOf(part) === 0);
-  }
-  function normalizeLocale(locale, messages2) {
-    if (!locale) {
-      return;
-    }
-    locale = locale.trim().replace(/_/g, "-");
-    if (messages2 && messages2[locale]) {
-      return locale;
-    }
-    locale = locale.toLowerCase();
-    if (locale === "chinese") {
-      return LOCALE_ZH_HANS;
-    }
-    if (locale.indexOf("zh") === 0) {
-      if (locale.indexOf("-hans") > -1) {
-        return LOCALE_ZH_HANS;
-      }
-      if (locale.indexOf("-hant") > -1) {
-        return LOCALE_ZH_HANT;
-      }
-      if (include(locale, ["-tw", "-hk", "-mo", "-cht"])) {
-        return LOCALE_ZH_HANT;
-      }
-      return LOCALE_ZH_HANS;
-    }
-    let locales = [LOCALE_EN, LOCALE_FR, LOCALE_ES];
-    if (messages2 && Object.keys(messages2).length > 0) {
-      locales = Object.keys(messages2);
-    }
-    const lang = startsWith(locale, locales);
-    if (lang) {
-      return lang;
-    }
-  }
-  class I18n {
-    constructor({ locale, fallbackLocale, messages: messages2, watcher, formater: formater2 }) {
-      this.locale = LOCALE_EN;
-      this.fallbackLocale = LOCALE_EN;
-      this.message = {};
-      this.messages = {};
-      this.watchers = [];
-      if (fallbackLocale) {
-        this.fallbackLocale = fallbackLocale;
-      }
-      this.formater = formater2 || defaultFormatter;
-      this.messages = messages2 || {};
-      this.setLocale(locale || LOCALE_EN);
-      if (watcher) {
-        this.watchLocale(watcher);
-      }
-    }
-    setLocale(locale) {
-      const oldLocale = this.locale;
-      this.locale = normalizeLocale(locale, this.messages) || this.fallbackLocale;
-      if (!this.messages[this.locale]) {
-        this.messages[this.locale] = {};
-      }
-      this.message = this.messages[this.locale];
-      if (oldLocale !== this.locale) {
-        this.watchers.forEach((watcher) => {
-          watcher(this.locale, oldLocale);
-        });
-      }
-    }
-    getLocale() {
-      return this.locale;
-    }
-    watchLocale(fn) {
-      const index = this.watchers.push(fn) - 1;
-      return () => {
-        this.watchers.splice(index, 1);
-      };
-    }
-    add(locale, message, override = true) {
-      const curMessages = this.messages[locale];
-      if (curMessages) {
-        if (override) {
-          Object.assign(curMessages, message);
-        } else {
-          Object.keys(message).forEach((key) => {
-            if (!hasOwn$2(curMessages, key)) {
-              curMessages[key] = message[key];
-            }
-          });
-        }
-      } else {
-        this.messages[locale] = message;
-      }
-    }
-    f(message, values, delimiters) {
-      return this.formater.interpolate(message, values, delimiters).join("");
-    }
-    t(key, locale, values) {
-      let message = this.message;
-      if (typeof locale === "string") {
-        locale = normalizeLocale(locale, this.messages);
-        locale && (message = this.messages[locale]);
-      } else {
-        values = locale;
-      }
-      if (!hasOwn$2(message, key)) {
-        console.warn(`Cannot translate the value of keypath ${key}. Use the value of keypath as default.`);
-        return key;
-      }
-      return this.formater.interpolate(message[key], values).join("");
-    }
-  }
-  function watchAppLocale(appVm, i18n2) {
-    if (appVm.$watchLocale) {
-      appVm.$watchLocale((newLocale) => {
-        i18n2.setLocale(newLocale);
-      });
-    } else {
-      appVm.$watch(() => appVm.$locale, (newLocale) => {
-        i18n2.setLocale(newLocale);
-      });
-    }
-  }
-  function getDefaultLocale() {
-    if (typeof uni !== "undefined" && uni.getLocale) {
-      return uni.getLocale();
-    }
-    if (typeof global !== "undefined" && global.getLocale) {
-      return global.getLocale();
-    }
-    return LOCALE_EN;
-  }
-  function initVueI18n(locale, messages2 = {}, fallbackLocale, watcher) {
-    if (typeof locale !== "string") {
-      [locale, messages2] = [
-        messages2,
-        locale
-      ];
-    }
-    if (typeof locale !== "string") {
-      locale = getDefaultLocale();
-    }
-    if (typeof fallbackLocale !== "string") {
-      fallbackLocale = typeof __uniConfig !== "undefined" && __uniConfig.fallbackLocale || LOCALE_EN;
-    }
-    const i18n2 = new I18n({
-      locale,
-      fallbackLocale,
-      messages: messages2,
-      watcher
-    });
-    let t2 = (key, values) => {
-      if (typeof getApp !== "function") {
-        t2 = function(key2, values2) {
-          return i18n2.t(key2, values2);
-        };
-      } else {
-        let isWatchedAppLocale = false;
-        t2 = function(key2, values2) {
-          const appVm = getApp().$vm;
-          if (appVm) {
-            appVm.$locale;
-            if (!isWatchedAppLocale) {
-              isWatchedAppLocale = true;
-              watchAppLocale(appVm, i18n2);
-            }
-          }
-          return i18n2.t(key2, values2);
-        };
-      }
-      return t2(key, values);
-    };
-    return {
-      i18n: i18n2,
-      f(message, values, delimiters) {
-        return i18n2.f(message, values, delimiters);
-      },
-      t(key, values) {
-        return t2(key, values);
-      },
-      add(locale2, message, override = true) {
-        return i18n2.add(locale2, message, override);
-      },
-      watch(fn) {
-        return i18n2.watchLocale(fn);
-      },
-      getLocale() {
-        return i18n2.getLocale();
-      },
-      setLocale(newLocale) {
-        return i18n2.setLocale(newLocale);
-      }
-    };
-  }
-  const en$3 = {
-    "uniCloud.component.add.success": "Success",
-    "uniCloud.component.update.success": "Success",
-    "uniCloud.component.remove.showModal.title": "Tips",
-    "uniCloud.component.remove.showModal.content": "是否删除该数据"
-  };
-  const es = {
-    "uniCloud.component.add.success": "新增成功",
-    "uniCloud.component.update.success": "修改成功",
-    "uniCloud.component.remove.showModal.title": "提示",
-    "uniCloud.component.remove.showModal.content": "是否删除该数据"
-  };
-  const fr = {
-    "uniCloud.component.add.success": "新增成功",
-    "uniCloud.component.update.success": "修改成功",
-    "uniCloud.component.remove.showModal.title": "提示",
-    "uniCloud.component.remove.showModal.content": "是否删除该数据"
-  };
-  const zhHans$4 = {
-    "uniCloud.component.add.success": "新增成功",
-    "uniCloud.component.update.success": "修改成功",
-    "uniCloud.component.remove.showModal.title": "提示",
-    "uniCloud.component.remove.showModal.content": "是否删除该数据"
-  };
-  const zhHant$2 = {
-    "uniCloud.component.add.success": "新增成功",
-    "uniCloud.component.update.success": "修改成功",
-    "uniCloud.component.remove.showModal.title": "提示",
-    "uniCloud.component.remove.showModal.content": "是否刪除數據"
-  };
-  const messages$4 = {
-    en: en$3,
-    es,
-    fr,
-    "zh-Hans": zhHans$4,
-    "zh-Hant": zhHant$2
-  };
-  const _export_sfc = (sfc, props) => {
-    const target = sfc.__vccOpts || sfc;
-    for (const [key, val] of props) {
-      target[key] = val;
-    }
-    return target;
-  };
-  const isArray$1 = Array.isArray;
-  const { t: t$4 } = initVueI18n(messages$4);
-  const events = {
-    load: "load",
-    error: "error"
-  };
-  const pageMode = {
-    add: "add",
-    replace: "replace"
-  };
-  const loadMode = {
-    auto: "auto",
-    onready: "onready",
-    manual: "manual"
-  };
-  const attrs = [
-    "pageCurrent",
-    "pageSize",
-    "collection",
-    "action",
-    "field",
-    "getcount",
-    "orderby",
-    "where",
-    "groupby",
-    "groupField",
-    "distinct"
-  ];
-  const _sfc_main$U = {
-    name: "UniClouddb",
-    setup(props) {
-      const dataListRef = props.ssrKey ? props.getone ? shallowSsrRef(void 0, props.ssrKey) : ssrRef([], props.ssrKey) : props.getone ? shallowSsrRef(void 0, "KYCxN2REL530V0B8uaTYVg==") : ssrRef([], "h67sEE75CAbPOfQZgl4L6A==");
-      const instance2 = vue.getCurrentInstance();
-      vue.onMounted(() => {
-        if ((!dataListRef.value || dataListRef.value.length === 0) && !props.manual && props.loadtime === loadMode.auto) {
-          instance2.proxy.loadData();
-        }
-      });
-      return { dataList: dataListRef };
-    },
-    // 服务端serverPrefetch生命周期，用于服务端加载数据，等将来全端支持Suspense时，可以采用 Suspense + async setup 来实现一版
-    async serverPrefetch() {
-      if (!this.manual && this.loadtime === loadMode.auto) {
-        return this.loadData();
-      }
-    },
-    props: {
-      options: {
-        type: [Object, Array],
-        default() {
-          return {};
-        }
-      },
-      spaceInfo: {
-        type: Object,
-        default() {
-          return {};
-        }
-      },
-      collection: {
-        type: [String, Array],
-        default: ""
-      },
-      action: {
-        type: String,
-        default: ""
-      },
-      field: {
-        type: String,
-        default: ""
-      },
-      orderby: {
-        type: String,
-        default: ""
-      },
-      where: {
-        type: [String, Object],
-        default: ""
-      },
-      pageData: {
-        type: String,
-        default: "add"
-      },
-      pageCurrent: {
-        type: Number,
-        default: 1
-      },
-      pageSize: {
-        type: Number,
-        default: 20
-      },
-      getcount: {
-        type: [Boolean, String],
-        default: false
-      },
-      getone: {
-        type: [Boolean, String],
-        default: false
-      },
-      gettree: {
-        type: [Boolean, String, Object],
-        default: false
-      },
-      gettreepath: {
-        type: [Boolean, String],
-        default: false
-      },
-      startwith: {
-        type: String,
-        default: ""
-      },
-      limitlevel: {
-        type: Number,
-        default: 10
-      },
-      groupby: {
-        type: String,
-        default: ""
-      },
-      groupField: {
-        type: String,
-        default: ""
-      },
-      distinct: {
-        type: [Boolean, String],
-        default: false
-      },
-      pageIndistinct: {
-        type: [Boolean, String],
-        default: false
-      },
-      foreignKey: {
-        type: String,
-        default: ""
-      },
-      loadtime: {
-        type: String,
-        default: "auto"
-      },
-      manual: {
-        type: Boolean,
-        default: false
-      },
-      ssrKey: {
-        type: [String, Number],
-        default: ""
-      }
-    },
-    data() {
-      return {
-        loading: false,
-        hasMore: false,
-        paginationInternal: {},
-        errorMessage: ""
-      };
-    },
-    computed: {
-      collectionArgs() {
-        return isArray$1(this.collection) ? this.collection : [this.collection];
-      },
-      isLookup() {
-        return isArray$1(this.collection) && this.collection.length > 1 || typeof this.collection === "string" && this.collection.indexOf(",") > -1;
-      },
-      mainCollection() {
-        if (typeof this.collection === "string") {
-          return this.collection.split(",")[0];
-        }
-        const mainQuery = JSON.parse(JSON.stringify(this.collection[0]));
-        return mainQuery.$db[0].$param[0];
-      }
-    },
-    created() {
-      this._isEnded = false;
-      this.paginationInternal = {
-        current: this.pageCurrent,
-        size: this.pageSize,
-        count: 0
-      };
-      this.$watch(() => {
-        var al = [];
-        attrs.forEach((key) => {
-          al.push(this[key]);
-        });
-        return al;
-      }, (newValue, oldValue) => {
-        this.paginationInternal.size = this.pageSize;
-        if (newValue[0] !== oldValue[0]) {
-          this.paginationInternal.current = this.pageCurrent;
-        }
-        if (this.loadtime === loadMode.manual) {
-          return;
-        }
-        let needReset = false;
-        for (let i2 = 2; i2 < newValue.length; i2++) {
-          if (newValue[i2] !== oldValue[i2]) {
-            needReset = true;
-            break;
-          }
-        }
-        if (needReset) {
-          this.clear();
-          this.reset();
-        }
-        this._execLoadData();
-      });
-    },
-    methods: {
-      loadData(args1, args2) {
-        let callback = null;
-        let clear = false;
-        if (typeof args1 === "object") {
-          if (args1.clear) {
-            if (this.pageData === pageMode.replace) {
-              this.clear();
-            } else {
-              clear = args1.clear;
-            }
-            this.reset();
-          }
-          if (args1.current !== void 0) {
-            this.paginationInternal.current = args1.current;
-          }
-          if (typeof args2 === "function") {
-            callback = args2;
-          }
-        } else if (typeof args1 === "function") {
-          callback = args1;
-        }
-        return this._execLoadData(callback, clear);
-      },
-      loadMore() {
-        if (this._isEnded || this.loading) {
-          return;
-        }
-        if (this.pageData === pageMode.add) {
-          this.paginationInternal.current++;
-        }
-        this._execLoadData();
-      },
-      refresh() {
-        this.clear();
-        this._execLoadData();
-      },
-      clear() {
-        this._isEnded = false;
-        this.dataList = [];
-      },
-      reset() {
-        this.paginationInternal.current = 1;
-      },
-      add(value, {
-        action,
-        showToast = true,
-        toastTitle,
-        success,
-        fail,
-        complete,
-        needConfirm = true,
-        needLoading = true,
-        loadingTitle = ""
-      } = {}) {
-        if (needLoading) {
-          uni.showLoading({
-            title: loadingTitle
-          });
-        }
-        let db2 = Ws.database(this.spaceInfo);
-        if (action) {
-          db2 = db2.action(action);
-        }
-        db2.collection(this.mainCollection).add(value).then((res) => {
-          success && success(res);
-          if (showToast) {
-            uni.showToast({
-              title: toastTitle || t$4("uniCloud.component.add.success")
-            });
-          }
-        }).catch((err) => {
-          fail && fail(err);
-          if (needConfirm) {
-            uni.showModal({
-              content: err.message,
-              showCancel: false
-            });
-          }
-        }).finally(() => {
-          if (needLoading) {
-            uni.hideLoading();
-          }
-          complete && complete();
-        });
-      },
-      remove(id, {
-        action,
-        success,
-        fail,
-        complete,
-        confirmTitle,
-        confirmContent,
-        needConfirm = true,
-        needLoading = true,
-        loadingTitle = ""
-      } = {}) {
-        if (!id || !id.length) {
-          return;
-        }
-        if (!needConfirm) {
-          this._execRemove(id, action, success, fail, complete, needConfirm, needLoading, loadingTitle);
-          return;
-        }
-        uni.showModal({
-          title: confirmTitle || t$4("uniCloud.component.remove.showModal.title"),
-          content: confirmContent || t$4("uniCloud.component.remove.showModal.content"),
-          showCancel: true,
-          success: (res) => {
-            if (!res.confirm) {
-              return;
-            }
-            this._execRemove(id, action, success, fail, complete, needConfirm, needLoading, loadingTitle);
-          }
-        });
-      },
-      update(id, value, {
-        action,
-        showToast = true,
-        toastTitle,
-        success,
-        fail,
-        complete,
-        needConfirm = true,
-        needLoading = true,
-        loadingTitle = ""
-      } = {}) {
-        if (needLoading) {
-          uni.showLoading({
-            title: loadingTitle
-          });
-        }
-        let db2 = Ws.database(this.spaceInfo);
-        if (action) {
-          db2 = db2.action(action);
-        }
-        return db2.collection(this.mainCollection).doc(id).update(value).then((res) => {
-          success && success(res);
-          if (showToast) {
-            uni.showToast({
-              title: toastTitle || t$4("uniCloud.component.update.success")
-            });
-          }
-        }).catch((err) => {
-          fail && fail(err);
-          if (needConfirm) {
-            uni.showModal({
-              content: err.message,
-              showCancel: false
-            });
-          }
-        }).finally(() => {
-          if (needLoading) {
-            uni.hideLoading();
-          }
-          complete && complete();
-        });
-      },
-      getTemp(isTemp = true) {
-        let db2 = Ws.database(this.spaceInfo);
-        if (this.action) {
-          db2 = db2.action(this.action);
-        }
-        db2 = db2.collection(...this.collectionArgs);
-        if (this.foreignKey) {
-          db2 = db2.foreignKey(this.foreignKey);
-        }
-        if (!(!this.where || !Object.keys(this.where).length)) {
-          db2 = db2.where(this.where);
-        }
-        if (this.field) {
-          db2 = db2.field(this.field);
-        }
-        if (this.groupby) {
-          db2 = db2.groupBy(this.groupby);
-        }
-        if (this.groupField) {
-          db2 = db2.groupField(this.groupField);
-        }
-        if (this.distinct === true) {
-          db2 = db2.distinct();
-        }
-        if (this.orderby) {
-          db2 = db2.orderBy(this.orderby);
-        }
-        const {
-          current,
-          size
-        } = this.paginationInternal;
-        const getOptions = {};
-        if (this.getcount) {
-          getOptions.getCount = this.getcount;
-        }
-        const treeOptions = {
-          limitLevel: this.limitlevel,
-          startWith: this.startwith
-        };
-        if (this.gettree) {
-          getOptions.getTree = treeOptions;
-        }
-        if (this.gettreepath) {
-          getOptions.getTreePath = treeOptions;
-        }
-        db2 = db2.skip(size * (current - 1)).limit(size);
-        if (isTemp) {
-          db2 = db2.getTemp(getOptions);
-          db2.udb = this;
-        } else {
-          db2 = db2.get(getOptions);
-        }
-        return db2;
-      },
-      setResult(result) {
-        if (result.code === 0) {
-          this._execLoadDataSuccess(result);
-        } else {
-          this._execLoadDataFail(new Error(result.message));
-        }
-      },
-      _execLoadData(callback, clear) {
-        if (this.loading) {
-          return;
-        }
-        this.loading = true;
-        this.errorMessage = "";
-        return this._getExec().then((res) => {
-          this.loading = false;
-          this._execLoadDataSuccess(res.result, callback, clear);
-        }).catch((err) => {
-          this.loading = false;
-          this._execLoadDataFail(err, callback);
-        });
-      },
-      _execLoadDataSuccess(result, callback, clear) {
-        const {
-          data: data2,
-          count
-        } = result;
-        this._isEnded = count !== void 0 ? this.paginationInternal.current * this.paginationInternal.size >= count : data2.length < this.pageSize;
-        this.hasMore = !this._isEnded;
-        const data22 = this.getone ? data2.length ? data2[0] : void 0 : data2;
-        if (this.getcount) {
-          this.paginationInternal.count = count;
-        }
-        callback && callback(data22, this._isEnded, this.paginationInternal);
-        this._dispatchEvent(events.load, data22);
-        if (this.getone || this.pageData === pageMode.replace) {
-          this.dataList = data22;
-        } else {
-          if (clear) {
-            this.dataList = data22;
-          } else {
-            this.dataList.push(...data22);
-          }
-        }
-      },
-      _execLoadDataFail(err, callback) {
-        this.errorMessage = err;
-        callback && callback();
-        this.$emit(events.error, err);
-        {
-          console.error(err);
-        }
-      },
-      _getExec() {
-        return this.getTemp(false);
-      },
-      _execRemove(id, action, success, fail, complete, needConfirm, needLoading, loadingTitle) {
-        if (!this.collection || !id) {
-          return;
-        }
-        const ids = isArray$1(id) ? id : [id];
-        if (!ids.length) {
-          return;
-        }
-        if (needLoading) {
-          uni.showLoading({
-            mask: true,
-            title: loadingTitle
-          });
-        }
-        const db2 = Ws.database(this.spaceInfo);
-        const dbCmd = db2.command;
-        let exec = db2;
-        if (action) {
-          exec = exec.action(action);
-        }
-        exec.collection(this.mainCollection).where({
-          _id: dbCmd.in(ids)
-        }).remove().then((res) => {
-          success && success(res.result);
-          if (this.pageData === pageMode.replace) {
-            this.refresh();
-          } else {
-            this.removeData(ids);
-          }
-        }).catch((err) => {
-          fail && fail(err);
-          if (needConfirm) {
-            uni.showModal({
-              content: err.message,
-              showCancel: false
-            });
-          }
-        }).finally(() => {
-          if (needLoading) {
-            uni.hideLoading();
-          }
-          complete && complete();
-        });
-      },
-      removeData(ids) {
-        const il = ids.slice(0);
-        const dl = this.dataList;
-        for (let i2 = dl.length - 1; i2 >= 0; i2--) {
-          const index = il.indexOf(dl[i2]._id);
-          if (index >= 0) {
-            dl.splice(i2, 1);
-            il.splice(index, 1);
-          }
-        }
-      },
-      _dispatchEvent(type, data2) {
-        if (this._changeDataFunction) {
-          this._changeDataFunction(data2, this._isEnded, this.paginationInternal);
-        } else {
-          this.$emit(type, data2, this._isEnded, this.paginationInternal);
-        }
-      }
-    }
-  };
-  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", null, [
-      vue.renderSlot(_ctx.$slots, "default", {
-        options: $props.options,
-        data: $setup.dataList,
-        pagination: $data.paginationInternal,
-        loading: $data.loading,
-        hasMore: $data.hasMore,
-        error: $data.errorMessage
-      })
-    ]);
-  }
-  const __easycom_4$3 = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__file", "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db.vue"]]);
-  const _sfc_main$T = {
-    name: "UniGridItem",
-    inject: ["grid"],
-    props: {
-      index: {
-        type: Number,
-        default: 0
-      }
-    },
-    data() {
-      return {
-        column: 0,
-        showBorder: true,
-        square: true,
-        highlight: true,
-        left: 0,
-        top: 0,
-        openNum: 2,
-        width: 0,
-        borderColor: "#e5e5e5"
-      };
-    },
-    created() {
-      this.column = this.grid.column;
-      this.showBorder = this.grid.showBorder;
-      this.square = this.grid.square;
-      this.highlight = this.grid.highlight;
-      this.top = this.hor === 0 ? this.grid.hor : this.hor;
-      this.left = this.ver === 0 ? this.grid.ver : this.ver;
-      this.borderColor = this.grid.borderColor;
-      this.grid.children.push(this);
-      this.width = this.grid.width;
-    },
-    beforeDestroy() {
-      this.grid.children.forEach((item, index) => {
-        if (item === this) {
-          this.grid.children.splice(index, 1);
-        }
-      });
-    },
-    methods: {
-      _onClick() {
-        this.grid.change({
-          detail: {
-            index: this.index
-          }
-        });
-      }
-    }
-  };
-  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
-    return $data.width ? (vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        key: 0,
-        style: vue.normalizeStyle("width:" + $data.width + ";" + ($data.square ? "height:" + $data.width : "")),
-        class: "uni-grid-item"
-      },
-      [
-        vue.createElementVNode(
-          "view",
-          {
-            class: vue.normalizeClass([{ "uni-grid-item--border": $data.showBorder, "uni-grid-item--border-top": $data.showBorder && $props.index < $data.column, "uni-highlight": $data.highlight }, "uni-grid-item__box"]),
-            style: vue.normalizeStyle({ "border-right-color": $data.borderColor, "border-bottom-color": $data.borderColor, "border-top-color": $data.borderColor }),
-            onClick: _cache[0] || (_cache[0] = (...args) => $options._onClick && $options._onClick(...args))
-          },
-          [
-            vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-          ],
-          6
-          /* CLASS, STYLE */
-        )
-      ],
-      4
-      /* STYLE */
-    )) : vue.createCommentVNode("v-if", true);
-  }
-  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-7a807eb7"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue"]]);
-  const _sfc_main$S = {
-    name: "UniGrid",
-    emits: ["change"],
-    props: {
-      // 每列显示个数
-      column: {
-        type: Number,
-        default: 3
-      },
-      // 是否显示边框
-      showBorder: {
-        type: Boolean,
-        default: true
-      },
-      // 边框颜色
-      borderColor: {
-        type: String,
-        default: "#D2D2D2"
-      },
-      // 是否正方形显示,默认为 true
-      square: {
-        type: Boolean,
-        default: true
-      },
-      highlight: {
-        type: Boolean,
-        default: true
-      }
-    },
-    provide() {
-      return {
-        grid: this
-      };
-    },
-    data() {
-      const elId = `Uni_${Math.ceil(Math.random() * 1e6).toString(36)}`;
-      return {
-        elId,
-        width: 0
-      };
-    },
-    created() {
-      this.children = [];
-    },
-    mounted() {
-      this.$nextTick(() => {
-        this.init();
-      });
-    },
-    methods: {
-      init() {
-        setTimeout(() => {
-          this._getSize((width) => {
-            this.children.forEach((item, index) => {
-              item.width = width;
-            });
-          });
-        }, 50);
-      },
-      change(e2) {
-        this.$emit("change", e2);
-      },
-      _getSize(fn) {
-        uni.createSelectorQuery().in(this).select(`#${this.elId}`).boundingClientRect().exec((ret) => {
-          this.width = parseInt((ret[0].width - 1) / this.column) + "px";
-          fn(this.width);
-        });
-      }
-    }
-  };
-  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-grid-wrap" }, [
-      vue.createElementVNode("view", {
-        id: $data.elId,
-        ref: "uni-grid",
-        class: vue.normalizeClass(["uni-grid", { "uni-grid--border": $props.showBorder }]),
-        style: vue.normalizeStyle({ "border-left-color": $props.borderColor })
-      }, [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ], 14, ["id"])
-    ]);
-  }
-  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-07acefee"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid/uni-grid.vue"]]);
-  const _sfc_main$R = {
-    name: "UniStatusBar",
-    data() {
-      return {
-        statusBarHeight: uni.getSystemInfoSync().statusBarHeight + "px"
-      };
-    }
-  };
-  function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        style: vue.normalizeStyle({ height: $data.statusBarHeight }),
-        class: "uni-status-bar"
-      },
-      [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ],
-      4
-      /* STYLE */
-    );
-  }
-  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-7920e3e0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
-  const _sfc_main$Q = {
-    components: {
-      statusBar
-    },
-    data() {
-      return {
-        gridList: [],
-        current: 0,
-        hasLogin: false
-      };
-    },
-    onShow() {
-      this.hasLogin = Ws.getCurrentUserInfo().tokenExpired > Date.now();
-    },
-    onLoad() {
-      let gridList = [];
-      for (var i2 = 0; i2 < 3; i2++) {
-        gridList.push(this.$t("grid.visibleToAll"));
-      }
-      for (var i2 = 0; i2 < 3; i2++) {
-        gridList.push(this.$t("grid.invisibleToTourists"));
-      }
-      for (var i2 = 0; i2 < 3; i2++) {
-        gridList.push(this.$t("grid.adminVisible"));
-      }
-      this.gridList = gridList;
-    },
-    methods: {
-      change(e2) {
-        uni.showToast({
-          title: this.$t("grid.clickTip") + ` ${e2.detail.index + 1} ` + this.$t("grid.clickTipGrid"),
-          icon: "none"
-        });
-      },
-      /**
-       * banner加载后触发的回调
-       */
-      onqueryload(data2) {
-      },
-      changeSwiper(e2) {
-        this.current = e2.detail.current;
-      },
-      /**
-       * 点击banner的处理
-       */
-      clickBannerItem(item) {
-        if (item.open_url) {
-          uni.navigateTo({
-            url: "/uni_modules/uni-id-pages/pages/common/webview/webview?url=" + item.open_url + "&title=" + item.title,
-            success: (res) => {
-            },
-            fail: () => {
-            },
-            complete: () => {
-            }
-          });
-        }
-      }
-    }
-  };
-  function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_statusBar = vue.resolveComponent("statusBar");
-    const _component_unicloud_db = resolveEasycom(vue.resolveDynamicComponent("unicloud-db"), __easycom_4$3);
-    const _component_uni_grid_item = resolveEasycom(vue.resolveDynamicComponent("uni-grid-item"), __easycom_3$3);
-    const _component_uni_grid = resolveEasycom(vue.resolveDynamicComponent("uni-grid"), __easycom_4$2);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "warp" }, [
-      vue.createVNode(_component_statusBar),
-      vue.createCommentVNode(" banner "),
-      vue.createVNode(_component_unicloud_db, {
-        ref: "bannerdb",
-        collection: "opendb-banner",
-        field: "_id,bannerfile,open_url,title",
-        onLoad: $options.onqueryload
-      }, {
-        default: vue.withCtx(({ data: data2, loading, error: error2, options }) => [
-          vue.createCommentVNode(" 当无banner数据时显示占位图 "),
-          !(loading || data2.length) ? (vue.openBlock(), vue.createElementBlock("image", {
-            key: 0,
-            class: "banner-image",
-            src: "/static/uni-center/headers.png",
-            mode: "aspectFill",
-            draggable: false
-          })) : (vue.openBlock(), vue.createElementBlock("swiper", {
-            key: 1,
-            class: "swiper-box",
-            onChange: _cache[0] || (_cache[0] = (...args) => $options.changeSwiper && $options.changeSwiper(...args)),
-            current: $data.current,
-            "indicator-dots": ""
-          }, [
-            (vue.openBlock(true), vue.createElementBlock(
-              vue.Fragment,
-              null,
-              vue.renderList(data2, (item, index) => {
-                return vue.openBlock(), vue.createElementBlock("swiper-item", {
-                  key: item._id
-                }, [
-                  vue.createElementVNode("view", {
-                    class: "swiper-item",
-                    onClick: ($event) => $options.clickBannerItem(item)
-                  }, [
-                    vue.createElementVNode("image", {
-                      class: "banner-image",
-                      src: item.bannerfile.url,
-                      mode: "aspectFill",
-                      draggable: false
-                    }, null, 8, ["src"])
-                  ], 8, ["onClick"])
-                ]);
-              }),
-              128
-              /* KEYED_FRAGMENT */
-            ))
-          ], 40, ["current"]))
-        ]),
-        _: 1
-        /* STABLE */
-      }, 8, ["onLoad"]),
-      vue.createCommentVNode(" 宫格 "),
-      vue.createElementVNode("view", { class: "section-box" }, [
-        vue.createElementVNode("text", { class: "decoration" }),
-        vue.createElementVNode(
-          "text",
-          { class: "section-text" },
-          vue.toDisplayString(_ctx.$t("grid.grid")),
-          1
-          /* TEXT */
-        )
-      ]),
-      vue.createElementVNode("view", { class: "example-body" }, [
-        vue.createVNode(_component_uni_grid, {
-          column: 3,
-          highlight: true,
-          onChange: $options.change
-        }, {
-          default: vue.withCtx(() => [
-            (vue.openBlock(true), vue.createElementBlock(
-              vue.Fragment,
-              null,
-              vue.renderList($data.gridList, (item, i2) => {
-                return vue.openBlock(), vue.createElementBlock(
-                  vue.Fragment,
-                  null,
-                  [
-                    i2 < 3 || i2 > 2 && i2 < 6 && $data.hasLogin || i2 > 5 && _ctx.uniIDHasRole("admin") ? (vue.openBlock(), vue.createBlock(_component_uni_grid_item, {
-                      index: i2,
-                      key: i2
-                    }, {
-                      default: vue.withCtx(() => [
-                        vue.createElementVNode("view", {
-                          class: "grid-item-box",
-                          style: { "background-color": "#fff" }
-                        }, [
-                          vue.createCommentVNode(` <image :src="'/static/grid/c'+(i+1)+'.png'" class="image" mode="aspectFill" /> `),
-                          vue.createElementVNode(
-                            "text",
-                            { class: "big-number" },
-                            vue.toDisplayString(i2 + 1),
-                            1
-                            /* TEXT */
-                          ),
-                          vue.createElementVNode(
-                            "text",
-                            { class: "text" },
-                            vue.toDisplayString(item),
-                            1
-                            /* TEXT */
-                          )
-                        ])
-                      ]),
-                      _: 2
-                      /* DYNAMIC */
-                    }, 1032, ["index"])) : vue.createCommentVNode("v-if", true)
-                  ],
-                  64
-                  /* STABLE_FRAGMENT */
-                );
-              }),
-              256
-              /* UNKEYED_FRAGMENT */
-            ))
-          ]),
-          _: 1
-          /* STABLE */
-        }, 8, ["onChange"])
-      ])
-    ]);
-  }
-  const PagesGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__file", "D:/project/CoHub/CoHub/pages/grid/grid.vue"]]);
   const fontData = [
     {
       "font_class": "arrow-down",
@@ -4937,7 +4177,7 @@ ${i3}
     const reg = /^[0-9]*$/g;
     return typeof val === "number" || reg.test(val) ? val + "px" : val;
   };
-  const _sfc_main$P = {
+  const _sfc_main$T = {
     name: "UniIcons",
     emits: ["click"],
     props: {
@@ -4991,7 +4231,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -5006,9 +4246,32 @@ ${i3}
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$c = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const __easycom_0$c = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const _sfc_main$S = {
+    name: "UniStatusBar",
+    data() {
+      return {
+        statusBarHeight: uni.getSystemInfoSync().statusBarHeight + "px"
+      };
+    }
+  };
+  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        style: vue.normalizeStyle({ height: $data.statusBarHeight }),
+        class: "uni-status-bar"
+      },
+      [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ],
+      4
+      /* STYLE */
+    );
+  }
+  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-7920e3e0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
   const getVal = (val) => typeof val === "number" ? val + "px" : val;
-  const _sfc_main$O = {
+  const _sfc_main$R = {
     name: "UniNavBar",
     components: {
       statusBar
@@ -5128,7 +4391,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_status_bar = vue.resolveComponent("status-bar");
     const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
     return vue.openBlock(), vue.createElementBlock(
@@ -5283,7 +4546,7 @@ ${i3}
       /* CLASS */
     );
   }
-  const __easycom_0$b = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-26544265"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
+  const __easycom_0$b = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-26544265"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
   function pad(str, length = 2) {
     str += "";
     while (str.length < length) {
@@ -5476,7 +4739,7 @@ ${i3}
       suffix
     );
   }
-  const _sfc_main$N = {
+  const _sfc_main$Q = {
     name: "uniDateformat",
     props: {
       date: {
@@ -5542,7 +4805,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       null,
@@ -5551,8 +4814,8 @@ ${i3}
       /* TEXT */
     );
   }
-  const __easycom_0$a = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue"]]);
-  const _sfc_main$M = {
+  const __easycom_0$a = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue"]]);
+  const _sfc_main$P = {
     name: "UniBadge",
     emits: ["click"],
     props: {
@@ -5675,7 +4938,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "uni-badge--x" }, [
       vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
       $props.text ? (vue.openBlock(), vue.createElementBlock(
@@ -5692,8 +4955,8 @@ ${i3}
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__scopeId", "data-v-c97cb896"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-badge/components/uni-badge/uni-badge.vue"]]);
-  const _sfc_main$L = {
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-c97cb896"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-badge/components/uni-badge/uni-badge.vue"]]);
+  const _sfc_main$O = {
     name: "UniListItem",
     emits: ["click", "switchChange"],
     props: {
@@ -5930,7 +5193,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
     const _component_uni_badge = resolveEasycom(vue.resolveDynamicComponent("uni-badge"), __easycom_1$4);
     return vue.openBlock(), vue.createElementBlock("view", {
@@ -6059,8 +5322,8 @@ ${i3}
       })) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-c7524739"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue"]]);
-  const _sfc_main$K = {
+  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-c7524739"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue"]]);
+  const _sfc_main$N = {
     name: "uniList",
     "mp-weixin": {
       options: {
@@ -6106,7 +5369,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "uni-list uni-border-top-bottom" }, [
       $props.border ? (vue.openBlock(), vue.createElementBlock("view", {
         key: 0,
@@ -6119,7 +5382,878 @@ ${i3}
       })) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-c2f1266a"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list/uni-list.vue"]]);
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-c2f1266a"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list/uni-list.vue"]]);
+  const isObject$2 = (val) => val !== null && typeof val === "object";
+  const defaultDelimiters = ["{", "}"];
+  class BaseFormatter {
+    constructor() {
+      this._caches = /* @__PURE__ */ Object.create(null);
+    }
+    interpolate(message, values, delimiters = defaultDelimiters) {
+      if (!values) {
+        return [message];
+      }
+      let tokens = this._caches[message];
+      if (!tokens) {
+        tokens = parse$1(message, delimiters);
+        this._caches[message] = tokens;
+      }
+      return compile(tokens, values);
+    }
+  }
+  const RE_TOKEN_LIST_VALUE = /^(?:\d)+/;
+  const RE_TOKEN_NAMED_VALUE = /^(?:\w)+/;
+  function parse$1(format2, [startDelimiter, endDelimiter]) {
+    const tokens = [];
+    let position = 0;
+    let text = "";
+    while (position < format2.length) {
+      let char = format2[position++];
+      if (char === startDelimiter) {
+        if (text) {
+          tokens.push({ type: "text", value: text });
+        }
+        text = "";
+        let sub = "";
+        char = format2[position++];
+        while (char !== void 0 && char !== endDelimiter) {
+          sub += char;
+          char = format2[position++];
+        }
+        const isClosed = char === endDelimiter;
+        const type = RE_TOKEN_LIST_VALUE.test(sub) ? "list" : isClosed && RE_TOKEN_NAMED_VALUE.test(sub) ? "named" : "unknown";
+        tokens.push({ value: sub, type });
+      } else {
+        text += char;
+      }
+    }
+    text && tokens.push({ type: "text", value: text });
+    return tokens;
+  }
+  function compile(tokens, values) {
+    const compiled = [];
+    let index = 0;
+    const mode = Array.isArray(values) ? "list" : isObject$2(values) ? "named" : "unknown";
+    if (mode === "unknown") {
+      return compiled;
+    }
+    while (index < tokens.length) {
+      const token = tokens[index];
+      switch (token.type) {
+        case "text":
+          compiled.push(token.value);
+          break;
+        case "list":
+          compiled.push(values[parseInt(token.value, 10)]);
+          break;
+        case "named":
+          if (mode === "named") {
+            compiled.push(values[token.value]);
+          } else {
+            {
+              console.warn(`Type of token '${token.type}' and format of value '${mode}' don't match!`);
+            }
+          }
+          break;
+        case "unknown":
+          {
+            console.warn(`Detect 'unknown' type of token!`);
+          }
+          break;
+      }
+      index++;
+    }
+    return compiled;
+  }
+  const LOCALE_ZH_HANS = "zh-Hans";
+  const LOCALE_ZH_HANT = "zh-Hant";
+  const LOCALE_EN = "en";
+  const LOCALE_FR = "fr";
+  const LOCALE_ES = "es";
+  const hasOwnProperty$2 = Object.prototype.hasOwnProperty;
+  const hasOwn$2 = (val, key) => hasOwnProperty$2.call(val, key);
+  const defaultFormatter = new BaseFormatter();
+  function include(str, parts) {
+    return !!parts.find((part) => str.indexOf(part) !== -1);
+  }
+  function startsWith(str, parts) {
+    return parts.find((part) => str.indexOf(part) === 0);
+  }
+  function normalizeLocale(locale, messages2) {
+    if (!locale) {
+      return;
+    }
+    locale = locale.trim().replace(/_/g, "-");
+    if (messages2 && messages2[locale]) {
+      return locale;
+    }
+    locale = locale.toLowerCase();
+    if (locale === "chinese") {
+      return LOCALE_ZH_HANS;
+    }
+    if (locale.indexOf("zh") === 0) {
+      if (locale.indexOf("-hans") > -1) {
+        return LOCALE_ZH_HANS;
+      }
+      if (locale.indexOf("-hant") > -1) {
+        return LOCALE_ZH_HANT;
+      }
+      if (include(locale, ["-tw", "-hk", "-mo", "-cht"])) {
+        return LOCALE_ZH_HANT;
+      }
+      return LOCALE_ZH_HANS;
+    }
+    let locales = [LOCALE_EN, LOCALE_FR, LOCALE_ES];
+    if (messages2 && Object.keys(messages2).length > 0) {
+      locales = Object.keys(messages2);
+    }
+    const lang = startsWith(locale, locales);
+    if (lang) {
+      return lang;
+    }
+  }
+  class I18n {
+    constructor({ locale, fallbackLocale, messages: messages2, watcher, formater: formater2 }) {
+      this.locale = LOCALE_EN;
+      this.fallbackLocale = LOCALE_EN;
+      this.message = {};
+      this.messages = {};
+      this.watchers = [];
+      if (fallbackLocale) {
+        this.fallbackLocale = fallbackLocale;
+      }
+      this.formater = formater2 || defaultFormatter;
+      this.messages = messages2 || {};
+      this.setLocale(locale || LOCALE_EN);
+      if (watcher) {
+        this.watchLocale(watcher);
+      }
+    }
+    setLocale(locale) {
+      const oldLocale = this.locale;
+      this.locale = normalizeLocale(locale, this.messages) || this.fallbackLocale;
+      if (!this.messages[this.locale]) {
+        this.messages[this.locale] = {};
+      }
+      this.message = this.messages[this.locale];
+      if (oldLocale !== this.locale) {
+        this.watchers.forEach((watcher) => {
+          watcher(this.locale, oldLocale);
+        });
+      }
+    }
+    getLocale() {
+      return this.locale;
+    }
+    watchLocale(fn) {
+      const index = this.watchers.push(fn) - 1;
+      return () => {
+        this.watchers.splice(index, 1);
+      };
+    }
+    add(locale, message, override = true) {
+      const curMessages = this.messages[locale];
+      if (curMessages) {
+        if (override) {
+          Object.assign(curMessages, message);
+        } else {
+          Object.keys(message).forEach((key) => {
+            if (!hasOwn$2(curMessages, key)) {
+              curMessages[key] = message[key];
+            }
+          });
+        }
+      } else {
+        this.messages[locale] = message;
+      }
+    }
+    f(message, values, delimiters) {
+      return this.formater.interpolate(message, values, delimiters).join("");
+    }
+    t(key, locale, values) {
+      let message = this.message;
+      if (typeof locale === "string") {
+        locale = normalizeLocale(locale, this.messages);
+        locale && (message = this.messages[locale]);
+      } else {
+        values = locale;
+      }
+      if (!hasOwn$2(message, key)) {
+        console.warn(`Cannot translate the value of keypath ${key}. Use the value of keypath as default.`);
+        return key;
+      }
+      return this.formater.interpolate(message[key], values).join("");
+    }
+  }
+  function watchAppLocale(appVm, i18n2) {
+    if (appVm.$watchLocale) {
+      appVm.$watchLocale((newLocale) => {
+        i18n2.setLocale(newLocale);
+      });
+    } else {
+      appVm.$watch(() => appVm.$locale, (newLocale) => {
+        i18n2.setLocale(newLocale);
+      });
+    }
+  }
+  function getDefaultLocale() {
+    if (typeof uni !== "undefined" && uni.getLocale) {
+      return uni.getLocale();
+    }
+    if (typeof global !== "undefined" && global.getLocale) {
+      return global.getLocale();
+    }
+    return LOCALE_EN;
+  }
+  function initVueI18n(locale, messages2 = {}, fallbackLocale, watcher) {
+    if (typeof locale !== "string") {
+      [locale, messages2] = [
+        messages2,
+        locale
+      ];
+    }
+    if (typeof locale !== "string") {
+      locale = getDefaultLocale();
+    }
+    if (typeof fallbackLocale !== "string") {
+      fallbackLocale = typeof __uniConfig !== "undefined" && __uniConfig.fallbackLocale || LOCALE_EN;
+    }
+    const i18n2 = new I18n({
+      locale,
+      fallbackLocale,
+      messages: messages2,
+      watcher
+    });
+    let t2 = (key, values) => {
+      if (typeof getApp !== "function") {
+        t2 = function(key2, values2) {
+          return i18n2.t(key2, values2);
+        };
+      } else {
+        let isWatchedAppLocale = false;
+        t2 = function(key2, values2) {
+          const appVm = getApp().$vm;
+          if (appVm) {
+            appVm.$locale;
+            if (!isWatchedAppLocale) {
+              isWatchedAppLocale = true;
+              watchAppLocale(appVm, i18n2);
+            }
+          }
+          return i18n2.t(key2, values2);
+        };
+      }
+      return t2(key, values);
+    };
+    return {
+      i18n: i18n2,
+      f(message, values, delimiters) {
+        return i18n2.f(message, values, delimiters);
+      },
+      t(key, values) {
+        return t2(key, values);
+      },
+      add(locale2, message, override = true) {
+        return i18n2.add(locale2, message, override);
+      },
+      watch(fn) {
+        return i18n2.watchLocale(fn);
+      },
+      getLocale() {
+        return i18n2.getLocale();
+      },
+      setLocale(newLocale) {
+        return i18n2.setLocale(newLocale);
+      }
+    };
+  }
+  const en$3 = {
+    "uniCloud.component.add.success": "Success",
+    "uniCloud.component.update.success": "Success",
+    "uniCloud.component.remove.showModal.title": "Tips",
+    "uniCloud.component.remove.showModal.content": "是否删除该数据"
+  };
+  const es = {
+    "uniCloud.component.add.success": "新增成功",
+    "uniCloud.component.update.success": "修改成功",
+    "uniCloud.component.remove.showModal.title": "提示",
+    "uniCloud.component.remove.showModal.content": "是否删除该数据"
+  };
+  const fr = {
+    "uniCloud.component.add.success": "新增成功",
+    "uniCloud.component.update.success": "修改成功",
+    "uniCloud.component.remove.showModal.title": "提示",
+    "uniCloud.component.remove.showModal.content": "是否删除该数据"
+  };
+  const zhHans$4 = {
+    "uniCloud.component.add.success": "新增成功",
+    "uniCloud.component.update.success": "修改成功",
+    "uniCloud.component.remove.showModal.title": "提示",
+    "uniCloud.component.remove.showModal.content": "是否删除该数据"
+  };
+  const zhHant$2 = {
+    "uniCloud.component.add.success": "新增成功",
+    "uniCloud.component.update.success": "修改成功",
+    "uniCloud.component.remove.showModal.title": "提示",
+    "uniCloud.component.remove.showModal.content": "是否刪除數據"
+  };
+  const messages$4 = {
+    en: en$3,
+    es,
+    fr,
+    "zh-Hans": zhHans$4,
+    "zh-Hant": zhHant$2
+  };
+  const isArray$1 = Array.isArray;
+  const { t: t$4 } = initVueI18n(messages$4);
+  const events = {
+    load: "load",
+    error: "error"
+  };
+  const pageMode = {
+    add: "add",
+    replace: "replace"
+  };
+  const loadMode = {
+    auto: "auto",
+    onready: "onready",
+    manual: "manual"
+  };
+  const attrs = [
+    "pageCurrent",
+    "pageSize",
+    "collection",
+    "action",
+    "field",
+    "getcount",
+    "orderby",
+    "where",
+    "groupby",
+    "groupField",
+    "distinct"
+  ];
+  const _sfc_main$M = {
+    name: "UniClouddb",
+    setup(props) {
+      const dataListRef = props.ssrKey ? props.getone ? shallowSsrRef(void 0, props.ssrKey) : ssrRef([], props.ssrKey) : props.getone ? shallowSsrRef(void 0, "KYCxN2REL530V0B8uaTYVg==") : ssrRef([], "h67sEE75CAbPOfQZgl4L6A==");
+      const instance2 = vue.getCurrentInstance();
+      vue.onMounted(() => {
+        if ((!dataListRef.value || dataListRef.value.length === 0) && !props.manual && props.loadtime === loadMode.auto) {
+          instance2.proxy.loadData();
+        }
+      });
+      return { dataList: dataListRef };
+    },
+    // 服务端serverPrefetch生命周期，用于服务端加载数据，等将来全端支持Suspense时，可以采用 Suspense + async setup 来实现一版
+    async serverPrefetch() {
+      if (!this.manual && this.loadtime === loadMode.auto) {
+        return this.loadData();
+      }
+    },
+    props: {
+      options: {
+        type: [Object, Array],
+        default() {
+          return {};
+        }
+      },
+      spaceInfo: {
+        type: Object,
+        default() {
+          return {};
+        }
+      },
+      collection: {
+        type: [String, Array],
+        default: ""
+      },
+      action: {
+        type: String,
+        default: ""
+      },
+      field: {
+        type: String,
+        default: ""
+      },
+      orderby: {
+        type: String,
+        default: ""
+      },
+      where: {
+        type: [String, Object],
+        default: ""
+      },
+      pageData: {
+        type: String,
+        default: "add"
+      },
+      pageCurrent: {
+        type: Number,
+        default: 1
+      },
+      pageSize: {
+        type: Number,
+        default: 20
+      },
+      getcount: {
+        type: [Boolean, String],
+        default: false
+      },
+      getone: {
+        type: [Boolean, String],
+        default: false
+      },
+      gettree: {
+        type: [Boolean, String, Object],
+        default: false
+      },
+      gettreepath: {
+        type: [Boolean, String],
+        default: false
+      },
+      startwith: {
+        type: String,
+        default: ""
+      },
+      limitlevel: {
+        type: Number,
+        default: 10
+      },
+      groupby: {
+        type: String,
+        default: ""
+      },
+      groupField: {
+        type: String,
+        default: ""
+      },
+      distinct: {
+        type: [Boolean, String],
+        default: false
+      },
+      pageIndistinct: {
+        type: [Boolean, String],
+        default: false
+      },
+      foreignKey: {
+        type: String,
+        default: ""
+      },
+      loadtime: {
+        type: String,
+        default: "auto"
+      },
+      manual: {
+        type: Boolean,
+        default: false
+      },
+      ssrKey: {
+        type: [String, Number],
+        default: ""
+      }
+    },
+    data() {
+      return {
+        loading: false,
+        hasMore: false,
+        paginationInternal: {},
+        errorMessage: ""
+      };
+    },
+    computed: {
+      collectionArgs() {
+        return isArray$1(this.collection) ? this.collection : [this.collection];
+      },
+      isLookup() {
+        return isArray$1(this.collection) && this.collection.length > 1 || typeof this.collection === "string" && this.collection.indexOf(",") > -1;
+      },
+      mainCollection() {
+        if (typeof this.collection === "string") {
+          return this.collection.split(",")[0];
+        }
+        const mainQuery = JSON.parse(JSON.stringify(this.collection[0]));
+        return mainQuery.$db[0].$param[0];
+      }
+    },
+    created() {
+      this._isEnded = false;
+      this.paginationInternal = {
+        current: this.pageCurrent,
+        size: this.pageSize,
+        count: 0
+      };
+      this.$watch(() => {
+        var al = [];
+        attrs.forEach((key) => {
+          al.push(this[key]);
+        });
+        return al;
+      }, (newValue, oldValue) => {
+        this.paginationInternal.size = this.pageSize;
+        if (newValue[0] !== oldValue[0]) {
+          this.paginationInternal.current = this.pageCurrent;
+        }
+        if (this.loadtime === loadMode.manual) {
+          return;
+        }
+        let needReset = false;
+        for (let i2 = 2; i2 < newValue.length; i2++) {
+          if (newValue[i2] !== oldValue[i2]) {
+            needReset = true;
+            break;
+          }
+        }
+        if (needReset) {
+          this.clear();
+          this.reset();
+        }
+        this._execLoadData();
+      });
+    },
+    methods: {
+      loadData(args1, args2) {
+        let callback = null;
+        let clear = false;
+        if (typeof args1 === "object") {
+          if (args1.clear) {
+            if (this.pageData === pageMode.replace) {
+              this.clear();
+            } else {
+              clear = args1.clear;
+            }
+            this.reset();
+          }
+          if (args1.current !== void 0) {
+            this.paginationInternal.current = args1.current;
+          }
+          if (typeof args2 === "function") {
+            callback = args2;
+          }
+        } else if (typeof args1 === "function") {
+          callback = args1;
+        }
+        return this._execLoadData(callback, clear);
+      },
+      loadMore() {
+        if (this._isEnded || this.loading) {
+          return;
+        }
+        if (this.pageData === pageMode.add) {
+          this.paginationInternal.current++;
+        }
+        this._execLoadData();
+      },
+      refresh() {
+        this.clear();
+        this._execLoadData();
+      },
+      clear() {
+        this._isEnded = false;
+        this.dataList = [];
+      },
+      reset() {
+        this.paginationInternal.current = 1;
+      },
+      add(value, {
+        action,
+        showToast = true,
+        toastTitle,
+        success,
+        fail,
+        complete,
+        needConfirm = true,
+        needLoading = true,
+        loadingTitle = ""
+      } = {}) {
+        if (needLoading) {
+          uni.showLoading({
+            title: loadingTitle
+          });
+        }
+        let db2 = Ws.database(this.spaceInfo);
+        if (action) {
+          db2 = db2.action(action);
+        }
+        db2.collection(this.mainCollection).add(value).then((res) => {
+          success && success(res);
+          if (showToast) {
+            uni.showToast({
+              title: toastTitle || t$4("uniCloud.component.add.success")
+            });
+          }
+        }).catch((err) => {
+          fail && fail(err);
+          if (needConfirm) {
+            uni.showModal({
+              content: err.message,
+              showCancel: false
+            });
+          }
+        }).finally(() => {
+          if (needLoading) {
+            uni.hideLoading();
+          }
+          complete && complete();
+        });
+      },
+      remove(id, {
+        action,
+        success,
+        fail,
+        complete,
+        confirmTitle,
+        confirmContent,
+        needConfirm = true,
+        needLoading = true,
+        loadingTitle = ""
+      } = {}) {
+        if (!id || !id.length) {
+          return;
+        }
+        if (!needConfirm) {
+          this._execRemove(id, action, success, fail, complete, needConfirm, needLoading, loadingTitle);
+          return;
+        }
+        uni.showModal({
+          title: confirmTitle || t$4("uniCloud.component.remove.showModal.title"),
+          content: confirmContent || t$4("uniCloud.component.remove.showModal.content"),
+          showCancel: true,
+          success: (res) => {
+            if (!res.confirm) {
+              return;
+            }
+            this._execRemove(id, action, success, fail, complete, needConfirm, needLoading, loadingTitle);
+          }
+        });
+      },
+      update(id, value, {
+        action,
+        showToast = true,
+        toastTitle,
+        success,
+        fail,
+        complete,
+        needConfirm = true,
+        needLoading = true,
+        loadingTitle = ""
+      } = {}) {
+        if (needLoading) {
+          uni.showLoading({
+            title: loadingTitle
+          });
+        }
+        let db2 = Ws.database(this.spaceInfo);
+        if (action) {
+          db2 = db2.action(action);
+        }
+        return db2.collection(this.mainCollection).doc(id).update(value).then((res) => {
+          success && success(res);
+          if (showToast) {
+            uni.showToast({
+              title: toastTitle || t$4("uniCloud.component.update.success")
+            });
+          }
+        }).catch((err) => {
+          fail && fail(err);
+          if (needConfirm) {
+            uni.showModal({
+              content: err.message,
+              showCancel: false
+            });
+          }
+        }).finally(() => {
+          if (needLoading) {
+            uni.hideLoading();
+          }
+          complete && complete();
+        });
+      },
+      getTemp(isTemp = true) {
+        let db2 = Ws.database(this.spaceInfo);
+        if (this.action) {
+          db2 = db2.action(this.action);
+        }
+        db2 = db2.collection(...this.collectionArgs);
+        if (this.foreignKey) {
+          db2 = db2.foreignKey(this.foreignKey);
+        }
+        if (!(!this.where || !Object.keys(this.where).length)) {
+          db2 = db2.where(this.where);
+        }
+        if (this.field) {
+          db2 = db2.field(this.field);
+        }
+        if (this.groupby) {
+          db2 = db2.groupBy(this.groupby);
+        }
+        if (this.groupField) {
+          db2 = db2.groupField(this.groupField);
+        }
+        if (this.distinct === true) {
+          db2 = db2.distinct();
+        }
+        if (this.orderby) {
+          db2 = db2.orderBy(this.orderby);
+        }
+        const {
+          current,
+          size
+        } = this.paginationInternal;
+        const getOptions = {};
+        if (this.getcount) {
+          getOptions.getCount = this.getcount;
+        }
+        const treeOptions = {
+          limitLevel: this.limitlevel,
+          startWith: this.startwith
+        };
+        if (this.gettree) {
+          getOptions.getTree = treeOptions;
+        }
+        if (this.gettreepath) {
+          getOptions.getTreePath = treeOptions;
+        }
+        db2 = db2.skip(size * (current - 1)).limit(size);
+        if (isTemp) {
+          db2 = db2.getTemp(getOptions);
+          db2.udb = this;
+        } else {
+          db2 = db2.get(getOptions);
+        }
+        return db2;
+      },
+      setResult(result) {
+        if (result.code === 0) {
+          this._execLoadDataSuccess(result);
+        } else {
+          this._execLoadDataFail(new Error(result.message));
+        }
+      },
+      _execLoadData(callback, clear) {
+        if (this.loading) {
+          return;
+        }
+        this.loading = true;
+        this.errorMessage = "";
+        return this._getExec().then((res) => {
+          this.loading = false;
+          this._execLoadDataSuccess(res.result, callback, clear);
+        }).catch((err) => {
+          this.loading = false;
+          this._execLoadDataFail(err, callback);
+        });
+      },
+      _execLoadDataSuccess(result, callback, clear) {
+        const {
+          data: data2,
+          count
+        } = result;
+        this._isEnded = count !== void 0 ? this.paginationInternal.current * this.paginationInternal.size >= count : data2.length < this.pageSize;
+        this.hasMore = !this._isEnded;
+        const data22 = this.getone ? data2.length ? data2[0] : void 0 : data2;
+        if (this.getcount) {
+          this.paginationInternal.count = count;
+        }
+        callback && callback(data22, this._isEnded, this.paginationInternal);
+        this._dispatchEvent(events.load, data22);
+        if (this.getone || this.pageData === pageMode.replace) {
+          this.dataList = data22;
+        } else {
+          if (clear) {
+            this.dataList = data22;
+          } else {
+            this.dataList.push(...data22);
+          }
+        }
+      },
+      _execLoadDataFail(err, callback) {
+        this.errorMessage = err;
+        callback && callback();
+        this.$emit(events.error, err);
+        {
+          console.error(err);
+        }
+      },
+      _getExec() {
+        return this.getTemp(false);
+      },
+      _execRemove(id, action, success, fail, complete, needConfirm, needLoading, loadingTitle) {
+        if (!this.collection || !id) {
+          return;
+        }
+        const ids = isArray$1(id) ? id : [id];
+        if (!ids.length) {
+          return;
+        }
+        if (needLoading) {
+          uni.showLoading({
+            mask: true,
+            title: loadingTitle
+          });
+        }
+        const db2 = Ws.database(this.spaceInfo);
+        const dbCmd = db2.command;
+        let exec = db2;
+        if (action) {
+          exec = exec.action(action);
+        }
+        exec.collection(this.mainCollection).where({
+          _id: dbCmd.in(ids)
+        }).remove().then((res) => {
+          success && success(res.result);
+          if (this.pageData === pageMode.replace) {
+            this.refresh();
+          } else {
+            this.removeData(ids);
+          }
+        }).catch((err) => {
+          fail && fail(err);
+          if (needConfirm) {
+            uni.showModal({
+              content: err.message,
+              showCancel: false
+            });
+          }
+        }).finally(() => {
+          if (needLoading) {
+            uni.hideLoading();
+          }
+          complete && complete();
+        });
+      },
+      removeData(ids) {
+        const il = ids.slice(0);
+        const dl = this.dataList;
+        for (let i2 = dl.length - 1; i2 >= 0; i2--) {
+          const index = il.indexOf(dl[i2]._id);
+          if (index >= 0) {
+            dl.splice(i2, 1);
+            il.splice(index, 1);
+          }
+        }
+      },
+      _dispatchEvent(type, data2) {
+        if (this._changeDataFunction) {
+          this._changeDataFunction(data2, this._isEnded, this.paginationInternal);
+        } else {
+          this.$emit(type, data2, this._isEnded, this.paginationInternal);
+        }
+      }
+    }
+  };
+  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", null, [
+      vue.renderSlot(_ctx.$slots, "default", {
+        options: $props.options,
+        data: $setup.dataList,
+        pagination: $data.paginationInternal,
+        loading: $data.loading,
+        hasMore: $data.hasMore,
+        error: $data.errorMessage
+      })
+    ]);
+  }
+  const __easycom_4$3 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__file", "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db.vue"]]);
   var nvMask, nvImageMenu;
   class NvImageMenu {
     constructor(arg) {
@@ -6381,7 +6515,7 @@ ${i3}
   const uniShare$2 = new UniShare();
   const db$6 = Ws.database();
   const readNewsLog = db$6.collection("read-news-log");
-  const _sfc_main$J = {
+  const _sfc_main$L = {
     components: {
       "uni-nav-bar": __easycom_0$b
     },
@@ -6593,7 +6727,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_nav_bar = resolveEasycom(vue.resolveDynamicComponent("uni-nav-bar"), __easycom_0$b);
     const _component_uni_dateformat = resolveEasycom(vue.resolveDynamicComponent("uni-dateformat"), __easycom_0$a);
     const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$9);
@@ -6711,7 +6845,7 @@ ${i3}
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesListDetail = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-495067d4"], ["__file", "D:/project/CoHub/CoHub/pages/list/detail.vue"]]);
+  const PagesListDetail = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-495067d4"], ["__file", "D:/project/CoHub/CoHub/pages/list/detail.vue"]]);
   class MPAnimation {
     constructor(options, _this) {
       this.options = options;
@@ -6824,7 +6958,7 @@ ${i3}
     clearTimeout(_this.timer);
     return new MPAnimation(option, _this);
   }
-  const _sfc_main$I = {
+  const _sfc_main$K = {
     name: "uniTransition",
     emits: ["click", "change"],
     props: {
@@ -7075,7 +7209,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.withDirectives((vue.openBlock(), vue.createElementBlock("view", {
       ref: "ani",
       animation: $data.animationData,
@@ -7088,8 +7222,8 @@ ${i3}
       [vue.vShow, $data.isShow]
     ]);
   }
-  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-transition/components/uni-transition/uni-transition.vue"]]);
-  const _sfc_main$H = {
+  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-transition/components/uni-transition/uni-transition.vue"]]);
+  const _sfc_main$J = {
     name: "uniPopup",
     components: {},
     emits: ["change", "maskClick"],
@@ -7439,7 +7573,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_transition = resolveEasycom(vue.resolveDynamicComponent("uni-transition"), __easycom_0$8);
     return $data.showPopup ? (vue.openBlock(), vue.createElementBlock(
       "view",
@@ -7499,7 +7633,7 @@ ${i3}
       /* CLASS */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-4dd3c44b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-popup/components/uni-popup/uni-popup.vue"]]);
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-4dd3c44b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-popup/components/uni-popup/uni-popup.vue"]]);
   const ADType = {
     RewardedVideo: "RewardedVideo",
     FullScreenVideo: "FullScreenVideo"
@@ -7708,7 +7842,7 @@ ${i3}
   const db$5 = Ws.database();
   const signInTable = db$5.action("signIn").collection("opendb-sign-in");
   new Date((/* @__PURE__ */ new Date()).toLocaleDateString()).getTime();
-  const _sfc_main$G = {
+  const _sfc_main$I = {
     name: "uni-signIn",
     data() {
       return {
@@ -7833,7 +7967,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
     const _component_uni_popup = resolveEasycom(vue.resolveDynamicComponent("uni-popup"), __easycom_1$2);
     return vue.openBlock(), vue.createElementBlock("view", null, [
@@ -7947,8 +8081,8 @@ ${i3}
       )
     ]);
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-dc1d9ace"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue"]]);
-  const _sfc_main$F = {
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-dc1d9ace"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue"]]);
+  const _sfc_main$H = {
     name: "cloud-image",
     emits: ["click"],
     props: {
@@ -8004,7 +8138,7 @@ ${i3}
       };
     }
   };
-  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -8023,7 +8157,168 @@ ${i3}
       /* STYLE */
     );
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue"]]);
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue"]]);
+  const _sfc_main$G = {
+    name: "UniGridItem",
+    inject: ["grid"],
+    props: {
+      index: {
+        type: Number,
+        default: 0
+      }
+    },
+    data() {
+      return {
+        column: 0,
+        showBorder: true,
+        square: true,
+        highlight: true,
+        left: 0,
+        top: 0,
+        openNum: 2,
+        width: 0,
+        borderColor: "#e5e5e5"
+      };
+    },
+    created() {
+      this.column = this.grid.column;
+      this.showBorder = this.grid.showBorder;
+      this.square = this.grid.square;
+      this.highlight = this.grid.highlight;
+      this.top = this.hor === 0 ? this.grid.hor : this.hor;
+      this.left = this.ver === 0 ? this.grid.ver : this.ver;
+      this.borderColor = this.grid.borderColor;
+      this.grid.children.push(this);
+      this.width = this.grid.width;
+    },
+    beforeDestroy() {
+      this.grid.children.forEach((item, index) => {
+        if (item === this) {
+          this.grid.children.splice(index, 1);
+        }
+      });
+    },
+    methods: {
+      _onClick() {
+        this.grid.change({
+          detail: {
+            index: this.index
+          }
+        });
+      }
+    }
+  };
+  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+    return $data.width ? (vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        key: 0,
+        style: vue.normalizeStyle("width:" + $data.width + ";" + ($data.square ? "height:" + $data.width : "")),
+        class: "uni-grid-item"
+      },
+      [
+        vue.createElementVNode(
+          "view",
+          {
+            class: vue.normalizeClass([{ "uni-grid-item--border": $data.showBorder, "uni-grid-item--border-top": $data.showBorder && $props.index < $data.column, "uni-highlight": $data.highlight }, "uni-grid-item__box"]),
+            style: vue.normalizeStyle({ "border-right-color": $data.borderColor, "border-bottom-color": $data.borderColor, "border-top-color": $data.borderColor }),
+            onClick: _cache[0] || (_cache[0] = (...args) => $options._onClick && $options._onClick(...args))
+          },
+          [
+            vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+          ],
+          6
+          /* CLASS, STYLE */
+        )
+      ],
+      4
+      /* STYLE */
+    )) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-7a807eb7"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue"]]);
+  const _sfc_main$F = {
+    name: "UniGrid",
+    emits: ["change"],
+    props: {
+      // 每列显示个数
+      column: {
+        type: Number,
+        default: 3
+      },
+      // 是否显示边框
+      showBorder: {
+        type: Boolean,
+        default: true
+      },
+      // 边框颜色
+      borderColor: {
+        type: String,
+        default: "#D2D2D2"
+      },
+      // 是否正方形显示,默认为 true
+      square: {
+        type: Boolean,
+        default: true
+      },
+      highlight: {
+        type: Boolean,
+        default: true
+      }
+    },
+    provide() {
+      return {
+        grid: this
+      };
+    },
+    data() {
+      const elId = `Uni_${Math.ceil(Math.random() * 1e6).toString(36)}`;
+      return {
+        elId,
+        width: 0
+      };
+    },
+    created() {
+      this.children = [];
+    },
+    mounted() {
+      this.$nextTick(() => {
+        this.init();
+      });
+    },
+    methods: {
+      init() {
+        setTimeout(() => {
+          this._getSize((width) => {
+            this.children.forEach((item, index) => {
+              item.width = width;
+            });
+          });
+        }, 50);
+      },
+      change(e2) {
+        this.$emit("change", e2);
+      },
+      _getSize(fn) {
+        uni.createSelectorQuery().in(this).select(`#${this.elId}`).boundingClientRect().exec((ret) => {
+          this.width = parseInt((ret[0].width - 1) / this.column) + "px";
+          fn(this.width);
+        });
+      }
+    }
+  };
+  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-grid-wrap" }, [
+      vue.createElementVNode("view", {
+        id: $data.elId,
+        ref: "uni-grid",
+        class: vue.normalizeClass(["uni-grid", { "uni-grid--border": $props.showBorder }]),
+        style: vue.normalizeStyle({ "border-left-color": $props.borderColor })
+      }, [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ], 14, ["id"])
+    ]);
+  }
+  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-07acefee"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid/uni-grid.vue"]]);
   function callCheckVersion() {
     return new Promise((resolve, reject) => {
       plus.runtime.getProperty(plus.runtime.appid, function(widgetInfo) {

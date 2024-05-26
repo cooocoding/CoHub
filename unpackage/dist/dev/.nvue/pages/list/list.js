@@ -1290,6 +1290,11 @@ const _sfc_main = {
         url: "/uni_modules/uni-id-pages/pages/userinfo/userinfo"
       });
     },
+    navigateToGrid() {
+      uni.navigateTo({
+        url: "/pages/grid/grid"
+      });
+    },
     searchClick(e) {
       uni.hideKeyboard();
       uni.navigateTo({
@@ -1306,28 +1311,23 @@ const _sfc_main = {
       }, () => {
         uni.stopPullDownRefresh();
         this.showRefresh = false;
-        formatAppLog("log", "at pages/list/list.nvue:197", "end");
+        formatAppLog("log", "at pages/list/list.nvue:202", "end");
       });
-      formatAppLog("log", "at pages/list/list.nvue:199", "refresh");
+      formatAppLog("log", "at pages/list/list.nvue:204", "refresh");
     },
     loadMore() {
       cdbRef.loadMore();
     },
     onqueryerror(e) {
-      formatAppLog("error", "at pages/list/list.nvue:205", e);
+      formatAppLog("error", "at pages/list/list.nvue:210", e);
     },
     onpullingdown(e) {
-      formatAppLog("log", "at pages/list/list.nvue:208", e);
+      formatAppLog("log", "at pages/list/list.nvue:213", e);
       this.showRefresh = true;
       if (e.pullingDistance > 100) {
         this.refresh();
       }
     }
-  },
-  navigateToPage(page) {
-    uni.navigateTo({
-      url: "/pages/${page}/${page}"
-    });
   },
   handleEdit(item) {
     formatAppLog("log", "at pages/list/list.nvue:222", "Edit:", item);
@@ -1416,7 +1416,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
           }, [
             createVNode(_component_uni_swipe_action_item, { "right-options": $data.rightOptions }, {
               default: withCtx(() => [
-                createElementVNode("view", { class: "swipe-item-content" }, [
+                createElementVNode("view", {
+                  class: "swipe-item-content",
+                  onClick: _cache[4] || (_cache[4] = (...args) => $options.navigateToGrid && $options.navigateToGrid(...args))
+                }, [
                   createElementVNode(
                     "u-text",
                     null,

@@ -707,7 +707,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
   var b = "app";
   var A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default);
   var P = b;
-  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "10.68.117.148",\n        "172.28.48.1"\n    ],\n    "debugPort": 9001,\n    "initialLaunchType": "local",\n    "servePort": 7001,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
+  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "172.20.10.14",\n        "172.28.48.1",\n        "172.24.64.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
   var C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
   var O = "";
   try {
@@ -5783,6 +5783,11 @@ ${i3}
           url: "/uni_modules/uni-id-pages/pages/userinfo/userinfo"
         });
       },
+      navigateToGrid() {
+        uni.navigateTo({
+          url: "/pages/grid/grid"
+        });
+      },
       searchClick(e2) {
         uni.hideKeyboard();
         uni.navigateTo({
@@ -5799,28 +5804,23 @@ ${i3}
         }, () => {
           uni.stopPullDownRefresh();
           this.showRefresh = false;
-          formatAppLog("log", "at pages/list/list.nvue:197", "end");
+          formatAppLog("log", "at pages/list/list.nvue:202", "end");
         });
-        formatAppLog("log", "at pages/list/list.nvue:199", "refresh");
+        formatAppLog("log", "at pages/list/list.nvue:204", "refresh");
       },
       loadMore() {
         cdbRef.loadMore();
       },
       onqueryerror(e2) {
-        formatAppLog("error", "at pages/list/list.nvue:205", e2);
+        formatAppLog("error", "at pages/list/list.nvue:210", e2);
       },
       onpullingdown(e2) {
-        formatAppLog("log", "at pages/list/list.nvue:208", e2);
+        formatAppLog("log", "at pages/list/list.nvue:213", e2);
         this.showRefresh = true;
         if (e2.pullingDistance > 100) {
           this.refresh();
         }
       }
-    },
-    navigateToPage(page) {
-      uni.navigateTo({
-        url: "/pages/${page}/${page}"
-      });
     },
     handleEdit(item) {
       formatAppLog("log", "at pages/list/list.nvue:222", "Edit:", item);
@@ -5909,7 +5909,10 @@ ${i3}
             }, [
               (0, import_vue2.createVNode)(_component_uni_swipe_action_item, { "right-options": $data.rightOptions }, {
                 default: (0, import_vue2.withCtx)(() => [
-                  (0, import_vue2.createElementVNode)("view", { class: "swipe-item-content" }, [
+                  (0, import_vue2.createElementVNode)("view", {
+                    class: "swipe-item-content",
+                    onClick: _cache[4] || (_cache[4] = (...args) => $options.navigateToGrid && $options.navigateToGrid(...args))
+                  }, [
                     (0, import_vue2.createElementVNode)(
                       "u-text",
                       null,

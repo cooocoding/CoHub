@@ -41,7 +41,7 @@
     <!-- SwipeAction 滑动按钮 -->
     <view v-for="(item, index) in items" :key="index" class="swipe-item">
       <uni-swipe-action-item :right-options="rightOptions">
-        <view class="swipe-item-content">
+        <view class="swipe-item-content" @click="navigateToGrid">
           <text>{{ item.name }}</text>
         </view>
       </uni-swipe-action-item>
@@ -173,9 +173,14 @@
 	      },
 		  goToArchivedInfoPage() {
 		    uni.navigateTo({
-		      url: '/uni_modules/uni-id-pages/pages/userinfo/userinfo'
+		      url: '/uni_modules/uni-id-pages/pages/userinfo/userinfo',
 		    });
 		  },
+			navigateToGrid() {
+				uni.navigateTo({
+					url: '/pages/grid/grid'
+				});
+			},
 			searchClick(e) { //点击搜索框
 				uni.hideKeyboard();
 				uni.navigateTo({
@@ -212,11 +217,6 @@
 				}
 			}
 		},
-			navigateToPage(page) {
-				uni.navigateTo({
-					url: '/pages/${page}/${page}'
-				});
-			},
 			
 		    handleEdit(item) {
 		      console.log('Edit:', item);

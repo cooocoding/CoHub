@@ -1,244 +1,229 @@
 <template>
-	<view class="warp">
-		<!-- #ifdef APP-PLUS -->
-		<statusBar></statusBar>
-		<!-- #endif -->
-		
-		<!-- banner -->
-		<unicloud-db ref="bannerdb" v-slot:default="{data, loading, error, options}" collection="opendb-banner"
-			field="_id,bannerfile,open_url,title" @load="onqueryload">
-			<!-- 当无banner数据时显示占位图 -->
-			<image v-if="!(loading||data.length)" class="banner-image" src="/static/uni-center/headers.png" mode="aspectFill" :draggable="false" />
+	<view class="nav-bar-placeholder"></view>
+	<view class="pages font-style">
 			
-			<swiper v-else class="swiper-box" @change="changeSwiper" :current="current" indicator-dots>
-				<swiper-item v-for="(item, index) in data" :key="item._id">
-					<view class="swiper-item" @click="clickBannerItem(item)">
-						<image class="banner-image" :src="item.bannerfile.url" mode="aspectFill" :draggable="false" />
-					</view>
-				</swiper-item>
-			</swiper>
-		</unicloud-db>
+		<!-- 收藏夹名 -->
+		<view class="goods-header-wrap">
+			<view class="goods-header-item" :class="{'goods-header-item-action' : 1 == goodsNav}" >Folder Name</view>
+		</view> 
+		<!-- 收藏夹名 -->
 
-		<!-- 宫格 -->
-		<view class="section-box">
-			<text class="decoration"></text>
-			<text class="section-text">{{$t('grid.grid')}}</text>
+		<!-- 收藏页面 -->
+		<view v-for="(item, index) in goodsList" class="goods-item-wrap" @click="selectTap(item.id)">
+			<image :src="item.image" class="goods-image" />
+
+			<view class="goods-content-wrap">
+				<view class="goods-name">{{ item.name }}</view>
+
+				<view class="goods-stock-wrap">
+					<view class="goods-stock">Main contents extracted from the collection.</view>
+				</view>
+
+				<view class="goods-option" @click.stop="">
+					<view class="goods-option-item" @tap="editPrice(item.id)"># Tag1</view>
+					<view class="goods-option-item" @tap="editStock(item.id)"># Tag2</view>
+					<view class="goods-option-item" @tap="editStock(item.id)"># Tag3</view>
+				</view>
+				
+				<view class="footer">
+					<view class="data">2022/01/09</view>
+				</view>
+				
+			</view>
+
 		</view>
+		<!-- 收藏页面 -->
+
+		<!-- 添加 -->
+		<view class="publish-goods-wrap">
+			<view class="publish-goods-btn" @click="addGoods()">➕</view>
+		</view>
+		<!-- 添加 -->
 		
-		<view class="example-body">
-			<uni-grid :column="3" :highlight="true" @change="change">
-				<template v-for="(item,i) in gridList">
-					<uni-grid-item :index="i" :key="i"
-						v-if="i<3 || i>2&&i<6&&hasLogin || i>5&&uniIDHasRole('admin')"
-					>
-						<view class="grid-item-box" style="background-color: #fff;">
-							<!-- <image :src="'/static/grid/c'+(i+1)+'.png'" class="image" mode="aspectFill" /> -->
-							<text class="big-number">{{i+1}}</text>
-							<text class="text">{{item}}</text>
-						</view>
-					</uni-grid-item>
-				</template>
-			</uni-grid>
-		</view>
+		<!-- 灰色背景部分 -->
+		<div class="gray-background"></div>
 	</view>
 </template>
 
 <script>
-	// #ifdef APP-PLUS
-	import statusBar from "@/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar";
-	// #endif
+	import CmdIcon from '@/components/cmd-icon/cmd-icon.vue';
+	import CmdNavBar from '@/components/cmd-nav-bar/cmd-nav-bar.vue';
+
 	export default {
-		// #ifdef APP-PLUS
-		components: {
-			statusBar
+			components: {
+				CmdNavBar
 		},
-		// #endif
 		data() {
 			return {
-				gridList: [],
-				current: 0,
-				hasLogin:false
+				goodsList: [{
+						id: 1,
+						image: "/static/pic/13.png",
+						name: "👋 Title for Collection 1"
+					},
+					{
+						id: 2,
+						image: "/static/pic/12.png",
+						name: "👋 Title for Collection 2"
+					}
+				],
+				goodsNav: 1
 			}
-		},
-		onShow() {
-			this.hasLogin = uniCloud.getCurrentUserInfo().tokenExpired > Date.now()
 		},
 		onLoad() {
-			let gridList = []
-			for (var i = 0; i < 3; i++) {
-				gridList.push( this.$t('grid.visibleToAll') )
-			}
-			for (var i = 0; i < 3; i++) {
-				gridList.push( this.$t('grid.invisibleToTourists') )
-			}
-			for (var i = 0; i < 3; i++) {
-				gridList.push( this.$t('grid.adminVisible') )
-			}
-			this.gridList = gridList
+
 		},
 		methods: {
-			change(e) {
-				uni.showToast({
-					title:this.$t('grid.clickTip') + " " + `${e.detail.index + 1}` + " " + this.$t('grid.clickTipGrid'),
-					icon: 'none'
-				})
+			selectTap(id) {
+				console.log("tap item id:" + JSON.stringify(id));
+				    // 在这里添加页面跳转代码
+				    uni.navigateTo({
+				        url: '/pages/webview/webview?url=https://www.baidu.com'
+				    });
 			},
-			/**
-			 * banner加载后触发的回调
-			 */
-			onqueryload(data) {
+			addGoods() {
+				console.log("tap add new Collections");
 			},
-			changeSwiper(e) {
-				this.current = e.detail.current
-			},
-			/**
-			 * 点击banner的处理
-			 */
-			clickBannerItem(item) {
-				// 有外部链接-跳转url
-				if (item.open_url) {
-					uni.navigateTo({
-						url: '/uni_modules/uni-id-pages/pages/common/webview/webview?url=' + item.open_url + '&title=' + item.title,
-						success: res => {},
-						fail: () => {},
-						complete: () => {}
-					});
-				}
-				// 其余业务处理
-			}
 		}
 	}
 </script>
 
-<style>
-	/* #ifndef APP-NVUE */
-	page {
+<style scoped>
+	.pages {
+		background-color: #F2F2F6;
+	}
+	.goods-main {
+		min-height: 100vh;
+		background: #F2F2F6;
+		padding-top: 10rpx;
+		padding-bottom: 240rpx;
+	}
+
+	.goods-item-wrap {
+		background: #FFFFFF;
 		display: flex;
-		flex-direction: column;
-		box-sizing: border-box;
-		background-color: #fff;
-		min-height: 100%;
-		height: auto;
-	}
-	view {
-		font-size: 14px;
-		line-height: inherit;
-	}
-	.example-body {
-		/* #ifndef APP-NVUE */
-		display: flex;
-		/* #endif */
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		padding: 0;
-		font-size: 14px;
-		background-color: #ffffff;
-	}
-	/* #endif */
-	
-	.section-box{
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		padding: 20rpx;
-	}
-	.decoration{
-		width: 4px;
-		height: 12px;
-		border-radius: 10px;
-		background-color: #2979ff;
-	}
-	.section-text{
-		color: #333;
-		margin-left: 15rpx;
+		padding: 30rpx;
+		margin: 30rpx;
+		border-radius: 20rpx;
 	}
 
-	/* #ifdef APP-NVUE */
-	.warp {
-		background-color: #fff;
-	}
-	/* #endif */
-
-	.example-body {
-		flex-direction: column;
-		padding: 15px;
-		background-color: #ffffff;
-	}
-
-	.image {
-		width: 50rpx;
-		height: 50rpx;
-	}
-	
-	.big-number{
-		font-size: 50rpx;
-		font-weight: 700;
-		font-stretch: condensed;
-		font-style:oblique;
-	}
-	
-	.text {
-		text-align: center;
-		font-size: 26rpx;
-		margin-top: 10rpx;
-	}
-
-	.example-body {
-		/* #ifndef APP-NVUE */
-		display: block;
-		/* #endif */
-	}
-
-	.grid-item-box {
+	.goods-content-wrap {
+		padding-left: 24rpx;
 		flex: 1;
-		/* #ifndef APP-NVUE */
+	}
+
+	.goods-option {
 		display: flex;
-		/* #endif */
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 15px 0;
 	}
 
-	.banner-image {
-		width: 750rpx;
-		height: 400rpx;
+	.goods-option-item {
+		background: #f4f4f6;
 	}
 
-	.swiper-box {
-		height: 400rpx;
+	.goods-image {
+		width: 170rpx;
+		height: 170rpx;
+		border-radius: 15rpx;
+		margin-top: 0.3cm;
+		margin-right: 0.3cm;
+		flex: none;
 	}
 
-	.search-icons {
-		padding: 16rpx;
+	.goods-name {
+		font-size: 38rpx;
+		font-weight: bold;
 	}
 
-	.search-container-bar {
-		/* #ifndef APP-NVUE */
+	.goods-stock-wrap {
 		display: flex;
-		/* #endif */
-		flex-direction: row;
-		justify-content: center;
+		color: #969696;
+		font-size: 26rpx;
+		margin-top: 14rpx;
+	}
+
+	.goods-stock {
+		margin-right: 24rpx;
+	}
+
+	.goods-option-item {
+		padding: 8rpx 16rpx;
+		border-radius: 36rpx;
+		font-size: 22rpx;
+		margin-top: 24rpx;
+	}
+
+	.goods-option-item:not(:last-child) {
+		margin-right: 30rpx;
+	}
+
+	.goods-item-wrap {
+		margin-top: 25rpx;
+		margin-bottom: 20rpx;
+	}
+
+	.goods-header-wrap {
+		display: flex;
 		align-items: center;
+		padding: 24rpx;
+		background: #FFFFFF;
+	}
+
+	.goods-header-item-action {
+		font-size: 50rpx;
+		font-color: #000;
+		font-weight: bold;
+		align-content: center;
+	}
+
+	.nav-bar-placeholder {
+	  height: 52px; /* 导航栏的高度 */
+	}
+
+	.goods-header-item {
+		margin-right: 24rpx;
+	}
+
+	.publish-goods-wrap {
+		background: rgba(255, 255, 255, .5);
+		padding: 23rpx;
 		position: fixed;
-		left: 0;
-		right: 0;
-		z-index: 10;
-		background-color: #fff;
+		bottom: 23rpx;
+		right: 23rpx;
+		z-index: 1000; 
 	}
 
-	/* #ifndef APP-NVUE || VUE3*/
-	::v-deep
-	/* #endif */
-	.uni-searchbar__box {
-		border-width: 0;
+	.publish-goods-btn {
+		background: #fff;
+		color: #F2F2F6;
+		width: 100rpx; 
+		height: 100rpx; 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%; 
+		font-size: 32rpx; 
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+	}
+	
+	.footer {
+		display: flex;
+		color: #969696;
+		font-size: 24rpx;
+		margin-top: 20rpx;
+		justify-content: flex-end;
+	}
+	
+	.date {
+		margin-right: 24rpx;
 	}
 
-	/* #ifndef APP-NVUE || VUE3 */
-	::v-deep
-	/* #endif */
-	.uni-input-placeholder {
-		font-size: 28rpx;
+	
+	.gray-background {
+	  background-color: #F2F2F6; 
+	  height: 100%; 
+	  width: 100%; 
+	  position: fixed; 
+	  top: 0; 
+	  left: 0; 
+	  z-index: -1;
 	}
 </style>
