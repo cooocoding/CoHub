@@ -1311,18 +1311,18 @@ const _sfc_main = {
       }, () => {
         uni.stopPullDownRefresh();
         this.showRefresh = false;
-        formatAppLog("log", "at pages/list/list.nvue:202", "end");
+        formatAppLog("log", "at pages/list/list.nvue:203", "end");
       });
-      formatAppLog("log", "at pages/list/list.nvue:204", "refresh");
+      formatAppLog("log", "at pages/list/list.nvue:205", "refresh");
     },
     loadMore() {
       cdbRef.loadMore();
     },
     onqueryerror(e) {
-      formatAppLog("error", "at pages/list/list.nvue:210", e);
+      formatAppLog("error", "at pages/list/list.nvue:211", e);
     },
     onpullingdown(e) {
-      formatAppLog("log", "at pages/list/list.nvue:213", e);
+      formatAppLog("log", "at pages/list/list.nvue:214", e);
       this.showRefresh = true;
       if (e.pullingDistance > 100) {
         this.refresh();
@@ -1330,13 +1330,13 @@ const _sfc_main = {
     }
   },
   handleEdit(item) {
-    formatAppLog("log", "at pages/list/list.nvue:222", "Edit:", item);
+    formatAppLog("log", "at pages/list/list.nvue:223", "Edit:", item);
   },
   handleArchived(item) {
-    formatAppLog("log", "at pages/list/list.nvue:226", "Archived:", item);
+    formatAppLog("log", "at pages/list/list.nvue:227", "Archived:", item);
   },
   handleDelete(item) {
-    formatAppLog("log", "at pages/list/list.nvue:230", "Delete:", item);
+    formatAppLog("log", "at pages/list/list.nvue:231", "Delete:", item);
   }
 };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {

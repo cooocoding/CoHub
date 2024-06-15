@@ -22,4 +22,5 @@ export function createApp() {
 	app.use(i18n)
 	return {app}
 }
+
 // #endif

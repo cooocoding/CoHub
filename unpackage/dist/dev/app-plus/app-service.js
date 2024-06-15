@@ -77,6 +77,652 @@ if (uni.restoreGlobal) {
   function resolveEasycom(component, easycom) {
     return typeof component === "string" ? easycom : component;
   }
+  const fontData = [
+    {
+      "font_class": "arrow-down",
+      "unicode": ""
+    },
+    {
+      "font_class": "arrow-left",
+      "unicode": ""
+    },
+    {
+      "font_class": "arrow-right",
+      "unicode": ""
+    },
+    {
+      "font_class": "arrow-up",
+      "unicode": ""
+    },
+    {
+      "font_class": "auth",
+      "unicode": ""
+    },
+    {
+      "font_class": "auth-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "back",
+      "unicode": ""
+    },
+    {
+      "font_class": "bars",
+      "unicode": ""
+    },
+    {
+      "font_class": "calendar",
+      "unicode": ""
+    },
+    {
+      "font_class": "calendar-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "camera",
+      "unicode": ""
+    },
+    {
+      "font_class": "camera-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "cart",
+      "unicode": ""
+    },
+    {
+      "font_class": "cart-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "chat",
+      "unicode": ""
+    },
+    {
+      "font_class": "chat-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatboxes",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatboxes-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatbubble",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatbubble-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "checkbox",
+      "unicode": ""
+    },
+    {
+      "font_class": "checkbox-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "checkmarkempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "circle",
+      "unicode": ""
+    },
+    {
+      "font_class": "circle-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "clear",
+      "unicode": ""
+    },
+    {
+      "font_class": "close",
+      "unicode": ""
+    },
+    {
+      "font_class": "closeempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-download",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-download-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-upload",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-upload-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "color",
+      "unicode": ""
+    },
+    {
+      "font_class": "color-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "compose",
+      "unicode": ""
+    },
+    {
+      "font_class": "contact",
+      "unicode": ""
+    },
+    {
+      "font_class": "contact-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "down",
+      "unicode": ""
+    },
+    {
+      "font_class": "bottom",
+      "unicode": ""
+    },
+    {
+      "font_class": "download",
+      "unicode": ""
+    },
+    {
+      "font_class": "download-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "email",
+      "unicode": ""
+    },
+    {
+      "font_class": "email-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye-slash",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye-slash-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "fire",
+      "unicode": ""
+    },
+    {
+      "font_class": "fire-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "flag",
+      "unicode": ""
+    },
+    {
+      "font_class": "flag-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "folder-add",
+      "unicode": ""
+    },
+    {
+      "font_class": "folder-add-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "font",
+      "unicode": ""
+    },
+    {
+      "font_class": "forward",
+      "unicode": ""
+    },
+    {
+      "font_class": "gear",
+      "unicode": ""
+    },
+    {
+      "font_class": "gear-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "gift",
+      "unicode": ""
+    },
+    {
+      "font_class": "gift-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-down",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-down-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-up",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-up-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "headphones",
+      "unicode": ""
+    },
+    {
+      "font_class": "heart",
+      "unicode": ""
+    },
+    {
+      "font_class": "heart-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "help",
+      "unicode": ""
+    },
+    {
+      "font_class": "help-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "home",
+      "unicode": ""
+    },
+    {
+      "font_class": "home-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "image",
+      "unicode": ""
+    },
+    {
+      "font_class": "image-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "images",
+      "unicode": ""
+    },
+    {
+      "font_class": "images-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "info",
+      "unicode": ""
+    },
+    {
+      "font_class": "info-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "left",
+      "unicode": ""
+    },
+    {
+      "font_class": "link",
+      "unicode": ""
+    },
+    {
+      "font_class": "list",
+      "unicode": ""
+    },
+    {
+      "font_class": "location",
+      "unicode": ""
+    },
+    {
+      "font_class": "location-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "locked",
+      "unicode": ""
+    },
+    {
+      "font_class": "locked-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "loop",
+      "unicode": ""
+    },
+    {
+      "font_class": "mail-open",
+      "unicode": ""
+    },
+    {
+      "font_class": "mail-open-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "map",
+      "unicode": ""
+    },
+    {
+      "font_class": "map-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "map-pin",
+      "unicode": ""
+    },
+    {
+      "font_class": "map-pin-ellipse",
+      "unicode": ""
+    },
+    {
+      "font_class": "medal",
+      "unicode": ""
+    },
+    {
+      "font_class": "medal-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "mic",
+      "unicode": ""
+    },
+    {
+      "font_class": "mic-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "micoff",
+      "unicode": ""
+    },
+    {
+      "font_class": "micoff-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "minus",
+      "unicode": ""
+    },
+    {
+      "font_class": "minus-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "more",
+      "unicode": ""
+    },
+    {
+      "font_class": "more-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "navigate",
+      "unicode": ""
+    },
+    {
+      "font_class": "navigate-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "notification",
+      "unicode": ""
+    },
+    {
+      "font_class": "notification-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "paperclip",
+      "unicode": ""
+    },
+    {
+      "font_class": "paperplane",
+      "unicode": ""
+    },
+    {
+      "font_class": "paperplane-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "person",
+      "unicode": ""
+    },
+    {
+      "font_class": "person-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "personadd",
+      "unicode": ""
+    },
+    {
+      "font_class": "personadd-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "personadd-filled-copy",
+      "unicode": ""
+    },
+    {
+      "font_class": "phone",
+      "unicode": ""
+    },
+    {
+      "font_class": "phone-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "plus",
+      "unicode": ""
+    },
+    {
+      "font_class": "plus-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "plusempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "pulldown",
+      "unicode": ""
+    },
+    {
+      "font_class": "pyq",
+      "unicode": ""
+    },
+    {
+      "font_class": "qq",
+      "unicode": ""
+    },
+    {
+      "font_class": "redo",
+      "unicode": ""
+    },
+    {
+      "font_class": "redo-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "refresh",
+      "unicode": ""
+    },
+    {
+      "font_class": "refresh-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "refreshempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "reload",
+      "unicode": ""
+    },
+    {
+      "font_class": "right",
+      "unicode": ""
+    },
+    {
+      "font_class": "scan",
+      "unicode": ""
+    },
+    {
+      "font_class": "search",
+      "unicode": ""
+    },
+    {
+      "font_class": "settings",
+      "unicode": ""
+    },
+    {
+      "font_class": "settings-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "shop",
+      "unicode": ""
+    },
+    {
+      "font_class": "shop-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "smallcircle",
+      "unicode": ""
+    },
+    {
+      "font_class": "smallcircle-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "sound",
+      "unicode": ""
+    },
+    {
+      "font_class": "sound-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "spinner-cycle",
+      "unicode": ""
+    },
+    {
+      "font_class": "staff",
+      "unicode": ""
+    },
+    {
+      "font_class": "staff-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "star",
+      "unicode": ""
+    },
+    {
+      "font_class": "star-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "starhalf",
+      "unicode": ""
+    },
+    {
+      "font_class": "trash",
+      "unicode": ""
+    },
+    {
+      "font_class": "trash-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "tune",
+      "unicode": ""
+    },
+    {
+      "font_class": "tune-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "undo",
+      "unicode": ""
+    },
+    {
+      "font_class": "undo-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "up",
+      "unicode": ""
+    },
+    {
+      "font_class": "top",
+      "unicode": ""
+    },
+    {
+      "font_class": "upload",
+      "unicode": ""
+    },
+    {
+      "font_class": "upload-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "videocam",
+      "unicode": ""
+    },
+    {
+      "font_class": "videocam-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "vip",
+      "unicode": ""
+    },
+    {
+      "font_class": "vip-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "wallet",
+      "unicode": ""
+    },
+    {
+      "font_class": "wallet-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "weibo",
+      "unicode": ""
+    },
+    {
+      "font_class": "weixin",
+      "unicode": ""
+    }
+  ];
   const _export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
@@ -84,7 +730,81 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$W = {
+  const getVal$1 = (val) => {
+    const reg = /^[0-9]*$/g;
+    return typeof val === "number" || reg.test(val) ? val + "px" : val;
+  };
+  const _sfc_main$_ = {
+    name: "UniIcons",
+    emits: ["click"],
+    props: {
+      type: {
+        type: String,
+        default: ""
+      },
+      color: {
+        type: String,
+        default: "#333333"
+      },
+      size: {
+        type: [Number, String],
+        default: 16
+      },
+      customPrefix: {
+        type: String,
+        default: ""
+      },
+      fontFamily: {
+        type: String,
+        default: ""
+      }
+    },
+    data() {
+      return {
+        icons: fontData
+      };
+    },
+    computed: {
+      unicode() {
+        let code = this.icons.find((v2) => v2.font_class === this.type);
+        if (code) {
+          return code.unicode;
+        }
+        return "";
+      },
+      iconSize() {
+        return getVal$1(this.size);
+      },
+      styleObj() {
+        if (this.fontFamily !== "") {
+          return `color: ${this.color}; font-size: ${this.iconSize}; font-family: ${this.fontFamily};`;
+        }
+        return `color: ${this.color}; font-size: ${this.iconSize};`;
+      }
+    },
+    methods: {
+      _onClick() {
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$Z(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "text",
+      {
+        style: vue.normalizeStyle($options.styleObj),
+        class: vue.normalizeClass(["uni-icons", ["uniui-" + $props.type, $props.customPrefix, $props.customPrefix ? $props.type : ""]]),
+        onClick: _cache[0] || (_cache[0] = (...args) => $options._onClick && $options._onClick(...args))
+      },
+      [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_0$e = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const _sfc_main$Z = {
     name: "cmd-icon",
     props: {
       /**
@@ -126,7 +846,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$Y(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -139,8 +859,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$d = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-7cd7d81f"], ["__file", "D:/project/CoHub/CoHub/components/cmd-icon/cmd-icon.vue"]]);
-  const _sfc_main$V = {
+  const __easycom_0$d = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__scopeId", "data-v-7cd7d81f"], ["__file", "D:/project/CoHub/CoHub/components/cmd-icon/cmd-icon.vue"]]);
+  const _sfc_main$Y = {
     name: "cmd-nav-bar",
     components: {
       cmdIcon: __easycom_0$d
@@ -335,7 +1055,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_cmd_icon = resolveEasycom(vue.resolveDynamicComponent("cmd-icon"), __easycom_0$d);
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -442,131 +1162,312 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const CmdNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-80f5af22"], ["__file", "D:/project/CoHub/CoHub/components/cmd-nav-bar/cmd-nav-bar.vue"]]);
-  const _sfc_main$U = {
-    components: {
-      CmdNavBar
+  const CmdNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__scopeId", "data-v-80f5af22"], ["__file", "D:/project/CoHub/CoHub/components/cmd-nav-bar/cmd-nav-bar.vue"]]);
+  const _sfc_main$X = {
+    name: "uniCombox",
+    emits: ["input", "update:modelValue"],
+    props: {
+      border: {
+        type: Boolean,
+        default: true
+      },
+      label: {
+        type: String,
+        default: ""
+      },
+      labelWidth: {
+        type: String,
+        default: "auto"
+      },
+      placeholder: {
+        type: String,
+        default: ""
+      },
+      candidates: {
+        type: Array,
+        default() {
+          return [];
+        }
+      },
+      emptyTips: {
+        type: String,
+        default: "无匹配项"
+      },
+      modelValue: {
+        type: [String, Number],
+        default: ""
+      }
     },
     data() {
       return {
-        goodsList: [
-          {
-            id: 1,
-            image: "/static/pic/13.png",
-            name: "👋 Title for Collection 1"
-          },
-          {
-            id: 2,
-            image: "/static/pic/12.png",
-            name: "👋 Title for Collection 2"
-          }
-        ],
-        goodsNav: 1
+        showSelector: false,
+        inputVal: ""
       };
     },
-    onLoad() {
-    },
-    methods: {
-      selectTap(id) {
-        formatAppLog("log", "at pages/grid/grid.vue:77", "tap item id:" + JSON.stringify(id));
-        uni.navigateTo({
-          url: "/pages/webview/webview?url=https://www.baidu.com"
+    computed: {
+      labelStyle() {
+        if (this.labelWidth === "auto") {
+          return "";
+        }
+        return `width: ${this.labelWidth}`;
+      },
+      filterCandidates() {
+        return this.candidates.filter((item) => {
+          return item.toString().indexOf(this.inputVal) > -1;
         });
       },
-      addGoods() {
-        formatAppLog("log", "at pages/grid/grid.vue:84", "tap add new Collections");
+      filterCandidatesLength() {
+        return this.filterCandidates.length;
+      }
+    },
+    watch: {
+      modelValue: {
+        handler(newVal) {
+          this.inputVal = newVal;
+        },
+        immediate: true
+      }
+    },
+    methods: {
+      toggleSelector() {
+        this.showSelector = !this.showSelector;
+      },
+      onFocus() {
+        this.showSelector = true;
+      },
+      onBlur() {
+        setTimeout(() => {
+          this.showSelector = false;
+        }, 153);
+      },
+      onSelectorClick(index) {
+        this.inputVal = this.filterCandidates[index];
+        this.showSelector = false;
+        this.$emit("input", this.inputVal);
+        this.$emit("update:modelValue", this.inputVal);
+      },
+      onInput() {
+        setTimeout(() => {
+          this.$emit("input", this.inputVal);
+          this.$emit("update:modelValue", this.inputVal);
+        });
       }
     }
   };
-  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
     return vue.openBlock(), vue.createElementBlock(
-      vue.Fragment,
-      null,
+      "view",
+      {
+        class: vue.normalizeClass(["uni-combox", $props.border ? "" : "uni-combox__no-border"])
+      },
       [
-        vue.createElementVNode("view", { class: "nav-bar-placeholder" }),
-        vue.createElementVNode("view", { class: "pages font-style" }, [
-          vue.createCommentVNode(" 收藏夹名 "),
-          vue.createElementVNode("view", { class: "goods-header-wrap" }, [
+        $props.label ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 0,
+            class: "uni-combox__label",
+            style: vue.normalizeStyle($options.labelStyle)
+          },
+          [
             vue.createElementVNode(
-              "view",
-              {
-                class: vue.normalizeClass(["goods-header-item", { "goods-header-item-action": 1 == $data.goodsNav }])
-              },
-              "Folder Name",
-              2
-              /* CLASS */
+              "text",
+              null,
+              vue.toDisplayString($props.label),
+              1
+              /* TEXT */
             )
+          ],
+          4
+          /* STYLE */
+        )) : vue.createCommentVNode("v-if", true),
+        vue.createElementVNode("view", { class: "uni-combox__input-box" }, [
+          vue.withDirectives(vue.createElementVNode("input", {
+            class: "uni-combox__input",
+            type: "text",
+            placeholder: $props.placeholder,
+            "placeholder-class": "uni-combox__input-plac",
+            "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.inputVal = $event),
+            onInput: _cache[1] || (_cache[1] = (...args) => $options.onInput && $options.onInput(...args)),
+            onFocus: _cache[2] || (_cache[2] = (...args) => $options.onFocus && $options.onFocus(...args)),
+            onBlur: _cache[3] || (_cache[3] = (...args) => $options.onBlur && $options.onBlur(...args))
+          }, null, 40, ["placeholder"]), [
+            [vue.vModelText, $data.inputVal]
           ]),
-          vue.createCommentVNode(" 收藏夹名 "),
-          vue.createCommentVNode(" 收藏页面 "),
-          (vue.openBlock(true), vue.createElementBlock(
-            vue.Fragment,
-            null,
-            vue.renderList($data.goodsList, (item, index) => {
-              return vue.openBlock(), vue.createElementBlock("view", {
-                class: "goods-item-wrap",
-                onClick: ($event) => $options.selectTap(item.id)
-              }, [
-                vue.createElementVNode("image", {
-                  src: item.image,
-                  class: "goods-image"
-                }, null, 8, ["src"]),
-                vue.createElementVNode("view", { class: "goods-content-wrap" }, [
+          vue.createVNode(_component_uni_icons, {
+            type: $data.showSelector ? "top" : "bottom",
+            size: "14",
+            color: "#999",
+            onClick: $options.toggleSelector
+          }, null, 8, ["type", "onClick"])
+        ]),
+        $data.showSelector ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 1,
+          class: "uni-combox__selector"
+        }, [
+          vue.createElementVNode("view", { class: "uni-popper__arrow" }),
+          vue.createElementVNode("scroll-view", {
+            "scroll-y": "true",
+            class: "uni-combox__selector-scroll"
+          }, [
+            $options.filterCandidatesLength === 0 ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 0,
+              class: "uni-combox__selector-empty"
+            }, [
+              vue.createElementVNode(
+                "text",
+                null,
+                vue.toDisplayString($props.emptyTips),
+                1
+                /* TEXT */
+              )
+            ])) : vue.createCommentVNode("v-if", true),
+            (vue.openBlock(true), vue.createElementBlock(
+              vue.Fragment,
+              null,
+              vue.renderList($options.filterCandidates, (item, index) => {
+                return vue.openBlock(), vue.createElementBlock("view", {
+                  class: "uni-combox__selector-item",
+                  key: index,
+                  onClick: ($event) => $options.onSelectorClick(index)
+                }, [
                   vue.createElementVNode(
-                    "view",
-                    { class: "goods-name" },
-                    vue.toDisplayString(item.name),
+                    "text",
+                    null,
+                    vue.toDisplayString(item),
                     1
                     /* TEXT */
-                  ),
-                  vue.createElementVNode("view", { class: "goods-stock-wrap" }, [
-                    vue.createElementVNode("view", { class: "goods-stock" }, "Main contents extracted from the collection.")
-                  ]),
-                  vue.createElementVNode("view", {
-                    class: "goods-option",
-                    onClick: _cache[0] || (_cache[0] = vue.withModifiers(() => {
-                    }, ["stop"]))
-                  }, [
-                    vue.createElementVNode("view", {
-                      class: "goods-option-item",
-                      onClick: ($event) => _ctx.editPrice(item.id)
-                    }, "# Tag1", 8, ["onClick"]),
-                    vue.createElementVNode("view", {
-                      class: "goods-option-item",
-                      onClick: ($event) => _ctx.editStock(item.id)
-                    }, "# Tag2", 8, ["onClick"]),
-                    vue.createElementVNode("view", {
-                      class: "goods-option-item",
-                      onClick: ($event) => _ctx.editStock(item.id)
-                    }, "# Tag3", 8, ["onClick"])
-                  ]),
-                  vue.createElementVNode("view", { class: "footer" }, [
-                    vue.createElementVNode("view", { class: "data" }, "2022/01/09")
-                  ])
-                ])
-              ], 8, ["onClick"]);
-            }),
-            256
-            /* UNKEYED_FRAGMENT */
-          )),
-          vue.createCommentVNode(" 收藏页面 "),
-          vue.createCommentVNode(" 添加 "),
-          vue.createElementVNode("view", { class: "publish-goods-wrap" }, [
-            vue.createElementVNode("view", {
-              class: "publish-goods-btn",
-              onClick: _cache[1] || (_cache[1] = ($event) => $options.addGoods())
-            }, "➕")
-          ]),
-          vue.createCommentVNode(" 添加 "),
-          vue.createCommentVNode(" 灰色背景部分 "),
-          vue.createElementVNode("div", { class: "gray-background" })
-        ])
+                  )
+                ], 8, ["onClick"]);
+              }),
+              128
+              /* KEYED_FRAGMENT */
+            ))
+          ])
+        ])) : vue.createCommentVNode("v-if", true)
       ],
-      64
-      /* STABLE_FRAGMENT */
+      2
+      /* CLASS */
     );
   }
-  const PagesGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-22222d69"], ["__file", "D:/project/CoHub/CoHub/pages/grid/grid.vue"]]);
+  const __easycom_0$c = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["__scopeId", "data-v-e602780e"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-combox/components/uni-combox/uni-combox.vue"]]);
+  const _sfc_main$W = {
+    name: "UniSection",
+    emits: ["click"],
+    props: {
+      type: {
+        type: String,
+        default: ""
+      },
+      title: {
+        type: String,
+        required: true,
+        default: ""
+      },
+      titleFontSize: {
+        type: String,
+        default: "14px"
+      },
+      titleColor: {
+        type: String,
+        default: "#333"
+      },
+      subTitle: {
+        type: String,
+        default: ""
+      },
+      subTitleFontSize: {
+        type: String,
+        default: "12px"
+      },
+      subTitleColor: {
+        type: String,
+        default: "#999"
+      },
+      padding: {
+        type: [Boolean, String],
+        default: false
+      }
+    },
+    computed: {
+      _padding() {
+        if (typeof this.padding === "string") {
+          return this.padding;
+        }
+        return this.padding ? "10px" : "";
+      }
+    },
+    watch: {
+      title(newVal) {
+        if (uni.report && newVal !== "") {
+          uni.report("title", newVal);
+        }
+      }
+    },
+    methods: {
+      onClick() {
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-section" }, [
+      vue.createElementVNode("view", {
+        class: "uni-section-header",
+        onClick: _cache[0] || (_cache[0] = (...args) => $options.onClick && $options.onClick(...args))
+      }, [
+        $props.type ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 0,
+            class: vue.normalizeClass(["uni-section-header__decoration", $props.type])
+          },
+          null,
+          2
+          /* CLASS */
+        )) : vue.renderSlot(_ctx.$slots, "decoration", { key: 1 }, void 0, true),
+        vue.createElementVNode("view", { class: "uni-section-header__content" }, [
+          vue.createElementVNode(
+            "text",
+            {
+              style: vue.normalizeStyle({ "font-size": $props.titleFontSize, "color": $props.titleColor }),
+              class: vue.normalizeClass(["uni-section__content-title", { "distraction": !$props.subTitle }])
+            },
+            vue.toDisplayString($props.title),
+            7
+            /* TEXT, CLASS, STYLE */
+          ),
+          $props.subTitle ? (vue.openBlock(), vue.createElementBlock(
+            "text",
+            {
+              key: 0,
+              style: vue.normalizeStyle({ "font-size": $props.subTitleFontSize, "color": $props.subTitleColor }),
+              class: "uni-section-header__content-sub"
+            },
+            vue.toDisplayString($props.subTitle),
+            5
+            /* TEXT, STYLE */
+          )) : vue.createCommentVNode("v-if", true)
+        ]),
+        vue.createElementVNode("view", { class: "uni-section-header__slot-right" }, [
+          vue.renderSlot(_ctx.$slots, "right", {}, void 0, true)
+        ])
+      ]),
+      vue.createElementVNode(
+        "view",
+        {
+          class: "uni-section-content",
+          style: vue.normalizeStyle({ padding: $options._padding })
+        },
+        [
+          vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+        ],
+        4
+        /* STYLE */
+      )
+    ]);
+  }
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-637fd36b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-section/components/uni-section/uni-section.vue"]]);
   const pages = [
     {
       path: "pages/list/list",
@@ -1127,7 +2028,7 @@ if (uni.restoreGlobal) {
   function I(e2) {
     return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
   }
-  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "172.20.10.14",\n        "172.28.48.1",\n        "172.24.64.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
+  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.21.144.1",\n        "172.20.10.4",\n        "172.20.10.14"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
   let O = "";
   try {
     O = "__UNI__8301740";
@@ -3527,1862 +4428,6 @@ ${i3}
     } }), bs(Bs), Bs.addInterceptor = N, Bs.removeInterceptor = D, Bs.interceptObject = F;
   })();
   var Ws = Bs;
-  const fontData = [
-    {
-      "font_class": "arrow-down",
-      "unicode": ""
-    },
-    {
-      "font_class": "arrow-left",
-      "unicode": ""
-    },
-    {
-      "font_class": "arrow-right",
-      "unicode": ""
-    },
-    {
-      "font_class": "arrow-up",
-      "unicode": ""
-    },
-    {
-      "font_class": "auth",
-      "unicode": ""
-    },
-    {
-      "font_class": "auth-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "back",
-      "unicode": ""
-    },
-    {
-      "font_class": "bars",
-      "unicode": ""
-    },
-    {
-      "font_class": "calendar",
-      "unicode": ""
-    },
-    {
-      "font_class": "calendar-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "camera",
-      "unicode": ""
-    },
-    {
-      "font_class": "camera-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "cart",
-      "unicode": ""
-    },
-    {
-      "font_class": "cart-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "chat",
-      "unicode": ""
-    },
-    {
-      "font_class": "chat-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "chatboxes",
-      "unicode": ""
-    },
-    {
-      "font_class": "chatboxes-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "chatbubble",
-      "unicode": ""
-    },
-    {
-      "font_class": "chatbubble-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "checkbox",
-      "unicode": ""
-    },
-    {
-      "font_class": "checkbox-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "checkmarkempty",
-      "unicode": ""
-    },
-    {
-      "font_class": "circle",
-      "unicode": ""
-    },
-    {
-      "font_class": "circle-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "clear",
-      "unicode": ""
-    },
-    {
-      "font_class": "close",
-      "unicode": ""
-    },
-    {
-      "font_class": "closeempty",
-      "unicode": ""
-    },
-    {
-      "font_class": "cloud-download",
-      "unicode": ""
-    },
-    {
-      "font_class": "cloud-download-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "cloud-upload",
-      "unicode": ""
-    },
-    {
-      "font_class": "cloud-upload-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "color",
-      "unicode": ""
-    },
-    {
-      "font_class": "color-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "compose",
-      "unicode": ""
-    },
-    {
-      "font_class": "contact",
-      "unicode": ""
-    },
-    {
-      "font_class": "contact-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "down",
-      "unicode": ""
-    },
-    {
-      "font_class": "bottom",
-      "unicode": ""
-    },
-    {
-      "font_class": "download",
-      "unicode": ""
-    },
-    {
-      "font_class": "download-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "email",
-      "unicode": ""
-    },
-    {
-      "font_class": "email-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "eye",
-      "unicode": ""
-    },
-    {
-      "font_class": "eye-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "eye-slash",
-      "unicode": ""
-    },
-    {
-      "font_class": "eye-slash-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "fire",
-      "unicode": ""
-    },
-    {
-      "font_class": "fire-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "flag",
-      "unicode": ""
-    },
-    {
-      "font_class": "flag-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "folder-add",
-      "unicode": ""
-    },
-    {
-      "font_class": "folder-add-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "font",
-      "unicode": ""
-    },
-    {
-      "font_class": "forward",
-      "unicode": ""
-    },
-    {
-      "font_class": "gear",
-      "unicode": ""
-    },
-    {
-      "font_class": "gear-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "gift",
-      "unicode": ""
-    },
-    {
-      "font_class": "gift-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "hand-down",
-      "unicode": ""
-    },
-    {
-      "font_class": "hand-down-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "hand-up",
-      "unicode": ""
-    },
-    {
-      "font_class": "hand-up-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "headphones",
-      "unicode": ""
-    },
-    {
-      "font_class": "heart",
-      "unicode": ""
-    },
-    {
-      "font_class": "heart-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "help",
-      "unicode": ""
-    },
-    {
-      "font_class": "help-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "home",
-      "unicode": ""
-    },
-    {
-      "font_class": "home-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "image",
-      "unicode": ""
-    },
-    {
-      "font_class": "image-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "images",
-      "unicode": ""
-    },
-    {
-      "font_class": "images-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "info",
-      "unicode": ""
-    },
-    {
-      "font_class": "info-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "left",
-      "unicode": ""
-    },
-    {
-      "font_class": "link",
-      "unicode": ""
-    },
-    {
-      "font_class": "list",
-      "unicode": ""
-    },
-    {
-      "font_class": "location",
-      "unicode": ""
-    },
-    {
-      "font_class": "location-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "locked",
-      "unicode": ""
-    },
-    {
-      "font_class": "locked-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "loop",
-      "unicode": ""
-    },
-    {
-      "font_class": "mail-open",
-      "unicode": ""
-    },
-    {
-      "font_class": "mail-open-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "map",
-      "unicode": ""
-    },
-    {
-      "font_class": "map-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "map-pin",
-      "unicode": ""
-    },
-    {
-      "font_class": "map-pin-ellipse",
-      "unicode": ""
-    },
-    {
-      "font_class": "medal",
-      "unicode": ""
-    },
-    {
-      "font_class": "medal-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "mic",
-      "unicode": ""
-    },
-    {
-      "font_class": "mic-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "micoff",
-      "unicode": ""
-    },
-    {
-      "font_class": "micoff-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "minus",
-      "unicode": ""
-    },
-    {
-      "font_class": "minus-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "more",
-      "unicode": ""
-    },
-    {
-      "font_class": "more-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "navigate",
-      "unicode": ""
-    },
-    {
-      "font_class": "navigate-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "notification",
-      "unicode": ""
-    },
-    {
-      "font_class": "notification-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "paperclip",
-      "unicode": ""
-    },
-    {
-      "font_class": "paperplane",
-      "unicode": ""
-    },
-    {
-      "font_class": "paperplane-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "person",
-      "unicode": ""
-    },
-    {
-      "font_class": "person-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "personadd",
-      "unicode": ""
-    },
-    {
-      "font_class": "personadd-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "personadd-filled-copy",
-      "unicode": ""
-    },
-    {
-      "font_class": "phone",
-      "unicode": ""
-    },
-    {
-      "font_class": "phone-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "plus",
-      "unicode": ""
-    },
-    {
-      "font_class": "plus-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "plusempty",
-      "unicode": ""
-    },
-    {
-      "font_class": "pulldown",
-      "unicode": ""
-    },
-    {
-      "font_class": "pyq",
-      "unicode": ""
-    },
-    {
-      "font_class": "qq",
-      "unicode": ""
-    },
-    {
-      "font_class": "redo",
-      "unicode": ""
-    },
-    {
-      "font_class": "redo-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "refresh",
-      "unicode": ""
-    },
-    {
-      "font_class": "refresh-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "refreshempty",
-      "unicode": ""
-    },
-    {
-      "font_class": "reload",
-      "unicode": ""
-    },
-    {
-      "font_class": "right",
-      "unicode": ""
-    },
-    {
-      "font_class": "scan",
-      "unicode": ""
-    },
-    {
-      "font_class": "search",
-      "unicode": ""
-    },
-    {
-      "font_class": "settings",
-      "unicode": ""
-    },
-    {
-      "font_class": "settings-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "shop",
-      "unicode": ""
-    },
-    {
-      "font_class": "shop-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "smallcircle",
-      "unicode": ""
-    },
-    {
-      "font_class": "smallcircle-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "sound",
-      "unicode": ""
-    },
-    {
-      "font_class": "sound-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "spinner-cycle",
-      "unicode": ""
-    },
-    {
-      "font_class": "staff",
-      "unicode": ""
-    },
-    {
-      "font_class": "staff-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "star",
-      "unicode": ""
-    },
-    {
-      "font_class": "star-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "starhalf",
-      "unicode": ""
-    },
-    {
-      "font_class": "trash",
-      "unicode": ""
-    },
-    {
-      "font_class": "trash-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "tune",
-      "unicode": ""
-    },
-    {
-      "font_class": "tune-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "undo",
-      "unicode": ""
-    },
-    {
-      "font_class": "undo-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "up",
-      "unicode": ""
-    },
-    {
-      "font_class": "top",
-      "unicode": ""
-    },
-    {
-      "font_class": "upload",
-      "unicode": ""
-    },
-    {
-      "font_class": "upload-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "videocam",
-      "unicode": ""
-    },
-    {
-      "font_class": "videocam-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "vip",
-      "unicode": ""
-    },
-    {
-      "font_class": "vip-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "wallet",
-      "unicode": ""
-    },
-    {
-      "font_class": "wallet-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "weibo",
-      "unicode": ""
-    },
-    {
-      "font_class": "weixin",
-      "unicode": ""
-    }
-  ];
-  const getVal$1 = (val) => {
-    const reg = /^[0-9]*$/g;
-    return typeof val === "number" || reg.test(val) ? val + "px" : val;
-  };
-  const _sfc_main$T = {
-    name: "UniIcons",
-    emits: ["click"],
-    props: {
-      type: {
-        type: String,
-        default: ""
-      },
-      color: {
-        type: String,
-        default: "#333333"
-      },
-      size: {
-        type: [Number, String],
-        default: 16
-      },
-      customPrefix: {
-        type: String,
-        default: ""
-      },
-      fontFamily: {
-        type: String,
-        default: ""
-      }
-    },
-    data() {
-      return {
-        icons: fontData
-      };
-    },
-    computed: {
-      unicode() {
-        let code = this.icons.find((v2) => v2.font_class === this.type);
-        if (code) {
-          return code.unicode;
-        }
-        return "";
-      },
-      iconSize() {
-        return getVal$1(this.size);
-      },
-      styleObj() {
-        if (this.fontFamily !== "") {
-          return `color: ${this.color}; font-size: ${this.iconSize}; font-family: ${this.fontFamily};`;
-        }
-        return `color: ${this.color}; font-size: ${this.iconSize};`;
-      }
-    },
-    methods: {
-      _onClick() {
-        this.$emit("click");
-      }
-    }
-  };
-  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "text",
-      {
-        style: vue.normalizeStyle($options.styleObj),
-        class: vue.normalizeClass(["uni-icons", ["uniui-" + $props.type, $props.customPrefix, $props.customPrefix ? $props.type : ""]]),
-        onClick: _cache[0] || (_cache[0] = (...args) => $options._onClick && $options._onClick(...args))
-      },
-      [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ],
-      6
-      /* CLASS, STYLE */
-    );
-  }
-  const __easycom_0$c = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
-  const _sfc_main$S = {
-    name: "UniStatusBar",
-    data() {
-      return {
-        statusBarHeight: uni.getSystemInfoSync().statusBarHeight + "px"
-      };
-    }
-  };
-  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        style: vue.normalizeStyle({ height: $data.statusBarHeight }),
-        class: "uni-status-bar"
-      },
-      [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ],
-      4
-      /* STYLE */
-    );
-  }
-  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-7920e3e0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
-  const getVal = (val) => typeof val === "number" ? val + "px" : val;
-  const _sfc_main$R = {
-    name: "UniNavBar",
-    components: {
-      statusBar
-    },
-    emits: ["clickLeft", "clickRight", "clickTitle"],
-    props: {
-      dark: {
-        type: Boolean,
-        default: false
-      },
-      title: {
-        type: String,
-        default: ""
-      },
-      leftText: {
-        type: String,
-        default: ""
-      },
-      rightText: {
-        type: String,
-        default: ""
-      },
-      leftIcon: {
-        type: String,
-        default: ""
-      },
-      rightIcon: {
-        type: String,
-        default: ""
-      },
-      fixed: {
-        type: [Boolean, String],
-        default: false
-      },
-      color: {
-        type: String,
-        default: ""
-      },
-      backgroundColor: {
-        type: String,
-        default: ""
-      },
-      statusBar: {
-        type: [Boolean, String],
-        default: false
-      },
-      shadow: {
-        type: [Boolean, String],
-        default: false
-      },
-      border: {
-        type: [Boolean, String],
-        default: true
-      },
-      height: {
-        type: [Number, String],
-        default: 44
-      },
-      leftWidth: {
-        type: [Number, String],
-        default: 60
-      },
-      rightWidth: {
-        type: [Number, String],
-        default: 60
-      },
-      stat: {
-        type: [Boolean, String],
-        default: ""
-      }
-    },
-    computed: {
-      themeBgColor() {
-        if (this.dark) {
-          if (this.backgroundColor) {
-            return this.backgroundColor;
-          } else {
-            return this.dark ? "#333" : "#FFF";
-          }
-        }
-        return this.backgroundColor || "#FFF";
-      },
-      themeColor() {
-        if (this.dark) {
-          if (this.color) {
-            return this.color;
-          } else {
-            return this.dark ? "#fff" : "#333";
-          }
-        }
-        return this.color || "#333";
-      },
-      navbarHeight() {
-        return getVal(this.height);
-      },
-      leftIconWidth() {
-        return getVal(this.leftWidth);
-      },
-      rightIconWidth() {
-        return getVal(this.rightWidth);
-      }
-    },
-    mounted() {
-      if (uni.report && this.stat && this.title !== "") {
-        uni.report("title", this.title);
-      }
-    },
-    methods: {
-      onClickLeft() {
-        this.$emit("clickLeft");
-      },
-      onClickRight() {
-        this.$emit("clickRight");
-      },
-      onClickTitle() {
-        this.$emit("clickTitle");
-      }
-    }
-  };
-  function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_status_bar = vue.resolveComponent("status-bar");
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        class: vue.normalizeClass(["uni-navbar", { "uni-dark": $props.dark, "uni-nvue-fixed": $props.fixed }])
-      },
-      [
-        vue.createElementVNode(
-          "view",
-          {
-            class: vue.normalizeClass(["uni-navbar__content", { "uni-navbar--fixed": $props.fixed, "uni-navbar--shadow": $props.shadow, "uni-navbar--border": $props.border }]),
-            style: vue.normalizeStyle({ "background-color": $options.themeBgColor, "border-bottom-color": $options.themeColor })
-          },
-          [
-            $props.statusBar ? (vue.openBlock(), vue.createBlock(_component_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
-            vue.createElementVNode(
-              "view",
-              {
-                style: vue.normalizeStyle({ color: $options.themeColor, backgroundColor: $options.themeBgColor, height: $options.navbarHeight }),
-                class: "uni-navbar__header"
-              },
-              [
-                vue.createElementVNode(
-                  "view",
-                  {
-                    onClick: _cache[0] || (_cache[0] = (...args) => $options.onClickLeft && $options.onClickLeft(...args)),
-                    class: "uni-navbar__header-btns uni-navbar__header-btns-left",
-                    style: vue.normalizeStyle({ width: $options.leftIconWidth })
-                  },
-                  [
-                    vue.renderSlot(_ctx.$slots, "left", {}, () => [
-                      $props.leftIcon.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 0,
-                        class: "uni-navbar__content_view"
-                      }, [
-                        vue.createVNode(_component_uni_icons, {
-                          color: $options.themeColor,
-                          type: $props.leftIcon,
-                          size: "20"
-                        }, null, 8, ["color", "type"])
-                      ])) : vue.createCommentVNode("v-if", true),
-                      $props.leftText.length ? (vue.openBlock(), vue.createElementBlock(
-                        "view",
-                        {
-                          key: 1,
-                          class: vue.normalizeClass([{ "uni-navbar-btn-icon-left": !$props.leftIcon.length > 0 }, "uni-navbar-btn-text"])
-                        },
-                        [
-                          vue.createElementVNode(
-                            "text",
-                            {
-                              style: vue.normalizeStyle({ color: $options.themeColor, fontSize: "12px" })
-                            },
-                            vue.toDisplayString($props.leftText),
-                            5
-                            /* TEXT, STYLE */
-                          )
-                        ],
-                        2
-                        /* CLASS */
-                      )) : vue.createCommentVNode("v-if", true)
-                    ], true)
-                  ],
-                  4
-                  /* STYLE */
-                ),
-                vue.createElementVNode("view", {
-                  class: "uni-navbar__header-container",
-                  onClick: _cache[1] || (_cache[1] = (...args) => $options.onClickTitle && $options.onClickTitle(...args))
-                }, [
-                  vue.renderSlot(_ctx.$slots, "default", {}, () => [
-                    $props.title.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", {
-                      key: 0,
-                      class: "uni-navbar__header-container-inner"
-                    }, [
-                      vue.createElementVNode(
-                        "text",
-                        {
-                          class: "uni-nav-bar-text uni-ellipsis-1",
-                          style: vue.normalizeStyle({ color: $options.themeColor })
-                        },
-                        vue.toDisplayString($props.title),
-                        5
-                        /* TEXT, STYLE */
-                      )
-                    ])) : vue.createCommentVNode("v-if", true)
-                  ], true)
-                ]),
-                vue.createElementVNode(
-                  "view",
-                  {
-                    onClick: _cache[2] || (_cache[2] = (...args) => $options.onClickRight && $options.onClickRight(...args)),
-                    class: "uni-navbar__header-btns uni-navbar__header-btns-right",
-                    style: vue.normalizeStyle({ width: $options.rightIconWidth })
-                  },
-                  [
-                    vue.renderSlot(_ctx.$slots, "right", {}, () => [
-                      $props.rightIcon.length ? (vue.openBlock(), vue.createElementBlock("view", { key: 0 }, [
-                        vue.createVNode(_component_uni_icons, {
-                          color: $options.themeColor,
-                          type: $props.rightIcon,
-                          size: "22"
-                        }, null, 8, ["color", "type"])
-                      ])) : vue.createCommentVNode("v-if", true),
-                      $props.rightText.length && !$props.rightIcon.length ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 1,
-                        class: "uni-navbar-btn-text"
-                      }, [
-                        vue.createElementVNode(
-                          "text",
-                          {
-                            class: "uni-nav-bar-right-text",
-                            style: vue.normalizeStyle({ color: $options.themeColor })
-                          },
-                          vue.toDisplayString($props.rightText),
-                          5
-                          /* TEXT, STYLE */
-                        )
-                      ])) : vue.createCommentVNode("v-if", true)
-                    ], true)
-                  ],
-                  4
-                  /* STYLE */
-                )
-              ],
-              4
-              /* STYLE */
-            )
-          ],
-          6
-          /* CLASS, STYLE */
-        ),
-        $props.fixed ? (vue.openBlock(), vue.createElementBlock("view", {
-          key: 0,
-          class: "uni-navbar__placeholder"
-        }, [
-          $props.statusBar ? (vue.openBlock(), vue.createBlock(_component_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
-          vue.createElementVNode(
-            "view",
-            {
-              class: "uni-navbar__placeholder-view",
-              style: vue.normalizeStyle({ height: $options.navbarHeight })
-            },
-            null,
-            4
-            /* STYLE */
-          )
-        ])) : vue.createCommentVNode("v-if", true)
-      ],
-      2
-      /* CLASS */
-    );
-  }
-  const __easycom_0$b = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-26544265"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
-  function pad(str, length = 2) {
-    str += "";
-    while (str.length < length) {
-      str = "0" + str;
-    }
-    return str.slice(-length);
-  }
-  const parser = {
-    yyyy: (dateObj) => {
-      return pad(dateObj.year, 4);
-    },
-    yy: (dateObj) => {
-      return pad(dateObj.year);
-    },
-    MM: (dateObj) => {
-      return pad(dateObj.month);
-    },
-    M: (dateObj) => {
-      return dateObj.month;
-    },
-    dd: (dateObj) => {
-      return pad(dateObj.day);
-    },
-    d: (dateObj) => {
-      return dateObj.day;
-    },
-    hh: (dateObj) => {
-      return pad(dateObj.hour);
-    },
-    h: (dateObj) => {
-      return dateObj.hour;
-    },
-    mm: (dateObj) => {
-      return pad(dateObj.minute);
-    },
-    m: (dateObj) => {
-      return dateObj.minute;
-    },
-    ss: (dateObj) => {
-      return pad(dateObj.second);
-    },
-    s: (dateObj) => {
-      return dateObj.second;
-    },
-    SSS: (dateObj) => {
-      return pad(dateObj.millisecond, 3);
-    },
-    S: (dateObj) => {
-      return dateObj.millisecond;
-    }
-  };
-  function getDate(time) {
-    if (time instanceof Date) {
-      return time;
-    }
-    switch (typeof time) {
-      case "string": {
-        if (time.indexOf("T") > -1) {
-          return new Date(time);
-        }
-        return new Date(time.replace(/-/g, "/"));
-      }
-      default:
-        return new Date(time);
-    }
-  }
-  function formatDate(date, format2 = "yyyy/MM/dd hh:mm:ss") {
-    if (!date && date !== 0) {
-      return "";
-    }
-    date = getDate(date);
-    const dateObj = {
-      year: date.getFullYear(),
-      month: date.getMonth() + 1,
-      day: date.getDate(),
-      hour: date.getHours(),
-      minute: date.getMinutes(),
-      second: date.getSeconds(),
-      millisecond: date.getMilliseconds()
-    };
-    const tokenRegExp = /yyyy|yy|MM|M|dd|d|hh|h|mm|m|ss|s|SSS|SS|S/;
-    let flag = true;
-    let result = format2;
-    while (flag) {
-      flag = false;
-      result = result.replace(tokenRegExp, function(matched) {
-        flag = true;
-        return parser[matched](dateObj);
-      });
-    }
-    return result;
-  }
-  function friendlyDate(time, {
-    locale = "zh",
-    threshold = [6e4, 36e5],
-    format: format2 = "yyyy/MM/dd hh:mm:ss"
-  }) {
-    if (time === "-") {
-      return time;
-    }
-    if (!time && time !== 0) {
-      return "";
-    }
-    const localeText = {
-      zh: {
-        year: "年",
-        month: "月",
-        day: "天",
-        hour: "小时",
-        minute: "分钟",
-        second: "秒",
-        ago: "前",
-        later: "后",
-        justNow: "刚刚",
-        soon: "马上",
-        template: "{num}{unit}{suffix}"
-      },
-      en: {
-        year: "year",
-        month: "month",
-        day: "day",
-        hour: "hour",
-        minute: "minute",
-        second: "second",
-        ago: "ago",
-        later: "later",
-        justNow: "just now",
-        soon: "soon",
-        template: "{num} {unit} {suffix}"
-      }
-    };
-    const text = localeText[locale] || localeText.zh;
-    let date = getDate(time);
-    let ms2 = date.getTime() - Date.now();
-    let absMs = Math.abs(ms2);
-    if (absMs < threshold[0]) {
-      return ms2 < 0 ? text.justNow : text.soon;
-    }
-    if (absMs >= threshold[1]) {
-      return formatDate(date, format2);
-    }
-    let num;
-    let unit;
-    let suffix = text.later;
-    if (ms2 < 0) {
-      suffix = text.ago;
-      ms2 = -ms2;
-    }
-    const seconds = Math.floor(ms2 / 1e3);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    const months = Math.floor(days / 30);
-    const years = Math.floor(months / 12);
-    switch (true) {
-      case years > 0:
-        num = years;
-        unit = text.year;
-        break;
-      case months > 0:
-        num = months;
-        unit = text.month;
-        break;
-      case days > 0:
-        num = days;
-        unit = text.day;
-        break;
-      case hours > 0:
-        num = hours;
-        unit = text.hour;
-        break;
-      case minutes > 0:
-        num = minutes;
-        unit = text.minute;
-        break;
-      default:
-        num = seconds;
-        unit = text.second;
-        break;
-    }
-    if (locale === "en") {
-      if (num === 1) {
-        num = "a";
-      } else {
-        unit += "s";
-      }
-    }
-    return text.template.replace(/{\s*num\s*}/g, num + "").replace(/{\s*unit\s*}/g, unit).replace(
-      /{\s*suffix\s*}/g,
-      suffix
-    );
-  }
-  const _sfc_main$Q = {
-    name: "uniDateformat",
-    props: {
-      date: {
-        type: [Object, String, Number],
-        default() {
-          return "-";
-        }
-      },
-      locale: {
-        type: String,
-        default: "zh"
-      },
-      threshold: {
-        type: Array,
-        default() {
-          return [0, 0];
-        }
-      },
-      format: {
-        type: String,
-        default: "yyyy/MM/dd hh:mm:ss"
-      },
-      // refreshRate使用不当可能导致性能问题，谨慎使用
-      refreshRate: {
-        type: [Number, String],
-        default: 0
-      }
-    },
-    data() {
-      return {
-        refreshMark: 0
-      };
-    },
-    computed: {
-      dateShow() {
-        this.refreshMark;
-        return friendlyDate(this.date, {
-          locale: this.locale,
-          threshold: this.threshold,
-          format: this.format
-        });
-      }
-    },
-    watch: {
-      refreshRate: {
-        handler() {
-          this.setAutoRefresh();
-        },
-        immediate: true
-      }
-    },
-    methods: {
-      refresh() {
-        this.refreshMark++;
-      },
-      setAutoRefresh() {
-        clearInterval(this.refreshInterval);
-        if (this.refreshRate) {
-          this.refreshInterval = setInterval(() => {
-            this.refresh();
-          }, parseInt(this.refreshRate));
-        }
-      }
-    }
-  };
-  function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "text",
-      null,
-      vue.toDisplayString($options.dateShow),
-      1
-      /* TEXT */
-    );
-  }
-  const __easycom_0$a = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue"]]);
-  const _sfc_main$P = {
-    name: "UniBadge",
-    emits: ["click"],
-    props: {
-      type: {
-        type: String,
-        default: "error"
-      },
-      inverted: {
-        type: Boolean,
-        default: false
-      },
-      isDot: {
-        type: Boolean,
-        default: false
-      },
-      maxNum: {
-        type: Number,
-        default: 99
-      },
-      absolute: {
-        type: String,
-        default: ""
-      },
-      offset: {
-        type: Array,
-        default() {
-          return [0, 0];
-        }
-      },
-      text: {
-        type: [String, Number],
-        default: ""
-      },
-      size: {
-        type: String,
-        default: "small"
-      },
-      customStyle: {
-        type: Object,
-        default() {
-          return {};
-        }
-      }
-    },
-    data() {
-      return {};
-    },
-    computed: {
-      width() {
-        return String(this.text).length * 8 + 12;
-      },
-      classNames() {
-        const {
-          inverted,
-          type,
-          size,
-          absolute
-        } = this;
-        return [
-          inverted ? "uni-badge--" + type + "-inverted" : "",
-          "uni-badge--" + type,
-          "uni-badge--" + size,
-          absolute ? "uni-badge--absolute" : ""
-        ].join(" ");
-      },
-      positionStyle() {
-        if (!this.absolute)
-          return {};
-        let w2 = this.width / 2, h2 = 10;
-        if (this.isDot) {
-          w2 = 5;
-          h2 = 5;
-        }
-        const x = `${-w2 + this.offset[0]}px`;
-        const y2 = `${-h2 + this.offset[1]}px`;
-        const whiteList = {
-          rightTop: {
-            right: x,
-            top: y2
-          },
-          rightBottom: {
-            right: x,
-            bottom: y2
-          },
-          leftBottom: {
-            left: x,
-            bottom: y2
-          },
-          leftTop: {
-            left: x,
-            top: y2
-          }
-        };
-        const match = whiteList[this.absolute];
-        return match ? match : whiteList["rightTop"];
-      },
-      dotStyle() {
-        if (!this.isDot)
-          return {};
-        return {
-          width: "10px",
-          minWidth: "0",
-          height: "10px",
-          padding: "0",
-          borderRadius: "10px"
-        };
-      },
-      displayValue() {
-        const {
-          isDot,
-          text,
-          maxNum
-        } = this;
-        return isDot ? "" : Number(text) > maxNum ? `${maxNum}+` : text;
-      }
-    },
-    methods: {
-      onClick() {
-        this.$emit("click");
-      }
-    }
-  };
-  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-badge--x" }, [
-      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
-      $props.text ? (vue.openBlock(), vue.createElementBlock(
-        "text",
-        {
-          key: 0,
-          class: vue.normalizeClass([$options.classNames, "uni-badge"]),
-          style: vue.normalizeStyle([$options.positionStyle, $props.customStyle, $options.dotStyle]),
-          onClick: _cache[0] || (_cache[0] = ($event) => $options.onClick())
-        },
-        vue.toDisplayString($options.displayValue),
-        7
-        /* TEXT, CLASS, STYLE */
-      )) : vue.createCommentVNode("v-if", true)
-    ]);
-  }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-c97cb896"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-badge/components/uni-badge/uni-badge.vue"]]);
-  const _sfc_main$O = {
-    name: "UniListItem",
-    emits: ["click", "switchChange"],
-    props: {
-      direction: {
-        type: String,
-        default: "row"
-      },
-      title: {
-        type: String,
-        default: ""
-      },
-      note: {
-        type: String,
-        default: ""
-      },
-      ellipsis: {
-        type: [Number, String],
-        default: 0
-      },
-      disabled: {
-        type: [Boolean, String],
-        default: false
-      },
-      clickable: {
-        type: Boolean,
-        default: false
-      },
-      showArrow: {
-        type: [Boolean, String],
-        default: false
-      },
-      link: {
-        type: [Boolean, String],
-        default: false
-      },
-      to: {
-        type: String,
-        default: ""
-      },
-      showBadge: {
-        type: [Boolean, String],
-        default: false
-      },
-      showSwitch: {
-        type: [Boolean, String],
-        default: false
-      },
-      switchChecked: {
-        type: [Boolean, String],
-        default: false
-      },
-      badgeText: {
-        type: String,
-        default: ""
-      },
-      badgeType: {
-        type: String,
-        default: "success"
-      },
-      badgeStyle: {
-        type: Object,
-        default() {
-          return {};
-        }
-      },
-      rightText: {
-        type: String,
-        default: ""
-      },
-      thumb: {
-        type: String,
-        default: ""
-      },
-      thumbSize: {
-        type: String,
-        default: "base"
-      },
-      showExtraIcon: {
-        type: [Boolean, String],
-        default: false
-      },
-      extraIcon: {
-        type: Object,
-        default() {
-          return {
-            type: "",
-            color: "#000000",
-            size: 20,
-            customPrefix: ""
-          };
-        }
-      },
-      border: {
-        type: Boolean,
-        default: true
-      },
-      customStyle: {
-        type: Object,
-        default() {
-          return {
-            padding: "",
-            backgroundColor: "#FFFFFF"
-          };
-        }
-      },
-      keepScrollPosition: {
-        type: Boolean,
-        default: false
-      }
-    },
-    watch: {
-      "customStyle.padding": {
-        handler(padding) {
-          if (typeof padding == "number") {
-            padding += "";
-          }
-          let paddingArr = padding.split(" ");
-          if (paddingArr.length === 1) {
-            const allPadding = paddingArr[0];
-            this.padding = {
-              "top": allPadding,
-              "right": allPadding,
-              "bottom": allPadding,
-              "left": allPadding
-            };
-          } else if (paddingArr.length === 2) {
-            const [verticalPadding, horizontalPadding] = paddingArr;
-            this.padding = {
-              "top": verticalPadding,
-              "right": horizontalPadding,
-              "bottom": verticalPadding,
-              "left": horizontalPadding
-            };
-          } else if (paddingArr.length === 4) {
-            const [topPadding, rightPadding, bottomPadding, leftPadding] = paddingArr;
-            this.padding = {
-              "top": topPadding,
-              "right": rightPadding,
-              "bottom": bottomPadding,
-              "left": leftPadding
-            };
-          }
-        },
-        immediate: true
-      }
-    },
-    // inject: ['list'],
-    data() {
-      return {
-        isFirstChild: false,
-        padding: {
-          top: "",
-          right: "",
-          bottom: "",
-          left: ""
-        }
-      };
-    },
-    mounted() {
-      this.list = this.getForm();
-      if (this.list) {
-        if (!this.list.firstChildAppend) {
-          this.list.firstChildAppend = true;
-          this.isFirstChild = true;
-        }
-      }
-    },
-    methods: {
-      /**
-       * 获取父元素实例
-       */
-      getForm(name = "uniList") {
-        let parent = this.$parent;
-        let parentName = parent.$options.name;
-        while (parentName !== name) {
-          parent = parent.$parent;
-          if (!parent)
-            return false;
-          parentName = parent.$options.name;
-        }
-        return parent;
-      },
-      onClick() {
-        if (this.to !== "") {
-          this.openPage();
-          return;
-        }
-        if (this.clickable || this.link) {
-          this.$emit("click", {
-            data: {}
-          });
-        }
-      },
-      onSwitchChange(e2) {
-        this.$emit("switchChange", e2.detail);
-      },
-      openPage() {
-        if (["navigateTo", "redirectTo", "reLaunch", "switchTab"].indexOf(this.link) !== -1) {
-          this.pageApi(this.link);
-        } else {
-          this.pageApi("navigateTo");
-        }
-      },
-      pageApi(api) {
-        let callback = {
-          url: this.to,
-          success: (res) => {
-            this.$emit("click", {
-              data: res
-            });
-          },
-          fail: (err) => {
-            this.$emit("click", {
-              data: err
-            });
-          }
-        };
-        switch (api) {
-          case "navigateTo":
-            uni.navigateTo(callback);
-            break;
-          case "redirectTo":
-            uni.redirectTo(callback);
-            break;
-          case "reLaunch":
-            uni.reLaunch(callback);
-            break;
-          case "switchTab":
-            uni.switchTab(callback);
-            break;
-          default:
-            uni.navigateTo(callback);
-        }
-      }
-    }
-  };
-  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
-    const _component_uni_badge = resolveEasycom(vue.resolveDynamicComponent("uni-badge"), __easycom_1$4);
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: vue.normalizeClass([{ "uni-list-item--disabled": $props.disabled }, "uni-list-item"]),
-      style: vue.normalizeStyle({ "background-color": $props.customStyle.backgroundColor }),
-      "hover-class": !$props.clickable && !$props.link || $props.disabled || $props.showSwitch ? "" : "uni-list-item--hover",
-      onClick: _cache[1] || (_cache[1] = (...args) => $options.onClick && $options.onClick(...args))
-    }, [
-      !$data.isFirstChild ? (vue.openBlock(), vue.createElementBlock(
-        "view",
-        {
-          key: 0,
-          class: vue.normalizeClass(["border--left", { "uni-list--border": $props.border }])
-        },
-        null,
-        2
-        /* CLASS */
-      )) : vue.createCommentVNode("v-if", true),
-      vue.createElementVNode(
-        "view",
-        {
-          class: vue.normalizeClass(["uni-list-item__container", { "container--right": $props.showArrow || $props.link, "flex--direction": $props.direction === "column" }]),
-          style: vue.normalizeStyle({ paddingTop: $data.padding.top, paddingLeft: $data.padding.left, paddingRight: $data.padding.right, paddingBottom: $data.padding.bottom })
-        },
-        [
-          vue.renderSlot(_ctx.$slots, "header", {}, () => [
-            vue.createElementVNode("view", { class: "uni-list-item__header" }, [
-              $props.thumb ? (vue.openBlock(), vue.createElementBlock("view", {
-                key: 0,
-                class: "uni-list-item__icon"
-              }, [
-                vue.createElementVNode("image", {
-                  src: $props.thumb,
-                  class: vue.normalizeClass(["uni-list-item__icon-img", ["uni-list--" + $props.thumbSize]])
-                }, null, 10, ["src"])
-              ])) : $props.showExtraIcon ? (vue.openBlock(), vue.createElementBlock("view", {
-                key: 1,
-                class: "uni-list-item__icon"
-              }, [
-                vue.createVNode(_component_uni_icons, {
-                  customPrefix: $props.extraIcon.customPrefix,
-                  color: $props.extraIcon.color,
-                  size: $props.extraIcon.size,
-                  type: $props.extraIcon.type
-                }, null, 8, ["customPrefix", "color", "size", "type"])
-              ])) : vue.createCommentVNode("v-if", true)
-            ])
-          ], true),
-          vue.renderSlot(_ctx.$slots, "body", {}, () => [
-            vue.createElementVNode(
-              "view",
-              {
-                class: vue.normalizeClass(["uni-list-item__content", { "uni-list-item__content--center": $props.thumb || $props.showExtraIcon || $props.showBadge || $props.showSwitch }])
-              },
-              [
-                $props.title ? (vue.openBlock(), vue.createElementBlock(
-                  "text",
-                  {
-                    key: 0,
-                    class: vue.normalizeClass(["uni-list-item__content-title", [$props.ellipsis !== 0 && $props.ellipsis <= 2 ? "uni-ellipsis-" + $props.ellipsis : ""]])
-                  },
-                  vue.toDisplayString($props.title),
-                  3
-                  /* TEXT, CLASS */
-                )) : vue.createCommentVNode("v-if", true),
-                $props.note ? (vue.openBlock(), vue.createElementBlock(
-                  "text",
-                  {
-                    key: 1,
-                    class: "uni-list-item__content-note"
-                  },
-                  vue.toDisplayString($props.note),
-                  1
-                  /* TEXT */
-                )) : vue.createCommentVNode("v-if", true)
-              ],
-              2
-              /* CLASS */
-            )
-          ], true),
-          vue.renderSlot(_ctx.$slots, "footer", {}, () => [
-            $props.rightText || $props.showBadge || $props.showSwitch ? (vue.openBlock(), vue.createElementBlock(
-              "view",
-              {
-                key: 0,
-                class: vue.normalizeClass(["uni-list-item__extra", { "flex--justify": $props.direction === "column" }])
-              },
-              [
-                $props.rightText ? (vue.openBlock(), vue.createElementBlock(
-                  "text",
-                  {
-                    key: 0,
-                    class: "uni-list-item__extra-text"
-                  },
-                  vue.toDisplayString($props.rightText),
-                  1
-                  /* TEXT */
-                )) : vue.createCommentVNode("v-if", true),
-                $props.showBadge ? (vue.openBlock(), vue.createBlock(_component_uni_badge, {
-                  key: 1,
-                  type: $props.badgeType,
-                  text: $props.badgeText,
-                  "custom-style": $props.badgeStyle
-                }, null, 8, ["type", "text", "custom-style"])) : vue.createCommentVNode("v-if", true),
-                $props.showSwitch ? (vue.openBlock(), vue.createElementBlock("switch", {
-                  key: 2,
-                  disabled: $props.disabled,
-                  checked: $props.switchChecked,
-                  onChange: _cache[0] || (_cache[0] = (...args) => $options.onSwitchChange && $options.onSwitchChange(...args))
-                }, null, 40, ["disabled", "checked"])) : vue.createCommentVNode("v-if", true)
-              ],
-              2
-              /* CLASS */
-            )) : vue.createCommentVNode("v-if", true)
-          ], true)
-        ],
-        6
-        /* CLASS, STYLE */
-      ),
-      $props.showArrow || $props.link ? (vue.openBlock(), vue.createBlock(_component_uni_icons, {
-        key: 1,
-        size: 16,
-        class: "uni-icon-wrapper",
-        color: "#bbb",
-        type: "arrowright"
-      })) : vue.createCommentVNode("v-if", true)
-    ], 14, ["hover-class"]);
-  }
-  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-c7524739"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue"]]);
-  const _sfc_main$N = {
-    name: "uniList",
-    "mp-weixin": {
-      options: {
-        multipleSlots: false
-      }
-    },
-    props: {
-      stackFromEnd: {
-        type: Boolean,
-        default: false
-      },
-      enableBackToTop: {
-        type: [Boolean, String],
-        default: false
-      },
-      scrollY: {
-        type: [Boolean, String],
-        default: false
-      },
-      border: {
-        type: Boolean,
-        default: true
-      },
-      renderReverse: {
-        type: Boolean,
-        default: false
-      }
-    },
-    // provide() {
-    // 	return {
-    // 		list: this
-    // 	};
-    // },
-    created() {
-      this.firstChildAppend = false;
-    },
-    methods: {
-      loadMore(e2) {
-        this.$emit("scrolltolower");
-      },
-      scroll(e2) {
-        this.$emit("scroll", e2);
-      }
-    }
-  };
-  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-list uni-border-top-bottom" }, [
-      $props.border ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 0,
-        class: "uni-list--border-top"
-      })) : vue.createCommentVNode("v-if", true),
-      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
-      $props.border ? (vue.openBlock(), vue.createElementBlock("view", {
-        key: 1,
-        class: "uni-list--border-bottom"
-      })) : vue.createCommentVNode("v-if", true)
-    ]);
-  }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-c2f1266a"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list/uni-list.vue"]]);
   const isObject$2 = (val) => val !== null && typeof val === "object";
   const defaultDelimiters = ["{", "}"];
   class BaseFormatter {
@@ -5668,6 +4713,2535 @@ ${i3}
     };
   }
   const en$3 = {
+    "uni-load-more.contentdown": "Pull up to show more",
+    "uni-load-more.contentrefresh": "loading...",
+    "uni-load-more.contentnomore": "No more data"
+  };
+  const zhHans$4 = {
+    "uni-load-more.contentdown": "上拉显示更多",
+    "uni-load-more.contentrefresh": "正在加载...",
+    "uni-load-more.contentnomore": "没有更多数据了"
+  };
+  const zhHant$2 = {
+    "uni-load-more.contentdown": "上拉顯示更多",
+    "uni-load-more.contentrefresh": "正在加載...",
+    "uni-load-more.contentnomore": "沒有更多數據了"
+  };
+  const messages$4 = {
+    en: en$3,
+    "zh-Hans": zhHans$4,
+    "zh-Hant": zhHant$2
+  };
+  let platform;
+  setTimeout(() => {
+    platform = uni.getSystemInfoSync().platform;
+  }, 16);
+  const {
+    t: t$4
+  } = initVueI18n(messages$4);
+  const _sfc_main$V = {
+    name: "UniLoadMore",
+    emits: ["clickLoadMore"],
+    props: {
+      status: {
+        // 上拉的状态：more-loading前；loading-loading中；noMore-没有更多了
+        type: String,
+        default: "more"
+      },
+      showIcon: {
+        type: Boolean,
+        default: true
+      },
+      iconType: {
+        type: String,
+        default: "auto"
+      },
+      iconSize: {
+        type: Number,
+        default: 24
+      },
+      color: {
+        type: String,
+        default: "#777777"
+      },
+      contentText: {
+        type: Object,
+        default() {
+          return {
+            contentdown: "",
+            contentrefresh: "",
+            contentnomore: ""
+          };
+        }
+      },
+      showText: {
+        type: Boolean,
+        default: true
+      }
+    },
+    data() {
+      return {
+        webviewHide: false,
+        platform,
+        imgBase64: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzlBMzU3OTlEOUM0MTFFOUI0NTZDNERBQURBQzI4RkUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzlBMzU3OUFEOUM0MTFFOUI0NTZDNERBQURBQzI4RkUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDOUEzNTc5N0Q5QzQxMUU5QjQ1NkM0REFBREFDMjhGRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDOUEzNTc5OEQ5QzQxMUU5QjQ1NkM0REFBREFDMjhGRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pt+ALSwAAA6CSURBVHja1FsLkFZV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"
+      };
+    },
+    computed: {
+      iconSnowWidth() {
+        return (Math.floor(this.iconSize / 24) || 1) * 2;
+      },
+      contentdownText() {
+        return this.contentText.contentdown || t$4("uni-load-more.contentdown");
+      },
+      contentrefreshText() {
+        return this.contentText.contentrefresh || t$4("uni-load-more.contentrefresh");
+      },
+      contentnomoreText() {
+        return this.contentText.contentnomore || t$4("uni-load-more.contentnomore");
+      }
+    },
+    mounted() {
+      var pages2 = getCurrentPages();
+      var page = pages2[pages2.length - 1];
+      var currentWebview2 = page.$getAppWebview();
+      currentWebview2.addEventListener("hide", () => {
+        this.webviewHide = true;
+      });
+      currentWebview2.addEventListener("show", () => {
+        this.webviewHide = false;
+      });
+    },
+    methods: {
+      onClick() {
+        this.$emit("clickLoadMore", {
+          detail: {
+            status: this.status
+          }
+        });
+      }
+    }
+  };
+  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: "uni-load-more",
+      onClick: _cache[0] || (_cache[0] = (...args) => $options.onClick && $options.onClick(...args))
+    }, [
+      !$data.webviewHide && ($props.iconType === "circle" || $props.iconType === "auto" && $data.platform === "android") && $props.status === "loading" && $props.showIcon ? (vue.openBlock(), vue.createElementBlock(
+        "view",
+        {
+          key: 0,
+          style: vue.normalizeStyle({ width: $props.iconSize + "px", height: $props.iconSize + "px" }),
+          class: "uni-load-more__img uni-load-more__img--android-MP"
+        },
+        [
+          vue.createElementVNode(
+            "view",
+            {
+              class: "uni-load-more__img-icon",
+              style: vue.normalizeStyle({ borderTopColor: $props.color, borderTopWidth: $props.iconSize / 12 })
+            },
+            null,
+            4
+            /* STYLE */
+          ),
+          vue.createElementVNode(
+            "view",
+            {
+              class: "uni-load-more__img-icon",
+              style: vue.normalizeStyle({ borderTopColor: $props.color, borderTopWidth: $props.iconSize / 12 })
+            },
+            null,
+            4
+            /* STYLE */
+          ),
+          vue.createElementVNode(
+            "view",
+            {
+              class: "uni-load-more__img-icon",
+              style: vue.normalizeStyle({ borderTopColor: $props.color, borderTopWidth: $props.iconSize / 12 })
+            },
+            null,
+            4
+            /* STYLE */
+          )
+        ],
+        4
+        /* STYLE */
+      )) : !$data.webviewHide && $props.status === "loading" && $props.showIcon ? (vue.openBlock(), vue.createElementBlock(
+        "view",
+        {
+          key: 1,
+          style: vue.normalizeStyle({ width: $props.iconSize + "px", height: $props.iconSize + "px" }),
+          class: "uni-load-more__img uni-load-more__img--ios-H5"
+        },
+        [
+          vue.createElementVNode("image", {
+            src: $data.imgBase64,
+            mode: "widthFix"
+          }, null, 8, ["src"])
+        ],
+        4
+        /* STYLE */
+      )) : vue.createCommentVNode("v-if", true),
+      $props.showText ? (vue.openBlock(), vue.createElementBlock(
+        "text",
+        {
+          key: 2,
+          class: "uni-load-more__text",
+          style: vue.normalizeStyle({ color: $props.color })
+        },
+        vue.toDisplayString($props.status === "more" ? $options.contentdownText : $props.status === "loading" ? $options.contentrefreshText : $options.contentnomoreText),
+        5
+        /* TEXT, STYLE */
+      )) : vue.createCommentVNode("v-if", true)
+    ]);
+  }
+  const __easycom_0$b = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-9245e42c"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-load-more/components/uni-load-more/uni-load-more.vue"]]);
+  const _sfc_main$U = {
+    name: "uniDataChecklist",
+    mixins: [Ws.mixinDatacom || {}],
+    emits: ["input", "update:modelValue", "change"],
+    props: {
+      mode: {
+        type: String,
+        default: "default"
+      },
+      multiple: {
+        type: Boolean,
+        default: false
+      },
+      value: {
+        type: [Array, String, Number],
+        default() {
+          return "";
+        }
+      },
+      // TODO vue3
+      modelValue: {
+        type: [Array, String, Number],
+        default() {
+          return "";
+        }
+      },
+      localdata: {
+        type: Array,
+        default() {
+          return [];
+        }
+      },
+      min: {
+        type: [Number, String],
+        default: ""
+      },
+      max: {
+        type: [Number, String],
+        default: ""
+      },
+      wrap: {
+        type: Boolean,
+        default: false
+      },
+      icon: {
+        type: String,
+        default: "left"
+      },
+      selectedColor: {
+        type: String,
+        default: ""
+      },
+      selectedTextColor: {
+        type: String,
+        default: ""
+      },
+      emptyText: {
+        type: String,
+        default: "暂无数据"
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      map: {
+        type: Object,
+        default() {
+          return {
+            text: "text",
+            value: "value"
+          };
+        }
+      }
+    },
+    watch: {
+      localdata: {
+        handler(newVal) {
+          this.range = newVal;
+          this.dataList = this.getDataList(this.getSelectedValue(newVal));
+        },
+        deep: true
+      },
+      mixinDatacomResData(newVal) {
+        this.range = newVal;
+        this.dataList = this.getDataList(this.getSelectedValue(newVal));
+      },
+      value(newVal) {
+        this.dataList = this.getDataList(newVal);
+      },
+      modelValue(newVal) {
+        this.dataList = this.getDataList(newVal);
+      }
+    },
+    data() {
+      return {
+        dataList: [],
+        range: [],
+        contentText: {
+          contentdown: "查看更多",
+          contentrefresh: "加载中",
+          contentnomore: "没有更多"
+        },
+        isLocal: true,
+        styles: {
+          selectedColor: "#2979ff",
+          selectedTextColor: "#666"
+        },
+        isTop: 0
+      };
+    },
+    computed: {
+      dataValue() {
+        if (this.value === "")
+          return this.modelValue;
+        if (this.modelValue === "")
+          return this.value;
+        return this.value;
+      }
+    },
+    created() {
+      if (this.localdata && this.localdata.length !== 0) {
+        this.isLocal = true;
+        this.range = this.localdata;
+        this.dataList = this.getDataList(this.getSelectedValue(this.range));
+      } else {
+        if (this.collection) {
+          this.isLocal = false;
+          this.loadData();
+        }
+      }
+    },
+    methods: {
+      loadData() {
+        this.mixinDatacomGet().then((res) => {
+          this.mixinDatacomResData = res.result.data;
+          if (this.mixinDatacomResData.length === 0) {
+            this.isLocal = false;
+            this.mixinDatacomErrorMessage = this.emptyText;
+          } else {
+            this.isLocal = true;
+          }
+        }).catch((err) => {
+          this.mixinDatacomErrorMessage = err.message;
+        });
+      },
+      /**
+       * 获取父元素实例
+       */
+      getForm(name = "uniForms") {
+        let parent = this.$parent;
+        let parentName = parent.$options.name;
+        while (parentName !== name) {
+          parent = parent.$parent;
+          if (!parent)
+            return false;
+          parentName = parent.$options.name;
+        }
+        return parent;
+      },
+      change(e2) {
+        const values = e2.detail.value;
+        let detail = {
+          value: [],
+          data: []
+        };
+        if (this.multiple) {
+          this.range.forEach((item) => {
+            if (values.includes(item[this.map.value] + "")) {
+              detail.value.push(item[this.map.value]);
+              detail.data.push(item);
+            }
+          });
+        } else {
+          const range = this.range.find((item) => item[this.map.value] + "" === values);
+          if (range) {
+            detail = {
+              value: range[this.map.value],
+              data: range
+            };
+          }
+        }
+        this.$emit("input", detail.value);
+        this.$emit("update:modelValue", detail.value);
+        this.$emit("change", {
+          detail
+        });
+        if (this.multiple) {
+          this.dataList = this.getDataList(detail.value, true);
+        } else {
+          this.dataList = this.getDataList(detail.value);
+        }
+      },
+      /**
+       * 获取渲染的新数组
+       * @param {Object} value 选中内容
+       */
+      getDataList(value) {
+        let dataList = JSON.parse(JSON.stringify(this.range));
+        let list = [];
+        if (this.multiple) {
+          if (!Array.isArray(value)) {
+            value = [];
+          }
+        }
+        dataList.forEach((item, index) => {
+          item.disabled = item.disable || item.disabled || false;
+          if (this.multiple) {
+            if (value.length > 0) {
+              let have = value.find((val) => val === item[this.map.value]);
+              item.selected = have !== void 0;
+            } else {
+              item.selected = false;
+            }
+          } else {
+            item.selected = value === item[this.map.value];
+          }
+          list.push(item);
+        });
+        return this.setRange(list);
+      },
+      /**
+       * 处理最大最小值
+       * @param {Object} list
+       */
+      setRange(list) {
+        let selectList = list.filter((item) => item.selected);
+        let min = Number(this.min) || 0;
+        let max = Number(this.max) || "";
+        list.forEach((item, index) => {
+          if (this.multiple) {
+            if (selectList.length <= min) {
+              let have = selectList.find((val) => val[this.map.value] === item[this.map.value]);
+              if (have !== void 0) {
+                item.disabled = true;
+              }
+            }
+            if (selectList.length >= max && max !== "") {
+              let have = selectList.find((val) => val[this.map.value] === item[this.map.value]);
+              if (have === void 0) {
+                item.disabled = true;
+              }
+            }
+          }
+          this.setStyles(item, index);
+          list[index] = item;
+        });
+        return list;
+      },
+      /**
+       * 设置 class
+       * @param {Object} item
+       * @param {Object} index
+       */
+      setStyles(item, index) {
+        item.styleBackgroud = this.setStyleBackgroud(item);
+        item.styleIcon = this.setStyleIcon(item);
+        item.styleIconText = this.setStyleIconText(item);
+        item.styleRightIcon = this.setStyleRightIcon(item);
+      },
+      /**
+       * 获取选中值
+       * @param {Object} range
+       */
+      getSelectedValue(range) {
+        if (!this.multiple)
+          return this.dataValue;
+        let selectedArr = [];
+        range.forEach((item) => {
+          if (item.selected) {
+            selectedArr.push(item[this.map.value]);
+          }
+        });
+        return this.dataValue.length > 0 ? this.dataValue : selectedArr;
+      },
+      /**
+       * 设置背景样式
+       */
+      setStyleBackgroud(item) {
+        let styles = {};
+        let selectedColor = this.selectedColor ? this.selectedColor : "#2979ff";
+        if (this.selectedColor) {
+          if (this.mode !== "list") {
+            styles["border-color"] = item.selected ? selectedColor : "#DCDFE6";
+          }
+          if (this.mode === "tag") {
+            styles["background-color"] = item.selected ? selectedColor : "#f5f5f5";
+          }
+        }
+        let classles = "";
+        for (let i2 in styles) {
+          classles += `${i2}:${styles[i2]};`;
+        }
+        return classles;
+      },
+      setStyleIcon(item) {
+        let styles = {};
+        let classles = "";
+        if (this.selectedColor) {
+          let selectedColor = this.selectedColor ? this.selectedColor : "#2979ff";
+          styles["background-color"] = item.selected ? selectedColor : "#fff";
+          styles["border-color"] = item.selected ? selectedColor : "#DCDFE6";
+          if (!item.selected && item.disabled) {
+            styles["background-color"] = "#F2F6FC";
+            styles["border-color"] = item.selected ? selectedColor : "#DCDFE6";
+          }
+        }
+        for (let i2 in styles) {
+          classles += `${i2}:${styles[i2]};`;
+        }
+        return classles;
+      },
+      setStyleIconText(item) {
+        let styles = {};
+        let classles = "";
+        if (this.selectedColor) {
+          let selectedColor = this.selectedColor ? this.selectedColor : "#2979ff";
+          if (this.mode === "tag") {
+            styles.color = item.selected ? this.selectedTextColor ? this.selectedTextColor : "#fff" : "#666";
+          } else {
+            styles.color = item.selected ? this.selectedTextColor ? this.selectedTextColor : selectedColor : "#666";
+          }
+          if (!item.selected && item.disabled) {
+            styles.color = "#999";
+          }
+        }
+        for (let i2 in styles) {
+          classles += `${i2}:${styles[i2]};`;
+        }
+        return classles;
+      },
+      setStyleRightIcon(item) {
+        let styles = {};
+        let classles = "";
+        if (this.mode === "list") {
+          styles["border-color"] = item.selected ? this.styles.selectedColor : "#DCDFE6";
+        }
+        for (let i2 in styles) {
+          classles += `${i2}:${styles[i2]};`;
+        }
+        return classles;
+      }
+    }
+  };
+  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_load_more = resolveEasycom(vue.resolveDynamicComponent("uni-load-more"), __easycom_0$b);
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: "uni-data-checklist",
+        style: vue.normalizeStyle({ "margin-top": $data.isTop + "px" })
+      },
+      [
+        !$data.isLocal ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 0,
+          class: "uni-data-loading"
+        }, [
+          !_ctx.mixinDatacomErrorMessage ? (vue.openBlock(), vue.createBlock(_component_uni_load_more, {
+            key: 0,
+            status: "loading",
+            iconType: "snow",
+            iconSize: 18,
+            "content-text": $data.contentText
+          }, null, 8, ["content-text"])) : (vue.openBlock(), vue.createElementBlock(
+            "text",
+            { key: 1 },
+            vue.toDisplayString(_ctx.mixinDatacomErrorMessage),
+            1
+            /* TEXT */
+          ))
+        ])) : (vue.openBlock(), vue.createElementBlock(
+          vue.Fragment,
+          { key: 1 },
+          [
+            $props.multiple ? (vue.openBlock(), vue.createElementBlock(
+              "checkbox-group",
+              {
+                key: 0,
+                class: vue.normalizeClass(["checklist-group", { "is-list": $props.mode === "list" || $props.wrap }]),
+                onChange: _cache[0] || (_cache[0] = (...args) => $options.change && $options.change(...args))
+              },
+              [
+                (vue.openBlock(true), vue.createElementBlock(
+                  vue.Fragment,
+                  null,
+                  vue.renderList($data.dataList, (item, index) => {
+                    return vue.openBlock(), vue.createElementBlock(
+                      "label",
+                      {
+                        class: vue.normalizeClass(["checklist-box", ["is--" + $props.mode, item.selected ? "is-checked" : "", $props.disabled || !!item.disabled ? "is-disable" : "", index !== 0 && $props.mode === "list" ? "is-list-border" : ""]]),
+                        style: vue.normalizeStyle(item.styleBackgroud),
+                        key: index
+                      },
+                      [
+                        vue.createElementVNode("checkbox", {
+                          class: "hidden",
+                          hidden: "",
+                          disabled: $props.disabled || !!item.disabled,
+                          value: item[$props.map.value] + "",
+                          checked: item.selected
+                        }, null, 8, ["disabled", "value", "checked"]),
+                        $props.mode !== "tag" && $props.mode !== "list" || $props.mode === "list" && $props.icon === "left" ? (vue.openBlock(), vue.createElementBlock(
+                          "view",
+                          {
+                            key: 0,
+                            class: "checkbox__inner",
+                            style: vue.normalizeStyle(item.styleIcon)
+                          },
+                          [
+                            vue.createElementVNode("view", { class: "checkbox__inner-icon" })
+                          ],
+                          4
+                          /* STYLE */
+                        )) : vue.createCommentVNode("v-if", true),
+                        vue.createElementVNode(
+                          "view",
+                          {
+                            class: vue.normalizeClass(["checklist-content", { "list-content": $props.mode === "list" && $props.icon === "left" }])
+                          },
+                          [
+                            vue.createElementVNode(
+                              "text",
+                              {
+                                class: "checklist-text",
+                                style: vue.normalizeStyle(item.styleIconText)
+                              },
+                              vue.toDisplayString(item[$props.map.text]),
+                              5
+                              /* TEXT, STYLE */
+                            ),
+                            $props.mode === "list" && $props.icon === "right" ? (vue.openBlock(), vue.createElementBlock(
+                              "view",
+                              {
+                                key: 0,
+                                class: "checkobx__list",
+                                style: vue.normalizeStyle(item.styleBackgroud)
+                              },
+                              null,
+                              4
+                              /* STYLE */
+                            )) : vue.createCommentVNode("v-if", true)
+                          ],
+                          2
+                          /* CLASS */
+                        )
+                      ],
+                      6
+                      /* CLASS, STYLE */
+                    );
+                  }),
+                  128
+                  /* KEYED_FRAGMENT */
+                ))
+              ],
+              34
+              /* CLASS, NEED_HYDRATION */
+            )) : (vue.openBlock(), vue.createElementBlock(
+              "radio-group",
+              {
+                key: 1,
+                class: vue.normalizeClass(["checklist-group", { "is-list": $props.mode === "list", "is-wrap": $props.wrap }]),
+                onChange: _cache[1] || (_cache[1] = (...args) => $options.change && $options.change(...args))
+              },
+              [
+                (vue.openBlock(true), vue.createElementBlock(
+                  vue.Fragment,
+                  null,
+                  vue.renderList($data.dataList, (item, index) => {
+                    return vue.openBlock(), vue.createElementBlock(
+                      "label",
+                      {
+                        class: vue.normalizeClass(["checklist-box", ["is--" + $props.mode, item.selected ? "is-checked" : "", $props.disabled || !!item.disabled ? "is-disable" : "", index !== 0 && $props.mode === "list" ? "is-list-border" : ""]]),
+                        style: vue.normalizeStyle(item.styleBackgroud),
+                        key: index
+                      },
+                      [
+                        vue.createElementVNode("radio", {
+                          class: "hidden",
+                          hidden: "",
+                          disabled: $props.disabled || item.disabled,
+                          value: item[$props.map.value] + "",
+                          checked: item.selected
+                        }, null, 8, ["disabled", "value", "checked"]),
+                        $props.mode !== "tag" && $props.mode !== "list" || $props.mode === "list" && $props.icon === "left" ? (vue.openBlock(), vue.createElementBlock(
+                          "view",
+                          {
+                            key: 0,
+                            class: "radio__inner",
+                            style: vue.normalizeStyle(item.styleBackgroud)
+                          },
+                          [
+                            vue.createElementVNode(
+                              "view",
+                              {
+                                class: "radio__inner-icon",
+                                style: vue.normalizeStyle(item.styleIcon)
+                              },
+                              null,
+                              4
+                              /* STYLE */
+                            )
+                          ],
+                          4
+                          /* STYLE */
+                        )) : vue.createCommentVNode("v-if", true),
+                        vue.createElementVNode(
+                          "view",
+                          {
+                            class: vue.normalizeClass(["checklist-content", { "list-content": $props.mode === "list" && $props.icon === "left" }])
+                          },
+                          [
+                            vue.createElementVNode(
+                              "text",
+                              {
+                                class: "checklist-text",
+                                style: vue.normalizeStyle(item.styleIconText)
+                              },
+                              vue.toDisplayString(item[$props.map.text]),
+                              5
+                              /* TEXT, STYLE */
+                            ),
+                            $props.mode === "list" && $props.icon === "right" ? (vue.openBlock(), vue.createElementBlock(
+                              "view",
+                              {
+                                key: 0,
+                                style: vue.normalizeStyle(item.styleRightIcon),
+                                class: "checkobx__list"
+                              },
+                              null,
+                              4
+                              /* STYLE */
+                            )) : vue.createCommentVNode("v-if", true)
+                          ],
+                          2
+                          /* CLASS */
+                        )
+                      ],
+                      6
+                      /* CLASS, STYLE */
+                    );
+                  }),
+                  128
+                  /* KEYED_FRAGMENT */
+                ))
+              ],
+              34
+              /* CLASS, NEED_HYDRATION */
+            ))
+          ],
+          64
+          /* STABLE_FRAGMENT */
+        ))
+      ],
+      4
+      /* STYLE */
+    );
+  }
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-2f788efd"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-data-checkbox/components/uni-data-checkbox/uni-data-checkbox.vue"]]);
+  const _sfc_main$T = {
+    data() {
+      return {
+        isVisible: false,
+        isInputFocused: false,
+        inputValue: "",
+        isFolderListVisible: false,
+        isTagListVisible: false,
+        candidates: ["Folder 1", "Folder 2", "Folder 3", "Folder 4", "Folder 5", "Folder 6", "Folder 7"],
+        city: "",
+        checkbox2: [0],
+        selectedTags: [],
+        hobby: [
+          { text: "Tag 1", value: 0 },
+          { text: "Tag 2", value: 1 },
+          { text: "Tag 3", value: 2 },
+          { text: "Tag 4", value: 3 },
+          { text: "Tag 5", value: 4 },
+          { text: "Tag 6", value: 5 }
+        ]
+      };
+    },
+    methods: {
+      open() {
+        this.isVisible = true;
+      },
+      close() {
+        this.isVisible = false;
+        this.isInputFocused = false;
+        this.isFolderListVisible = false;
+        this.isTagListVisible = false;
+      },
+      toggleFolderList() {
+        this.isFolderListVisible = !this.isFolderListVisible;
+      },
+      toggleTagList() {
+        if (this.isTagListVisible) {
+          this.selectedTags = this.checkbox2.map((tagValue) => {
+            const tag = this.hobby.find((h2) => h2.value === tagValue);
+            return tag ? tag.text : "";
+          });
+          this.$emit("update-tags", this.selectedTags);
+        }
+        this.isTagListVisible = !this.isTagListVisible;
+      },
+      addTagFromInput() {
+        if (this.newTag.trim()) {
+          this.tags.push(this.newTag.trim());
+          this.newTag = "";
+        }
+      },
+      done() {
+        if (this.inputValue.trim() !== "") {
+          this.selectedTags.map((tagValue) => {
+            const tag = this.hobby.find((h2) => h2.value === tagValue);
+            return tag ? tag.text : "";
+          });
+          const newItem = {
+            id: Date.now(),
+            image: "/static/pic/13.png",
+            name: this.inputValue.trim(),
+            date: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
+            tags: this.selectedTags
+          };
+          this.$emit("add-item", newItem);
+        }
+        this.close();
+      },
+      addTag() {
+        formatAppLog("log", "at pages/grid/add.vue:140", "Add Tag:", this.inputValue);
+        this.close();
+      },
+      onFocus() {
+        this.isInputFocused = true;
+        this.fixBackgroundPosition();
+      },
+      onBlur() {
+        this.isInputFocused = false;
+        this.resetBackgroundPosition();
+      },
+      fixBackgroundPosition() {
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+        document.body.style.top = `-${window.scrollY}px`;
+      },
+      resetBackgroundPosition() {
+        document.body.style.position = "";
+        document.body.style.width = "";
+        document.body.style.top = "";
+        window.scrollTo(0, parseInt(document.body.style.top || "0") * -1);
+      },
+      selectPredefinedTag(tag) {
+        if (!this.tags.includes(tag)) {
+          this.tags.push(tag);
+        }
+      },
+      removeTag(tag) {
+        this.tags = this.tags.filter((t2) => t2 !== tag);
+      }
+    }
+  };
+  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_combox = resolveEasycom(vue.resolveDynamicComponent("uni-combox"), __easycom_0$c);
+    const _component_uni_section = resolveEasycom(vue.resolveDynamicComponent("uni-section"), __easycom_1$5);
+    const _component_uni_data_checkbox = resolveEasycom(vue.resolveDynamicComponent("uni-data-checkbox"), __easycom_2$1);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "font-style" }, [
+      vue.createElementVNode("view", { class: "container" }, [
+        vue.createElementVNode(
+          "view",
+          {
+            class: vue.normalizeClass(["gray-overlay", { "show": $data.isInputFocused || $data.isFolderListVisible }])
+          },
+          null,
+          2
+          /* CLASS */
+        ),
+        vue.createElementVNode(
+          "view",
+          {
+            class: vue.normalizeClass(["bottom-sheet", { "show": $data.isVisible }])
+          },
+          [
+            vue.createElementVNode("view", { class: "sheet-content" }, [
+              vue.createElementVNode("view", { class: "sheet-header" }, [
+                vue.createElementVNode("text", { class: "sheet-title" }, "Add Link"),
+                vue.createElementVNode("button", {
+                  class: "done-btn",
+                  onClick: _cache[0] || (_cache[0] = (...args) => $options.done && $options.done(...args))
+                }, "Done")
+              ]),
+              vue.createCommentVNode(" 输入框 "),
+              vue.createElementVNode("view", { class: "sheet-body" }, [
+                vue.withDirectives(vue.createElementVNode(
+                  "textarea",
+                  {
+                    class: "input-box",
+                    placeholder: "Website link https://...",
+                    "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $data.inputValue = $event),
+                    onFocus: _cache[2] || (_cache[2] = (...args) => $options.onFocus && $options.onFocus(...args)),
+                    onBlur: _cache[3] || (_cache[3] = (...args) => $options.onBlur && $options.onBlur(...args))
+                  },
+                  null,
+                  544
+                  /* NEED_HYDRATION, NEED_PATCH */
+                ), [
+                  [vue.vModelText, $data.inputValue]
+                ]),
+                vue.createElementVNode("view", { class: "button-container" }, [
+                  vue.createElementVNode("button", {
+                    class: "action-button add-folder",
+                    onClick: _cache[4] || (_cache[4] = (...args) => $options.toggleFolderList && $options.toggleFolderList(...args))
+                  }, "➕ Shared Folder"),
+                  vue.createElementVNode("button", {
+                    class: "action-button add-tag",
+                    onClick: _cache[5] || (_cache[5] = (...args) => $options.toggleTagList && $options.toggleTagList(...args))
+                  }, "➕ Add Tag")
+                ])
+              ])
+            ]),
+            vue.createCommentVNode(" 文件夹选项列表 "),
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["bottom-sheet folder-list-container", { "show": $data.isFolderListVisible }])
+              },
+              [
+                vue.createElementVNode("view", { class: "sheet-content" }, [
+                  vue.createElementVNode("view", { class: "sheet-header sticky" }, [
+                    vue.createElementVNode("text", { class: "sheet-title" }, "Select Folder"),
+                    vue.createElementVNode("button", {
+                      class: "done-btn",
+                      onClick: _cache[6] || (_cache[6] = (...args) => $options.toggleFolderList && $options.toggleFolderList(...args))
+                    }, "Close")
+                  ]),
+                  vue.createElementVNode("view", { class: "sheet-body" }, [
+                    vue.createVNode(_component_uni_section, {
+                      title: "Folder Name",
+                      type: "line"
+                    }, {
+                      default: vue.withCtx(() => [
+                        vue.createElementVNode("view", { class: "example-body" }, [
+                          vue.createVNode(_component_uni_combox, {
+                            candidates: $data.candidates,
+                            placeholder: "Select your folder",
+                            modelValue: $data.city,
+                            "onUpdate:modelValue": _cache[7] || (_cache[7] = ($event) => $data.city = $event)
+                          }, null, 8, ["candidates", "modelValue"]),
+                          vue.createElementVNode("view", { class: "result-box" }, [
+                            vue.createElementVNode(
+                              "text",
+                              null,
+                              "Selected: " + vue.toDisplayString($data.city),
+                              1
+                              /* TEXT */
+                            )
+                          ])
+                        ])
+                      ]),
+                      _: 1
+                      /* STABLE */
+                    })
+                  ])
+                ])
+              ],
+              2
+              /* CLASS */
+            ),
+            vue.createCommentVNode(" 标签选项列表 "),
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["bottom-sheet tag-list-container", { "show": $data.isTagListVisible }])
+              },
+              [
+                vue.createElementVNode("view", { class: "sheet-content" }, [
+                  vue.createElementVNode("view", { class: "sheet-header sticky" }, [
+                    vue.createElementVNode("text", { class: "sheet-title" }, "Add Tag"),
+                    vue.createElementVNode("button", {
+                      class: "done-btn",
+                      onClick: _cache[8] || (_cache[8] = (...args) => $options.toggleTagList && $options.toggleTagList(...args))
+                    }, "Close")
+                  ]),
+                  vue.createElementVNode("view", { class: "sheet-body" }, [
+                    vue.createVNode(_component_uni_section, {
+                      title: "Tag Name",
+                      type: "line"
+                    }, {
+                      default: vue.withCtx(() => [
+                        vue.createElementVNode("view", { class: "uni-px-5 uni-pb-5" }, [
+                          vue.createElementVNode(
+                            "view",
+                            { class: "text" },
+                            "Selected: " + vue.toDisplayString(JSON.stringify($data.checkbox2)),
+                            1
+                            /* TEXT */
+                          ),
+                          vue.createVNode(_component_uni_data_checkbox, {
+                            class: "a",
+                            mode: "button",
+                            multiple: "",
+                            modelValue: $data.checkbox2,
+                            "onUpdate:modelValue": _cache[9] || (_cache[9] = ($event) => $data.checkbox2 = $event),
+                            localdata: $data.hobby
+                          }, null, 8, ["modelValue", "localdata"])
+                        ])
+                      ]),
+                      _: 1
+                      /* STABLE */
+                    })
+                  ])
+                ])
+              ],
+              2
+              /* CLASS */
+            )
+          ],
+          2
+          /* CLASS */
+        )
+      ])
+    ]);
+  }
+  const Add = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-0b59ba63"], ["__file", "D:/project/CoHub/CoHub/pages/grid/add.vue"]]);
+  const _sfc_main$S = {
+    components: {
+      CmdNavBar,
+      Add
+    },
+    data() {
+      return {
+        goodsList: [
+          {
+            id: 1,
+            image: "/static/pic/13.png",
+            name: "👋 Title for Collection 1",
+            tags: ["Tag1", "Tag2"],
+            date: "2022/01/09",
+            link: "https://example.com/link1"
+          },
+          {
+            id: 2,
+            image: "/static/pic/12.png",
+            name: "👋 Title for Collection 2",
+            tags: ["Tag1", "Tag3"],
+            date: "2022/01/09",
+            link: "https://example.com/link2"
+          }
+        ],
+        goodsNav: 1,
+        selectedItems: [],
+        isSelectionMode: false,
+        isEditPopupVisible: false,
+        isSharePopupVisible: false,
+        currentLink: "",
+        newTitle: "",
+        editingItemId: null,
+        startX: 0,
+        startY: 0
+      };
+    },
+    onLoad() {
+    },
+    computed: {
+      isAnyItemSelected() {
+        return this.selectedItems.length > 0;
+      }
+    },
+    methods: {
+      handleClick(id) {
+        if (this.isSelectionMode) {
+          this.toggleSelectItem(id);
+        } else {
+          uni.navigateTo({
+            url: "/pages/webview/webview?url=https://www.baidu.com"
+          });
+        }
+      },
+      handleLongPress(id) {
+        this.isSelectionMode = true;
+        this.toggleSelectItem(id);
+      },
+      toggleSelectItem(id) {
+        const index = this.selectedItems.indexOf(id);
+        if (index === -1) {
+          this.selectedItems.push(id);
+        } else {
+          this.selectedItems.splice(index, 1);
+        }
+      },
+      addGoods() {
+        formatAppLog("log", "at pages/grid/grid.vue:184", "tap add new Collections");
+        this.$refs.addComponent.open();
+      },
+      startSwipe(event, id) {
+        this.startX = event.touches[0].pageX;
+        this.startY = event.touches[0].pageY;
+      },
+      moveSwipe(event, id) {
+        const deltaX = event.touches[0].pageX - this.startX;
+        if (Math.abs(deltaX) > 50) {
+          this.selectItem(id);
+        }
+      },
+      endSwipe(event, id) {
+        this.startX = 0;
+        this.startY = 0;
+      },
+      selectAll() {
+        this.selectedItems = this.goodsList.map((item) => item.id);
+      },
+      done() {
+        this.selectedItems = [];
+        this.isSelectionMode = false;
+      },
+      editSelected() {
+        if (this.selectedItems.length === 1) {
+          this.editingItemId = this.selectedItems[0];
+          const item = this.goodsList.find((item2) => item2.id === this.editingItemId);
+          this.newTitle = item.name;
+          this.isEditPopupVisible = true;
+        } else {
+          alert("Please select exactly one item to edit.");
+        }
+      },
+      saveTitle() {
+        if (this.editingItemId !== null) {
+          const item = this.goodsList.find((item2) => item2.id === this.editingItemId);
+          item.name = this.newTitle;
+          this.isEditPopupVisible = false;
+          this.newTitle = "";
+          this.editingItemId = null;
+        }
+      },
+      closeEditPopup() {
+        this.isEditPopupVisible = false;
+        this.newTitle = "";
+        this.editingItemId = null;
+      },
+      shareLink() {
+        if (this.selectedItems.length === 1) {
+          const item = this.goodsList.find((item2) => item2.id === this.selectedItems[0]);
+          this.currentLink = item.link;
+          this.isSharePopupVisible = true;
+        } else {
+          alert("Please select exactly one item to share.");
+        }
+      },
+      copyLink() {
+        const selectedItem = this.goodsList.find((item) => item.id === this.selectedItems[0]);
+        if (selectedItem) {
+          const link = selectedItem.link;
+          this.copyToClipboard(link);
+          alert("Link copied to clipboard");
+        }
+        this.isSharePopupVisible = false;
+      },
+      copyToClipboard(text) {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).catch((err) => {
+            formatAppLog("error", "at pages/grid/grid.vue:253", "Could not copy text: ", err);
+          });
+        } else {
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          try {
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+          } catch (err) {
+            formatAppLog("error", "at pages/grid/grid.vue:265", "Could not copy text: ", err);
+          }
+          document.body.removeChild(textArea);
+        }
+      },
+      closeSharePopup() {
+        this.isSharePopupVisible = false;
+      },
+      archiveSelected() {
+        formatAppLog("log", "at pages/grid/grid.vue:274", "Archive selected items", this.selectedItems);
+      },
+      deleteSelected() {
+        formatAppLog("log", "at pages/grid/grid.vue:277", "Delete selected items", this.selectedItems);
+        this.goodsList = this.goodsList.filter((item) => !this.selectedItems.includes(item.id));
+        this.selectedItems = [];
+      },
+      addItem(newItem) {
+        this.goodsList.push(newItem);
+      }
+    }
+  };
+  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    const _component_add = vue.resolveComponent("add");
+    return vue.openBlock(), vue.createElementBlock(
+      vue.Fragment,
+      null,
+      [
+        vue.createElementVNode("view", { class: "nav-bar-placeholder" }),
+        vue.createElementVNode("view", { class: "pages font-style" }, [
+          vue.createCommentVNode(" 顶部导航栏 "),
+          $options.isAnyItemSelected ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 0,
+            class: "top-bar"
+          }, [
+            vue.createElementVNode("button", {
+              class: "nav-button left",
+              onClick: _cache[0] || (_cache[0] = (...args) => $options.selectAll && $options.selectAll(...args))
+            }, "SELECT ALL"),
+            vue.createElementVNode("button", {
+              class: "nav-button right",
+              onClick: _cache[1] || (_cache[1] = (...args) => $options.done && $options.done(...args))
+            }, "DONE")
+          ])) : vue.createCommentVNode("v-if", true),
+          vue.createCommentVNode(" 收藏夹名 "),
+          vue.createElementVNode("view", { class: "goods-header-wrap" }, [
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["goods-header-item", { "goods-header-item-action": 1 == $data.goodsNav }])
+              },
+              "Folder Name",
+              2
+              /* CLASS */
+            )
+          ]),
+          vue.createCommentVNode(" 收藏页面 "),
+          (vue.openBlock(true), vue.createElementBlock(
+            vue.Fragment,
+            null,
+            vue.renderList($data.goodsList, (item, index) => {
+              return vue.openBlock(), vue.createElementBlock("view", {
+                key: item.id,
+                class: vue.normalizeClass(["goods-item-wrap", { "selected": $data.selectedItems.includes(item.id) }]),
+                onClick: ($event) => $options.handleClick(item.id),
+                onLongpress: ($event) => $options.handleLongPress(item.id)
+              }, [
+                vue.createElementVNode("image", {
+                  src: item.image,
+                  class: "goods-image"
+                }, null, 8, ["src"]),
+                vue.createElementVNode("view", { class: "goods-content-wrap" }, [
+                  vue.createElementVNode(
+                    "view",
+                    { class: "goods-name" },
+                    vue.toDisplayString(item.name),
+                    1
+                    /* TEXT */
+                  ),
+                  vue.createElementVNode("view", { class: "goods-stock-wrap" }, [
+                    vue.createElementVNode("view", { class: "goods-stock" }, "Main contents extracted from the collection.")
+                  ]),
+                  vue.createElementVNode("view", { class: "goods-option" }, [
+                    (vue.openBlock(true), vue.createElementBlock(
+                      vue.Fragment,
+                      null,
+                      vue.renderList(item.tags, (tag, tagIndex) => {
+                        return vue.openBlock(), vue.createElementBlock(
+                          "view",
+                          {
+                            key: tagIndex,
+                            class: "goods-option-item"
+                          },
+                          " # " + vue.toDisplayString(tag),
+                          1
+                          /* TEXT */
+                        );
+                      }),
+                      128
+                      /* KEYED_FRAGMENT */
+                    ))
+                  ]),
+                  vue.createElementVNode("view", { class: "footer" }, [
+                    vue.createElementVNode(
+                      "view",
+                      { class: "data" },
+                      vue.toDisplayString(item.date),
+                      1
+                      /* TEXT */
+                    )
+                  ])
+                ])
+              ], 42, ["onClick", "onLongpress"]);
+            }),
+            128
+            /* KEYED_FRAGMENT */
+          )),
+          vue.createCommentVNode(" 底部操作栏 "),
+          $options.isAnyItemSelected ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 1,
+            class: "bottom-bar"
+          }, [
+            vue.createElementVNode("view", { class: "action-buttons" }, [
+              vue.createElementVNode("view", { class: "action-button" }, [
+                vue.createVNode(_component_uni_icons, {
+                  type: "compose",
+                  size: "30"
+                }),
+                vue.createElementVNode("button", {
+                  class: "bottom-bar-button",
+                  onClick: _cache[2] || (_cache[2] = (...args) => $options.editSelected && $options.editSelected(...args))
+                }, "EDIT")
+              ]),
+              vue.createElementVNode("view", { class: "action-button" }, [
+                vue.createVNode(_component_uni_icons, {
+                  type: "link",
+                  size: "30"
+                }),
+                vue.createElementVNode("button", {
+                  class: "bottom-bar-button",
+                  onClick: _cache[3] || (_cache[3] = (...args) => $options.shareLink && $options.shareLink(...args))
+                }, "SHARED")
+              ]),
+              vue.createElementVNode("view", { class: "action-button" }, [
+                vue.createVNode(_component_uni_icons, {
+                  type: "download",
+                  size: "30"
+                }),
+                vue.createElementVNode("button", {
+                  class: "bottom-bar-button",
+                  onClick: _cache[4] || (_cache[4] = (...args) => $options.archiveSelected && $options.archiveSelected(...args))
+                }, "ARCHIVED")
+              ]),
+              vue.createElementVNode("view", { class: "action-button" }, [
+                vue.createVNode(_component_uni_icons, {
+                  type: "trash",
+                  size: "30",
+                  color: "red"
+                }),
+                vue.createElementVNode("button", {
+                  class: "bottom-bar-buttond",
+                  onClick: _cache[5] || (_cache[5] = (...args) => $options.deleteSelected && $options.deleteSelected(...args))
+                }, "DELETE")
+              ])
+            ])
+          ])) : vue.createCommentVNode("v-if", true),
+          vue.createCommentVNode(" 添加 "),
+          vue.createElementVNode("view", { class: "publish-goods-wrap" }, [
+            vue.createElementVNode("view", {
+              class: "publish-goods-btn",
+              onClick: _cache[6] || (_cache[6] = ($event) => $options.addGoods())
+            }, "➕")
+          ]),
+          vue.createCommentVNode(" 灰色背景部分 "),
+          vue.createElementVNode("div", { class: "gray-background" }),
+          vue.createCommentVNode(" 编辑弹窗 "),
+          $data.isEditPopupVisible ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 2,
+            class: "edit-popup"
+          }, [
+            vue.createElementVNode("view", { class: "edit-popup-content" }, [
+              vue.withDirectives(vue.createElementVNode(
+                "input",
+                {
+                  "onUpdate:modelValue": _cache[7] || (_cache[7] = ($event) => $data.newTitle = $event),
+                  placeholder: "Enter new title"
+                },
+                null,
+                512
+                /* NEED_PATCH */
+              ), [
+                [vue.vModelText, $data.newTitle]
+              ]),
+              vue.createElementVNode("view", { class: "row" }, [
+                vue.createElementVNode("button", {
+                  onClick: _cache[8] || (_cache[8] = (...args) => $options.saveTitle && $options.saveTitle(...args))
+                }, "Save"),
+                vue.createElementVNode("button", {
+                  onClick: _cache[9] || (_cache[9] = (...args) => $options.closeEditPopup && $options.closeEditPopup(...args))
+                }, "Cancel")
+              ])
+            ])
+          ])) : vue.createCommentVNode("v-if", true),
+          vue.createCommentVNode(" 分享链接弹窗 "),
+          $data.isSharePopupVisible ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 3,
+            class: "share-popup"
+          }, [
+            vue.createElementVNode("view", { class: "share-popup-content" }, [
+              vue.createElementVNode("view", { class: "share-popup-top" }, [
+                vue.createElementVNode("image", {
+                  src: "/static/pic/link.png",
+                  class: "share-popup-image"
+                }),
+                vue.createElementVNode("view", { class: "share-popup-text" }, [
+                  vue.createElementVNode("view", { class: "invite-text" }, "Shared Link"),
+                  vue.createElementVNode("view", { class: "link-text" }, "Anyone with the link")
+                ])
+              ])
+            ]),
+            vue.createElementVNode("button", {
+              class: "share-popup-button",
+              onClick: _cache[10] || (_cache[10] = (...args) => $options.copyLink && $options.copyLink(...args))
+            }, "Share Link"),
+            vue.createElementVNode("button", {
+              class: "close-button",
+              onClick: _cache[11] || (_cache[11] = (...args) => $options.closeSharePopup && $options.closeSharePopup(...args))
+            }, "✖")
+          ])) : vue.createCommentVNode("v-if", true)
+        ]),
+        vue.createVNode(_component_add, {
+          ref: "addComponent",
+          onAddItem: $options.addItem
+        }, null, 8, ["onAddItem"])
+      ],
+      64
+      /* STABLE_FRAGMENT */
+    );
+  }
+  const PagesGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-22222d69"], ["__file", "D:/project/CoHub/CoHub/pages/grid/grid.vue"]]);
+  const _sfc_main$R = {
+    name: "UniStatusBar",
+    data() {
+      return {
+        statusBarHeight: uni.getSystemInfoSync().statusBarHeight + "px"
+      };
+    }
+  };
+  function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        style: vue.normalizeStyle({ height: $data.statusBarHeight }),
+        class: "uni-status-bar"
+      },
+      [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ],
+      4
+      /* STYLE */
+    );
+  }
+  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-7920e3e0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+  const getVal = (val) => typeof val === "number" ? val + "px" : val;
+  const _sfc_main$Q = {
+    name: "UniNavBar",
+    components: {
+      statusBar
+    },
+    emits: ["clickLeft", "clickRight", "clickTitle"],
+    props: {
+      dark: {
+        type: Boolean,
+        default: false
+      },
+      title: {
+        type: String,
+        default: ""
+      },
+      leftText: {
+        type: String,
+        default: ""
+      },
+      rightText: {
+        type: String,
+        default: ""
+      },
+      leftIcon: {
+        type: String,
+        default: ""
+      },
+      rightIcon: {
+        type: String,
+        default: ""
+      },
+      fixed: {
+        type: [Boolean, String],
+        default: false
+      },
+      color: {
+        type: String,
+        default: ""
+      },
+      backgroundColor: {
+        type: String,
+        default: ""
+      },
+      statusBar: {
+        type: [Boolean, String],
+        default: false
+      },
+      shadow: {
+        type: [Boolean, String],
+        default: false
+      },
+      border: {
+        type: [Boolean, String],
+        default: true
+      },
+      height: {
+        type: [Number, String],
+        default: 44
+      },
+      leftWidth: {
+        type: [Number, String],
+        default: 60
+      },
+      rightWidth: {
+        type: [Number, String],
+        default: 60
+      },
+      stat: {
+        type: [Boolean, String],
+        default: ""
+      }
+    },
+    computed: {
+      themeBgColor() {
+        if (this.dark) {
+          if (this.backgroundColor) {
+            return this.backgroundColor;
+          } else {
+            return this.dark ? "#333" : "#FFF";
+          }
+        }
+        return this.backgroundColor || "#FFF";
+      },
+      themeColor() {
+        if (this.dark) {
+          if (this.color) {
+            return this.color;
+          } else {
+            return this.dark ? "#fff" : "#333";
+          }
+        }
+        return this.color || "#333";
+      },
+      navbarHeight() {
+        return getVal(this.height);
+      },
+      leftIconWidth() {
+        return getVal(this.leftWidth);
+      },
+      rightIconWidth() {
+        return getVal(this.rightWidth);
+      }
+    },
+    mounted() {
+      if (uni.report && this.stat && this.title !== "") {
+        uni.report("title", this.title);
+      }
+    },
+    methods: {
+      onClickLeft() {
+        this.$emit("clickLeft");
+      },
+      onClickRight() {
+        this.$emit("clickRight");
+      },
+      onClickTitle() {
+        this.$emit("clickTitle");
+      }
+    }
+  };
+  function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_status_bar = vue.resolveComponent("status-bar");
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass(["uni-navbar", { "uni-dark": $props.dark, "uni-nvue-fixed": $props.fixed }])
+      },
+      [
+        vue.createElementVNode(
+          "view",
+          {
+            class: vue.normalizeClass(["uni-navbar__content", { "uni-navbar--fixed": $props.fixed, "uni-navbar--shadow": $props.shadow, "uni-navbar--border": $props.border }]),
+            style: vue.normalizeStyle({ "background-color": $options.themeBgColor, "border-bottom-color": $options.themeColor })
+          },
+          [
+            $props.statusBar ? (vue.openBlock(), vue.createBlock(_component_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
+            vue.createElementVNode(
+              "view",
+              {
+                style: vue.normalizeStyle({ color: $options.themeColor, backgroundColor: $options.themeBgColor, height: $options.navbarHeight }),
+                class: "uni-navbar__header"
+              },
+              [
+                vue.createElementVNode(
+                  "view",
+                  {
+                    onClick: _cache[0] || (_cache[0] = (...args) => $options.onClickLeft && $options.onClickLeft(...args)),
+                    class: "uni-navbar__header-btns uni-navbar__header-btns-left",
+                    style: vue.normalizeStyle({ width: $options.leftIconWidth })
+                  },
+                  [
+                    vue.renderSlot(_ctx.$slots, "left", {}, () => [
+                      $props.leftIcon.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", {
+                        key: 0,
+                        class: "uni-navbar__content_view"
+                      }, [
+                        vue.createVNode(_component_uni_icons, {
+                          color: $options.themeColor,
+                          type: $props.leftIcon,
+                          size: "20"
+                        }, null, 8, ["color", "type"])
+                      ])) : vue.createCommentVNode("v-if", true),
+                      $props.leftText.length ? (vue.openBlock(), vue.createElementBlock(
+                        "view",
+                        {
+                          key: 1,
+                          class: vue.normalizeClass([{ "uni-navbar-btn-icon-left": !$props.leftIcon.length > 0 }, "uni-navbar-btn-text"])
+                        },
+                        [
+                          vue.createElementVNode(
+                            "text",
+                            {
+                              style: vue.normalizeStyle({ color: $options.themeColor, fontSize: "12px" })
+                            },
+                            vue.toDisplayString($props.leftText),
+                            5
+                            /* TEXT, STYLE */
+                          )
+                        ],
+                        2
+                        /* CLASS */
+                      )) : vue.createCommentVNode("v-if", true)
+                    ], true)
+                  ],
+                  4
+                  /* STYLE */
+                ),
+                vue.createElementVNode("view", {
+                  class: "uni-navbar__header-container",
+                  onClick: _cache[1] || (_cache[1] = (...args) => $options.onClickTitle && $options.onClickTitle(...args))
+                }, [
+                  vue.renderSlot(_ctx.$slots, "default", {}, () => [
+                    $props.title.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 0,
+                      class: "uni-navbar__header-container-inner"
+                    }, [
+                      vue.createElementVNode(
+                        "text",
+                        {
+                          class: "uni-nav-bar-text uni-ellipsis-1",
+                          style: vue.normalizeStyle({ color: $options.themeColor })
+                        },
+                        vue.toDisplayString($props.title),
+                        5
+                        /* TEXT, STYLE */
+                      )
+                    ])) : vue.createCommentVNode("v-if", true)
+                  ], true)
+                ]),
+                vue.createElementVNode(
+                  "view",
+                  {
+                    onClick: _cache[2] || (_cache[2] = (...args) => $options.onClickRight && $options.onClickRight(...args)),
+                    class: "uni-navbar__header-btns uni-navbar__header-btns-right",
+                    style: vue.normalizeStyle({ width: $options.rightIconWidth })
+                  },
+                  [
+                    vue.renderSlot(_ctx.$slots, "right", {}, () => [
+                      $props.rightIcon.length ? (vue.openBlock(), vue.createElementBlock("view", { key: 0 }, [
+                        vue.createVNode(_component_uni_icons, {
+                          color: $options.themeColor,
+                          type: $props.rightIcon,
+                          size: "22"
+                        }, null, 8, ["color", "type"])
+                      ])) : vue.createCommentVNode("v-if", true),
+                      $props.rightText.length && !$props.rightIcon.length ? (vue.openBlock(), vue.createElementBlock("view", {
+                        key: 1,
+                        class: "uni-navbar-btn-text"
+                      }, [
+                        vue.createElementVNode(
+                          "text",
+                          {
+                            class: "uni-nav-bar-right-text",
+                            style: vue.normalizeStyle({ color: $options.themeColor })
+                          },
+                          vue.toDisplayString($props.rightText),
+                          5
+                          /* TEXT, STYLE */
+                        )
+                      ])) : vue.createCommentVNode("v-if", true)
+                    ], true)
+                  ],
+                  4
+                  /* STYLE */
+                )
+              ],
+              4
+              /* STYLE */
+            )
+          ],
+          6
+          /* CLASS, STYLE */
+        ),
+        $props.fixed ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 0,
+          class: "uni-navbar__placeholder"
+        }, [
+          $props.statusBar ? (vue.openBlock(), vue.createBlock(_component_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
+          vue.createElementVNode(
+            "view",
+            {
+              class: "uni-navbar__placeholder-view",
+              style: vue.normalizeStyle({ height: $options.navbarHeight })
+            },
+            null,
+            4
+            /* STYLE */
+          )
+        ])) : vue.createCommentVNode("v-if", true)
+      ],
+      2
+      /* CLASS */
+    );
+  }
+  const __easycom_0$a = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__scopeId", "data-v-26544265"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
+  function pad(str, length = 2) {
+    str += "";
+    while (str.length < length) {
+      str = "0" + str;
+    }
+    return str.slice(-length);
+  }
+  const parser = {
+    yyyy: (dateObj) => {
+      return pad(dateObj.year, 4);
+    },
+    yy: (dateObj) => {
+      return pad(dateObj.year);
+    },
+    MM: (dateObj) => {
+      return pad(dateObj.month);
+    },
+    M: (dateObj) => {
+      return dateObj.month;
+    },
+    dd: (dateObj) => {
+      return pad(dateObj.day);
+    },
+    d: (dateObj) => {
+      return dateObj.day;
+    },
+    hh: (dateObj) => {
+      return pad(dateObj.hour);
+    },
+    h: (dateObj) => {
+      return dateObj.hour;
+    },
+    mm: (dateObj) => {
+      return pad(dateObj.minute);
+    },
+    m: (dateObj) => {
+      return dateObj.minute;
+    },
+    ss: (dateObj) => {
+      return pad(dateObj.second);
+    },
+    s: (dateObj) => {
+      return dateObj.second;
+    },
+    SSS: (dateObj) => {
+      return pad(dateObj.millisecond, 3);
+    },
+    S: (dateObj) => {
+      return dateObj.millisecond;
+    }
+  };
+  function getDate(time) {
+    if (time instanceof Date) {
+      return time;
+    }
+    switch (typeof time) {
+      case "string": {
+        if (time.indexOf("T") > -1) {
+          return new Date(time);
+        }
+        return new Date(time.replace(/-/g, "/"));
+      }
+      default:
+        return new Date(time);
+    }
+  }
+  function formatDate(date, format2 = "yyyy/MM/dd hh:mm:ss") {
+    if (!date && date !== 0) {
+      return "";
+    }
+    date = getDate(date);
+    const dateObj = {
+      year: date.getFullYear(),
+      month: date.getMonth() + 1,
+      day: date.getDate(),
+      hour: date.getHours(),
+      minute: date.getMinutes(),
+      second: date.getSeconds(),
+      millisecond: date.getMilliseconds()
+    };
+    const tokenRegExp = /yyyy|yy|MM|M|dd|d|hh|h|mm|m|ss|s|SSS|SS|S/;
+    let flag = true;
+    let result = format2;
+    while (flag) {
+      flag = false;
+      result = result.replace(tokenRegExp, function(matched) {
+        flag = true;
+        return parser[matched](dateObj);
+      });
+    }
+    return result;
+  }
+  function friendlyDate(time, {
+    locale = "zh",
+    threshold = [6e4, 36e5],
+    format: format2 = "yyyy/MM/dd hh:mm:ss"
+  }) {
+    if (time === "-") {
+      return time;
+    }
+    if (!time && time !== 0) {
+      return "";
+    }
+    const localeText = {
+      zh: {
+        year: "年",
+        month: "月",
+        day: "天",
+        hour: "小时",
+        minute: "分钟",
+        second: "秒",
+        ago: "前",
+        later: "后",
+        justNow: "刚刚",
+        soon: "马上",
+        template: "{num}{unit}{suffix}"
+      },
+      en: {
+        year: "year",
+        month: "month",
+        day: "day",
+        hour: "hour",
+        minute: "minute",
+        second: "second",
+        ago: "ago",
+        later: "later",
+        justNow: "just now",
+        soon: "soon",
+        template: "{num} {unit} {suffix}"
+      }
+    };
+    const text = localeText[locale] || localeText.zh;
+    let date = getDate(time);
+    let ms2 = date.getTime() - Date.now();
+    let absMs = Math.abs(ms2);
+    if (absMs < threshold[0]) {
+      return ms2 < 0 ? text.justNow : text.soon;
+    }
+    if (absMs >= threshold[1]) {
+      return formatDate(date, format2);
+    }
+    let num;
+    let unit;
+    let suffix = text.later;
+    if (ms2 < 0) {
+      suffix = text.ago;
+      ms2 = -ms2;
+    }
+    const seconds = Math.floor(ms2 / 1e3);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    const months = Math.floor(days / 30);
+    const years = Math.floor(months / 12);
+    switch (true) {
+      case years > 0:
+        num = years;
+        unit = text.year;
+        break;
+      case months > 0:
+        num = months;
+        unit = text.month;
+        break;
+      case days > 0:
+        num = days;
+        unit = text.day;
+        break;
+      case hours > 0:
+        num = hours;
+        unit = text.hour;
+        break;
+      case minutes > 0:
+        num = minutes;
+        unit = text.minute;
+        break;
+      default:
+        num = seconds;
+        unit = text.second;
+        break;
+    }
+    if (locale === "en") {
+      if (num === 1) {
+        num = "a";
+      } else {
+        unit += "s";
+      }
+    }
+    return text.template.replace(/{\s*num\s*}/g, num + "").replace(/{\s*unit\s*}/g, unit).replace(
+      /{\s*suffix\s*}/g,
+      suffix
+    );
+  }
+  const _sfc_main$P = {
+    name: "uniDateformat",
+    props: {
+      date: {
+        type: [Object, String, Number],
+        default() {
+          return "-";
+        }
+      },
+      locale: {
+        type: String,
+        default: "zh"
+      },
+      threshold: {
+        type: Array,
+        default() {
+          return [0, 0];
+        }
+      },
+      format: {
+        type: String,
+        default: "yyyy/MM/dd hh:mm:ss"
+      },
+      // refreshRate使用不当可能导致性能问题，谨慎使用
+      refreshRate: {
+        type: [Number, String],
+        default: 0
+      }
+    },
+    data() {
+      return {
+        refreshMark: 0
+      };
+    },
+    computed: {
+      dateShow() {
+        this.refreshMark;
+        return friendlyDate(this.date, {
+          locale: this.locale,
+          threshold: this.threshold,
+          format: this.format
+        });
+      }
+    },
+    watch: {
+      refreshRate: {
+        handler() {
+          this.setAutoRefresh();
+        },
+        immediate: true
+      }
+    },
+    methods: {
+      refresh() {
+        this.refreshMark++;
+      },
+      setAutoRefresh() {
+        clearInterval(this.refreshInterval);
+        if (this.refreshRate) {
+          this.refreshInterval = setInterval(() => {
+            this.refresh();
+          }, parseInt(this.refreshRate));
+        }
+      }
+    }
+  };
+  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "text",
+      null,
+      vue.toDisplayString($options.dateShow),
+      1
+      /* TEXT */
+    );
+  }
+  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue"]]);
+  const _sfc_main$O = {
+    name: "UniBadge",
+    emits: ["click"],
+    props: {
+      type: {
+        type: String,
+        default: "error"
+      },
+      inverted: {
+        type: Boolean,
+        default: false
+      },
+      isDot: {
+        type: Boolean,
+        default: false
+      },
+      maxNum: {
+        type: Number,
+        default: 99
+      },
+      absolute: {
+        type: String,
+        default: ""
+      },
+      offset: {
+        type: Array,
+        default() {
+          return [0, 0];
+        }
+      },
+      text: {
+        type: [String, Number],
+        default: ""
+      },
+      size: {
+        type: String,
+        default: "small"
+      },
+      customStyle: {
+        type: Object,
+        default() {
+          return {};
+        }
+      }
+    },
+    data() {
+      return {};
+    },
+    computed: {
+      width() {
+        return String(this.text).length * 8 + 12;
+      },
+      classNames() {
+        const {
+          inverted,
+          type,
+          size,
+          absolute
+        } = this;
+        return [
+          inverted ? "uni-badge--" + type + "-inverted" : "",
+          "uni-badge--" + type,
+          "uni-badge--" + size,
+          absolute ? "uni-badge--absolute" : ""
+        ].join(" ");
+      },
+      positionStyle() {
+        if (!this.absolute)
+          return {};
+        let w2 = this.width / 2, h2 = 10;
+        if (this.isDot) {
+          w2 = 5;
+          h2 = 5;
+        }
+        const x = `${-w2 + this.offset[0]}px`;
+        const y2 = `${-h2 + this.offset[1]}px`;
+        const whiteList = {
+          rightTop: {
+            right: x,
+            top: y2
+          },
+          rightBottom: {
+            right: x,
+            bottom: y2
+          },
+          leftBottom: {
+            left: x,
+            bottom: y2
+          },
+          leftTop: {
+            left: x,
+            top: y2
+          }
+        };
+        const match = whiteList[this.absolute];
+        return match ? match : whiteList["rightTop"];
+      },
+      dotStyle() {
+        if (!this.isDot)
+          return {};
+        return {
+          width: "10px",
+          minWidth: "0",
+          height: "10px",
+          padding: "0",
+          borderRadius: "10px"
+        };
+      },
+      displayValue() {
+        const {
+          isDot,
+          text,
+          maxNum
+        } = this;
+        return isDot ? "" : Number(text) > maxNum ? `${maxNum}+` : text;
+      }
+    },
+    methods: {
+      onClick() {
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-badge--x" }, [
+      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
+      $props.text ? (vue.openBlock(), vue.createElementBlock(
+        "text",
+        {
+          key: 0,
+          class: vue.normalizeClass([$options.classNames, "uni-badge"]),
+          style: vue.normalizeStyle([$options.positionStyle, $props.customStyle, $options.dotStyle]),
+          onClick: _cache[0] || (_cache[0] = ($event) => $options.onClick())
+        },
+        vue.toDisplayString($options.displayValue),
+        7
+        /* TEXT, CLASS, STYLE */
+      )) : vue.createCommentVNode("v-if", true)
+    ]);
+  }
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-c97cb896"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-badge/components/uni-badge/uni-badge.vue"]]);
+  const _sfc_main$N = {
+    name: "UniListItem",
+    emits: ["click", "switchChange"],
+    props: {
+      direction: {
+        type: String,
+        default: "row"
+      },
+      title: {
+        type: String,
+        default: ""
+      },
+      note: {
+        type: String,
+        default: ""
+      },
+      ellipsis: {
+        type: [Number, String],
+        default: 0
+      },
+      disabled: {
+        type: [Boolean, String],
+        default: false
+      },
+      clickable: {
+        type: Boolean,
+        default: false
+      },
+      showArrow: {
+        type: [Boolean, String],
+        default: false
+      },
+      link: {
+        type: [Boolean, String],
+        default: false
+      },
+      to: {
+        type: String,
+        default: ""
+      },
+      showBadge: {
+        type: [Boolean, String],
+        default: false
+      },
+      showSwitch: {
+        type: [Boolean, String],
+        default: false
+      },
+      switchChecked: {
+        type: [Boolean, String],
+        default: false
+      },
+      badgeText: {
+        type: String,
+        default: ""
+      },
+      badgeType: {
+        type: String,
+        default: "success"
+      },
+      badgeStyle: {
+        type: Object,
+        default() {
+          return {};
+        }
+      },
+      rightText: {
+        type: String,
+        default: ""
+      },
+      thumb: {
+        type: String,
+        default: ""
+      },
+      thumbSize: {
+        type: String,
+        default: "base"
+      },
+      showExtraIcon: {
+        type: [Boolean, String],
+        default: false
+      },
+      extraIcon: {
+        type: Object,
+        default() {
+          return {
+            type: "",
+            color: "#000000",
+            size: 20,
+            customPrefix: ""
+          };
+        }
+      },
+      border: {
+        type: Boolean,
+        default: true
+      },
+      customStyle: {
+        type: Object,
+        default() {
+          return {
+            padding: "",
+            backgroundColor: "#FFFFFF"
+          };
+        }
+      },
+      keepScrollPosition: {
+        type: Boolean,
+        default: false
+      }
+    },
+    watch: {
+      "customStyle.padding": {
+        handler(padding) {
+          if (typeof padding == "number") {
+            padding += "";
+          }
+          let paddingArr = padding.split(" ");
+          if (paddingArr.length === 1) {
+            const allPadding = paddingArr[0];
+            this.padding = {
+              "top": allPadding,
+              "right": allPadding,
+              "bottom": allPadding,
+              "left": allPadding
+            };
+          } else if (paddingArr.length === 2) {
+            const [verticalPadding, horizontalPadding] = paddingArr;
+            this.padding = {
+              "top": verticalPadding,
+              "right": horizontalPadding,
+              "bottom": verticalPadding,
+              "left": horizontalPadding
+            };
+          } else if (paddingArr.length === 4) {
+            const [topPadding, rightPadding, bottomPadding, leftPadding] = paddingArr;
+            this.padding = {
+              "top": topPadding,
+              "right": rightPadding,
+              "bottom": bottomPadding,
+              "left": leftPadding
+            };
+          }
+        },
+        immediate: true
+      }
+    },
+    // inject: ['list'],
+    data() {
+      return {
+        isFirstChild: false,
+        padding: {
+          top: "",
+          right: "",
+          bottom: "",
+          left: ""
+        }
+      };
+    },
+    mounted() {
+      this.list = this.getForm();
+      if (this.list) {
+        if (!this.list.firstChildAppend) {
+          this.list.firstChildAppend = true;
+          this.isFirstChild = true;
+        }
+      }
+    },
+    methods: {
+      /**
+       * 获取父元素实例
+       */
+      getForm(name = "uniList") {
+        let parent = this.$parent;
+        let parentName = parent.$options.name;
+        while (parentName !== name) {
+          parent = parent.$parent;
+          if (!parent)
+            return false;
+          parentName = parent.$options.name;
+        }
+        return parent;
+      },
+      onClick() {
+        if (this.to !== "") {
+          this.openPage();
+          return;
+        }
+        if (this.clickable || this.link) {
+          this.$emit("click", {
+            data: {}
+          });
+        }
+      },
+      onSwitchChange(e2) {
+        this.$emit("switchChange", e2.detail);
+      },
+      openPage() {
+        if (["navigateTo", "redirectTo", "reLaunch", "switchTab"].indexOf(this.link) !== -1) {
+          this.pageApi(this.link);
+        } else {
+          this.pageApi("navigateTo");
+        }
+      },
+      pageApi(api) {
+        let callback = {
+          url: this.to,
+          success: (res) => {
+            this.$emit("click", {
+              data: res
+            });
+          },
+          fail: (err) => {
+            this.$emit("click", {
+              data: err
+            });
+          }
+        };
+        switch (api) {
+          case "navigateTo":
+            uni.navigateTo(callback);
+            break;
+          case "redirectTo":
+            uni.redirectTo(callback);
+            break;
+          case "reLaunch":
+            uni.reLaunch(callback);
+            break;
+          case "switchTab":
+            uni.switchTab(callback);
+            break;
+          default:
+            uni.navigateTo(callback);
+        }
+      }
+    }
+  };
+  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    const _component_uni_badge = resolveEasycom(vue.resolveDynamicComponent("uni-badge"), __easycom_1$4);
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: vue.normalizeClass([{ "uni-list-item--disabled": $props.disabled }, "uni-list-item"]),
+      style: vue.normalizeStyle({ "background-color": $props.customStyle.backgroundColor }),
+      "hover-class": !$props.clickable && !$props.link || $props.disabled || $props.showSwitch ? "" : "uni-list-item--hover",
+      onClick: _cache[1] || (_cache[1] = (...args) => $options.onClick && $options.onClick(...args))
+    }, [
+      !$data.isFirstChild ? (vue.openBlock(), vue.createElementBlock(
+        "view",
+        {
+          key: 0,
+          class: vue.normalizeClass(["border--left", { "uni-list--border": $props.border }])
+        },
+        null,
+        2
+        /* CLASS */
+      )) : vue.createCommentVNode("v-if", true),
+      vue.createElementVNode(
+        "view",
+        {
+          class: vue.normalizeClass(["uni-list-item__container", { "container--right": $props.showArrow || $props.link, "flex--direction": $props.direction === "column" }]),
+          style: vue.normalizeStyle({ paddingTop: $data.padding.top, paddingLeft: $data.padding.left, paddingRight: $data.padding.right, paddingBottom: $data.padding.bottom })
+        },
+        [
+          vue.renderSlot(_ctx.$slots, "header", {}, () => [
+            vue.createElementVNode("view", { class: "uni-list-item__header" }, [
+              $props.thumb ? (vue.openBlock(), vue.createElementBlock("view", {
+                key: 0,
+                class: "uni-list-item__icon"
+              }, [
+                vue.createElementVNode("image", {
+                  src: $props.thumb,
+                  class: vue.normalizeClass(["uni-list-item__icon-img", ["uni-list--" + $props.thumbSize]])
+                }, null, 10, ["src"])
+              ])) : $props.showExtraIcon ? (vue.openBlock(), vue.createElementBlock("view", {
+                key: 1,
+                class: "uni-list-item__icon"
+              }, [
+                vue.createVNode(_component_uni_icons, {
+                  customPrefix: $props.extraIcon.customPrefix,
+                  color: $props.extraIcon.color,
+                  size: $props.extraIcon.size,
+                  type: $props.extraIcon.type
+                }, null, 8, ["customPrefix", "color", "size", "type"])
+              ])) : vue.createCommentVNode("v-if", true)
+            ])
+          ], true),
+          vue.renderSlot(_ctx.$slots, "body", {}, () => [
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["uni-list-item__content", { "uni-list-item__content--center": $props.thumb || $props.showExtraIcon || $props.showBadge || $props.showSwitch }])
+              },
+              [
+                $props.title ? (vue.openBlock(), vue.createElementBlock(
+                  "text",
+                  {
+                    key: 0,
+                    class: vue.normalizeClass(["uni-list-item__content-title", [$props.ellipsis !== 0 && $props.ellipsis <= 2 ? "uni-ellipsis-" + $props.ellipsis : ""]])
+                  },
+                  vue.toDisplayString($props.title),
+                  3
+                  /* TEXT, CLASS */
+                )) : vue.createCommentVNode("v-if", true),
+                $props.note ? (vue.openBlock(), vue.createElementBlock(
+                  "text",
+                  {
+                    key: 1,
+                    class: "uni-list-item__content-note"
+                  },
+                  vue.toDisplayString($props.note),
+                  1
+                  /* TEXT */
+                )) : vue.createCommentVNode("v-if", true)
+              ],
+              2
+              /* CLASS */
+            )
+          ], true),
+          vue.renderSlot(_ctx.$slots, "footer", {}, () => [
+            $props.rightText || $props.showBadge || $props.showSwitch ? (vue.openBlock(), vue.createElementBlock(
+              "view",
+              {
+                key: 0,
+                class: vue.normalizeClass(["uni-list-item__extra", { "flex--justify": $props.direction === "column" }])
+              },
+              [
+                $props.rightText ? (vue.openBlock(), vue.createElementBlock(
+                  "text",
+                  {
+                    key: 0,
+                    class: "uni-list-item__extra-text"
+                  },
+                  vue.toDisplayString($props.rightText),
+                  1
+                  /* TEXT */
+                )) : vue.createCommentVNode("v-if", true),
+                $props.showBadge ? (vue.openBlock(), vue.createBlock(_component_uni_badge, {
+                  key: 1,
+                  type: $props.badgeType,
+                  text: $props.badgeText,
+                  "custom-style": $props.badgeStyle
+                }, null, 8, ["type", "text", "custom-style"])) : vue.createCommentVNode("v-if", true),
+                $props.showSwitch ? (vue.openBlock(), vue.createElementBlock("switch", {
+                  key: 2,
+                  disabled: $props.disabled,
+                  checked: $props.switchChecked,
+                  onChange: _cache[0] || (_cache[0] = (...args) => $options.onSwitchChange && $options.onSwitchChange(...args))
+                }, null, 40, ["disabled", "checked"])) : vue.createCommentVNode("v-if", true)
+              ],
+              2
+              /* CLASS */
+            )) : vue.createCommentVNode("v-if", true)
+          ], true)
+        ],
+        6
+        /* CLASS, STYLE */
+      ),
+      $props.showArrow || $props.link ? (vue.openBlock(), vue.createBlock(_component_uni_icons, {
+        key: 1,
+        size: 16,
+        class: "uni-icon-wrapper",
+        color: "#bbb",
+        type: "arrowright"
+      })) : vue.createCommentVNode("v-if", true)
+    ], 14, ["hover-class"]);
+  }
+  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-c7524739"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue"]]);
+  const _sfc_main$M = {
+    name: "uniList",
+    "mp-weixin": {
+      options: {
+        multipleSlots: false
+      }
+    },
+    props: {
+      stackFromEnd: {
+        type: Boolean,
+        default: false
+      },
+      enableBackToTop: {
+        type: [Boolean, String],
+        default: false
+      },
+      scrollY: {
+        type: [Boolean, String],
+        default: false
+      },
+      border: {
+        type: Boolean,
+        default: true
+      },
+      renderReverse: {
+        type: Boolean,
+        default: false
+      }
+    },
+    // provide() {
+    // 	return {
+    // 		list: this
+    // 	};
+    // },
+    created() {
+      this.firstChildAppend = false;
+    },
+    methods: {
+      loadMore(e2) {
+        this.$emit("scrolltolower");
+      },
+      scroll(e2) {
+        this.$emit("scroll", e2);
+      }
+    }
+  };
+  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-list uni-border-top-bottom" }, [
+      $props.border ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: "uni-list--border-top"
+      })) : vue.createCommentVNode("v-if", true),
+      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
+      $props.border ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 1,
+        class: "uni-list--border-bottom"
+      })) : vue.createCommentVNode("v-if", true)
+    ]);
+  }
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__scopeId", "data-v-c2f1266a"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list/uni-list.vue"]]);
+  const en$2 = {
     "uniCloud.component.add.success": "Success",
     "uniCloud.component.update.success": "Success",
     "uniCloud.component.remove.showModal.title": "Tips",
@@ -5685,27 +7259,27 @@ ${i3}
     "uniCloud.component.remove.showModal.title": "提示",
     "uniCloud.component.remove.showModal.content": "是否删除该数据"
   };
-  const zhHans$4 = {
+  const zhHans$3 = {
     "uniCloud.component.add.success": "新增成功",
     "uniCloud.component.update.success": "修改成功",
     "uniCloud.component.remove.showModal.title": "提示",
     "uniCloud.component.remove.showModal.content": "是否删除该数据"
   };
-  const zhHant$2 = {
+  const zhHant$1 = {
     "uniCloud.component.add.success": "新增成功",
     "uniCloud.component.update.success": "修改成功",
     "uniCloud.component.remove.showModal.title": "提示",
     "uniCloud.component.remove.showModal.content": "是否刪除數據"
   };
-  const messages$4 = {
-    en: en$3,
+  const messages$3 = {
+    en: en$2,
     es,
     fr,
-    "zh-Hans": zhHans$4,
-    "zh-Hant": zhHant$2
+    "zh-Hans": zhHans$3,
+    "zh-Hant": zhHant$1
   };
   const isArray$1 = Array.isArray;
-  const { t: t$4 } = initVueI18n(messages$4);
+  const { t: t$3 } = initVueI18n(messages$3);
   const events = {
     load: "load",
     error: "error"
@@ -5732,7 +7306,7 @@ ${i3}
     "groupField",
     "distinct"
   ];
-  const _sfc_main$M = {
+  const _sfc_main$L = {
     name: "UniClouddb",
     setup(props) {
       const dataListRef = props.ssrKey ? props.getone ? shallowSsrRef(void 0, props.ssrKey) : ssrRef([], props.ssrKey) : props.getone ? shallowSsrRef(void 0, "KYCxN2REL530V0B8uaTYVg==") : ssrRef([], "h67sEE75CAbPOfQZgl4L6A==");
@@ -5978,7 +7552,7 @@ ${i3}
           success && success(res);
           if (showToast) {
             uni.showToast({
-              title: toastTitle || t$4("uniCloud.component.add.success")
+              title: toastTitle || t$3("uniCloud.component.add.success")
             });
           }
         }).catch((err) => {
@@ -6015,8 +7589,8 @@ ${i3}
           return;
         }
         uni.showModal({
-          title: confirmTitle || t$4("uniCloud.component.remove.showModal.title"),
-          content: confirmContent || t$4("uniCloud.component.remove.showModal.content"),
+          title: confirmTitle || t$3("uniCloud.component.remove.showModal.title"),
+          content: confirmContent || t$3("uniCloud.component.remove.showModal.content"),
           showCancel: true,
           success: (res) => {
             if (!res.confirm) {
@@ -6050,7 +7624,7 @@ ${i3}
           success && success(res);
           if (showToast) {
             uni.showToast({
-              title: toastTitle || t$4("uniCloud.component.update.success")
+              title: toastTitle || t$3("uniCloud.component.update.success")
             });
           }
         }).catch((err) => {
@@ -6241,7 +7815,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", null, [
       vue.renderSlot(_ctx.$slots, "default", {
         options: $props.options,
@@ -6253,7 +7827,7 @@ ${i3}
       })
     ]);
   }
-  const __easycom_4$3 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["__file", "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db.vue"]]);
+  const __easycom_4$3 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__file", "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db.vue"]]);
   var nvMask, nvImageMenu;
   class NvImageMenu {
     constructor(arg) {
@@ -6515,9 +8089,9 @@ ${i3}
   const uniShare$2 = new UniShare();
   const db$6 = Ws.database();
   const readNewsLog = db$6.collection("read-news-log");
-  const _sfc_main$L = {
+  const _sfc_main$K = {
     components: {
-      "uni-nav-bar": __easycom_0$b
+      "uni-nav-bar": __easycom_0$a
     },
     onBackPress({ from }) {
       if (from == "backbutton") {
@@ -6727,10 +8301,10 @@ ${i3}
       }
     }
   };
-  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_nav_bar = resolveEasycom(vue.resolveDynamicComponent("uni-nav-bar"), __easycom_0$b);
-    const _component_uni_dateformat = resolveEasycom(vue.resolveDynamicComponent("uni-dateformat"), __easycom_0$a);
-    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$9);
+  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_nav_bar = resolveEasycom(vue.resolveDynamicComponent("uni-nav-bar"), __easycom_0$a);
+    const _component_uni_dateformat = resolveEasycom(vue.resolveDynamicComponent("uni-dateformat"), __easycom_0$9);
+    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$8);
     const _component_uni_list = resolveEasycom(vue.resolveDynamicComponent("uni-list"), __easycom_1$3);
     const _component_unicloud_db = resolveEasycom(vue.resolveDynamicComponent("unicloud-db"), __easycom_4$3);
     return vue.openBlock(), vue.createElementBlock(
@@ -6845,7 +8419,7 @@ ${i3}
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesListDetail = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-495067d4"], ["__file", "D:/project/CoHub/CoHub/pages/list/detail.vue"]]);
+  const PagesListDetail = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__scopeId", "data-v-495067d4"], ["__file", "D:/project/CoHub/CoHub/pages/list/detail.vue"]]);
   class MPAnimation {
     constructor(options, _this) {
       this.options = options;
@@ -6958,7 +8532,7 @@ ${i3}
     clearTimeout(_this.timer);
     return new MPAnimation(option, _this);
   }
-  const _sfc_main$K = {
+  const _sfc_main$J = {
     name: "uniTransition",
     emits: ["click", "change"],
     props: {
@@ -7209,7 +8783,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.withDirectives((vue.openBlock(), vue.createElementBlock("view", {
       ref: "ani",
       animation: $data.animationData,
@@ -7222,8 +8796,8 @@ ${i3}
       [vue.vShow, $data.isShow]
     ]);
   }
-  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-transition/components/uni-transition/uni-transition.vue"]]);
-  const _sfc_main$J = {
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-transition/components/uni-transition/uni-transition.vue"]]);
+  const _sfc_main$I = {
     name: "uniPopup",
     components: {},
     emits: ["change", "maskClick"],
@@ -7573,8 +9147,8 @@ ${i3}
       }
     }
   };
-  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_transition = resolveEasycom(vue.resolveDynamicComponent("uni-transition"), __easycom_0$8);
+  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_transition = resolveEasycom(vue.resolveDynamicComponent("uni-transition"), __easycom_0$7);
     return $data.showPopup ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -7633,7 +9207,7 @@ ${i3}
       /* CLASS */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-4dd3c44b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-popup/components/uni-popup/uni-popup.vue"]]);
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-4dd3c44b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-popup/components/uni-popup/uni-popup.vue"]]);
   const ADType = {
     RewardedVideo: "RewardedVideo",
     FullScreenVideo: "FullScreenVideo"
@@ -7842,7 +9416,7 @@ ${i3}
   const db$5 = Ws.database();
   const signInTable = db$5.action("signIn").collection("opendb-sign-in");
   new Date((/* @__PURE__ */ new Date()).toLocaleDateString()).getTime();
-  const _sfc_main$I = {
+  const _sfc_main$H = {
     name: "uni-signIn",
     data() {
       return {
@@ -7967,8 +9541,8 @@ ${i3}
       }
     }
   };
-  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
+  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
     const _component_uni_popup = resolveEasycom(vue.resolveDynamicComponent("uni-popup"), __easycom_1$2);
     return vue.openBlock(), vue.createElementBlock("view", null, [
       vue.createVNode(
@@ -8081,8 +9655,8 @@ ${i3}
       )
     ]);
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-dc1d9ace"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue"]]);
-  const _sfc_main$H = {
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__scopeId", "data-v-dc1d9ace"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue"]]);
+  const _sfc_main$G = {
     name: "cloud-image",
     emits: ["click"],
     props: {
@@ -8138,7 +9712,7 @@ ${i3}
       };
     }
   };
-  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -8157,8 +9731,8 @@ ${i3}
       /* STYLE */
     );
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue"]]);
-  const _sfc_main$G = {
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue"]]);
+  const _sfc_main$F = {
     name: "UniGridItem",
     inject: ["grid"],
     props: {
@@ -8208,7 +9782,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
     return $data.width ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -8235,8 +9809,8 @@ ${i3}
       /* STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-7a807eb7"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue"]]);
-  const _sfc_main$F = {
+  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-7a807eb7"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue"]]);
+  const _sfc_main$E = {
     name: "UniGrid",
     emits: ["change"],
     props: {
@@ -8306,7 +9880,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "uni-grid-wrap" }, [
       vue.createElementVNode("view", {
         id: $data.elId,
@@ -8318,7 +9892,7 @@ ${i3}
       ], 14, ["id"])
     ]);
   }
-  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-07acefee"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid/uni-grid.vue"]]);
+  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-07acefee"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid/uni-grid.vue"]]);
   function callCheckVersion() {
     return new Promise((resolve, reject) => {
       plus.runtime.getProperty(plus.runtime.appid, function(widgetInfo) {
@@ -8602,7 +10176,7 @@ ${i3}
   const store = vue.reactive(data);
   const uniShare$1 = new UniShare();
   const db$3 = Ws.database();
-  const _sfc_main$E = {
+  const _sfc_main$D = {
     onBackPress({ from }) {
       if (from == "backbutton") {
         this.$nextTick(function() {
@@ -8889,13 +10463,13 @@ ${i3}
       }
     }
   };
-  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_sign_in = resolveEasycom(vue.resolveDynamicComponent("uni-sign-in"), __easycom_0$7);
-    const _component_cloud_image = resolveEasycom(vue.resolveDynamicComponent("cloud-image"), __easycom_0$6);
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
+  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_sign_in = resolveEasycom(vue.resolveDynamicComponent("uni-sign-in"), __easycom_0$6);
+    const _component_cloud_image = resolveEasycom(vue.resolveDynamicComponent("cloud-image"), __easycom_0$5);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
     const _component_uni_grid_item = resolveEasycom(vue.resolveDynamicComponent("uni-grid-item"), __easycom_3$3);
     const _component_uni_grid = resolveEasycom(vue.resolveDynamicComponent("uni-grid"), __easycom_4$2);
-    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$9);
+    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$8);
     const _component_uni_list = resolveEasycom(vue.resolveDynamicComponent("uni-list"), __easycom_1$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "center font-style" }, [
       vue.createVNode(
@@ -9056,7 +10630,7 @@ ${i3}
       ))
     ]);
   }
-  const PagesUcenterUcenter = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-b6546e32"], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/ucenter.vue"]]);
+  const PagesUcenterUcenter = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__scopeId", "data-v-b6546e32"], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/ucenter.vue"]]);
   function isTurnedOnPush() {
     var isOn = void 0;
     try {
@@ -9146,7 +10720,7 @@ ${i3}
     off: trunOffPush,
     setting
   };
-  const _sfc_main$D = {
+  const _sfc_main$C = {
     data() {
       return {
         pushServer,
@@ -9333,8 +10907,8 @@ ${i3}
       }
     }
   };
-  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$9);
+  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$8);
     const _component_uni_list = resolveEasycom(vue.resolveDynamicComponent("uni-list"), __easycom_1$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "content font-style" }, [
       vue.createCommentVNode(" 功能列表 "),
@@ -9468,192 +11042,7 @@ ${i3}
       ])
     ]);
   }
-  const PagesUcenterSettingsSettings = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/settings/settings.vue"]]);
-  const en$2 = {
-    "uni-load-more.contentdown": "Pull up to show more",
-    "uni-load-more.contentrefresh": "loading...",
-    "uni-load-more.contentnomore": "No more data"
-  };
-  const zhHans$3 = {
-    "uni-load-more.contentdown": "上拉显示更多",
-    "uni-load-more.contentrefresh": "正在加载...",
-    "uni-load-more.contentnomore": "没有更多数据了"
-  };
-  const zhHant$1 = {
-    "uni-load-more.contentdown": "上拉顯示更多",
-    "uni-load-more.contentrefresh": "正在加載...",
-    "uni-load-more.contentnomore": "沒有更多數據了"
-  };
-  const messages$3 = {
-    en: en$2,
-    "zh-Hans": zhHans$3,
-    "zh-Hant": zhHant$1
-  };
-  let platform;
-  setTimeout(() => {
-    platform = uni.getSystemInfoSync().platform;
-  }, 16);
-  const {
-    t: t$3
-  } = initVueI18n(messages$3);
-  const _sfc_main$C = {
-    name: "UniLoadMore",
-    emits: ["clickLoadMore"],
-    props: {
-      status: {
-        // 上拉的状态：more-loading前；loading-loading中；noMore-没有更多了
-        type: String,
-        default: "more"
-      },
-      showIcon: {
-        type: Boolean,
-        default: true
-      },
-      iconType: {
-        type: String,
-        default: "auto"
-      },
-      iconSize: {
-        type: Number,
-        default: 24
-      },
-      color: {
-        type: String,
-        default: "#777777"
-      },
-      contentText: {
-        type: Object,
-        default() {
-          return {
-            contentdown: "",
-            contentrefresh: "",
-            contentnomore: ""
-          };
-        }
-      },
-      showText: {
-        type: Boolean,
-        default: true
-      }
-    },
-    data() {
-      return {
-        webviewHide: false,
-        platform,
-        imgBase64: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzlBMzU3OTlEOUM0MTFFOUI0NTZDNERBQURBQzI4RkUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzlBMzU3OUFEOUM0MTFFOUI0NTZDNERBQURBQzI4RkUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDOUEzNTc5N0Q5QzQxMUU5QjQ1NkM0REFBREFDMjhGRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDOUEzNTc5OEQ5QzQxMUU5QjQ1NkM0REFBREFDMjhGRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pt+ALSwAAA6CSURBVHja1FsLkFZV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"
-      };
-    },
-    computed: {
-      iconSnowWidth() {
-        return (Math.floor(this.iconSize / 24) || 1) * 2;
-      },
-      contentdownText() {
-        return this.contentText.contentdown || t$3("uni-load-more.contentdown");
-      },
-      contentrefreshText() {
-        return this.contentText.contentrefresh || t$3("uni-load-more.contentrefresh");
-      },
-      contentnomoreText() {
-        return this.contentText.contentnomore || t$3("uni-load-more.contentnomore");
-      }
-    },
-    mounted() {
-      var pages2 = getCurrentPages();
-      var page = pages2[pages2.length - 1];
-      var currentWebview2 = page.$getAppWebview();
-      currentWebview2.addEventListener("hide", () => {
-        this.webviewHide = true;
-      });
-      currentWebview2.addEventListener("show", () => {
-        this.webviewHide = false;
-      });
-    },
-    methods: {
-      onClick() {
-        this.$emit("clickLoadMore", {
-          detail: {
-            status: this.status
-          }
-        });
-      }
-    }
-  };
-  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: "uni-load-more",
-      onClick: _cache[0] || (_cache[0] = (...args) => $options.onClick && $options.onClick(...args))
-    }, [
-      !$data.webviewHide && ($props.iconType === "circle" || $props.iconType === "auto" && $data.platform === "android") && $props.status === "loading" && $props.showIcon ? (vue.openBlock(), vue.createElementBlock(
-        "view",
-        {
-          key: 0,
-          style: vue.normalizeStyle({ width: $props.iconSize + "px", height: $props.iconSize + "px" }),
-          class: "uni-load-more__img uni-load-more__img--android-MP"
-        },
-        [
-          vue.createElementVNode(
-            "view",
-            {
-              class: "uni-load-more__img-icon",
-              style: vue.normalizeStyle({ borderTopColor: $props.color, borderTopWidth: $props.iconSize / 12 })
-            },
-            null,
-            4
-            /* STYLE */
-          ),
-          vue.createElementVNode(
-            "view",
-            {
-              class: "uni-load-more__img-icon",
-              style: vue.normalizeStyle({ borderTopColor: $props.color, borderTopWidth: $props.iconSize / 12 })
-            },
-            null,
-            4
-            /* STYLE */
-          ),
-          vue.createElementVNode(
-            "view",
-            {
-              class: "uni-load-more__img-icon",
-              style: vue.normalizeStyle({ borderTopColor: $props.color, borderTopWidth: $props.iconSize / 12 })
-            },
-            null,
-            4
-            /* STYLE */
-          )
-        ],
-        4
-        /* STYLE */
-      )) : !$data.webviewHide && $props.status === "loading" && $props.showIcon ? (vue.openBlock(), vue.createElementBlock(
-        "view",
-        {
-          key: 1,
-          style: vue.normalizeStyle({ width: $props.iconSize + "px", height: $props.iconSize + "px" }),
-          class: "uni-load-more__img uni-load-more__img--ios-H5"
-        },
-        [
-          vue.createElementVNode("image", {
-            src: $data.imgBase64,
-            mode: "widthFix"
-          }, null, 8, ["src"])
-        ],
-        4
-        /* STYLE */
-      )) : vue.createCommentVNode("v-if", true),
-      $props.showText ? (vue.openBlock(), vue.createElementBlock(
-        "text",
-        {
-          key: 2,
-          class: "uni-load-more__text",
-          style: vue.normalizeStyle({ color: $props.color })
-        },
-        vue.toDisplayString($props.status === "more" ? $options.contentdownText : $props.status === "loading" ? $options.contentrefreshText : $options.contentnomoreText),
-        5
-        /* TEXT, STYLE */
-      )) : vue.createCommentVNode("v-if", true)
-    ]);
-  }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__scopeId", "data-v-9245e42c"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-load-more/components/uni-load-more/uni-load-more.vue"]]);
+  const PagesUcenterSettingsSettings = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/settings/settings.vue"]]);
   const noData$1 = "No Data";
   const noNetwork$1 = "Network error";
   const toSet$1 = "Go to settings";
@@ -9763,7 +11152,7 @@ ${i3}
     }
   };
   function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_load_more = resolveEasycom(vue.resolveDynamicComponent("uni-load-more"), __easycom_0$5);
+    const _component_uni_load_more = resolveEasycom(vue.resolveDynamicComponent("uni-load-more"), __easycom_0$b);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -9864,8 +11253,8 @@ ${i3}
     }
   };
   function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_dateformat = resolveEasycom(vue.resolveDynamicComponent("uni-dateformat"), __easycom_0$a);
-    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$9);
+    const _component_uni_dateformat = resolveEasycom(vue.resolveDynamicComponent("uni-dateformat"), __easycom_0$9);
+    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$8);
     const _component_uni_list = resolveEasycom(vue.resolveDynamicComponent("uni-list"), __easycom_1$3);
     const _component_uni_load_state = resolveEasycom(vue.resolveDynamicComponent("uni-load-state"), __easycom_3$2);
     const _component_unicloud_db = resolveEasycom(vue.resolveDynamicComponent("unicloud-db"), __easycom_4$3);
@@ -14233,7 +15622,7 @@ ${i3}
     }
   };
   function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -15546,8 +16935,8 @@ ${i3}
     }
   };
   function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_cloud_image = resolveEasycom(vue.resolveDynamicComponent("cloud-image"), __easycom_0$6);
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
+    const _component_cloud_image = resolveEasycom(vue.resolveDynamicComponent("cloud-image"), __easycom_0$5);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
     return vue.openBlock(), vue.createElementBlock(
       "button",
       {
@@ -16111,7 +17500,7 @@ ${i3}
   };
   function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_id_pages_avatar = resolveEasycom(vue.resolveDynamicComponent("uni-id-pages-avatar"), __easycom_0$3);
-    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$9);
+    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$8);
     const _component_uni_list = resolveEasycom(vue.resolveDynamicComponent("uni-list"), __easycom_1$3);
     const _component_uni_popup_dialog = resolveEasycom(vue.resolveDynamicComponent("uni-popup-dialog"), __easycom_0$2);
     const _component_uni_popup = resolveEasycom(vue.resolveDynamicComponent("uni-popup"), __easycom_1$2);
@@ -16671,7 +18060,7 @@ ${i3}
     }
   };
   function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$9);
+    const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$8);
     const _component_uni_list = resolveEasycom(vue.resolveDynamicComponent("uni-list"), __easycom_1$3);
     const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_1);
     const _component_uni_forms_item = resolveEasycom(vue.resolveDynamicComponent("uni-forms-item"), __easycom_2);
@@ -17514,7 +18903,7 @@ ${i3}
     }
   };
   function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$c);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
     return vue.openBlock(), vue.createElementBlock("view", { class: "captcha-box" }, [
       vue.createElementVNode("view", { class: "captcha-img-box" }, [
         $data.loging ? (vue.openBlock(), vue.createBlock(_component_uni_icons, {

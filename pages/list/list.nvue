@@ -17,6 +17,7 @@
 			avatarUrl="/static/pic/LeftAccessory.png" >
 		</cmd-nav-bar>
 		
+		
 		<!-- 搜索功能 -->
 		<view class="uni-search-box">
 			<uni-search-bar v-model="keyword" ref="searchBar" radius="20" cancelButton="none" disabled
