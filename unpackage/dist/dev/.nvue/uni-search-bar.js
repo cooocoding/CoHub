@@ -70,6 +70,12 @@ const pages = [
     }
   },
   {
+    path: "pages/gridmul/gridmul",
+    style: {
+      navigationStyle: "custom"
+    }
+  },
+  {
     path: "pages/list/search/search",
     style: {
       navigationBarTitleText: "搜索"
@@ -159,6 +165,12 @@ const pages = [
     style: {
       navigationStyle: "custom",
       enablePullDownRefresh: false
+    }
+  },
+  {
+    path: "pages/gridmul/friends/friends",
+    style: {
+      navigationBarTitleText: "Friends under the folder"
     }
   }
 ];
@@ -296,19 +308,25 @@ const tabBar = {
       pagePath: "pages/list/list",
       iconPath: "static/tabbar/list.png",
       selectedIconPath: "static/tabbar/list_active.png",
-      text: "列表"
+      text: "list"
     },
     {
       pagePath: "pages/grid/grid",
       iconPath: "static/tabbar/grid.png",
       selectedIconPath: "static/tabbar/grid_active.png",
-      text: "宫格"
+      text: "grid"
+    },
+    {
+      pagePath: "pages/gridmul/gridmul",
+      iconPath: "static/tabbar/grid.png",
+      selectedIconPath: "static/tabbar/grid_active.png",
+      text: "gridmul"
     },
     {
       pagePath: "pages/ucenter/ucenter",
       iconPath: "static/tabbar/me.png",
       selectedIconPath: "static/tabbar/me_active.png",
-      text: "我的"
+      text: "mine"
     }
   ]
 };
@@ -616,7 +634,7 @@ class v {
 function I(e2) {
   return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
 }
-const S = true, b = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.21.144.1",\n        "172.20.10.4",\n        "172.20.10.14"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
+const S = true, b = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "172.20.10.14",\n        "172.19.160.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
 let O = "";
 try {
   O = "__UNI__8301740";
@@ -4264,10 +4282,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
 const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue"]]);
 export {
   Ws as W,
-  __easycom_1 as _,
+  __easycom_0 as _,
   requireNativePlugin as a,
-  ssrRef as b,
-  __easycom_0 as c,
+  __easycom_1 as b,
+  ssrRef as c,
   formatAppLog as f,
   initVueI18n as i,
   resolveEasycom as r,

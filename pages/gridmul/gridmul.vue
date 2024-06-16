@@ -10,8 +10,13 @@
 			
 		<!-- 收藏夹名 -->
 		<view class="goods-header-wrap">
-			<view class="goods-header-item" :class="{'goods-header-item-action' : 1 == goodsNav}" >Folder Name</view>
+			<view class="goods-header-item" :class="{'goods-header-item-action' : 1 == goodsNav}" >Shared Folder Name</view>
 		</view> 
+		
+		<!-- 新添加的按钮 -->
+		<view class="folder-friends-button" @click="navigateToFriends">
+		  {{ friendsCount }} friends under the folder
+		</view>
 
 		<!-- 收藏页面 -->
 		<view 
@@ -105,18 +110,18 @@
 		</view>
 		
 	</view>
-	    <add ref="addComponent" @add-item="addItem"></add>
+	    <addmul ref="addComponent" @add-item="addItem"></addmul>
 </template>
 
 <script>
 	import CmdIcon from '@/components/cmd-icon/cmd-icon.vue';
 	import CmdNavBar from '@/components/cmd-nav-bar/cmd-nav-bar.vue';
-	import Add from './add.vue';
+	import Addmul from './addmul.vue';
 
 	export default {
 			components: {
 				CmdNavBar,
-				Add,
+				Addmul,
 		},
 		data() {
 			return {
@@ -146,6 +151,7 @@
 				currentLink: '',
 				newTitle: '',
 				editingItemId: null,
+				friendsCount: 3,
 		        startX: 0,
 		        startY: 0
 			}
@@ -159,6 +165,11 @@
 	      }
 	    },
 		methods: {
+			navigateToFriends() {
+			      uni.navigateTo({
+			        url: '/pages/gridmul/friends/friends'
+			      });
+			    },
 			handleClick(id) {
 				if (this.isSelectionMode) {
 				    this.toggleSelectItem(id);
@@ -286,6 +297,21 @@
 </script>
 
 <style scoped>
+	.folder-friends-button {
+	  margin-top: 10px;
+	  margin-left: 13px;
+	  width: 325px;
+	  height: 23px;
+	  background: #FFFFFF;
+	  color: black;
+	  border-radius: 10px;
+	  padding: 10px 20px;
+	  font-size: 16px;
+	  cursor: pointer;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}
 	.pages {
 		background-color: #F2F2F6;
 	}
@@ -533,7 +559,6 @@
 	  justify-content: center;
 	}
 
-
 	.edit-popup {
 	  position: fixed;
 	  width: 250px;
@@ -569,7 +594,6 @@
 		display: flex;
 		flex-direction: row;
 	}
-
 	.edit-popup-content view{
 	  height: 20px;
 	  width: 60px;

@@ -1,4 +1,4 @@
-import { i as initVueI18n, s as shallowSsrRef, b as ssrRef, W as Ws, r as resolveEasycom, c as __easycom_0, f as formatAppLog, _ as __easycom_1$1 } from "../../../uni-search-bar.js";
+import { i as initVueI18n, s as shallowSsrRef, c as ssrRef, W as Ws, r as resolveEasycom, _ as __easycom_0, f as formatAppLog, b as __easycom_1$1 } from "../../../uni-search-bar.js";
 import { getCurrentInstance, onMounted, openBlock, createElementBlock, renderSlot, normalizeClass, normalizeStyle, toDisplayString, createCommentVNode, resolveDynamicComponent, resolveComponent, createElementVNode, createVNode, createBlock, Fragment, renderList, withCtx } from "vue";
 import { _ as _export_sfc } from "../../../_plugin-vue_export-helper.js";
 const en = {

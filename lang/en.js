@@ -1,5 +1,5 @@
 export default {
-	tabbar:'List,Grid,contacts,Mine',
+	tabbar:'List,Grid,Gridmul,Mine',
 	agreementsTitle:'User service agreement,Privacy policy',
 	common: {
 		wechatFriends: "friends",
@@ -44,6 +44,14 @@ export default {
 	},
 	grid: {
 		grid: "Grid Assembly",
+		visibleToAll: "Visible to all",
+		invisibleToTourists: "Invisible to tourists",
+		adminVisible: "Admin Visible",
+		clickTip: "Click the",
+		clickTipGrid: "Grid",
+	},
+	gridmul: {
+		gridmul: "Grid Assembly",
 		visibleToAll: "Visible to all",
 		invisibleToTourists: "Invisible to tourists",
 		adminVisible: "Admin Visible",
