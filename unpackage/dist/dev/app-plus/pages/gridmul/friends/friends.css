@@ -1,6 +1,18 @@
 
 .container {
+	  background-color: #F2F2F6; 
+	  padding: 0;
+}
+.content-wrap {
 	  padding: 20px;
+	  background-color: #F2F2F6; 
+	  min-height: 100vh;
+}
+.friend-list-container {
+	  background-color: #fff;
+	  padding: 20px;
+	  border-radius: 10px;
+	  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .friend-item-wrap {
 	  margin-bottom: 15px;
@@ -9,24 +21,32 @@
 	  display: flex;
 	  align-items: center;
 	  padding: 10px 0;
+	  margin-top: -15px;
 }
 .friend-image {
-	  width: 40px;
-	  height: 40px;
+	  width: 35px;
+	  height: 35px;
 	  margin-right: 10px;
 }
 .friend-name {
-	  font-size: 18px;
+	  font-size: 16px;
 	  color: #000;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
 }
 .separator {
 	  height: 1px;
 	  background-color: #e0e0e0;
 	  margin: 0 -20px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
 }
 .add-friend-item {
 	  color: blue;
 	  cursor: pointer;
+	  margin-bottom: -15px;
 }
 	/* Share popup styles */
 .share-popup {
@@ -122,4 +142,18 @@
 	  display: flex;
       align-items: center;
 	  justify-content: center;
+}
+.exit-button {
+    width: 94%;
+    height: 27px;
+    padding: 10px;
+    margin-top: 30px;
+    background-color: #fff;
+    color: #ff4d4d;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

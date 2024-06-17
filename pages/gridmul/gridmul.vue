@@ -15,24 +15,41 @@
 		
 		<!-- 新添加的按钮 -->
 		<view class="folder-friends-button" @click="navigateToFriends">
-		  {{ friendsCount }} friends under the folder
+		  <view class="avatars">
+			<image class="avatar" v-for="(friend, index) in friends.slice(0, 3)" :key="index" :src="friend.image" />
+		  </view>
+		  <text class="button-text">{{ friendsCount }} friends under the folder</text>
+		  <text class="card-count">{{ goodsList.length }} cards</text>
+		  <uni-icons type="right" size="20"></uni-icons>
 		</view>
+		
+	    <!-- 筛选 -->
+	    <view class="control-bar">
+		    <view class="control-button" :class="{ active: sortByLatest }" @click="toggleSortByLatest">
+			  <uni-icons type="refreshempty" size="20"></uni-icons>
+			      Latest
+		    </view>
+		    <view class="control-buttontext" :class="{ active: isListView }" @click="toggleView">
+				<uni-icons :type="isListView ? 'list' : 'tune'" size="20"></uni-icons>
+		            {{ isListView ? 'List' : 'Filter' }}
+	        </view>
+	    </view>
 
 		<!-- 收藏页面 -->
 		<view 
-			v-for="(item, index) in goodsList" 
+			v-for="(item, index) in sortedGoodsList" 
 			:key="item.id"
 			class="goods-item-wrap"
 			:class="{'selected': selectedItems.includes(item.id)}"
 			@click="handleClick(item.id)"
 			@longpress="handleLongPress(item.id)"
 		  >
-			<image :src="item.image" class="goods-image" />
+			<image v-if="!isListView" :src="item.image" class="goods-image" />
 
 			<view class="goods-content-wrap">
 				<view class="goods-name">{{ item.name }}</view>
 
-				<view class="goods-stock-wrap">
+				<view v-if="!isListView" class="goods-stock-wrap">
 					<view class="goods-stock">Main contents extracted from the collection.</view>
 				</view>
 
@@ -125,12 +142,19 @@
 		},
 		data() {
 			return {
+		      friends: [
+		        { image: '/static/pic/LeftAccessory.png', name: 'Friend 1' },
+		        { image: '/static/pic/Ellipse 178.png', name: 'Friend 2' },
+		        { image: '/static/pic/Ellipse 177.png', name: 'Friend 3' },
+		        { image: '/static/pic/Ellipse 178.png', name: 'Friend 4' }
+		      ],
+		      friendsCount: 4,
 				goodsList: [{
 						id: 1,
 						image: "/static/pic/13.png",
 						name: "👋 Title for Collection 1",
 						tags: ["Tag1", "Tag2"],
-						date: "2022/01/09",
+						date: "2021/01/09",
 						link: "https://example.com/link1"
 					},
 					{
@@ -153,7 +177,9 @@
 				editingItemId: null,
 				friendsCount: 3,
 		        startX: 0,
-		        startY: 0
+		        startY: 0,
+				sortByLatest: true,
+				isListView: false,
 			}
 		},
 		onLoad() {
@@ -162,8 +188,20 @@
 	    computed: {
 	      isAnyItemSelected() {
 	        return this.selectedItems.length > 0;
-	      }
-	    },
+	      },
+	    
+		sortedGoodsList() {
+		  let sortedList = [...this.goodsList];
+		  if (this.sortByLatest) {
+			// 按日期倒序排序
+			sortedList.sort((a, b) => new Date(b.date) - new Date(a.date));
+		  } else {
+			// 按标题字母排序
+			sortedList.sort((a, b) => a.name.localeCompare(b.name));
+		  }
+		  return sortedList;
+		}
+	  },
 		methods: {
 			navigateToFriends() {
 			      uni.navigateTo({
@@ -291,7 +329,13 @@
 			},
 		    addItem(newItem) {
 		      this.goodsList.push(newItem);
-		    }
+		    },
+		    toggleSortByLatest() {
+		      this.sortByLatest = !this.sortByLatest;
+		    },
+		    toggleView() {
+		      this.isListView = !this.isListView;
+		    },
 		}
 	}
 </script>
@@ -300,18 +344,93 @@
 	.folder-friends-button {
 	  margin-top: 10px;
 	  margin-left: 13px;
-	  width: 325px;
+	  width: 330px;
 	  height: 23px;
 	  background: #FFFFFF;
 	  color: black;
 	  border-radius: 10px;
 	  padding: 10px 20px;
-	  font-size: 16px;
+	  font-size: 14px;
 	  cursor: pointer;
 	  display: flex;
 	  align-items: center;
 	  justify-content: center;
+	  position: relative;
 	}
+	.avatars {
+	  margin-left: 7px;
+	  display: flex;
+	  position: absolute;
+	  left: 10px;
+	  margin-right: 7px;
+	}
+	
+	.avatar {
+	  width: 30px;
+	  height: 30px;
+	  border-radius: 50%;
+	  border: 2px solid #fff;
+	  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	  margin-left: -10px;
+	}
+	
+	.button-text {
+	  margin-left: 40px;
+	  flex: 1;
+	  text-align: center;
+	  font-size: 14px;
+	}
+	 
+	.card-count {
+	  font-size: 12px;
+	  margin-right: 2px;
+	  color: #7D7D7D;
+	}
+	
+	.control-bar {
+	  width: 85%;
+      height: 14px;
+	  margin-left: 18px;
+	  margin-top: 10px;
+	  border-radius: 40rpx;
+	  background-color: #E4E4E5;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  padding: 12px;
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+	.control-button {
+	  width: 95%;
+	  height: 14px;
+	  border-radius: 35rpx;
+	  font-size: 14px;
+	  cursor: pointer;
+	  padding: 8px 16px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  background-color: #E4E4E5;
+	}
+	.control-button.active {
+	  background-color: #ffffff;
+	}
+	.control-buttontext {
+	  width: 95%;
+	  height: 14px;
+	  border-radius: 40rpx;
+	  font-size: 14px;
+	  cursor: pointer;
+	  padding: 8px 16px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  background-color: #E4E4E5;
+	}
+	.control-buttontext.active {
+	  background-color: #E4E4E5;
+	}
+	
 	.pages {
 		background-color: #F2F2F6;
 	}
@@ -407,7 +526,7 @@
 	}
 
 	.nav-bar-placeholder {
-	  height: 52px; /* 导航栏的高度 */
+	  height: 52px; 
 	}
 
 	.goods-header-item {
@@ -527,7 +646,7 @@
 	}
 	
 	.action-buttons .bottom-bar-button uni-icons {
-	    margin-bottom: 1rpx; /* 图标与文本之间的间距 */
+	    margin-bottom: 1rpx; 
 	    color: #fff;
 	}
 	.bottom-bar-button {

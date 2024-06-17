@@ -53,6 +53,15 @@
                     <view class="sheet-body">
                             <uni-section title="Tag Name" type="line">
                                 <view class="uni-px-5 uni-pb-5">
+									<view class="input-with-button">
+			                                    <input 
+			                                        type="text" 
+			                                        v-model="newTag" 
+			                                        placeholder="Enter your new tag" 
+			                                        class="tag-input"
+			                                    />
+												<button @click="addNewTag" class="add-tag-button">Done</button>
+									</view>
                                     <view class="text">Selected: {{JSON.stringify(checkbox2)}}</view>
                                     <uni-data-checkbox class="a" mode="button" multiple v-model="checkbox2" :localdata="hobby"></uni-data-checkbox>
                                 </view>
@@ -76,6 +85,7 @@ export default {
 			isTagListVisible: false,
             candidates: ['Folder 1', 'Folder 2', 'Folder 3', 'Folder 4', 'Folder 5', 'Folder 6', 'Folder 7'],
 			city: '',
+			newTag: '',
             checkbox2: [0],
 			selectedTags: [],
             hobby: [
@@ -112,6 +122,15 @@ export default {
             }
             this.isTagListVisible = !this.isTagListVisible;
         },
+    addNewTag() {
+      const trimmedTag = this.newTag.trim();
+      if (trimmedTag) {
+        const newValue = this.hobby.length; 
+        this.hobby.push({ text: trimmedTag, value: newValue });
+        this.checkbox2.push(newValue); 
+        this.newTag = ''; 
+      }
+    },
         addTagFromInput() {
             if (this.newTag.trim()) {
                 this.tags.push(this.newTag.trim());
@@ -387,5 +406,34 @@ export default {
 }
 .a{
 	padding-left: 25px;
+}
+.input-with-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.tag-input {
+  flex: 1;
+  margin-left: -10px;
+  width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.add-tag-button {	
+  margin-left: 10px;
+  font-size: 32rpx;
+  height: 72rpx ;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10rpx 20rpx;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-tag-button:hover {
+  background-color: #0056b3;
 }
 </style>

@@ -1,18 +1,23 @@
 <template>
   <view class="container font-style">
-    <view v-for="(friend, index) in friends" :key="index" class="friend-item-wrap">
-      <view class="friend-item" @longpress="handleLongPress(index)">
-        <image class="friend-image" :src="friend.image" />
-        <text class="friend-name">{{ friend.name }}</text>
+    <view class="content-wrap">
+      <view class="friend-list-container">
+        <view v-for="(friend, index) in friends" :key="index" class="friend-item-wrap">
+          <view class="friend-item" @longpress="handleLongPress(index)">
+            <image class="friend-image" :src="friend.image" />
+            <text class="friend-name">{{ friend.name }}</text>
+          </view>
+          <view v-if="index < friends.length" class="separator"></view>
+        </view>
+        <view class="add-friend-item" @click="showAddFriendModal">
+          <image class="friend-image" src="/static/pic/Plus.png" />
+          <text class="friend-name">Add friends</text>
+        </view>
       </view>
-  
-      <view v-if="index < friends.length" class="separator"></view>
-    </view>
-    <view class="add-friend-item" @click="showAddFriendModal">
-      <image class="friend-image" src="/static/pic/Plus.png" />
-      <text class="friend-name">Add friends</text>
-    </view>
-
+	  <view class="exit-button" @click="exitButton">Exit the folder</view>
+    </view> 
+	
+	
     <!-- 分享链接弹窗 -->
     <view class="share-popup" v-if="isSharePopupVisible">
       <view class="share-popup-content">
@@ -25,7 +30,7 @@
         </view>
       </view>
       <button class="share-popup-button" @click="copyLink">Share Link</button>
-      <button class="close-button" @click="closeSharePopup">✖</button>
+      <view class="close-button" @click="closeSharePopup">✖</view>
     </view>
 	
     <!-- 编辑/删除弹窗 -->
@@ -99,13 +104,28 @@ export default {
       }
       this.closeEditPopup();
     },
+    exitFolder() {
+      // 
+    },
   }
 };
 </script>
 
 <style>
 	.container {
+	  background-color: #F2F2F6; 
+	  padding: 0;
+	}
+	.content-wrap {
 	  padding: 20px;
+	  background-color: #F2F2F6; 
+	  min-height: 100vh;
+	}
+	.friend-list-container {
+	  background-color: #fff;
+	  padding: 20px;
+	  border-radius: 10px;
+	  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	}
 	.friend-item-wrap {
 	  margin-bottom: 15px;
@@ -114,24 +134,32 @@ export default {
 	  display: flex;
 	  align-items: center;
 	  padding: 10px 0;
+	  margin-top: -15px;
 	}
 	.friend-image {
-	  width: 40px;
-	  height: 40px;
+	  width: 35px;
+	  height: 35px;
 	  margin-right: 10px;
 	}
 	.friend-name {
-	  font-size: 18px;
+	  font-size: 16px;
 	  color: #000;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
 	}
 	.separator {
 	  height: 1px;
 	  background-color: #e0e0e0;
 	  margin: 0 -20px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
 	}
 	.add-friend-item {
 	  color: blue;
 	  cursor: pointer;
+	  margin-bottom: -15px;
 	}
 	/* Share popup styles */
 	.share-popup {
@@ -235,4 +263,18 @@ export default {
       align-items: center;
 	  justify-content: center;
 	}
+  .exit-button {
+    width: 94%;
+    height: 27px;
+    padding: 10px;
+    margin-top: 30px;
+    background-color: #fff;
+    color: #ff4d4d;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>

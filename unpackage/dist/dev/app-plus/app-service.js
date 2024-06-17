@@ -2046,7 +2046,7 @@ if (uni.restoreGlobal) {
   function I(e2) {
     return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
   }
-  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "172.20.10.14",\n        "172.19.160.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
+  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "172.19.160.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
   let O = "";
   try {
     O = "__UNI__8301740";
@@ -5482,6 +5482,7 @@ ${i3}
         isTagListVisible: false,
         candidates: ["Folder 1", "Folder 2", "Folder 3", "Folder 4", "Folder 5", "Folder 6", "Folder 7"],
         city: "",
+        newTag: "",
         checkbox2: [0],
         selectedTags: [],
         hobby: [
@@ -5517,6 +5518,15 @@ ${i3}
         }
         this.isTagListVisible = !this.isTagListVisible;
       },
+      addNewTag() {
+        const trimmedTag = this.newTag.trim();
+        if (trimmedTag) {
+          const newValue = this.hobby.length;
+          this.hobby.push({ text: trimmedTag, value: newValue });
+          this.checkbox2.push(newValue);
+          this.newTag = "";
+        }
+      },
       addTagFromInput() {
         if (this.newTag.trim()) {
           this.tags.push(this.newTag.trim());
@@ -5541,7 +5551,7 @@ ${i3}
         this.close();
       },
       addTag() {
-        formatAppLog("log", "at pages/grid/add.vue:140", "Add Tag:", this.inputValue);
+        formatAppLog("log", "at pages/grid/add.vue:159", "Add Tag:", this.inputValue);
         this.close();
       },
       onFocus() {
@@ -5701,6 +5711,26 @@ ${i3}
                     }, {
                       default: vue.withCtx(() => [
                         vue.createElementVNode("view", { class: "uni-px-5 uni-pb-5" }, [
+                          vue.createElementVNode("view", { class: "input-with-button" }, [
+                            vue.withDirectives(vue.createElementVNode(
+                              "input",
+                              {
+                                type: "text",
+                                "onUpdate:modelValue": _cache[9] || (_cache[9] = ($event) => $data.newTag = $event),
+                                placeholder: "Enter your new tag",
+                                class: "tag-input"
+                              },
+                              null,
+                              512
+                              /* NEED_PATCH */
+                            ), [
+                              [vue.vModelText, $data.newTag]
+                            ]),
+                            vue.createElementVNode("button", {
+                              onClick: _cache[10] || (_cache[10] = (...args) => $options.addNewTag && $options.addNewTag(...args)),
+                              class: "add-tag-button"
+                            }, "Done")
+                          ]),
                           vue.createElementVNode(
                             "view",
                             { class: "text" },
@@ -5713,7 +5743,7 @@ ${i3}
                             mode: "button",
                             multiple: "",
                             modelValue: $data.checkbox2,
-                            "onUpdate:modelValue": _cache[9] || (_cache[9] = ($event) => $data.checkbox2 = $event),
+                            "onUpdate:modelValue": _cache[11] || (_cache[11] = ($event) => $data.checkbox2 = $event),
                             localdata: $data.hobby
                           }, null, 8, ["modelValue", "localdata"])
                         ])
@@ -5748,7 +5778,7 @@ ${i3}
             image: "/static/pic/13.png",
             name: "👋 Title for Collection 1",
             tags: ["Tag1", "Tag2"],
-            date: "2022/01/09",
+            date: "2021/01/09",
             link: "https://example.com/link1"
           },
           {
@@ -5769,7 +5799,9 @@ ${i3}
         newTitle: "",
         editingItemId: null,
         startX: 0,
-        startY: 0
+        startY: 0,
+        sortByLatest: true,
+        isListView: false
       };
     },
     onLoad() {
@@ -5777,6 +5809,15 @@ ${i3}
     computed: {
       isAnyItemSelected() {
         return this.selectedItems.length > 0;
+      },
+      sortedGoodsList() {
+        let sortedList = [...this.goodsList];
+        if (this.sortByLatest) {
+          sortedList.sort((a2, b2) => new Date(b2.date) - new Date(a2.date));
+        } else {
+          sortedList.sort((a2, b2) => a2.name.localeCompare(b2.name));
+        }
+        return sortedList;
       }
     },
     methods: {
@@ -5802,7 +5843,7 @@ ${i3}
         }
       },
       addGoods() {
-        formatAppLog("log", "at pages/grid/grid.vue:184", "tap add new Collections");
+        formatAppLog("log", "at pages/grid/grid.vue:210", "tap add new Collections");
         this.$refs.addComponent.open();
       },
       startSwipe(event, id) {
@@ -5871,7 +5912,7 @@ ${i3}
       copyToClipboard(text) {
         if (navigator.clipboard) {
           navigator.clipboard.writeText(text).catch((err) => {
-            formatAppLog("error", "at pages/grid/grid.vue:253", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/grid/grid.vue:279", "Could not copy text: ", err);
           });
         } else {
           const textArea = document.createElement("textarea");
@@ -5883,7 +5924,7 @@ ${i3}
             document.execCommand("copy");
             document.body.removeChild(textArea);
           } catch (err) {
-            formatAppLog("error", "at pages/grid/grid.vue:265", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/grid/grid.vue:291", "Could not copy text: ", err);
           }
           document.body.removeChild(textArea);
         }
@@ -5892,15 +5933,21 @@ ${i3}
         this.isSharePopupVisible = false;
       },
       archiveSelected() {
-        formatAppLog("log", "at pages/grid/grid.vue:274", "Archive selected items", this.selectedItems);
+        formatAppLog("log", "at pages/grid/grid.vue:300", "Archive selected items", this.selectedItems);
       },
       deleteSelected() {
-        formatAppLog("log", "at pages/grid/grid.vue:277", "Delete selected items", this.selectedItems);
+        formatAppLog("log", "at pages/grid/grid.vue:303", "Delete selected items", this.selectedItems);
         this.goodsList = this.goodsList.filter((item) => !this.selectedItems.includes(item.id));
         this.selectedItems = [];
       },
       addItem(newItem) {
         this.goodsList.push(newItem);
+      },
+      toggleSortByLatest() {
+        this.sortByLatest = !this.sortByLatest;
+      },
+      toggleView() {
+        this.isListView = !this.isListView;
       }
     }
   };
@@ -5939,21 +5986,61 @@ ${i3}
               /* CLASS */
             )
           ]),
+          vue.createCommentVNode(" 筛选 "),
+          vue.createElementVNode("view", { class: "control-bar" }, [
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["control-button", { active: $data.sortByLatest }]),
+                onClick: _cache[2] || (_cache[2] = (...args) => $options.toggleSortByLatest && $options.toggleSortByLatest(...args))
+              },
+              [
+                vue.createVNode(_component_uni_icons, {
+                  type: "refreshempty",
+                  size: "20"
+                }),
+                vue.createTextVNode(" Latest ")
+              ],
+              2
+              /* CLASS */
+            ),
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["control-buttontext", { active: $data.isListView }]),
+                onClick: _cache[3] || (_cache[3] = (...args) => $options.toggleView && $options.toggleView(...args))
+              },
+              [
+                vue.createVNode(_component_uni_icons, {
+                  type: $data.isListView ? "list" : "tune",
+                  size: "20"
+                }, null, 8, ["type"]),
+                vue.createTextVNode(
+                  " " + vue.toDisplayString($data.isListView ? "List" : "Filter"),
+                  1
+                  /* TEXT */
+                )
+              ],
+              2
+              /* CLASS */
+            )
+          ]),
           vue.createCommentVNode(" 收藏页面 "),
           (vue.openBlock(true), vue.createElementBlock(
             vue.Fragment,
             null,
-            vue.renderList($data.goodsList, (item, index) => {
+            vue.renderList($options.sortedGoodsList, (item, index) => {
               return vue.openBlock(), vue.createElementBlock("view", {
                 key: item.id,
                 class: vue.normalizeClass(["goods-item-wrap", { "selected": $data.selectedItems.includes(item.id) }]),
                 onClick: ($event) => $options.handleClick(item.id),
                 onLongpress: ($event) => $options.handleLongPress(item.id)
               }, [
-                vue.createElementVNode("image", {
+                !$data.isListView ? (vue.openBlock(), vue.createElementBlock("image", {
+                  key: 0,
                   src: item.image,
                   class: "goods-image"
-                }, null, 8, ["src"]),
+                }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true),
                 vue.createElementVNode("view", { class: "goods-content-wrap" }, [
                   vue.createElementVNode(
                     "view",
@@ -5962,9 +6049,12 @@ ${i3}
                     1
                     /* TEXT */
                   ),
-                  vue.createElementVNode("view", { class: "goods-stock-wrap" }, [
+                  !$data.isListView ? (vue.openBlock(), vue.createElementBlock("view", {
+                    key: 0,
+                    class: "goods-stock-wrap"
+                  }, [
                     vue.createElementVNode("view", { class: "goods-stock" }, "Main contents extracted from the collection.")
-                  ]),
+                  ])) : vue.createCommentVNode("v-if", true),
                   vue.createElementVNode("view", { class: "goods-option" }, [
                     (vue.openBlock(true), vue.createElementBlock(
                       vue.Fragment,
@@ -6013,7 +6103,7 @@ ${i3}
                 }),
                 vue.createElementVNode("view", {
                   class: "bottom-bar-button",
-                  onClick: _cache[2] || (_cache[2] = (...args) => $options.editSelected && $options.editSelected(...args))
+                  onClick: _cache[4] || (_cache[4] = (...args) => $options.editSelected && $options.editSelected(...args))
                 }, "EDIT")
               ]),
               vue.createElementVNode("view", { class: "action-button" }, [
@@ -6023,7 +6113,7 @@ ${i3}
                 }),
                 vue.createElementVNode("view", {
                   class: "bottom-bar-button",
-                  onClick: _cache[3] || (_cache[3] = (...args) => $options.shareLink && $options.shareLink(...args))
+                  onClick: _cache[5] || (_cache[5] = (...args) => $options.shareLink && $options.shareLink(...args))
                 }, "SHARED")
               ]),
               vue.createElementVNode("view", { class: "action-button" }, [
@@ -6033,7 +6123,7 @@ ${i3}
                 }),
                 vue.createElementVNode("view", {
                   class: "bottom-bar-button",
-                  onClick: _cache[4] || (_cache[4] = (...args) => $options.archiveSelected && $options.archiveSelected(...args))
+                  onClick: _cache[6] || (_cache[6] = (...args) => $options.archiveSelected && $options.archiveSelected(...args))
                 }, "ARCHIVED")
               ]),
               vue.createElementVNode("view", { class: "action-button" }, [
@@ -6044,7 +6134,7 @@ ${i3}
                 }),
                 vue.createElementVNode("view", {
                   class: "bottom-bar-buttond",
-                  onClick: _cache[5] || (_cache[5] = (...args) => $options.deleteSelected && $options.deleteSelected(...args))
+                  onClick: _cache[7] || (_cache[7] = (...args) => $options.deleteSelected && $options.deleteSelected(...args))
                 }, "DELETE")
               ])
             ])
@@ -6053,7 +6143,7 @@ ${i3}
           vue.createElementVNode("view", { class: "publish-goods-wrap" }, [
             vue.createElementVNode("view", {
               class: "publish-goods-btn",
-              onClick: _cache[6] || (_cache[6] = ($event) => $options.addGoods())
+              onClick: _cache[8] || (_cache[8] = ($event) => $options.addGoods())
             }, "➕")
           ]),
           vue.createCommentVNode(" 灰色背景部分 "),
@@ -6067,7 +6157,7 @@ ${i3}
               vue.withDirectives(vue.createElementVNode(
                 "input",
                 {
-                  "onUpdate:modelValue": _cache[7] || (_cache[7] = ($event) => $data.newTitle = $event),
+                  "onUpdate:modelValue": _cache[9] || (_cache[9] = ($event) => $data.newTitle = $event),
                   placeholder: "Enter new title"
                 },
                 null,
@@ -6079,11 +6169,11 @@ ${i3}
               vue.createElementVNode("view", { class: "row" }, [
                 vue.createElementVNode("view", {
                   class: "bottontwo",
-                  onClick: _cache[8] || (_cache[8] = (...args) => $options.closeEditPopup && $options.closeEditPopup(...args))
+                  onClick: _cache[10] || (_cache[10] = (...args) => $options.closeEditPopup && $options.closeEditPopup(...args))
                 }, "Cancel"),
                 vue.createElementVNode("view", {
                   class: "bottonone",
-                  onClick: _cache[9] || (_cache[9] = (...args) => $options.saveTitle && $options.saveTitle(...args))
+                  onClick: _cache[11] || (_cache[11] = (...args) => $options.saveTitle && $options.saveTitle(...args))
                 }, "Save")
               ])
             ])
@@ -6107,11 +6197,11 @@ ${i3}
             ]),
             vue.createElementVNode("button", {
               class: "share-popup-button",
-              onClick: _cache[10] || (_cache[10] = (...args) => $options.copyLink && $options.copyLink(...args))
+              onClick: _cache[12] || (_cache[12] = (...args) => $options.copyLink && $options.copyLink(...args))
             }, "Share Link"),
             vue.createElementVNode("view", {
               class: "close-button",
-              onClick: _cache[11] || (_cache[11] = (...args) => $options.closeSharePopup && $options.closeSharePopup(...args))
+              onClick: _cache[13] || (_cache[13] = (...args) => $options.closeSharePopup && $options.closeSharePopup(...args))
             }, "✖")
           ])) : vue.createCommentVNode("v-if", true)
         ]),
@@ -6135,6 +6225,7 @@ ${i3}
         isTagListVisible: false,
         candidates: ["Folder 1", "Folder 2", "Folder 3", "Folder 4", "Folder 5", "Folder 6", "Folder 7"],
         city: "",
+        newTag: "",
         checkbox2: [0],
         selectedTags: [],
         hobby: [
@@ -6170,6 +6261,15 @@ ${i3}
         }
         this.isTagListVisible = !this.isTagListVisible;
       },
+      addNewTag() {
+        const trimmedTag = this.newTag.trim();
+        if (trimmedTag) {
+          const newValue = this.hobby.length;
+          this.hobby.push({ text: trimmedTag, value: newValue });
+          this.checkbox2.push(newValue);
+          this.newTag = "";
+        }
+      },
       addTagFromInput() {
         if (this.newTag.trim()) {
           this.tags.push(this.newTag.trim());
@@ -6194,7 +6294,7 @@ ${i3}
         this.close();
       },
       addTag() {
-        formatAppLog("log", "at pages/gridmul/addmul.vue:140", "Add Tag:", this.inputValue);
+        formatAppLog("log", "at pages/gridmul/addmul.vue:159", "Add Tag:", this.inputValue);
         this.close();
       },
       onFocus() {
@@ -6354,6 +6454,26 @@ ${i3}
                     }, {
                       default: vue.withCtx(() => [
                         vue.createElementVNode("view", { class: "uni-px-5 uni-pb-5" }, [
+                          vue.createElementVNode("view", { class: "input-with-button" }, [
+                            vue.withDirectives(vue.createElementVNode(
+                              "input",
+                              {
+                                type: "text",
+                                "onUpdate:modelValue": _cache[9] || (_cache[9] = ($event) => $data.newTag = $event),
+                                placeholder: "Enter your new tag",
+                                class: "tag-input"
+                              },
+                              null,
+                              512
+                              /* NEED_PATCH */
+                            ), [
+                              [vue.vModelText, $data.newTag]
+                            ]),
+                            vue.createElementVNode("button", {
+                              onClick: _cache[10] || (_cache[10] = (...args) => $options.addNewTag && $options.addNewTag(...args)),
+                              class: "add-tag-button"
+                            }, "Done")
+                          ]),
                           vue.createElementVNode(
                             "view",
                             { class: "text" },
@@ -6366,7 +6486,7 @@ ${i3}
                             mode: "button",
                             multiple: "",
                             modelValue: $data.checkbox2,
-                            "onUpdate:modelValue": _cache[9] || (_cache[9] = ($event) => $data.checkbox2 = $event),
+                            "onUpdate:modelValue": _cache[11] || (_cache[11] = ($event) => $data.checkbox2 = $event),
                             localdata: $data.hobby
                           }, null, 8, ["modelValue", "localdata"])
                         ])
@@ -6395,13 +6515,20 @@ ${i3}
     },
     data() {
       return {
+        friends: [
+          { image: "/static/pic/LeftAccessory.png", name: "Friend 1" },
+          { image: "/static/pic/Ellipse 178.png", name: "Friend 2" },
+          { image: "/static/pic/Ellipse 177.png", name: "Friend 3" },
+          { image: "/static/pic/Ellipse 178.png", name: "Friend 4" }
+        ],
+        friendsCount: 4,
         goodsList: [
           {
             id: 1,
             image: "/static/pic/13.png",
             name: "👋 Title for Collection 1",
             tags: ["Tag1", "Tag2"],
-            date: "2022/01/09",
+            date: "2021/01/09",
             link: "https://example.com/link1"
           },
           {
@@ -6423,7 +6550,9 @@ ${i3}
         editingItemId: null,
         friendsCount: 3,
         startX: 0,
-        startY: 0
+        startY: 0,
+        sortByLatest: true,
+        isListView: false
       };
     },
     onLoad() {
@@ -6431,6 +6560,15 @@ ${i3}
     computed: {
       isAnyItemSelected() {
         return this.selectedItems.length > 0;
+      },
+      sortedGoodsList() {
+        let sortedList = [...this.goodsList];
+        if (this.sortByLatest) {
+          sortedList.sort((a2, b2) => new Date(b2.date) - new Date(a2.date));
+        } else {
+          sortedList.sort((a2, b2) => a2.name.localeCompare(b2.name));
+        }
+        return sortedList;
       }
     },
     methods: {
@@ -6461,7 +6599,7 @@ ${i3}
         }
       },
       addGoods() {
-        formatAppLog("log", "at pages/gridmul/gridmul.vue:195", "tap add new Collections");
+        formatAppLog("log", "at pages/gridmul/gridmul.vue:233", "tap add new Collections");
         this.$refs.addComponent.open();
       },
       startSwipe(event, id) {
@@ -6530,7 +6668,7 @@ ${i3}
       copyToClipboard(text) {
         if (navigator.clipboard) {
           navigator.clipboard.writeText(text).catch((err) => {
-            formatAppLog("error", "at pages/gridmul/gridmul.vue:264", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/gridmul/gridmul.vue:302", "Could not copy text: ", err);
           });
         } else {
           const textArea = document.createElement("textarea");
@@ -6542,7 +6680,7 @@ ${i3}
             document.execCommand("copy");
             document.body.removeChild(textArea);
           } catch (err) {
-            formatAppLog("error", "at pages/gridmul/gridmul.vue:276", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/gridmul/gridmul.vue:314", "Could not copy text: ", err);
           }
           document.body.removeChild(textArea);
         }
@@ -6551,15 +6689,21 @@ ${i3}
         this.isSharePopupVisible = false;
       },
       archiveSelected() {
-        formatAppLog("log", "at pages/gridmul/gridmul.vue:285", "Archive selected items", this.selectedItems);
+        formatAppLog("log", "at pages/gridmul/gridmul.vue:323", "Archive selected items", this.selectedItems);
       },
       deleteSelected() {
-        formatAppLog("log", "at pages/gridmul/gridmul.vue:288", "Delete selected items", this.selectedItems);
+        formatAppLog("log", "at pages/gridmul/gridmul.vue:326", "Delete selected items", this.selectedItems);
         this.goodsList = this.goodsList.filter((item) => !this.selectedItems.includes(item.id));
         this.selectedItems = [];
       },
       addItem(newItem) {
         this.goodsList.push(newItem);
+      },
+      toggleSortByLatest() {
+        this.sortByLatest = !this.sortByLatest;
+      },
+      toggleView() {
+        this.isListView = !this.isListView;
       }
     }
   };
@@ -6599,31 +6743,99 @@ ${i3}
             )
           ]),
           vue.createCommentVNode(" 新添加的按钮 "),
-          vue.createElementVNode(
-            "view",
-            {
-              class: "folder-friends-button",
-              onClick: _cache[2] || (_cache[2] = (...args) => $options.navigateToFriends && $options.navigateToFriends(...args))
-            },
-            vue.toDisplayString($data.friendsCount) + " friends under the folder ",
-            1
-            /* TEXT */
-          ),
+          vue.createElementVNode("view", {
+            class: "folder-friends-button",
+            onClick: _cache[2] || (_cache[2] = (...args) => $options.navigateToFriends && $options.navigateToFriends(...args))
+          }, [
+            vue.createElementVNode("view", { class: "avatars" }, [
+              (vue.openBlock(true), vue.createElementBlock(
+                vue.Fragment,
+                null,
+                vue.renderList($data.friends.slice(0, 3), (friend, index) => {
+                  return vue.openBlock(), vue.createElementBlock("image", {
+                    class: "avatar",
+                    key: index,
+                    src: friend.image
+                  }, null, 8, ["src"]);
+                }),
+                128
+                /* KEYED_FRAGMENT */
+              ))
+            ]),
+            vue.createElementVNode(
+              "text",
+              { class: "button-text" },
+              vue.toDisplayString($data.friendsCount) + " friends under the folder",
+              1
+              /* TEXT */
+            ),
+            vue.createElementVNode(
+              "text",
+              { class: "card-count" },
+              vue.toDisplayString($data.goodsList.length) + " cards",
+              1
+              /* TEXT */
+            ),
+            vue.createVNode(_component_uni_icons, {
+              type: "right",
+              size: "20"
+            })
+          ]),
+          vue.createCommentVNode(" 筛选 "),
+          vue.createElementVNode("view", { class: "control-bar" }, [
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["control-button", { active: $data.sortByLatest }]),
+                onClick: _cache[3] || (_cache[3] = (...args) => $options.toggleSortByLatest && $options.toggleSortByLatest(...args))
+              },
+              [
+                vue.createVNode(_component_uni_icons, {
+                  type: "refreshempty",
+                  size: "20"
+                }),
+                vue.createTextVNode(" Latest ")
+              ],
+              2
+              /* CLASS */
+            ),
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["control-buttontext", { active: $data.isListView }]),
+                onClick: _cache[4] || (_cache[4] = (...args) => $options.toggleView && $options.toggleView(...args))
+              },
+              [
+                vue.createVNode(_component_uni_icons, {
+                  type: $data.isListView ? "list" : "tune",
+                  size: "20"
+                }, null, 8, ["type"]),
+                vue.createTextVNode(
+                  " " + vue.toDisplayString($data.isListView ? "List" : "Filter"),
+                  1
+                  /* TEXT */
+                )
+              ],
+              2
+              /* CLASS */
+            )
+          ]),
           vue.createCommentVNode(" 收藏页面 "),
           (vue.openBlock(true), vue.createElementBlock(
             vue.Fragment,
             null,
-            vue.renderList($data.goodsList, (item, index) => {
+            vue.renderList($options.sortedGoodsList, (item, index) => {
               return vue.openBlock(), vue.createElementBlock("view", {
                 key: item.id,
                 class: vue.normalizeClass(["goods-item-wrap", { "selected": $data.selectedItems.includes(item.id) }]),
                 onClick: ($event) => $options.handleClick(item.id),
                 onLongpress: ($event) => $options.handleLongPress(item.id)
               }, [
-                vue.createElementVNode("image", {
+                !$data.isListView ? (vue.openBlock(), vue.createElementBlock("image", {
+                  key: 0,
                   src: item.image,
                   class: "goods-image"
-                }, null, 8, ["src"]),
+                }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true),
                 vue.createElementVNode("view", { class: "goods-content-wrap" }, [
                   vue.createElementVNode(
                     "view",
@@ -6632,9 +6844,12 @@ ${i3}
                     1
                     /* TEXT */
                   ),
-                  vue.createElementVNode("view", { class: "goods-stock-wrap" }, [
+                  !$data.isListView ? (vue.openBlock(), vue.createElementBlock("view", {
+                    key: 0,
+                    class: "goods-stock-wrap"
+                  }, [
                     vue.createElementVNode("view", { class: "goods-stock" }, "Main contents extracted from the collection.")
-                  ]),
+                  ])) : vue.createCommentVNode("v-if", true),
                   vue.createElementVNode("view", { class: "goods-option" }, [
                     (vue.openBlock(true), vue.createElementBlock(
                       vue.Fragment,
@@ -6683,7 +6898,7 @@ ${i3}
                 }),
                 vue.createElementVNode("view", {
                   class: "bottom-bar-button",
-                  onClick: _cache[3] || (_cache[3] = (...args) => $options.editSelected && $options.editSelected(...args))
+                  onClick: _cache[5] || (_cache[5] = (...args) => $options.editSelected && $options.editSelected(...args))
                 }, "EDIT")
               ]),
               vue.createElementVNode("view", { class: "action-button" }, [
@@ -6693,7 +6908,7 @@ ${i3}
                 }),
                 vue.createElementVNode("view", {
                   class: "bottom-bar-button",
-                  onClick: _cache[4] || (_cache[4] = (...args) => $options.shareLink && $options.shareLink(...args))
+                  onClick: _cache[6] || (_cache[6] = (...args) => $options.shareLink && $options.shareLink(...args))
                 }, "SHARED")
               ]),
               vue.createElementVNode("view", { class: "action-button" }, [
@@ -6703,7 +6918,7 @@ ${i3}
                 }),
                 vue.createElementVNode("view", {
                   class: "bottom-bar-button",
-                  onClick: _cache[5] || (_cache[5] = (...args) => $options.archiveSelected && $options.archiveSelected(...args))
+                  onClick: _cache[7] || (_cache[7] = (...args) => $options.archiveSelected && $options.archiveSelected(...args))
                 }, "ARCHIVED")
               ]),
               vue.createElementVNode("view", { class: "action-button" }, [
@@ -6714,7 +6929,7 @@ ${i3}
                 }),
                 vue.createElementVNode("view", {
                   class: "bottom-bar-buttond",
-                  onClick: _cache[6] || (_cache[6] = (...args) => $options.deleteSelected && $options.deleteSelected(...args))
+                  onClick: _cache[8] || (_cache[8] = (...args) => $options.deleteSelected && $options.deleteSelected(...args))
                 }, "DELETE")
               ])
             ])
@@ -6723,7 +6938,7 @@ ${i3}
           vue.createElementVNode("view", { class: "publish-goods-wrap" }, [
             vue.createElementVNode("view", {
               class: "publish-goods-btn",
-              onClick: _cache[7] || (_cache[7] = ($event) => $options.addGoods())
+              onClick: _cache[9] || (_cache[9] = ($event) => $options.addGoods())
             }, "➕")
           ]),
           vue.createCommentVNode(" 灰色背景部分 "),
@@ -6737,7 +6952,7 @@ ${i3}
               vue.withDirectives(vue.createElementVNode(
                 "input",
                 {
-                  "onUpdate:modelValue": _cache[8] || (_cache[8] = ($event) => $data.newTitle = $event),
+                  "onUpdate:modelValue": _cache[10] || (_cache[10] = ($event) => $data.newTitle = $event),
                   placeholder: "Enter new title"
                 },
                 null,
@@ -6749,11 +6964,11 @@ ${i3}
               vue.createElementVNode("view", { class: "row" }, [
                 vue.createElementVNode("view", {
                   class: "bottontwo",
-                  onClick: _cache[9] || (_cache[9] = (...args) => $options.closeEditPopup && $options.closeEditPopup(...args))
+                  onClick: _cache[11] || (_cache[11] = (...args) => $options.closeEditPopup && $options.closeEditPopup(...args))
                 }, "Cancel"),
                 vue.createElementVNode("view", {
                   class: "bottonone",
-                  onClick: _cache[10] || (_cache[10] = (...args) => $options.saveTitle && $options.saveTitle(...args))
+                  onClick: _cache[12] || (_cache[12] = (...args) => $options.saveTitle && $options.saveTitle(...args))
                 }, "Save")
               ])
             ])
@@ -6777,11 +6992,11 @@ ${i3}
             ]),
             vue.createElementVNode("button", {
               class: "share-popup-button",
-              onClick: _cache[11] || (_cache[11] = (...args) => $options.copyLink && $options.copyLink(...args))
+              onClick: _cache[13] || (_cache[13] = (...args) => $options.copyLink && $options.copyLink(...args))
             }, "Share Link"),
             vue.createElementVNode("view", {
               class: "close-button",
-              onClick: _cache[12] || (_cache[12] = (...args) => $options.closeSharePopup && $options.closeSharePopup(...args))
+              onClick: _cache[14] || (_cache[14] = (...args) => $options.closeSharePopup && $options.closeSharePopup(...args))
             }, "✖")
           ])) : vue.createCommentVNode("v-if", true)
         ]),
@@ -14291,7 +14506,7 @@ ${i3}
       copyToClipboard(text) {
         if (navigator.clipboard) {
           navigator.clipboard.writeText(text).catch((err) => {
-            formatAppLog("error", "at pages/gridmul/friends/friends.vue:73", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/gridmul/friends/friends.vue:78", "Could not copy text: ", err);
           });
         } else {
           const textArea = document.createElement("textarea");
@@ -14303,7 +14518,7 @@ ${i3}
             document.execCommand("copy");
             document.body.removeChild(textArea);
           } catch (err) {
-            formatAppLog("error", "at pages/gridmul/friends/friends.vue:85", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/gridmul/friends/friends.vue:90", "Could not copy text: ", err);
           }
           document.body.removeChild(textArea);
         }
@@ -14319,53 +14534,63 @@ ${i3}
           this.friends.splice(this.selectedFriendIndex, 1);
         }
         this.closeEditPopup();
+      },
+      exitFolder() {
       }
     }
   };
   function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container font-style" }, [
-      (vue.openBlock(true), vue.createElementBlock(
-        vue.Fragment,
-        null,
-        vue.renderList($data.friends, (friend, index) => {
-          return vue.openBlock(), vue.createElementBlock("view", {
-            key: index,
-            class: "friend-item-wrap"
+      vue.createElementVNode("view", { class: "content-wrap" }, [
+        vue.createElementVNode("view", { class: "friend-list-container" }, [
+          (vue.openBlock(true), vue.createElementBlock(
+            vue.Fragment,
+            null,
+            vue.renderList($data.friends, (friend, index) => {
+              return vue.openBlock(), vue.createElementBlock("view", {
+                key: index,
+                class: "friend-item-wrap"
+              }, [
+                vue.createElementVNode("view", {
+                  class: "friend-item",
+                  onLongpress: ($event) => $options.handleLongPress(index)
+                }, [
+                  vue.createElementVNode("image", {
+                    class: "friend-image",
+                    src: friend.image
+                  }, null, 8, ["src"]),
+                  vue.createElementVNode(
+                    "text",
+                    { class: "friend-name" },
+                    vue.toDisplayString(friend.name),
+                    1
+                    /* TEXT */
+                  )
+                ], 40, ["onLongpress"]),
+                index < $data.friends.length ? (vue.openBlock(), vue.createElementBlock("view", {
+                  key: 0,
+                  class: "separator"
+                })) : vue.createCommentVNode("v-if", true)
+              ]);
+            }),
+            128
+            /* KEYED_FRAGMENT */
+          )),
+          vue.createElementVNode("view", {
+            class: "add-friend-item",
+            onClick: _cache[0] || (_cache[0] = (...args) => $options.showAddFriendModal && $options.showAddFriendModal(...args))
           }, [
-            vue.createElementVNode("view", {
-              class: "friend-item",
-              onLongpress: ($event) => $options.handleLongPress(index)
-            }, [
-              vue.createElementVNode("image", {
-                class: "friend-image",
-                src: friend.image
-              }, null, 8, ["src"]),
-              vue.createElementVNode(
-                "text",
-                { class: "friend-name" },
-                vue.toDisplayString(friend.name),
-                1
-                /* TEXT */
-              )
-            ], 40, ["onLongpress"]),
-            index < $data.friends.length ? (vue.openBlock(), vue.createElementBlock("view", {
-              key: 0,
-              class: "separator"
-            })) : vue.createCommentVNode("v-if", true)
-          ]);
-        }),
-        128
-        /* KEYED_FRAGMENT */
-      )),
-      vue.createElementVNode("view", {
-        class: "add-friend-item",
-        onClick: _cache[0] || (_cache[0] = (...args) => $options.showAddFriendModal && $options.showAddFriendModal(...args))
-      }, [
-        vue.createElementVNode("image", {
-          class: "friend-image",
-          src: "/static/pic/Plus.png"
-        }),
-        vue.createElementVNode("text", { class: "friend-name" }, "Add friends")
+            vue.createElementVNode("image", {
+              class: "friend-image",
+              src: "/static/pic/Plus.png"
+            }),
+            vue.createElementVNode("text", { class: "friend-name" }, "Add friends")
+          ])
+        ]),
+        vue.createElementVNode("view", {
+          class: "exit-button",
+          onClick: _cache[1] || (_cache[1] = (...args) => _ctx.exitButton && _ctx.exitButton(...args))
+        }, "Exit the folder")
       ]),
       vue.createCommentVNode(" 分享链接弹窗 "),
       $data.isSharePopupVisible ? (vue.openBlock(), vue.createElementBlock("view", {
@@ -14386,11 +14611,11 @@ ${i3}
         ]),
         vue.createElementVNode("button", {
           class: "share-popup-button",
-          onClick: _cache[1] || (_cache[1] = (...args) => $options.copyLink && $options.copyLink(...args))
+          onClick: _cache[2] || (_cache[2] = (...args) => $options.copyLink && $options.copyLink(...args))
         }, "Share Link"),
-        vue.createElementVNode("button", {
+        vue.createElementVNode("view", {
           class: "close-button",
-          onClick: _cache[2] || (_cache[2] = (...args) => $options.closeSharePopup && $options.closeSharePopup(...args))
+          onClick: _cache[3] || (_cache[3] = (...args) => $options.closeSharePopup && $options.closeSharePopup(...args))
         }, "✖")
       ])) : vue.createCommentVNode("v-if", true),
       vue.createCommentVNode(" 编辑/删除弹窗 "),
@@ -14401,11 +14626,11 @@ ${i3}
         vue.createElementVNode("view", { class: "edit-popup-content" }, [
           vue.createElementVNode("button", {
             class: "edit-popup-button",
-            onClick: _cache[3] || (_cache[3] = (...args) => $options.deleteFriend && $options.deleteFriend(...args))
+            onClick: _cache[4] || (_cache[4] = (...args) => $options.deleteFriend && $options.deleteFriend(...args))
           }, "Delete"),
           vue.createElementVNode("view", {
             class: "close-button",
-            onClick: _cache[4] || (_cache[4] = (...args) => $options.closeEditPopup && $options.closeEditPopup(...args))
+            onClick: _cache[5] || (_cache[5] = (...args) => $options.closeEditPopup && $options.closeEditPopup(...args))
           }, "✖")
         ])
       ])) : vue.createCommentVNode("v-if", true)
