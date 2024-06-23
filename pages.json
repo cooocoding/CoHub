@@ -28,7 +28,26 @@
 			"style": {
 				"navigationBarTitleText": "搜索"
 			}
-		}, {
+		},
+		{
+		  "path": "pages/list/archived/archived",
+		  "style": {
+		    "navigationBarTitleText": "Archived"
+		  }
+		},
+		{
+		  "path": "pages/list/all/all",
+		  "style": {
+		    "navigationBarTitleText": "All"
+		  }
+		},
+		{
+		  "path": "pages/list/delete/delete",
+		  "style": {
+		    "navigationBarTitleText": "Recently Deleted Folder"
+		  }
+		},
+		{
 			"path": "pages/list/detail",
 			"style": {
 				"app-plus": {

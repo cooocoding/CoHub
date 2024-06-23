@@ -1,9 +1,9 @@
 if (typeof Promise !== "undefined" && !Promise.prototype.finally) {
-  Promise.prototype.finally = function(callback) {
+  Promise.prototype.finally = function(callback2) {
     const promise = this.constructor;
     return this.then(
-      (value) => promise.resolve(callback()).then(() => value),
-      (reason) => promise.resolve(callback()).then(() => {
+      (value) => promise.resolve(callback2()).then(() => value),
+      (reason) => promise.resolve(callback2()).then(() => {
         throw reason;
       })
     );
@@ -734,7 +734,7 @@ if (uni.restoreGlobal) {
     const reg = /^[0-9]*$/g;
     return typeof val === "number" || reg.test(val) ? val + "px" : val;
   };
-  const _sfc_main$11 = {
+  const _sfc_main$17 = {
     name: "UniIcons",
     emits: ["click"],
     props: {
@@ -788,7 +788,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$10(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$16(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -803,8 +803,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$e = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
-  const _sfc_main$10 = {
+  const __easycom_0$f = /* @__PURE__ */ _export_sfc(_sfc_main$17, [["render", _sfc_render$16], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const _sfc_main$16 = {
     name: "cmd-icon",
     props: {
       /**
@@ -846,7 +846,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$$(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$15(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -859,11 +859,11 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$d = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__scopeId", "data-v-7cd7d81f"], ["__file", "D:/project/CoHub/CoHub/components/cmd-icon/cmd-icon.vue"]]);
-  const _sfc_main$$ = {
+  const __easycom_0$e = /* @__PURE__ */ _export_sfc(_sfc_main$16, [["render", _sfc_render$15], ["__scopeId", "data-v-7cd7d81f"], ["__file", "D:/project/CoHub/CoHub/components/cmd-icon/cmd-icon.vue"]]);
+  const _sfc_main$15 = {
     name: "cmd-nav-bar",
     components: {
-      cmdIcon: __easycom_0$d
+      cmdIcon: __easycom_0$e
     },
     props: {
       /**
@@ -1055,8 +1055,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$_(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_cmd_icon = resolveEasycom(vue.resolveDynamicComponent("cmd-icon"), __easycom_0$d);
+  function _sfc_render$14(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_cmd_icon = resolveEasycom(vue.resolveDynamicComponent("cmd-icon"), __easycom_0$e);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1162,8 +1162,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const CmdNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-80f5af22"], ["__file", "D:/project/CoHub/CoHub/components/cmd-nav-bar/cmd-nav-bar.vue"]]);
-  const _sfc_main$_ = {
+  const CmdNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$15, [["render", _sfc_render$14], ["__scopeId", "data-v-80f5af22"], ["__file", "D:/project/CoHub/CoHub/components/cmd-nav-bar/cmd-nav-bar.vue"]]);
+  const _sfc_main$14 = {
     name: "uniCombox",
     emits: ["input", "update:modelValue"],
     props: {
@@ -1254,8 +1254,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$Z(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+  function _sfc_render$13(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1350,8 +1350,8 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_0$c = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-e602780e"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-combox/components/uni-combox/uni-combox.vue"]]);
-  const _sfc_main$Z = {
+  const __easycom_0$d = /* @__PURE__ */ _export_sfc(_sfc_main$14, [["render", _sfc_render$13], ["__scopeId", "data-v-e602780e"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-combox/components/uni-combox/uni-combox.vue"]]);
+  const _sfc_main$13 = {
     name: "UniSection",
     emits: ["click"],
     props: {
@@ -1410,7 +1410,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$Y(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$12(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "uni-section" }, [
       vue.createElementVNode("view", {
         class: "uni-section-header",
@@ -1467,7 +1467,7 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__scopeId", "data-v-637fd36b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-section/components/uni-section/uni-section.vue"]]);
+  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$13, [["render", _sfc_render$12], ["__scopeId", "data-v-637fd36b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-section/components/uni-section/uni-section.vue"]]);
   const pages = [
     {
       path: "pages/list/list",
@@ -1491,6 +1491,24 @@ if (uni.restoreGlobal) {
       path: "pages/list/search/search",
       style: {
         navigationBarTitleText: "搜索"
+      }
+    },
+    {
+      path: "pages/list/archived/archived",
+      style: {
+        navigationBarTitleText: "Archived"
+      }
+    },
+    {
+      path: "pages/list/all/all",
+      style: {
+        navigationBarTitleText: "All"
+      }
+    },
+    {
+      path: "pages/list/delete/delete",
+      style: {
+        navigationBarTitleText: "Recently Deleted Folder"
       }
     },
     {
@@ -2046,7 +2064,7 @@ if (uni.restoreGlobal) {
   function I(e2) {
     return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
   }
-  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "172.19.160.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
+  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.9",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
   let O = "";
   try {
     O = "__UNI__8301740";
@@ -4446,7 +4464,7 @@ ${i3}
     } }), bs(Bs), Bs.addInterceptor = N, Bs.removeInterceptor = D, Bs.interceptObject = F;
   })();
   var Ws = Bs;
-  const isObject$2 = (val) => val !== null && typeof val === "object";
+  const isObject$3 = (val) => val !== null && typeof val === "object";
   const defaultDelimiters = ["{", "}"];
   class BaseFormatter {
     constructor() {
@@ -4496,7 +4514,7 @@ ${i3}
   function compile(tokens, values) {
     const compiled = [];
     let index = 0;
-    const mode = Array.isArray(values) ? "list" : isObject$2(values) ? "named" : "unknown";
+    const mode = Array.isArray(values) ? "list" : isObject$3(values) ? "named" : "unknown";
     if (mode === "unknown") {
       return compiled;
     }
@@ -4757,7 +4775,7 @@ ${i3}
   const {
     t: t$4
   } = initVueI18n(messages$4);
-  const _sfc_main$Y = {
+  const _sfc_main$12 = {
     name: "UniLoadMore",
     emits: ["clickLoadMore"],
     props: {
@@ -4839,7 +4857,7 @@ ${i3}
       }
     }
   };
-  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$11(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "uni-load-more",
       onClick: _cache[0] || (_cache[0] = (...args) => $options.onClick && $options.onClick(...args))
@@ -4914,8 +4932,8 @@ ${i3}
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_0$b = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__scopeId", "data-v-9245e42c"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-load-more/components/uni-load-more/uni-load-more.vue"]]);
-  const _sfc_main$X = {
+  const __easycom_0$c = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$11], ["__scopeId", "data-v-9245e42c"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-load-more/components/uni-load-more/uni-load-more.vue"]]);
+  const _sfc_main$11 = {
     name: "uniDataChecklist",
     mixins: [Ws.mixinDatacom || {}],
     emits: ["input", "update:modelValue", "change"],
@@ -5258,8 +5276,8 @@ ${i3}
       }
     }
   };
-  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_load_more = resolveEasycom(vue.resolveDynamicComponent("uni-load-more"), __easycom_0$b);
+  function _sfc_render$10(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_load_more = resolveEasycom(vue.resolveDynamicComponent("uni-load-more"), __easycom_0$c);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -5471,8 +5489,8 @@ ${i3}
       /* STYLE */
     );
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["__scopeId", "data-v-2f788efd"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-data-checkbox/components/uni-data-checkbox/uni-data-checkbox.vue"]]);
-  const _sfc_main$W = {
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["__scopeId", "data-v-2f788efd"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-data-checkbox/components/uni-data-checkbox/uni-data-checkbox.vue"]]);
+  const _sfc_main$10 = {
     data() {
       return {
         isVisible: false,
@@ -5583,10 +5601,10 @@ ${i3}
       }
     }
   };
-  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_combox = resolveEasycom(vue.resolveDynamicComponent("uni-combox"), __easycom_0$c);
-    const _component_uni_section = resolveEasycom(vue.resolveDynamicComponent("uni-section"), __easycom_1$5);
-    const _component_uni_data_checkbox = resolveEasycom(vue.resolveDynamicComponent("uni-data-checkbox"), __easycom_2$1);
+  function _sfc_render$$(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_combox = resolveEasycom(vue.resolveDynamicComponent("uni-combox"), __easycom_0$d);
+    const _component_uni_section = resolveEasycom(vue.resolveDynamicComponent("uni-section"), __easycom_1$6);
+    const _component_uni_data_checkbox = resolveEasycom(vue.resolveDynamicComponent("uni-data-checkbox"), __easycom_2$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "font-style" }, [
       vue.createElementVNode("view", { class: "container" }, [
         vue.createElementVNode(
@@ -5764,8 +5782,8 @@ ${i3}
       ])
     ]);
   }
-  const Add = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-0b59ba63"], ["__file", "D:/project/CoHub/CoHub/pages/grid/add.vue"]]);
-  const _sfc_main$V = {
+  const Add = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__scopeId", "data-v-0b59ba63"], ["__file", "D:/project/CoHub/CoHub/pages/grid/add.vue"]]);
+  const _sfc_main$$ = {
     components: {
       CmdNavBar,
       Add
@@ -5951,8 +5969,8 @@ ${i3}
       }
     }
   };
-  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+  function _sfc_render$_(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     const _component_add = vue.resolveComponent("add");
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
@@ -6214,8 +6232,8 @@ ${i3}
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-22222d69"], ["__file", "D:/project/CoHub/CoHub/pages/grid/grid.vue"]]);
-  const _sfc_main$U = {
+  const PagesGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-22222d69"], ["__file", "D:/project/CoHub/CoHub/pages/grid/grid.vue"]]);
+  const _sfc_main$_ = {
     data() {
       return {
         isVisible: false,
@@ -6326,10 +6344,10 @@ ${i3}
       }
     }
   };
-  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_combox = resolveEasycom(vue.resolveDynamicComponent("uni-combox"), __easycom_0$c);
-    const _component_uni_section = resolveEasycom(vue.resolveDynamicComponent("uni-section"), __easycom_1$5);
-    const _component_uni_data_checkbox = resolveEasycom(vue.resolveDynamicComponent("uni-data-checkbox"), __easycom_2$1);
+  function _sfc_render$Z(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_combox = resolveEasycom(vue.resolveDynamicComponent("uni-combox"), __easycom_0$d);
+    const _component_uni_section = resolveEasycom(vue.resolveDynamicComponent("uni-section"), __easycom_1$6);
+    const _component_uni_data_checkbox = resolveEasycom(vue.resolveDynamicComponent("uni-data-checkbox"), __easycom_2$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "font-style" }, [
       vue.createElementVNode("view", { class: "container" }, [
         vue.createElementVNode(
@@ -6507,8 +6525,8 @@ ${i3}
       ])
     ]);
   }
-  const Addmul = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-09f3a83f"], ["__file", "D:/project/CoHub/CoHub/pages/gridmul/addmul.vue"]]);
-  const _sfc_main$T = {
+  const Addmul = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-09f3a83f"], ["__file", "D:/project/CoHub/CoHub/pages/gridmul/addmul.vue"]]);
+  const _sfc_main$Z = {
     components: {
       CmdNavBar,
       Addmul
@@ -6707,8 +6725,8 @@ ${i3}
       }
     }
   };
-  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+  function _sfc_render$Y(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     const _component_addmul = vue.resolveComponent("addmul");
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
@@ -7009,8 +7027,615 @@ ${i3}
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesGridmulGridmul = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-68e2f14e"], ["__file", "D:/project/CoHub/CoHub/pages/gridmul/gridmul.vue"]]);
-  const _sfc_main$S = {
+  const PagesGridmulGridmul = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__scopeId", "data-v-68e2f14e"], ["__file", "D:/project/CoHub/CoHub/pages/gridmul/gridmul.vue"]]);
+  let mpMixins = {};
+  mpMixins = {
+    data() {
+      return {
+        is_show: "none"
+      };
+    },
+    watch: {
+      show(newVal) {
+        this.is_show = this.show;
+      }
+    },
+    created() {
+      this.swipeaction = this.getSwipeAction();
+      if (this.swipeaction && Array.isArray(this.swipeaction.children)) {
+        this.swipeaction.children.push(this);
+      }
+    },
+    mounted() {
+      this.is_show = this.show;
+    },
+    methods: {
+      // wxs 中调用
+      closeSwipe(e2) {
+        if (this.autoClose && this.swipeaction) {
+          this.swipeaction.closeOther(this);
+        }
+      },
+      change(e2) {
+        this.$emit("change", e2.open);
+        if (this.is_show !== e2.open) {
+          this.is_show = e2.open;
+        }
+      },
+      appTouchStart(e2) {
+        const {
+          clientX
+        } = e2.changedTouches[0];
+        this.clientX = clientX;
+        this.timestamp = (/* @__PURE__ */ new Date()).getTime();
+      },
+      appTouchEnd(e2, index, item, position) {
+        const {
+          clientX
+        } = e2.changedTouches[0];
+        let diff = Math.abs(this.clientX - clientX);
+        let time = (/* @__PURE__ */ new Date()).getTime() - this.timestamp;
+        if (diff < 40 && time < 300) {
+          this.$emit("click", {
+            content: item,
+            index,
+            position
+          });
+        }
+      },
+      onClickForPC(index, item, position) {
+        return;
+      }
+    }
+  };
+  const mpwxs = mpMixins;
+  let bindIngXMixins = {};
+  let otherMixins = {};
+  const block0 = (Comp) => {
+    (Comp.$wxs || (Comp.$wxs = [])).push("wxsswipe");
+    (Comp.$wxsModules || (Comp.$wxsModules = {}))["wxsswipe"] = "afd46426";
+  };
+  const block1 = (Comp) => {
+    (Comp.$renderjs || (Comp.$renderjs = [])).push("renderswipe");
+    (Comp.$renderjsModules || (Comp.$renderjsModules = {}))["renderswipe"] = "5a1e922e";
+  };
+  const _sfc_main$Y = {
+    mixins: [mpwxs, bindIngXMixins, otherMixins],
+    emits: ["click", "change"],
+    props: {
+      // 控制开关
+      show: {
+        type: String,
+        default: "none"
+      },
+      // 禁用
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      // 是否自动关闭
+      autoClose: {
+        type: Boolean,
+        default: true
+      },
+      // 滑动缺省距离
+      threshold: {
+        type: Number,
+        default: 20
+      },
+      // 左侧按钮内容
+      leftOptions: {
+        type: Array,
+        default() {
+          return [];
+        }
+      },
+      // 右侧按钮内容
+      rightOptions: {
+        type: Array,
+        default() {
+          return [];
+        }
+      }
+    },
+    // TODO vue3
+    unmounted() {
+      this.__isUnmounted = true;
+      this.uninstall();
+    },
+    methods: {
+      uninstall() {
+        if (this.swipeaction) {
+          this.swipeaction.children.forEach((item, index) => {
+            if (item === this) {
+              this.swipeaction.children.splice(index, 1);
+            }
+          });
+        }
+      },
+      /**
+       * 获取父元素实例
+       */
+      getSwipeAction(name = "uniSwipeAction") {
+        let parent = this.$parent;
+        let parentName = parent.$options.name;
+        while (parentName !== name) {
+          parent = parent.$parent;
+          if (!parent)
+            return false;
+          parentName = parent.$options.name;
+        }
+        return parent;
+      }
+    }
+  };
+  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      vue.Fragment,
+      null,
+      [
+        vue.createCommentVNode(" 在微信小程序 app vue端 h5 使用wxs 实现"),
+        vue.createElementVNode("view", { class: "uni-swipe" }, [
+          vue.createElementVNode("view", {
+            class: "uni-swipe_box",
+            "change:prop": _ctx.wxsswipe.showWatch,
+            prop: vue.wp(_ctx.is_show),
+            "data-threshold": $props.threshold,
+            "data-disabled": $props.disabled,
+            onTouchstart: _cache[2] || (_cache[2] = (...args) => _ctx.wxsswipe.touchstart && _ctx.wxsswipe.touchstart(...args)),
+            onTouchmove: _cache[3] || (_cache[3] = (...args) => _ctx.wxsswipe.touchmove && _ctx.wxsswipe.touchmove(...args)),
+            onTouchend: _cache[4] || (_cache[4] = (...args) => _ctx.wxsswipe.touchend && _ctx.wxsswipe.touchend(...args))
+          }, [
+            vue.createCommentVNode(" 在微信小程序 app vue端 h5 使用wxs 实现"),
+            vue.createElementVNode("view", { class: "uni-swipe_button-group button-group--left" }, [
+              vue.renderSlot(_ctx.$slots, "left", {}, () => [
+                (vue.openBlock(true), vue.createElementBlock(
+                  vue.Fragment,
+                  null,
+                  vue.renderList($props.leftOptions, (item, index) => {
+                    return vue.openBlock(), vue.createElementBlock("view", {
+                      key: index,
+                      style: vue.normalizeStyle({
+                        backgroundColor: item.style && item.style.backgroundColor ? item.style.backgroundColor : "#C7C6CD"
+                      }),
+                      class: "uni-swipe_button button-hock",
+                      onTouchstart: _cache[0] || (_cache[0] = vue.withModifiers((...args) => _ctx.appTouchStart && _ctx.appTouchStart(...args), ["stop"])),
+                      onTouchend: vue.withModifiers(($event) => _ctx.appTouchEnd($event, index, item, "left"), ["stop"]),
+                      onClick: vue.withModifiers(($event) => _ctx.onClickForPC(index, item, "left"), ["stop"])
+                    }, [
+                      vue.createElementVNode(
+                        "text",
+                        {
+                          class: "uni-swipe_button-text",
+                          style: vue.normalizeStyle({ color: item.style && item.style.color ? item.style.color : "#FFFFFF", fontSize: item.style && item.style.fontSize ? item.style.fontSize : "12px" })
+                        },
+                        vue.toDisplayString(item.text),
+                        5
+                        /* TEXT, STYLE */
+                      )
+                    ], 44, ["onTouchend", "onClick"]);
+                  }),
+                  128
+                  /* KEYED_FRAGMENT */
+                ))
+              ], true)
+            ]),
+            vue.createElementVNode("view", { class: "uni-swipe_text--center" }, [
+              vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+            ]),
+            vue.createElementVNode("view", { class: "uni-swipe_button-group button-group--right" }, [
+              vue.renderSlot(_ctx.$slots, "right", {}, () => [
+                (vue.openBlock(true), vue.createElementBlock(
+                  vue.Fragment,
+                  null,
+                  vue.renderList($props.rightOptions, (item, index) => {
+                    return vue.openBlock(), vue.createElementBlock("view", {
+                      key: index,
+                      style: vue.normalizeStyle({
+                        backgroundColor: item.style && item.style.backgroundColor ? item.style.backgroundColor : "#C7C6CD"
+                      }),
+                      class: "uni-swipe_button button-hock",
+                      onTouchstart: _cache[1] || (_cache[1] = vue.withModifiers((...args) => _ctx.appTouchStart && _ctx.appTouchStart(...args), ["stop"])),
+                      onTouchend: vue.withModifiers(($event) => _ctx.appTouchEnd($event, index, item, "right"), ["stop"]),
+                      onClick: vue.withModifiers(($event) => _ctx.onClickForPC(index, item, "right"), ["stop"])
+                    }, [
+                      vue.createElementVNode(
+                        "text",
+                        {
+                          class: "uni-swipe_button-text",
+                          style: vue.normalizeStyle({ color: item.style && item.style.color ? item.style.color : "#FFFFFF", fontSize: item.style && item.style.fontSize ? item.style.fontSize : "16px" })
+                        },
+                        vue.toDisplayString(item.text),
+                        5
+                        /* TEXT, STYLE */
+                      )
+                    ], 44, ["onTouchend", "onClick"]);
+                  }),
+                  128
+                  /* KEYED_FRAGMENT */
+                ))
+              ], true)
+            ])
+          ], 40, ["change:prop", "prop", "data-threshold", "data-disabled"])
+        ]),
+        vue.createCommentVNode(" app nvue端 使用 bindingx "),
+        vue.createCommentVNode(" 其他平台使用 js ，长列表性能可能会有影响")
+      ],
+      2112
+      /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+    );
+  }
+  if (typeof block0 === "function")
+    block0(_sfc_main$Y);
+  if (typeof block1 === "function")
+    block1(_sfc_main$Y);
+  const __easycom_0$b = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__scopeId", "data-v-8ff2a577"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.vue"]]);
+  const _sfc_main$X = {
+    name: "uniCollapseItem",
+    props: {
+      // 列表标题
+      title: {
+        type: String,
+        default: ""
+      },
+      name: {
+        type: [Number, String],
+        default: ""
+      },
+      // 是否禁用
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      // 是否显示动画,app 端默认不开启动画，卡顿严重
+      showAnimation: {
+        type: Boolean,
+        default: false
+      },
+      // 是否展开
+      open: {
+        type: Boolean,
+        default: false
+      },
+      // 缩略图
+      thumb: {
+        type: String,
+        default: ""
+      },
+      // 标题分隔线显示类型
+      titleBorder: {
+        type: String,
+        default: "auto"
+      },
+      border: {
+        type: Boolean,
+        default: true
+      },
+      showArrow: {
+        type: Boolean,
+        default: true
+      }
+    },
+    data() {
+      const elId = `Uni_${Math.ceil(Math.random() * 1e6).toString(36)}`;
+      return {
+        isOpen: false,
+        isheight: null,
+        height: 0,
+        elId,
+        nameSync: 0
+      };
+    },
+    watch: {
+      open(val) {
+        this.isOpen = val;
+        this.onClick(val, "init");
+      }
+    },
+    updated(e2) {
+      this.$nextTick(() => {
+        this.init(true);
+      });
+    },
+    created() {
+      this.collapse = this.getCollapse();
+      this.oldHeight = 0;
+      this.onClick(this.open, "init");
+    },
+    // TODO vue3
+    unmounted() {
+      this.__isUnmounted = true;
+      this.uninstall();
+    },
+    mounted() {
+      if (!this.collapse)
+        return;
+      if (this.name !== "") {
+        this.nameSync = this.name;
+      } else {
+        this.nameSync = this.collapse.childrens.length + "";
+      }
+      if (this.collapse.names.indexOf(this.nameSync) === -1) {
+        this.collapse.names.push(this.nameSync);
+      } else {
+        formatAppLog("warn", "at uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue:154", `name 值 ${this.nameSync} 重复`);
+      }
+      if (this.collapse.childrens.indexOf(this) === -1) {
+        this.collapse.childrens.push(this);
+      }
+      this.init();
+    },
+    methods: {
+      init(type) {
+        this.getCollapseHeight(type);
+      },
+      uninstall() {
+        if (this.collapse) {
+          this.collapse.childrens.forEach((item, index) => {
+            if (item === this) {
+              this.collapse.childrens.splice(index, 1);
+            }
+          });
+          this.collapse.names.forEach((item, index) => {
+            if (item === this.nameSync) {
+              this.collapse.names.splice(index, 1);
+            }
+          });
+        }
+      },
+      onClick(isOpen, type) {
+        if (this.disabled)
+          return;
+        this.isOpen = isOpen;
+        if (this.isOpen && this.collapse) {
+          this.collapse.setAccordion(this);
+        }
+        if (type !== "init") {
+          this.collapse.onChange(isOpen, this);
+        }
+      },
+      getCollapseHeight(type, index = 0) {
+        const views = uni.createSelectorQuery().in(this);
+        views.select(`#${this.elId}`).fields({
+          size: true
+        }, (data2) => {
+          if (index >= 10)
+            return;
+          if (!data2) {
+            index++;
+            this.getCollapseHeight(false, index);
+            return;
+          }
+          this.height = data2.height;
+          this.isheight = true;
+          if (type)
+            return;
+          this.onClick(this.isOpen, "init");
+        }).exec();
+      },
+      getNvueHwight(type) {
+        dom.getComponentRect(this.$refs["collapse--hook"], (option) => {
+          if (option && option.result && option.size) {
+            this.height = option.size.height;
+            this.isheight = true;
+            if (type)
+              return;
+            this.onClick(this.open, "init");
+          }
+        });
+      },
+      /**
+       * 获取父元素实例
+       */
+      getCollapse(name = "uniCollapse") {
+        let parent = this.$parent;
+        let parentName = parent.$options.name;
+        while (parentName !== name) {
+          parent = parent.$parent;
+          if (!parent)
+            return false;
+          parentName = parent.$options.name;
+        }
+        return parent;
+      }
+    }
+  };
+  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-collapse-item" }, [
+      vue.createCommentVNode(" onClick(!isOpen) "),
+      vue.createElementVNode(
+        "view",
+        {
+          onClick: _cache[0] || (_cache[0] = ($event) => $options.onClick(!$data.isOpen)),
+          class: vue.normalizeClass(["uni-collapse-item__title", { "is-open": $data.isOpen && $props.titleBorder === "auto", "uni-collapse-item-border": $props.titleBorder !== "none" }])
+        },
+        [
+          vue.createElementVNode("view", { class: "uni-collapse-item__title-wrap" }, [
+            vue.renderSlot(_ctx.$slots, "title", {}, () => [
+              vue.createElementVNode(
+                "view",
+                {
+                  class: vue.normalizeClass(["uni-collapse-item__title-box", { "is-disabled": $props.disabled }])
+                },
+                [
+                  $props.thumb ? (vue.openBlock(), vue.createElementBlock("image", {
+                    key: 0,
+                    src: $props.thumb,
+                    class: "uni-collapse-item__title-img"
+                  }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true),
+                  vue.createElementVNode(
+                    "text",
+                    { class: "uni-collapse-item__title-text" },
+                    vue.toDisplayString($props.title),
+                    1
+                    /* TEXT */
+                  )
+                ],
+                2
+                /* CLASS */
+              )
+            ], true)
+          ]),
+          $props.showArrow ? (vue.openBlock(), vue.createElementBlock(
+            "view",
+            {
+              key: 0,
+              class: vue.normalizeClass([{ "uni-collapse-item__title-arrow-active": $data.isOpen, "uni-collapse-item--animation": $props.showAnimation === true }, "uni-collapse-item__title-arrow"])
+            },
+            [
+              vue.createVNode(_component_uni_icons, {
+                color: $props.disabled ? "#ddd" : "#bbb",
+                size: "14",
+                type: "bottom"
+              }, null, 8, ["color"])
+            ],
+            2
+            /* CLASS */
+          )) : vue.createCommentVNode("v-if", true)
+        ],
+        2
+        /* CLASS */
+      ),
+      vue.createElementVNode(
+        "view",
+        {
+          class: vue.normalizeClass(["uni-collapse-item__wrap", { "is--transition": $props.showAnimation }]),
+          style: vue.normalizeStyle({ height: ($data.isOpen ? $data.height : 0) + "px" })
+        },
+        [
+          vue.createElementVNode("view", {
+            id: $data.elId,
+            ref: "collapse--hook",
+            class: vue.normalizeClass(["uni-collapse-item__wrap-content", { open: $data.isheight, "uni-collapse-item--border": $props.border && $data.isOpen }])
+          }, [
+            vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+          ], 10, ["id"])
+        ],
+        6
+        /* CLASS, STYLE */
+      )
+    ]);
+  }
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["__scopeId", "data-v-3d2dde9f"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue"]]);
+  const _sfc_main$W = {
+    name: "uniCollapse",
+    emits: ["change", "activeItem", "input", "update:modelValue"],
+    props: {
+      value: {
+        type: [String, Array],
+        default: ""
+      },
+      modelValue: {
+        type: [String, Array],
+        default: ""
+      },
+      accordion: {
+        // 是否开启手风琴效果
+        type: [Boolean, String],
+        default: false
+      }
+    },
+    data() {
+      return {};
+    },
+    computed: {
+      // TODO 兼容 vue2 和 vue3
+      dataValue() {
+        let value = typeof this.value === "string" && this.value === "" || Array.isArray(this.value) && this.value.length === 0;
+        let modelValue = typeof this.modelValue === "string" && this.modelValue === "" || Array.isArray(this.modelValue) && this.modelValue.length === 0;
+        if (value) {
+          return this.modelValue;
+        }
+        if (modelValue) {
+          return this.value;
+        }
+        return this.value;
+      }
+    },
+    watch: {
+      dataValue(val) {
+        this.setOpen(val);
+      }
+    },
+    created() {
+      this.childrens = [];
+      this.names = [];
+    },
+    mounted() {
+      this.$nextTick(() => {
+        this.setOpen(this.dataValue);
+      });
+    },
+    methods: {
+      setOpen(val) {
+        let str = typeof val === "string";
+        let arr = Array.isArray(val);
+        this.childrens.forEach((vm, index) => {
+          if (str) {
+            if (val === vm.nameSync) {
+              if (!this.accordion) {
+                formatAppLog("warn", "at uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue:75", "accordion 属性为 false ,v-model 类型应该为 array");
+                return;
+              }
+              vm.isOpen = true;
+            }
+          }
+          if (arr) {
+            val.forEach((v2) => {
+              if (v2 === vm.nameSync) {
+                if (this.accordion) {
+                  formatAppLog("warn", "at uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue:85", "accordion 属性为 true ,v-model 类型应该为 string");
+                  return;
+                }
+                vm.isOpen = true;
+              }
+            });
+          }
+        });
+        this.emit(val);
+      },
+      setAccordion(self2) {
+        if (!this.accordion)
+          return;
+        this.childrens.forEach((vm, index) => {
+          if (self2 !== vm) {
+            vm.isOpen = false;
+          }
+        });
+      },
+      resize() {
+        this.childrens.forEach((vm, index) => {
+          vm.getCollapseHeight();
+        });
+      },
+      onChange(isOpen, self2) {
+        let activeItem = [];
+        if (this.accordion) {
+          activeItem = isOpen ? self2.nameSync : "";
+        } else {
+          this.childrens.forEach((vm, index) => {
+            if (vm.isOpen) {
+              activeItem.push(vm.nameSync);
+            }
+          });
+        }
+        this.$emit("change", activeItem);
+        this.emit(activeItem);
+      },
+      emit(val) {
+        this.$emit("input", val);
+        this.$emit("update:modelValue", val);
+      }
+    }
+  };
+  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-collapse" }, [
+      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+    ]);
+  }
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-3f050360"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue"]]);
+  const _sfc_main$V = {
     name: "UniStatusBar",
     data() {
       return {
@@ -7018,7 +7643,7 @@ ${i3}
       };
     }
   };
-  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -7032,7 +7657,2222 @@ ${i3}
       /* STYLE */
     );
   }
-  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-7920e3e0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-7920e3e0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+  function getDevtoolsGlobalHook() {
+    return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
+  }
+  function getTarget() {
+    return typeof navigator !== "undefined" && typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {};
+  }
+  const isProxyAvailable = typeof Proxy === "function";
+  const HOOK_SETUP = "devtools-plugin:setup";
+  const HOOK_PLUGIN_SETTINGS_SET = "plugin:settings:set";
+  class ApiProxy {
+    constructor(plugin, hook) {
+      this.target = null;
+      this.targetQueue = [];
+      this.onQueue = [];
+      this.plugin = plugin;
+      this.hook = hook;
+      const defaultSettings = {};
+      if (plugin.settings) {
+        for (const id in plugin.settings) {
+          const item = plugin.settings[id];
+          defaultSettings[id] = item.defaultValue;
+        }
+      }
+      const localSettingsSaveId = `__vue-devtools-plugin-settings__${plugin.id}`;
+      let currentSettings = { ...defaultSettings };
+      try {
+        const raw = localStorage.getItem(localSettingsSaveId);
+        const data2 = JSON.parse(raw);
+        Object.assign(currentSettings, data2);
+      } catch (e2) {
+      }
+      this.fallbacks = {
+        getSettings() {
+          return currentSettings;
+        },
+        setSettings(value) {
+          try {
+            localStorage.setItem(localSettingsSaveId, JSON.stringify(value));
+          } catch (e2) {
+          }
+          currentSettings = value;
+        }
+      };
+      hook.on(HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
+        if (pluginId === this.plugin.id) {
+          this.fallbacks.setSettings(value);
+        }
+      });
+      this.proxiedOn = new Proxy({}, {
+        get: (_target, prop) => {
+          if (this.target) {
+            return this.target.on[prop];
+          } else {
+            return (...args) => {
+              this.onQueue.push({
+                method: prop,
+                args
+              });
+            };
+          }
+        }
+      });
+      this.proxiedTarget = new Proxy({}, {
+        get: (_target, prop) => {
+          if (this.target) {
+            return this.target[prop];
+          } else if (prop === "on") {
+            return this.proxiedOn;
+          } else if (Object.keys(this.fallbacks).includes(prop)) {
+            return (...args) => {
+              this.targetQueue.push({
+                method: prop,
+                args,
+                resolve: () => {
+                }
+              });
+              return this.fallbacks[prop](...args);
+            };
+          } else {
+            return (...args) => {
+              return new Promise((resolve) => {
+                this.targetQueue.push({
+                  method: prop,
+                  args,
+                  resolve
+                });
+              });
+            };
+          }
+        }
+      });
+    }
+    async setRealTarget(target) {
+      this.target = target;
+      for (const item of this.onQueue) {
+        this.target.on[item.method](...item.args);
+      }
+      for (const item of this.targetQueue) {
+        item.resolve(await this.target[item.method](...item.args));
+      }
+    }
+  }
+  function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
+    const target = getTarget();
+    const hook = getDevtoolsGlobalHook();
+    const enableProxy = isProxyAvailable && pluginDescriptor.enableEarlyProxy;
+    if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
+      hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);
+    } else {
+      const proxy = enableProxy ? new ApiProxy(pluginDescriptor, hook) : null;
+      const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
+      list.push({
+        pluginDescriptor,
+        setupFn,
+        proxy
+      });
+      if (proxy)
+        setupFn(proxy.proxiedTarget);
+    }
+  }
+  /*!
+   * vuex v4.1.0
+   * (c) 2022 Evan You
+   * @license MIT
+   */
+  var storeKey = "store";
+  function forEachValue(obj, fn) {
+    Object.keys(obj).forEach(function(key) {
+      return fn(obj[key], key);
+    });
+  }
+  function isObject$2(obj) {
+    return obj !== null && typeof obj === "object";
+  }
+  function isPromise(val) {
+    return val && typeof val.then === "function";
+  }
+  function assert(condition2, msg) {
+    if (!condition2) {
+      throw new Error("[vuex] " + msg);
+    }
+  }
+  function partial(fn, arg) {
+    return function() {
+      return fn(arg);
+    };
+  }
+  function genericSubscribe(fn, subs, options) {
+    if (subs.indexOf(fn) < 0) {
+      options && options.prepend ? subs.unshift(fn) : subs.push(fn);
+    }
+    return function() {
+      var i2 = subs.indexOf(fn);
+      if (i2 > -1) {
+        subs.splice(i2, 1);
+      }
+    };
+  }
+  function resetStore(store2, hot) {
+    store2._actions = /* @__PURE__ */ Object.create(null);
+    store2._mutations = /* @__PURE__ */ Object.create(null);
+    store2._wrappedGetters = /* @__PURE__ */ Object.create(null);
+    store2._modulesNamespaceMap = /* @__PURE__ */ Object.create(null);
+    var state = store2.state;
+    installModule(store2, state, [], store2._modules.root, true);
+    resetStoreState(store2, state, hot);
+  }
+  function resetStoreState(store2, state, hot) {
+    var oldState = store2._state;
+    var oldScope = store2._scope;
+    store2.getters = {};
+    store2._makeLocalGettersCache = /* @__PURE__ */ Object.create(null);
+    var wrappedGetters = store2._wrappedGetters;
+    var computedObj = {};
+    var computedCache = {};
+    var scope = vue.effectScope(true);
+    scope.run(function() {
+      forEachValue(wrappedGetters, function(fn, key) {
+        computedObj[key] = partial(fn, store2);
+        computedCache[key] = vue.computed(function() {
+          return computedObj[key]();
+        });
+        Object.defineProperty(store2.getters, key, {
+          get: function() {
+            return computedCache[key].value;
+          },
+          enumerable: true
+          // for local getters
+        });
+      });
+    });
+    store2._state = vue.reactive({
+      data: state
+    });
+    store2._scope = scope;
+    if (store2.strict) {
+      enableStrictMode(store2);
+    }
+    if (oldState) {
+      if (hot) {
+        store2._withCommit(function() {
+          oldState.data = null;
+        });
+      }
+    }
+    if (oldScope) {
+      oldScope.stop();
+    }
+  }
+  function installModule(store2, rootState, path, module, hot) {
+    var isRoot = !path.length;
+    var namespace = store2._modules.getNamespace(path);
+    if (module.namespaced) {
+      if (store2._modulesNamespaceMap[namespace] && true) {
+        console.error("[vuex] duplicate namespace " + namespace + " for the namespaced module " + path.join("/"));
+      }
+      store2._modulesNamespaceMap[namespace] = module;
+    }
+    if (!isRoot && !hot) {
+      var parentState = getNestedState(rootState, path.slice(0, -1));
+      var moduleName = path[path.length - 1];
+      store2._withCommit(function() {
+        {
+          if (moduleName in parentState) {
+            console.warn(
+              '[vuex] state field "' + moduleName + '" was overridden by a module with the same name at "' + path.join(".") + '"'
+            );
+          }
+        }
+        parentState[moduleName] = module.state;
+      });
+    }
+    var local = module.context = makeLocalContext(store2, namespace, path);
+    module.forEachMutation(function(mutation, key) {
+      var namespacedType = namespace + key;
+      registerMutation(store2, namespacedType, mutation, local);
+    });
+    module.forEachAction(function(action, key) {
+      var type = action.root ? key : namespace + key;
+      var handler = action.handler || action;
+      registerAction(store2, type, handler, local);
+    });
+    module.forEachGetter(function(getter, key) {
+      var namespacedType = namespace + key;
+      registerGetter(store2, namespacedType, getter, local);
+    });
+    module.forEachChild(function(child, key) {
+      installModule(store2, rootState, path.concat(key), child, hot);
+    });
+  }
+  function makeLocalContext(store2, namespace, path) {
+    var noNamespace = namespace === "";
+    var local = {
+      dispatch: noNamespace ? store2.dispatch : function(_type, _payload, _options) {
+        var args = unifyObjectStyle(_type, _payload, _options);
+        var payload = args.payload;
+        var options = args.options;
+        var type = args.type;
+        if (!options || !options.root) {
+          type = namespace + type;
+          if (!store2._actions[type]) {
+            console.error("[vuex] unknown local action type: " + args.type + ", global type: " + type);
+            return;
+          }
+        }
+        return store2.dispatch(type, payload);
+      },
+      commit: noNamespace ? store2.commit : function(_type, _payload, _options) {
+        var args = unifyObjectStyle(_type, _payload, _options);
+        var payload = args.payload;
+        var options = args.options;
+        var type = args.type;
+        if (!options || !options.root) {
+          type = namespace + type;
+          if (!store2._mutations[type]) {
+            console.error("[vuex] unknown local mutation type: " + args.type + ", global type: " + type);
+            return;
+          }
+        }
+        store2.commit(type, payload, options);
+      }
+    };
+    Object.defineProperties(local, {
+      getters: {
+        get: noNamespace ? function() {
+          return store2.getters;
+        } : function() {
+          return makeLocalGetters(store2, namespace);
+        }
+      },
+      state: {
+        get: function() {
+          return getNestedState(store2.state, path);
+        }
+      }
+    });
+    return local;
+  }
+  function makeLocalGetters(store2, namespace) {
+    if (!store2._makeLocalGettersCache[namespace]) {
+      var gettersProxy = {};
+      var splitPos = namespace.length;
+      Object.keys(store2.getters).forEach(function(type) {
+        if (type.slice(0, splitPos) !== namespace) {
+          return;
+        }
+        var localType = type.slice(splitPos);
+        Object.defineProperty(gettersProxy, localType, {
+          get: function() {
+            return store2.getters[type];
+          },
+          enumerable: true
+        });
+      });
+      store2._makeLocalGettersCache[namespace] = gettersProxy;
+    }
+    return store2._makeLocalGettersCache[namespace];
+  }
+  function registerMutation(store2, type, handler, local) {
+    var entry = store2._mutations[type] || (store2._mutations[type] = []);
+    entry.push(function wrappedMutationHandler(payload) {
+      handler.call(store2, local.state, payload);
+    });
+  }
+  function registerAction(store2, type, handler, local) {
+    var entry = store2._actions[type] || (store2._actions[type] = []);
+    entry.push(function wrappedActionHandler(payload) {
+      var res = handler.call(store2, {
+        dispatch: local.dispatch,
+        commit: local.commit,
+        getters: local.getters,
+        state: local.state,
+        rootGetters: store2.getters,
+        rootState: store2.state
+      }, payload);
+      if (!isPromise(res)) {
+        res = Promise.resolve(res);
+      }
+      if (store2._devtoolHook) {
+        return res.catch(function(err) {
+          store2._devtoolHook.emit("vuex:error", err);
+          throw err;
+        });
+      } else {
+        return res;
+      }
+    });
+  }
+  function registerGetter(store2, type, rawGetter, local) {
+    if (store2._wrappedGetters[type]) {
+      {
+        console.error("[vuex] duplicate getter key: " + type);
+      }
+      return;
+    }
+    store2._wrappedGetters[type] = function wrappedGetter(store22) {
+      return rawGetter(
+        local.state,
+        // local state
+        local.getters,
+        // local getters
+        store22.state,
+        // root state
+        store22.getters
+        // root getters
+      );
+    };
+  }
+  function enableStrictMode(store2) {
+    vue.watch(function() {
+      return store2._state.data;
+    }, function() {
+      {
+        assert(store2._committing, "do not mutate vuex store state outside mutation handlers.");
+      }
+    }, { deep: true, flush: "sync" });
+  }
+  function getNestedState(state, path) {
+    return path.reduce(function(state2, key) {
+      return state2[key];
+    }, state);
+  }
+  function unifyObjectStyle(type, payload, options) {
+    if (isObject$2(type) && type.type) {
+      options = payload;
+      payload = type;
+      type = type.type;
+    }
+    {
+      assert(typeof type === "string", "expects string as the type, but found " + typeof type + ".");
+    }
+    return { type, payload, options };
+  }
+  var LABEL_VUEX_BINDINGS = "vuex bindings";
+  var MUTATIONS_LAYER_ID = "vuex:mutations";
+  var ACTIONS_LAYER_ID = "vuex:actions";
+  var INSPECTOR_ID = "vuex";
+  var actionId = 0;
+  function addDevtools(app, store2) {
+    setupDevtoolsPlugin(
+      {
+        id: "org.vuejs.vuex",
+        app,
+        label: "Vuex",
+        homepage: "https://next.vuex.vuejs.org/",
+        logo: "https://vuejs.org/images/icons/favicon-96x96.png",
+        packageName: "vuex",
+        componentStateTypes: [LABEL_VUEX_BINDINGS]
+      },
+      function(api) {
+        api.addTimelineLayer({
+          id: MUTATIONS_LAYER_ID,
+          label: "Vuex Mutations",
+          color: COLOR_LIME_500
+        });
+        api.addTimelineLayer({
+          id: ACTIONS_LAYER_ID,
+          label: "Vuex Actions",
+          color: COLOR_LIME_500
+        });
+        api.addInspector({
+          id: INSPECTOR_ID,
+          label: "Vuex",
+          icon: "storage",
+          treeFilterPlaceholder: "Filter stores..."
+        });
+        api.on.getInspectorTree(function(payload) {
+          if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
+            if (payload.filter) {
+              var nodes = [];
+              flattenStoreForInspectorTree(nodes, store2._modules.root, payload.filter, "");
+              payload.rootNodes = nodes;
+            } else {
+              payload.rootNodes = [
+                formatStoreForInspectorTree(store2._modules.root, "")
+              ];
+            }
+          }
+        });
+        api.on.getInspectorState(function(payload) {
+          if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
+            var modulePath = payload.nodeId;
+            makeLocalGetters(store2, modulePath);
+            payload.state = formatStoreForInspectorState(
+              getStoreModule(store2._modules, modulePath),
+              modulePath === "root" ? store2.getters : store2._makeLocalGettersCache,
+              modulePath
+            );
+          }
+        });
+        api.on.editInspectorState(function(payload) {
+          if (payload.app === app && payload.inspectorId === INSPECTOR_ID) {
+            var modulePath = payload.nodeId;
+            var path = payload.path;
+            if (modulePath !== "root") {
+              path = modulePath.split("/").filter(Boolean).concat(path);
+            }
+            store2._withCommit(function() {
+              payload.set(store2._state.data, path, payload.state.value);
+            });
+          }
+        });
+        store2.subscribe(function(mutation, state) {
+          var data2 = {};
+          if (mutation.payload) {
+            data2.payload = mutation.payload;
+          }
+          data2.state = state;
+          api.notifyComponentUpdate();
+          api.sendInspectorTree(INSPECTOR_ID);
+          api.sendInspectorState(INSPECTOR_ID);
+          api.addTimelineEvent({
+            layerId: MUTATIONS_LAYER_ID,
+            event: {
+              time: Date.now(),
+              title: mutation.type,
+              data: data2
+            }
+          });
+        });
+        store2.subscribeAction({
+          before: function(action, state) {
+            var data2 = {};
+            if (action.payload) {
+              data2.payload = action.payload;
+            }
+            action._id = actionId++;
+            action._time = Date.now();
+            data2.state = state;
+            api.addTimelineEvent({
+              layerId: ACTIONS_LAYER_ID,
+              event: {
+                time: action._time,
+                title: action.type,
+                groupId: action._id,
+                subtitle: "start",
+                data: data2
+              }
+            });
+          },
+          after: function(action, state) {
+            var data2 = {};
+            var duration = Date.now() - action._time;
+            data2.duration = {
+              _custom: {
+                type: "duration",
+                display: duration + "ms",
+                tooltip: "Action duration",
+                value: duration
+              }
+            };
+            if (action.payload) {
+              data2.payload = action.payload;
+            }
+            data2.state = state;
+            api.addTimelineEvent({
+              layerId: ACTIONS_LAYER_ID,
+              event: {
+                time: Date.now(),
+                title: action.type,
+                groupId: action._id,
+                subtitle: "end",
+                data: data2
+              }
+            });
+          }
+        });
+      }
+    );
+  }
+  var COLOR_LIME_500 = 8702998;
+  var COLOR_DARK = 6710886;
+  var COLOR_WHITE = 16777215;
+  var TAG_NAMESPACED = {
+    label: "namespaced",
+    textColor: COLOR_WHITE,
+    backgroundColor: COLOR_DARK
+  };
+  function extractNameFromPath(path) {
+    return path && path !== "root" ? path.split("/").slice(-2, -1)[0] : "Root";
+  }
+  function formatStoreForInspectorTree(module, path) {
+    return {
+      id: path || "root",
+      // all modules end with a `/`, we want the last segment only
+      // cart/ -> cart
+      // nested/cart/ -> cart
+      label: extractNameFromPath(path),
+      tags: module.namespaced ? [TAG_NAMESPACED] : [],
+      children: Object.keys(module._children).map(
+        function(moduleName) {
+          return formatStoreForInspectorTree(
+            module._children[moduleName],
+            path + moduleName + "/"
+          );
+        }
+      )
+    };
+  }
+  function flattenStoreForInspectorTree(result, module, filter, path) {
+    if (path.includes(filter)) {
+      result.push({
+        id: path || "root",
+        label: path.endsWith("/") ? path.slice(0, path.length - 1) : path || "Root",
+        tags: module.namespaced ? [TAG_NAMESPACED] : []
+      });
+    }
+    Object.keys(module._children).forEach(function(moduleName) {
+      flattenStoreForInspectorTree(result, module._children[moduleName], filter, path + moduleName + "/");
+    });
+  }
+  function formatStoreForInspectorState(module, getters, path) {
+    getters = path === "root" ? getters : getters[path];
+    var gettersKeys = Object.keys(getters);
+    var storeState = {
+      state: Object.keys(module.state).map(function(key) {
+        return {
+          key,
+          editable: true,
+          value: module.state[key]
+        };
+      })
+    };
+    if (gettersKeys.length) {
+      var tree = transformPathsToObjectTree(getters);
+      storeState.getters = Object.keys(tree).map(function(key) {
+        return {
+          key: key.endsWith("/") ? extractNameFromPath(key) : key,
+          editable: false,
+          value: canThrow(function() {
+            return tree[key];
+          })
+        };
+      });
+    }
+    return storeState;
+  }
+  function transformPathsToObjectTree(getters) {
+    var result = {};
+    Object.keys(getters).forEach(function(key) {
+      var path = key.split("/");
+      if (path.length > 1) {
+        var target = result;
+        var leafKey = path.pop();
+        path.forEach(function(p2) {
+          if (!target[p2]) {
+            target[p2] = {
+              _custom: {
+                value: {},
+                display: p2,
+                tooltip: "Module",
+                abstract: true
+              }
+            };
+          }
+          target = target[p2]._custom.value;
+        });
+        target[leafKey] = canThrow(function() {
+          return getters[key];
+        });
+      } else {
+        result[key] = canThrow(function() {
+          return getters[key];
+        });
+      }
+    });
+    return result;
+  }
+  function getStoreModule(moduleMap, path) {
+    var names = path.split("/").filter(function(n2) {
+      return n2;
+    });
+    return names.reduce(
+      function(module, moduleName, i2) {
+        var child = module[moduleName];
+        if (!child) {
+          throw new Error('Missing module "' + moduleName + '" for path "' + path + '".');
+        }
+        return i2 === names.length - 1 ? child : child._children;
+      },
+      path === "root" ? moduleMap : moduleMap.root._children
+    );
+  }
+  function canThrow(cb) {
+    try {
+      return cb();
+    } catch (e2) {
+      return e2;
+    }
+  }
+  var Module = function Module2(rawModule, runtime) {
+    this.runtime = runtime;
+    this._children = /* @__PURE__ */ Object.create(null);
+    this._rawModule = rawModule;
+    var rawState = rawModule.state;
+    this.state = (typeof rawState === "function" ? rawState() : rawState) || {};
+  };
+  var prototypeAccessors$1 = { namespaced: { configurable: true } };
+  prototypeAccessors$1.namespaced.get = function() {
+    return !!this._rawModule.namespaced;
+  };
+  Module.prototype.addChild = function addChild(key, module) {
+    this._children[key] = module;
+  };
+  Module.prototype.removeChild = function removeChild(key) {
+    delete this._children[key];
+  };
+  Module.prototype.getChild = function getChild(key) {
+    return this._children[key];
+  };
+  Module.prototype.hasChild = function hasChild(key) {
+    return key in this._children;
+  };
+  Module.prototype.update = function update(rawModule) {
+    this._rawModule.namespaced = rawModule.namespaced;
+    if (rawModule.actions) {
+      this._rawModule.actions = rawModule.actions;
+    }
+    if (rawModule.mutations) {
+      this._rawModule.mutations = rawModule.mutations;
+    }
+    if (rawModule.getters) {
+      this._rawModule.getters = rawModule.getters;
+    }
+  };
+  Module.prototype.forEachChild = function forEachChild(fn) {
+    forEachValue(this._children, fn);
+  };
+  Module.prototype.forEachGetter = function forEachGetter(fn) {
+    if (this._rawModule.getters) {
+      forEachValue(this._rawModule.getters, fn);
+    }
+  };
+  Module.prototype.forEachAction = function forEachAction(fn) {
+    if (this._rawModule.actions) {
+      forEachValue(this._rawModule.actions, fn);
+    }
+  };
+  Module.prototype.forEachMutation = function forEachMutation(fn) {
+    if (this._rawModule.mutations) {
+      forEachValue(this._rawModule.mutations, fn);
+    }
+  };
+  Object.defineProperties(Module.prototype, prototypeAccessors$1);
+  var ModuleCollection = function ModuleCollection2(rawRootModule) {
+    this.register([], rawRootModule, false);
+  };
+  ModuleCollection.prototype.get = function get(path) {
+    return path.reduce(function(module, key) {
+      return module.getChild(key);
+    }, this.root);
+  };
+  ModuleCollection.prototype.getNamespace = function getNamespace(path) {
+    var module = this.root;
+    return path.reduce(function(namespace, key) {
+      module = module.getChild(key);
+      return namespace + (module.namespaced ? key + "/" : "");
+    }, "");
+  };
+  ModuleCollection.prototype.update = function update$1(rawRootModule) {
+    update2([], this.root, rawRootModule);
+  };
+  ModuleCollection.prototype.register = function register(path, rawModule, runtime) {
+    var this$1$1 = this;
+    if (runtime === void 0)
+      runtime = true;
+    {
+      assertRawModule(path, rawModule);
+    }
+    var newModule = new Module(rawModule, runtime);
+    if (path.length === 0) {
+      this.root = newModule;
+    } else {
+      var parent = this.get(path.slice(0, -1));
+      parent.addChild(path[path.length - 1], newModule);
+    }
+    if (rawModule.modules) {
+      forEachValue(rawModule.modules, function(rawChildModule, key) {
+        this$1$1.register(path.concat(key), rawChildModule, runtime);
+      });
+    }
+  };
+  ModuleCollection.prototype.unregister = function unregister(path) {
+    var parent = this.get(path.slice(0, -1));
+    var key = path[path.length - 1];
+    var child = parent.getChild(key);
+    if (!child) {
+      {
+        console.warn(
+          "[vuex] trying to unregister module '" + key + "', which is not registered"
+        );
+      }
+      return;
+    }
+    if (!child.runtime) {
+      return;
+    }
+    parent.removeChild(key);
+  };
+  ModuleCollection.prototype.isRegistered = function isRegistered(path) {
+    var parent = this.get(path.slice(0, -1));
+    var key = path[path.length - 1];
+    if (parent) {
+      return parent.hasChild(key);
+    }
+    return false;
+  };
+  function update2(path, targetModule, newModule) {
+    {
+      assertRawModule(path, newModule);
+    }
+    targetModule.update(newModule);
+    if (newModule.modules) {
+      for (var key in newModule.modules) {
+        if (!targetModule.getChild(key)) {
+          {
+            console.warn(
+              "[vuex] trying to add a new module '" + key + "' on hot reloading, manual reload is needed"
+            );
+          }
+          return;
+        }
+        update2(
+          path.concat(key),
+          targetModule.getChild(key),
+          newModule.modules[key]
+        );
+      }
+    }
+  }
+  var functionAssert = {
+    assert: function(value) {
+      return typeof value === "function";
+    },
+    expected: "function"
+  };
+  var objectAssert = {
+    assert: function(value) {
+      return typeof value === "function" || typeof value === "object" && typeof value.handler === "function";
+    },
+    expected: 'function or object with "handler" function'
+  };
+  var assertTypes = {
+    getters: functionAssert,
+    mutations: functionAssert,
+    actions: objectAssert
+  };
+  function assertRawModule(path, rawModule) {
+    Object.keys(assertTypes).forEach(function(key) {
+      if (!rawModule[key]) {
+        return;
+      }
+      var assertOptions = assertTypes[key];
+      forEachValue(rawModule[key], function(value, type) {
+        assert(
+          assertOptions.assert(value),
+          makeAssertionMessage(path, key, type, value, assertOptions.expected)
+        );
+      });
+    });
+  }
+  function makeAssertionMessage(path, key, type, value, expected) {
+    var buf = key + " should be " + expected + ' but "' + key + "." + type + '"';
+    if (path.length > 0) {
+      buf += ' in module "' + path.join(".") + '"';
+    }
+    buf += " is " + JSON.stringify(value) + ".";
+    return buf;
+  }
+  var Store = function Store2(options) {
+    var this$1$1 = this;
+    if (options === void 0)
+      options = {};
+    {
+      assert(typeof Promise !== "undefined", "vuex requires a Promise polyfill in this browser.");
+      assert(this instanceof Store2, "store must be called with the new operator.");
+    }
+    var plugins = options.plugins;
+    if (plugins === void 0)
+      plugins = [];
+    var strict = options.strict;
+    if (strict === void 0)
+      strict = false;
+    var devtools2 = options.devtools;
+    this._committing = false;
+    this._actions = /* @__PURE__ */ Object.create(null);
+    this._actionSubscribers = [];
+    this._mutations = /* @__PURE__ */ Object.create(null);
+    this._wrappedGetters = /* @__PURE__ */ Object.create(null);
+    this._modules = new ModuleCollection(options);
+    this._modulesNamespaceMap = /* @__PURE__ */ Object.create(null);
+    this._subscribers = [];
+    this._makeLocalGettersCache = /* @__PURE__ */ Object.create(null);
+    this._scope = null;
+    this._devtools = devtools2;
+    var store2 = this;
+    var ref = this;
+    var dispatch2 = ref.dispatch;
+    var commit2 = ref.commit;
+    this.dispatch = function boundDispatch(type, payload) {
+      return dispatch2.call(store2, type, payload);
+    };
+    this.commit = function boundCommit(type, payload, options2) {
+      return commit2.call(store2, type, payload, options2);
+    };
+    this.strict = strict;
+    var state = this._modules.root.state;
+    installModule(this, state, [], this._modules.root);
+    resetStoreState(this, state);
+    plugins.forEach(function(plugin) {
+      return plugin(this$1$1);
+    });
+  };
+  var prototypeAccessors = { state: { configurable: true } };
+  Store.prototype.install = function install(app, injectKey) {
+    app.provide(injectKey || storeKey, this);
+    app.config.globalProperties.$store = this;
+    var useDevtools = this._devtools !== void 0 ? this._devtools : true;
+    if (useDevtools) {
+      addDevtools(app, this);
+    }
+  };
+  prototypeAccessors.state.get = function() {
+    return this._state.data;
+  };
+  prototypeAccessors.state.set = function(v2) {
+    {
+      assert(false, "use store.replaceState() to explicit replace store state.");
+    }
+  };
+  Store.prototype.commit = function commit(_type, _payload, _options) {
+    var this$1$1 = this;
+    var ref = unifyObjectStyle(_type, _payload, _options);
+    var type = ref.type;
+    var payload = ref.payload;
+    var options = ref.options;
+    var mutation = { type, payload };
+    var entry = this._mutations[type];
+    if (!entry) {
+      {
+        console.error("[vuex] unknown mutation type: " + type);
+      }
+      return;
+    }
+    this._withCommit(function() {
+      entry.forEach(function commitIterator(handler) {
+        handler(payload);
+      });
+    });
+    this._subscribers.slice().forEach(function(sub) {
+      return sub(mutation, this$1$1.state);
+    });
+    if (options && options.silent) {
+      console.warn(
+        "[vuex] mutation type: " + type + ". Silent option has been removed. Use the filter functionality in the vue-devtools"
+      );
+    }
+  };
+  Store.prototype.dispatch = function dispatch(_type, _payload) {
+    var this$1$1 = this;
+    var ref = unifyObjectStyle(_type, _payload);
+    var type = ref.type;
+    var payload = ref.payload;
+    var action = { type, payload };
+    var entry = this._actions[type];
+    if (!entry) {
+      {
+        console.error("[vuex] unknown action type: " + type);
+      }
+      return;
+    }
+    try {
+      this._actionSubscribers.slice().filter(function(sub) {
+        return sub.before;
+      }).forEach(function(sub) {
+        return sub.before(action, this$1$1.state);
+      });
+    } catch (e2) {
+      {
+        console.warn("[vuex] error in before action subscribers: ");
+        console.error(e2);
+      }
+    }
+    var result = entry.length > 1 ? Promise.all(entry.map(function(handler) {
+      return handler(payload);
+    })) : entry[0](payload);
+    return new Promise(function(resolve, reject) {
+      result.then(function(res) {
+        try {
+          this$1$1._actionSubscribers.filter(function(sub) {
+            return sub.after;
+          }).forEach(function(sub) {
+            return sub.after(action, this$1$1.state);
+          });
+        } catch (e2) {
+          {
+            console.warn("[vuex] error in after action subscribers: ");
+            console.error(e2);
+          }
+        }
+        resolve(res);
+      }, function(error2) {
+        try {
+          this$1$1._actionSubscribers.filter(function(sub) {
+            return sub.error;
+          }).forEach(function(sub) {
+            return sub.error(action, this$1$1.state, error2);
+          });
+        } catch (e2) {
+          {
+            console.warn("[vuex] error in error action subscribers: ");
+            console.error(e2);
+          }
+        }
+        reject(error2);
+      });
+    });
+  };
+  Store.prototype.subscribe = function subscribe(fn, options) {
+    return genericSubscribe(fn, this._subscribers, options);
+  };
+  Store.prototype.subscribeAction = function subscribeAction(fn, options) {
+    var subs = typeof fn === "function" ? { before: fn } : fn;
+    return genericSubscribe(subs, this._actionSubscribers, options);
+  };
+  Store.prototype.watch = function watch$1(getter, cb, options) {
+    var this$1$1 = this;
+    {
+      assert(typeof getter === "function", "store.watch only accepts a function.");
+    }
+    return vue.watch(function() {
+      return getter(this$1$1.state, this$1$1.getters);
+    }, cb, Object.assign({}, options));
+  };
+  Store.prototype.replaceState = function replaceState(state) {
+    var this$1$1 = this;
+    this._withCommit(function() {
+      this$1$1._state.data = state;
+    });
+  };
+  Store.prototype.registerModule = function registerModule(path, rawModule, options) {
+    if (options === void 0)
+      options = {};
+    if (typeof path === "string") {
+      path = [path];
+    }
+    {
+      assert(Array.isArray(path), "module path must be a string or an Array.");
+      assert(path.length > 0, "cannot register the root module by using registerModule.");
+    }
+    this._modules.register(path, rawModule);
+    installModule(this, this.state, path, this._modules.get(path), options.preserveState);
+    resetStoreState(this, this.state);
+  };
+  Store.prototype.unregisterModule = function unregisterModule(path) {
+    var this$1$1 = this;
+    if (typeof path === "string") {
+      path = [path];
+    }
+    {
+      assert(Array.isArray(path), "module path must be a string or an Array.");
+    }
+    this._modules.unregister(path);
+    this._withCommit(function() {
+      var parentState = getNestedState(this$1$1.state, path.slice(0, -1));
+      delete parentState[path[path.length - 1]];
+    });
+    resetStore(this);
+  };
+  Store.prototype.hasModule = function hasModule(path) {
+    if (typeof path === "string") {
+      path = [path];
+    }
+    {
+      assert(Array.isArray(path), "module path must be a string or an Array.");
+    }
+    return this._modules.isRegistered(path);
+  };
+  Store.prototype.hotUpdate = function hotUpdate(newOptions) {
+    this._modules.update(newOptions);
+    resetStore(this, true);
+  };
+  Store.prototype._withCommit = function _withCommit(fn) {
+    var committing = this._committing;
+    this._committing = true;
+    fn();
+    this._committing = committing;
+  };
+  Object.defineProperties(Store.prototype, prototypeAccessors);
+  var isIos;
+  isIos = plus.os.name == "iOS";
+  function judgeIosPermissionPush() {
+    var result = false;
+    var UIApplication = plus.ios.import("UIApplication");
+    var app = UIApplication.sharedApplication();
+    var enabledTypes = 0;
+    if (app.currentUserNotificationSettings) {
+      var settings = app.currentUserNotificationSettings();
+      enabledTypes = settings.plusGetAttribute("types");
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:19", "enabledTypes1:" + enabledTypes);
+      if (enabledTypes == 0) {
+        formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:21", "推送权限没有开启");
+      } else {
+        result = true;
+        formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:24", "已经开启推送功能!");
+      }
+      plus.ios.deleteObject(settings);
+    } else {
+      enabledTypes = app.enabledRemoteNotificationTypes();
+      if (enabledTypes == 0) {
+        formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:30", "推送权限没有开启!");
+      } else {
+        result = true;
+        formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:33", "已经开启推送功能!");
+      }
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:35", "enabledTypes2:" + enabledTypes);
+    }
+    plus.ios.deleteObject(app);
+    plus.ios.deleteObject(UIApplication);
+    return result;
+  }
+  function judgeIosPermissionLocation() {
+    var result = false;
+    var cllocationManger = plus.ios.import("CLLocationManager");
+    var status = cllocationManger.authorizationStatus();
+    result = status != 2;
+    plus.ios.deleteObject(cllocationManger);
+    return result;
+  }
+  function judgeIosPermissionRecord() {
+    var result = false;
+    var avaudiosession = plus.ios.import("AVAudioSession");
+    var avaudio = avaudiosession.sharedInstance();
+    var permissionStatus = avaudio.recordPermission();
+    formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:70", "permissionStatus:" + permissionStatus);
+    if (permissionStatus == 1684369017 || permissionStatus == 1970168948) {
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:72", "麦克风权限没有开启");
+    } else {
+      result = true;
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:75", "麦克风权限已经开启");
+    }
+    plus.ios.deleteObject(avaudiosession);
+    return result;
+  }
+  function judgeIosPermissionCamera() {
+    var result = false;
+    var AVCaptureDevice = plus.ios.import("AVCaptureDevice");
+    var authStatus = AVCaptureDevice.authorizationStatusForMediaType("vide");
+    formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:86", "authStatus:" + authStatus);
+    if (authStatus == 3) {
+      result = true;
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:89", "相机权限已经开启");
+    } else {
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:91", "相机权限没有开启");
+    }
+    plus.ios.deleteObject(AVCaptureDevice);
+    return result;
+  }
+  function judgeIosPermissionPhotoLibrary() {
+    var result = false;
+    var PHPhotoLibrary = plus.ios.import("PHPhotoLibrary");
+    var authStatus = PHPhotoLibrary.authorizationStatus();
+    formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:102", "authStatus:" + authStatus);
+    if (authStatus == 3) {
+      result = true;
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:105", "相册权限已经开启");
+    } else {
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:107", "相册权限没有开启");
+    }
+    plus.ios.deleteObject(PHPhotoLibrary);
+    return result;
+  }
+  function judgeIosPermissionContact() {
+    var result = false;
+    var CNContactStore = plus.ios.import("CNContactStore");
+    var cnAuthStatus = CNContactStore.authorizationStatusForEntityType(0);
+    if (cnAuthStatus == 3) {
+      result = true;
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:120", "通讯录权限已经开启");
+    } else {
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:122", "通讯录权限没有开启");
+    }
+    plus.ios.deleteObject(CNContactStore);
+    return result;
+  }
+  function judgeIosPermissionCalendar() {
+    var result = false;
+    var EKEventStore = plus.ios.import("EKEventStore");
+    var ekAuthStatus = EKEventStore.authorizationStatusForEntityType(0);
+    if (ekAuthStatus == 3) {
+      result = true;
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:135", "日历权限已经开启");
+    } else {
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:137", "日历权限没有开启");
+    }
+    plus.ios.deleteObject(EKEventStore);
+    return result;
+  }
+  function judgeIosPermissionMemo() {
+    var result = false;
+    var EKEventStore = plus.ios.import("EKEventStore");
+    var ekAuthStatus = EKEventStore.authorizationStatusForEntityType(1);
+    if (ekAuthStatus == 3) {
+      result = true;
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:150", "备忘录权限已经开启");
+    } else {
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:152", "备忘录权限没有开启");
+    }
+    plus.ios.deleteObject(EKEventStore);
+    return result;
+  }
+  function requestAndroidPermission(permissionID) {
+    return new Promise((resolve, reject) => {
+      plus.android.requestPermissions(
+        [permissionID],
+        // 理论上支持多个权限同时查询，但实际上本函数封装只处理了一个权限的情况。有需要的可自行扩展封装
+        function(resultObj) {
+          var result = 0;
+          for (var i2 = 0; i2 < resultObj.granted.length; i2++) {
+            var grantedPermission = resultObj.granted[i2];
+            formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:167", "已获取的权限：" + grantedPermission);
+            result = 1;
+          }
+          for (var i2 = 0; i2 < resultObj.deniedPresent.length; i2++) {
+            var deniedPresentPermission = resultObj.deniedPresent[i2];
+            formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:172", "拒绝本次申请的权限：" + deniedPresentPermission);
+            result = 0;
+          }
+          for (var i2 = 0; i2 < resultObj.deniedAlways.length; i2++) {
+            var deniedAlwaysPermission = resultObj.deniedAlways[i2];
+            formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:177", "永久拒绝申请的权限：" + deniedAlwaysPermission);
+            result = -1;
+          }
+          resolve(result);
+        },
+        function(error2) {
+          formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:187", "申请权限错误：" + error2.code + " = " + error2.message);
+          resolve({
+            code: error2.code,
+            message: error2.message
+          });
+        }
+      );
+    });
+  }
+  function judgeIosPermission(permissionID) {
+    if (permissionID == "location") {
+      return judgeIosPermissionLocation();
+    } else if (permissionID == "camera") {
+      return judgeIosPermissionCamera();
+    } else if (permissionID == "photoLibrary") {
+      return judgeIosPermissionPhotoLibrary();
+    } else if (permissionID == "record") {
+      return judgeIosPermissionRecord();
+    } else if (permissionID == "push") {
+      return judgeIosPermissionPush();
+    } else if (permissionID == "contact") {
+      return judgeIosPermissionContact();
+    } else if (permissionID == "calendar") {
+      return judgeIosPermissionCalendar();
+    } else if (permissionID == "memo") {
+      return judgeIosPermissionMemo();
+    }
+    return false;
+  }
+  function gotoAppPermissionSetting() {
+    if (isIos) {
+      var UIApplication = plus.ios.import("UIApplication");
+      var application2 = UIApplication.sharedApplication();
+      var NSURL2 = plus.ios.import("NSURL");
+      var setting2 = NSURL2.URLWithString("app-settings:");
+      application2.openURL(setting2);
+      plus.ios.deleteObject(setting2);
+      plus.ios.deleteObject(NSURL2);
+      plus.ios.deleteObject(application2);
+    } else {
+      var Intent = plus.android.importClass("android.content.Intent");
+      var Settings = plus.android.importClass("android.provider.Settings");
+      var Uri = plus.android.importClass("android.net.Uri");
+      var mainActivity = plus.android.runtimeMainActivity();
+      var intent = new Intent();
+      intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+      var uri = Uri.fromParts("package", mainActivity.getPackageName(), null);
+      intent.setData(uri);
+      mainActivity.startActivity(intent);
+    }
+  }
+  function checkSystemEnableLocation() {
+    if (isIos) {
+      var result = false;
+      var cllocationManger = plus.ios.import("CLLocationManager");
+      var result = cllocationManger.locationServicesEnabled();
+      plus.ios.deleteObject(cllocationManger);
+      return result;
+    } else {
+      var context = plus.android.importClass("android.content.Context");
+      var locationManager = plus.android.importClass("android.location.LocationManager");
+      var main = plus.android.runtimeMainActivity();
+      var mainSvr = main.getSystemService(context.LOCATION_SERVICE);
+      var result = mainSvr.isProviderEnabled(locationManager.GPS_PROVIDER);
+      formatAppLog("log", "at uni_modules/json-gps/js_sdk/wa-permission/permission.js:262", "系统定位开启:" + result);
+      return result;
+    }
+  }
+  const permision = {
+    judgeIosPermission,
+    requestAndroidPermission,
+    checkSystemEnableLocation,
+    gotoAppPermissionSetting
+  };
+  class Gps {
+    constructor(arg) {
+      this.lock = false;
+    }
+    async getLocation(param = {
+      type: "wgs84"
+    }) {
+      return new Promise(async (callback2) => {
+        if (this.lock) {
+          callback2(false);
+          return false;
+        }
+        this.lock = true;
+        uni.getLocation({
+          ...param,
+          success: (res) => {
+            this.lock = false;
+            callback2(res);
+          },
+          fail: async (err) => {
+            uni.showToast({
+              title: "定位获取失败",
+              icon: "none"
+            });
+            formatAppLog("error", "at uni_modules/json-gps/js_sdk/gps.js:30", err);
+            callback2(false);
+            await this.checkGpsIsOpen();
+          }
+        });
+      });
+    }
+    async checkGpsIsOpen() {
+      this.lock = true;
+      if (!permision.checkSystemEnableLocation()) {
+        plus.nativeUI.confirm("手机定位权限没有开启，是否去开启？", (e2) => {
+          this.lock = false;
+          if (e2.index == 0) {
+            if (uni.getSystemInfoSync().platform == "ios") {
+              plus.runtime.openURL("app-settings://");
+            } else {
+              var main = plus.android.runtimeMainActivity();
+              var Intent = plus.android.importClass("android.content.Intent");
+              var Settings = plus.android.importClass("android.provider.Settings");
+              var intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+              main.startActivity(intent);
+            }
+          } else {
+            uni.showToast({
+              title: "设备无定位权限",
+              icon: "none"
+            });
+            callback(false);
+          }
+        }, {
+          "buttons": ["去设置", "不开启"],
+          "verticalAlign": "center"
+        });
+        return false;
+      }
+      let checkAppGpsRes = await this.checkAppGps();
+      if (!checkAppGpsRes) {
+        plus.nativeUI.confirm("应用定位权限没有开启，是否去开启？", (e2) => {
+          this.lock = false;
+          if (e2.index == 0) {
+            permision.gotoAppPermissionSetting();
+            callback(false);
+          } else {
+            uni.showToast({
+              title: "应用无定位权限",
+              icon: "none"
+            });
+            return false;
+          }
+        }, {
+          "buttons": ["去设置", "不开启"],
+          "verticalAlign": "center"
+        });
+      } else {
+        this.lock = false;
+      }
+    }
+    async checkAppGps() {
+      if (uni.getSystemInfoSync().platform == "ios" && !permision.judgeIosPermission("location")) {
+        return false;
+      }
+      if (uni.getSystemInfoSync().platform != "ios" && await permision.requestAndroidPermission(
+        "android.permission.ACCESS_FINE_LOCATION"
+      ) != 1) {
+        return false;
+      }
+      return true;
+    }
+  }
+  let cdbRef;
+  const gps = new Gps(), db$7 = Ws.database();
+  const _sfc_main$U = {
+    components: {
+      statusBar,
+      cmdNavBar: CmdNavBar
+    },
+    computed: {
+      inputPlaceholder(e2) {
+        if (uni.getStorageSync("CURRENT_LANG") == "en") {
+          return "Please enter the search content";
+        } else {
+          return "Quick Search";
+        }
+      },
+      colList() {
+        return [
+          db$7.collection("opendb-news-articles").where(this.where).field("avatar,title,last_modify_date,user_id").getTemp(),
+          db$7.collection("uni-id-users").field("_id,nickname").getTemp()
+        ];
+      }
+    },
+    data() {
+      return {
+        where: '"article_status" == 1',
+        keyword: "",
+        showRefresh: false,
+        listHight: 0,
+        swipeOptions: [],
+        rightOptions: [
+          {
+            text: "Recover",
+            style: {
+              backgroundColor: "#0C79FE",
+              backgroundImage: "/static/pic/edit.png",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              width: "100%",
+              margin: "0"
+            },
+            click: (item) => this.handleRecover(item)
+          },
+          {
+            text: "Delete",
+            style: {
+              backgroundColor: "#FF3B30",
+              color: "#FFFFFF"
+            },
+            click: (item) => this.handleDelete(item)
+          }
+        ],
+        folders: [
+          {
+            name: "All Archived Cards",
+            isExpanded: false,
+            items: [
+              { name: "All Archived Cards", icon: "/static/pic/10.png" }
+            ]
+          },
+          {
+            name: "Archived Folders",
+            isExpanded: false,
+            items: [
+              { name: "Folder1", icon: "/static/pic/10.png" },
+              { name: "Folder2", icon: "/static/pic/10.png" },
+              { name: "Folder3", icon: "/static/pic/10.png" }
+            ]
+          }
+          // Add more folders as needed
+        ]
+      };
+    },
+    watch: {
+      keyword(keyword, oldValue) {
+        let where = '"article_status" == 1 ';
+        if (keyword) {
+          this.where = where + `&& /${keyword}/.test(title)`;
+        } else {
+          this.where = where;
+        }
+      }
+    },
+    async onReady() {
+      this.listHight = "auto";
+      cdbRef = this.$refs.udb;
+    },
+    async onShow() {
+      this.keyword = getApp().globalData.searchText;
+      getApp().globalData.searchText = "";
+      await gps.getLocation({
+        geocode: true
+      });
+    },
+    methods: {
+      goToAllInfoPage() {
+        uni.navigateTo({
+          url: "/pages/list/all/all"
+        });
+      },
+      goToArchivedInfoPage() {
+        uni.navigateTo({
+          url: "/pages/list/archived/archived"
+        });
+      },
+      navigateToGrid() {
+        uni.navigateTo({
+          url: "/pages/grid/grid"
+        });
+      },
+      searchClick(e2) {
+        uni.hideKeyboard();
+        uni.navigateTo({
+          url: "/pages/list/search/search",
+          animationType: "fade-in"
+        });
+      },
+      retry() {
+        this.refresh();
+      },
+      refresh() {
+        cdbRef.loadData({
+          clear: true
+        }, () => {
+          uni.stopPullDownRefresh();
+          formatAppLog("log", "at pages/list/archived/archived.vue:189", "end");
+        });
+        formatAppLog("log", "at pages/list/archived/archived.vue:191", "refresh");
+      },
+      loadMore() {
+        cdbRef.loadMore();
+      },
+      onqueryerror(e2) {
+        formatAppLog("error", "at pages/list/archived/archived.vue:197", e2);
+      },
+      onpullingdown(e2) {
+        formatAppLog("log", "at pages/list/archived/archived.vue:200", e2);
+        this.showRefresh = true;
+        if (e2.pullingDistance > 100) {
+          this.refresh();
+        }
+      },
+      handleCollapseItemClick(item) {
+        if (item.name === "All Archived Cards") {
+          uni.navigateTo({
+            url: "/pages/list/archived/AllArchivedCards"
+          });
+        }
+      }
+    },
+    handleRecover(item) {
+      formatAppLog("log", "at pages/list/archived/archived.vue:216", "Recover:", item);
+    },
+    handleDelete(item) {
+      formatAppLog("log", "at pages/list/archived/archived.vue:221", "Delete:", item);
+    },
+    onPullDownRefresh() {
+      this.refresh();
+    },
+    onReachBottom() {
+      this.loadMore();
+    }
+  };
+  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_swipe_action_item = resolveEasycom(vue.resolveDynamicComponent("uni-swipe-action-item"), __easycom_0$b);
+    const _component_uni_collapse_item = resolveEasycom(vue.resolveDynamicComponent("uni-collapse-item"), __easycom_1$5);
+    const _component_uni_collapse = resolveEasycom(vue.resolveDynamicComponent("uni-collapse"), __easycom_2$1);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "collapse-wrapper" }, [
+      vue.createVNode(_component_uni_collapse, null, {
+        default: vue.withCtx(() => [
+          (vue.openBlock(true), vue.createElementBlock(
+            vue.Fragment,
+            null,
+            vue.renderList($data.folders, (folder, index) => {
+              return vue.openBlock(), vue.createBlock(_component_uni_collapse_item, {
+                key: index,
+                title: folder.name
+              }, {
+                default: vue.withCtx(() => [
+                  vue.createElementVNode("view", { class: "folder-content" }, [
+                    (vue.openBlock(true), vue.createElementBlock(
+                      vue.Fragment,
+                      null,
+                      vue.renderList(folder.items, (item, itemIndex) => {
+                        return vue.openBlock(), vue.createElementBlock("view", {
+                          key: itemIndex,
+                          class: "swipe-item",
+                          onClick: ($event) => $options.handleCollapseItemClick(item)
+                        }, [
+                          vue.createVNode(_component_uni_swipe_action_item, { "right-options": $data.rightOptions }, {
+                            default: vue.withCtx(() => [
+                              vue.createElementVNode("view", {
+                                class: "swipe-item-content",
+                                onClick: ($event) => $options.navigateToGrid(item)
+                              }, [
+                                vue.createElementVNode("view", { class: "item-left" }, [
+                                  vue.createElementVNode("view", { class: "circle-image" }, [
+                                    vue.createElementVNode("image", {
+                                      class: "circle-image-icon",
+                                      src: item.icon
+                                    }, null, 8, ["src"])
+                                  ]),
+                                  vue.createElementVNode(
+                                    "view",
+                                    { class: "item-text" },
+                                    vue.toDisplayString(item.name),
+                                    1
+                                    /* TEXT */
+                                  )
+                                ])
+                              ], 8, ["onClick"])
+                            ]),
+                            _: 2
+                            /* DYNAMIC */
+                          }, 1032, ["right-options"])
+                        ], 8, ["onClick"]);
+                      }),
+                      128
+                      /* KEYED_FRAGMENT */
+                    ))
+                  ])
+                ]),
+                _: 2
+                /* DYNAMIC */
+              }, 1032, ["title"]);
+            }),
+            128
+            /* KEYED_FRAGMENT */
+          ))
+        ]),
+        _: 1
+        /* STABLE */
+      })
+    ]);
+  }
+  const PagesListArchivedArchived = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-47587fad"], ["__file", "D:/project/CoHub/CoHub/pages/list/archived/archived.vue"]]);
+  const _sfc_main$T = {
+    components: {
+      CmdNavBar
+    },
+    data() {
+      return {
+        goodsList: [
+          {
+            id: 1,
+            image: "/static/pic/13.png",
+            name: "👋 Title for Collection 1",
+            tags: ["Tag1", "Tag2"],
+            date: "2021/01/09",
+            link: "https://example.com/link1"
+          },
+          {
+            id: 2,
+            image: "/static/pic/12.png",
+            name: "👋 Title for Collection 2",
+            tags: ["Tag1", "Tag3"],
+            date: "2022/01/09",
+            link: "https://example.com/link2"
+          }
+        ],
+        goodsNav: 1,
+        selectedItems: [],
+        isSelectionMode: false,
+        isEditPopupVisible: false,
+        isSharePopupVisible: false,
+        currentLink: "",
+        newTitle: "",
+        editingItemId: null,
+        startX: 0,
+        startY: 0,
+        sortByLatest: true,
+        isListView: false
+      };
+    },
+    onLoad() {
+    },
+    computed: {
+      isAnyItemSelected() {
+        return this.selectedItems.length > 0;
+      },
+      sortedGoodsList() {
+        let sortedList = [...this.goodsList];
+        if (this.sortByLatest) {
+          sortedList.sort((a2, b2) => new Date(b2.date) - new Date(a2.date));
+        } else {
+          sortedList.sort((a2, b2) => a2.name.localeCompare(b2.name));
+        }
+        return sortedList;
+      }
+    },
+    methods: {
+      handleClick(id) {
+        if (this.isSelectionMode) {
+          this.toggleSelectItem(id);
+        } else {
+          uni.navigateTo({
+            url: "/pages/webview/webview?url=https://www.baidu.com"
+          });
+        }
+      },
+      handleLongPress(id) {
+        this.isSelectionMode = true;
+        this.toggleSelectItem(id);
+      },
+      toggleSelectItem(id) {
+        const index = this.selectedItems.indexOf(id);
+        if (index === -1) {
+          this.selectedItems.push(id);
+        } else {
+          this.selectedItems.splice(index, 1);
+        }
+      },
+      startSwipe(event, id) {
+        this.startX = event.touches[0].pageX;
+        this.startY = event.touches[0].pageY;
+      },
+      moveSwipe(event, id) {
+        const deltaX = event.touches[0].pageX - this.startX;
+        if (Math.abs(deltaX) > 50) {
+          this.selectItem(id);
+        }
+      },
+      endSwipe(event, id) {
+        this.startX = 0;
+        this.startY = 0;
+      },
+      selectAll() {
+        this.selectedItems = this.goodsList.map((item) => item.id);
+      },
+      done() {
+        this.selectedItems = [];
+        this.isSelectionMode = false;
+      },
+      editSelected() {
+        if (this.selectedItems.length === 1) {
+          this.editingItemId = this.selectedItems[0];
+          const item = this.goodsList.find((item2) => item2.id === this.editingItemId);
+          this.newTitle = item.name;
+          this.isEditPopupVisible = true;
+        } else {
+          alert("Please select exactly one item to edit.");
+        }
+      },
+      saveTitle() {
+        if (this.editingItemId !== null) {
+          const item = this.goodsList.find((item2) => item2.id === this.editingItemId);
+          item.name = this.newTitle;
+          this.isEditPopupVisible = false;
+          this.newTitle = "";
+          this.editingItemId = null;
+        }
+      },
+      closeEditPopup() {
+        this.isEditPopupVisible = false;
+        this.newTitle = "";
+        this.editingItemId = null;
+      },
+      shareLink() {
+        if (this.selectedItems.length === 1) {
+          const item = this.goodsList.find((item2) => item2.id === this.selectedItems[0]);
+          this.currentLink = item.link;
+          this.isSharePopupVisible = true;
+        } else {
+          alert("Please select exactly one item to share.");
+        }
+      },
+      copyLink() {
+        const selectedItem = this.goodsList.find((item) => item.id === this.selectedItems[0]);
+        if (selectedItem) {
+          const link = selectedItem.link;
+          this.copyToClipboard(link);
+          alert("Link copied to clipboard");
+        }
+        this.isSharePopupVisible = false;
+      },
+      copyToClipboard(text) {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).catch((err) => {
+            formatAppLog("error", "at pages/list/all/all.vue:269", "Could not copy text: ", err);
+          });
+        } else {
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          try {
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+          } catch (err) {
+            formatAppLog("error", "at pages/list/all/all.vue:281", "Could not copy text: ", err);
+          }
+          document.body.removeChild(textArea);
+        }
+      },
+      closeSharePopup() {
+        this.isSharePopupVisible = false;
+      },
+      archiveSelected() {
+        formatAppLog("log", "at pages/list/all/all.vue:290", "Archive selected items", this.selectedItems);
+      },
+      deleteSelected() {
+        formatAppLog("log", "at pages/list/all/all.vue:293", "Delete selected items", this.selectedItems);
+        this.goodsList = this.goodsList.filter((item) => !this.selectedItems.includes(item.id));
+        this.selectedItems = [];
+      },
+      toggleSortByLatest() {
+        this.sortByLatest = !this.sortByLatest;
+      },
+      toggleView() {
+        this.isListView = !this.isListView;
+      }
+    }
+  };
+  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "pages font-style" }, [
+      vue.createCommentVNode(" 顶部导航栏 "),
+      $options.isAnyItemSelected ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: "top-bar"
+      }, [
+        vue.createElementVNode("view", {
+          class: "nav-button left",
+          onClick: _cache[0] || (_cache[0] = (...args) => $options.selectAll && $options.selectAll(...args))
+        }, "SELECT ALL"),
+        vue.createElementVNode("view", {
+          class: "nav-button right",
+          onClick: _cache[1] || (_cache[1] = (...args) => $options.done && $options.done(...args))
+        }, "DONE")
+      ])) : vue.createCommentVNode("v-if", true),
+      vue.createCommentVNode(" 筛选 "),
+      vue.createElementVNode("view", { class: "control-bar" }, [
+        vue.createElementVNode(
+          "view",
+          {
+            class: vue.normalizeClass(["control-button", { active: $data.sortByLatest }]),
+            onClick: _cache[2] || (_cache[2] = (...args) => $options.toggleSortByLatest && $options.toggleSortByLatest(...args))
+          },
+          [
+            vue.createVNode(_component_uni_icons, {
+              type: "refreshempty",
+              size: "20"
+            }),
+            vue.createTextVNode(" Latest ")
+          ],
+          2
+          /* CLASS */
+        ),
+        vue.createElementVNode(
+          "view",
+          {
+            class: vue.normalizeClass(["control-buttontext", { active: $data.isListView }]),
+            onClick: _cache[3] || (_cache[3] = (...args) => $options.toggleView && $options.toggleView(...args))
+          },
+          [
+            vue.createVNode(_component_uni_icons, {
+              type: $data.isListView ? "list" : "tune",
+              size: "20"
+            }, null, 8, ["type"]),
+            vue.createTextVNode(
+              " " + vue.toDisplayString($data.isListView ? "List" : "Filter"),
+              1
+              /* TEXT */
+            )
+          ],
+          2
+          /* CLASS */
+        )
+      ]),
+      vue.createCommentVNode(" 收藏页面 "),
+      (vue.openBlock(true), vue.createElementBlock(
+        vue.Fragment,
+        null,
+        vue.renderList($options.sortedGoodsList, (item, index) => {
+          return vue.openBlock(), vue.createElementBlock("view", {
+            key: item.id,
+            class: vue.normalizeClass(["goods-item-wrap", { "selected": $data.selectedItems.includes(item.id) }]),
+            onClick: ($event) => $options.handleClick(item.id),
+            onLongpress: ($event) => $options.handleLongPress(item.id)
+          }, [
+            !$data.isListView ? (vue.openBlock(), vue.createElementBlock("image", {
+              key: 0,
+              src: item.image,
+              class: "goods-image"
+            }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true),
+            vue.createElementVNode("view", { class: "goods-content-wrap" }, [
+              vue.createElementVNode(
+                "view",
+                { class: "goods-name" },
+                vue.toDisplayString(item.name),
+                1
+                /* TEXT */
+              ),
+              !$data.isListView ? (vue.openBlock(), vue.createElementBlock("view", {
+                key: 0,
+                class: "goods-stock-wrap"
+              }, [
+                vue.createElementVNode("view", { class: "goods-stock" }, "Main contents extracted from the collection.")
+              ])) : vue.createCommentVNode("v-if", true),
+              vue.createElementVNode("view", { class: "goods-option" }, [
+                (vue.openBlock(true), vue.createElementBlock(
+                  vue.Fragment,
+                  null,
+                  vue.renderList(item.tags, (tag, tagIndex) => {
+                    return vue.openBlock(), vue.createElementBlock(
+                      "view",
+                      {
+                        key: tagIndex,
+                        class: "goods-option-item"
+                      },
+                      " # " + vue.toDisplayString(tag),
+                      1
+                      /* TEXT */
+                    );
+                  }),
+                  128
+                  /* KEYED_FRAGMENT */
+                ))
+              ]),
+              vue.createElementVNode("view", { class: "footer" }, [
+                vue.createElementVNode(
+                  "view",
+                  { class: "data" },
+                  vue.toDisplayString(item.date),
+                  1
+                  /* TEXT */
+                )
+              ])
+            ])
+          ], 42, ["onClick", "onLongpress"]);
+        }),
+        128
+        /* KEYED_FRAGMENT */
+      )),
+      vue.createCommentVNode(" 底部操作栏 "),
+      $options.isAnyItemSelected ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 1,
+        class: "bottom-bar"
+      }, [
+        vue.createElementVNode("view", { class: "action-buttons" }, [
+          vue.createElementVNode("view", { class: "action-button" }, [
+            vue.createVNode(_component_uni_icons, {
+              type: "compose",
+              size: "30"
+            }),
+            vue.createElementVNode("view", {
+              class: "bottom-bar-button",
+              onClick: _cache[4] || (_cache[4] = (...args) => $options.editSelected && $options.editSelected(...args))
+            }, "EDIT")
+          ]),
+          vue.createElementVNode("view", { class: "action-button" }, [
+            vue.createVNode(_component_uni_icons, {
+              type: "link",
+              size: "30"
+            }),
+            vue.createElementVNode("view", {
+              class: "bottom-bar-button",
+              onClick: _cache[5] || (_cache[5] = (...args) => $options.shareLink && $options.shareLink(...args))
+            }, "SHARED")
+          ]),
+          vue.createElementVNode("view", { class: "action-button" }, [
+            vue.createVNode(_component_uni_icons, {
+              type: "download",
+              size: "30"
+            }),
+            vue.createElementVNode("view", {
+              class: "bottom-bar-button",
+              onClick: _cache[6] || (_cache[6] = (...args) => $options.archiveSelected && $options.archiveSelected(...args))
+            }, "ARCHIVED")
+          ]),
+          vue.createElementVNode("view", { class: "action-button" }, [
+            vue.createVNode(_component_uni_icons, {
+              type: "trash",
+              size: "30",
+              color: "red"
+            }),
+            vue.createElementVNode("view", {
+              class: "bottom-bar-buttond",
+              onClick: _cache[7] || (_cache[7] = (...args) => $options.deleteSelected && $options.deleteSelected(...args))
+            }, "DELETE")
+          ])
+        ])
+      ])) : vue.createCommentVNode("v-if", true),
+      vue.createCommentVNode(" 灰色背景部分 "),
+      vue.createElementVNode("div", { class: "gray-background" }),
+      vue.createCommentVNode(" 编辑弹窗 "),
+      $data.isEditPopupVisible ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 2,
+        class: "edit-popup"
+      }, [
+        vue.createElementVNode("view", { class: "edit-popup-content" }, [
+          vue.withDirectives(vue.createElementVNode(
+            "input",
+            {
+              "onUpdate:modelValue": _cache[8] || (_cache[8] = ($event) => $data.newTitle = $event),
+              placeholder: "Enter new title"
+            },
+            null,
+            512
+            /* NEED_PATCH */
+          ), [
+            [vue.vModelText, $data.newTitle]
+          ]),
+          vue.createElementVNode("view", { class: "row" }, [
+            vue.createElementVNode("view", {
+              class: "bottontwo",
+              onClick: _cache[9] || (_cache[9] = (...args) => $options.closeEditPopup && $options.closeEditPopup(...args))
+            }, "Cancel"),
+            vue.createElementVNode("view", {
+              class: "bottonone",
+              onClick: _cache[10] || (_cache[10] = (...args) => $options.saveTitle && $options.saveTitle(...args))
+            }, "Save")
+          ])
+        ])
+      ])) : vue.createCommentVNode("v-if", true),
+      vue.createCommentVNode(" 分享链接弹窗 "),
+      $data.isSharePopupVisible ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 3,
+        class: "share-popup"
+      }, [
+        vue.createElementVNode("view", { class: "share-popup-content" }, [
+          vue.createElementVNode("view", { class: "share-popup-top" }, [
+            vue.createElementVNode("image", {
+              src: "/static/pic/link.png",
+              class: "share-popup-image"
+            }),
+            vue.createElementVNode("view", { class: "share-popup-text" }, [
+              vue.createElementVNode("view", { class: "invite-text" }, "Shared Link"),
+              vue.createElementVNode("view", { class: "link-text" }, "Anyone with the link")
+            ])
+          ])
+        ]),
+        vue.createElementVNode("button", {
+          class: "share-popup-button",
+          onClick: _cache[11] || (_cache[11] = (...args) => $options.copyLink && $options.copyLink(...args))
+        }, "Share Link"),
+        vue.createElementVNode("view", {
+          class: "close-button",
+          onClick: _cache[12] || (_cache[12] = (...args) => $options.closeSharePopup && $options.closeSharePopup(...args))
+        }, "✖")
+      ])) : vue.createCommentVNode("v-if", true)
+    ]);
+  }
+  const PagesListAllAll = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-6d2a9a62"], ["__file", "D:/project/CoHub/CoHub/pages/list/all/all.vue"]]);
+  const _sfc_main$S = {
+    components: {
+      CmdNavBar
+    },
+    data() {
+      return {
+        goodsList: [
+          {
+            id: 1,
+            image: "/static/pic/13.png",
+            name: "👋 Title for Collection 1",
+            tags: ["Tag1", "Tag2"],
+            date: "2022/01/09",
+            link: "https://example.com/link1"
+          },
+          {
+            id: 2,
+            image: "/static/pic/12.png",
+            name: "👋 Title for Collection 2",
+            tags: ["Tag1", "Tag3"],
+            date: "2022/01/09",
+            link: "https://example.com/link2"
+          }
+        ],
+        goodsNav: 1,
+        selectedItems: [],
+        isSelectionMode: false,
+        isEditPopupVisible: false,
+        isSharePopupVisible: false,
+        currentLink: "",
+        newTitle: "",
+        editingItemId: null,
+        startX: 0,
+        startY: 0
+      };
+    },
+    onLoad() {
+    },
+    computed: {
+      isAnyItemSelected() {
+        return this.selectedItems.length > 0;
+      }
+    },
+    methods: {
+      handleClick(id) {
+        if (this.isSelectionMode) {
+          this.toggleSelectItem(id);
+        } else {
+          uni.navigateTo({
+            url: "/pages/webview/webview?url=https://www.baidu.com"
+          });
+        }
+      },
+      handleLongPress(id) {
+        this.isSelectionMode = true;
+        this.toggleSelectItem(id);
+      },
+      toggleSelectItem(id) {
+        const index = this.selectedItems.indexOf(id);
+        if (index === -1) {
+          this.selectedItems.push(id);
+        } else {
+          this.selectedItems.splice(index, 1);
+        }
+      },
+      startSwipe(event, id) {
+        this.startX = event.touches[0].pageX;
+        this.startY = event.touches[0].pageY;
+      },
+      moveSwipe(event, id) {
+        const deltaX = event.touches[0].pageX - this.startX;
+        if (Math.abs(deltaX) > 50) {
+          this.selectItem(id);
+        }
+      },
+      endSwipe(event, id) {
+        this.startX = 0;
+        this.startY = 0;
+      },
+      selectAll() {
+        this.selectedItems = this.goodsList.map((item) => item.id);
+      },
+      done() {
+        this.selectedItems = [];
+        this.isSelectionMode = false;
+      },
+      recoverSelected() {
+        formatAppLog("log", "at pages/list/delete/delete.vue:170", "Recover selected items", this.selectedItems);
+      },
+      deleteSelected() {
+        formatAppLog("log", "at pages/list/delete/delete.vue:173", "Delete selected items", this.selectedItems);
+        this.goodsList = this.goodsList.filter((item) => !this.selectedItems.includes(item.id));
+        this.selectedItems = [];
+      }
+    }
+  };
+  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "pages font-style" }, [
+      vue.createCommentVNode(" 顶部导航栏 "),
+      $options.isAnyItemSelected ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 0,
+        class: "top-bar"
+      }, [
+        vue.createElementVNode("view", {
+          class: "nav-button left",
+          onClick: _cache[0] || (_cache[0] = (...args) => $options.selectAll && $options.selectAll(...args))
+        }, "SELECT ALL"),
+        vue.createElementVNode("view", {
+          class: "nav-button right",
+          onClick: _cache[1] || (_cache[1] = (...args) => $options.done && $options.done(...args))
+        }, "DONE")
+      ])) : vue.createCommentVNode("v-if", true),
+      vue.createCommentVNode(" 收藏页面 "),
+      (vue.openBlock(true), vue.createElementBlock(
+        vue.Fragment,
+        null,
+        vue.renderList($data.goodsList, (item, index) => {
+          return vue.openBlock(), vue.createElementBlock("view", {
+            key: item.id,
+            class: vue.normalizeClass(["goods-item-wrap", { "selected": $data.selectedItems.includes(item.id) }]),
+            onClick: ($event) => $options.handleClick(item.id),
+            onLongpress: ($event) => $options.handleLongPress(item.id)
+          }, [
+            vue.createElementVNode("image", {
+              src: item.image,
+              class: "goods-image"
+            }, null, 8, ["src"]),
+            vue.createElementVNode("view", { class: "goods-content-wrap" }, [
+              vue.createElementVNode(
+                "view",
+                { class: "goods-name" },
+                vue.toDisplayString(item.name),
+                1
+                /* TEXT */
+              ),
+              vue.createElementVNode("view", { class: "goods-stock-wrap" }, [
+                vue.createElementVNode("view", { class: "goods-stock" }, "Main contents extracted from the collection.")
+              ]),
+              vue.createElementVNode("view", { class: "goods-option" }, [
+                (vue.openBlock(true), vue.createElementBlock(
+                  vue.Fragment,
+                  null,
+                  vue.renderList(item.tags, (tag, tagIndex) => {
+                    return vue.openBlock(), vue.createElementBlock(
+                      "view",
+                      {
+                        key: tagIndex,
+                        class: "goods-option-item"
+                      },
+                      " # " + vue.toDisplayString(tag),
+                      1
+                      /* TEXT */
+                    );
+                  }),
+                  128
+                  /* KEYED_FRAGMENT */
+                ))
+              ]),
+              vue.createElementVNode("view", { class: "footer" }, [
+                vue.createElementVNode(
+                  "view",
+                  { class: "data" },
+                  vue.toDisplayString(item.date),
+                  1
+                  /* TEXT */
+                )
+              ])
+            ])
+          ], 42, ["onClick", "onLongpress"]);
+        }),
+        128
+        /* KEYED_FRAGMENT */
+      )),
+      vue.createCommentVNode(" 底部操作栏 "),
+      $options.isAnyItemSelected ? (vue.openBlock(), vue.createElementBlock("view", {
+        key: 1,
+        class: "bottom-bar"
+      }, [
+        vue.createElementVNode("view", { class: "action-buttons" }, [
+          vue.createElementVNode("view", { class: "action-button" }, [
+            vue.createVNode(_component_uni_icons, {
+              type: "refreshempty",
+              size: "30"
+            }),
+            vue.createElementVNode("view", {
+              class: "bottom-bar-button",
+              onClick: _cache[2] || (_cache[2] = (...args) => $options.recoverSelected && $options.recoverSelected(...args))
+            }, "RECOVER")
+          ]),
+          vue.createElementVNode("view", { class: "action-button" }, [
+            vue.createVNode(_component_uni_icons, {
+              type: "trash",
+              size: "30",
+              color: "red"
+            }),
+            vue.createElementVNode("view", {
+              class: "bottom-bar-buttond",
+              onClick: _cache[3] || (_cache[3] = (...args) => $options.deleteSelected && $options.deleteSelected(...args))
+            }, "DELETE")
+          ])
+        ])
+      ])) : vue.createCommentVNode("v-if", true),
+      vue.createCommentVNode(" 灰色背景部分 "),
+      vue.createElementVNode("div", { class: "gray-background" })
+    ]);
+  }
+  const PagesListDeleteDelete = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-3d7be036"], ["__file", "D:/project/CoHub/CoHub/pages/list/delete/delete.vue"]]);
   const getVal = (val) => typeof val === "number" ? val + "px" : val;
   const _sfc_main$R = {
     name: "UniNavBar",
@@ -7156,7 +9996,7 @@ ${i3}
   };
   function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_status_bar = vue.resolveComponent("status-bar");
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -7924,7 +10764,7 @@ ${i3}
         }
       },
       pageApi(api) {
-        let callback = {
+        let callback2 = {
           url: this.to,
           success: (res) => {
             this.$emit("click", {
@@ -7939,25 +10779,25 @@ ${i3}
         };
         switch (api) {
           case "navigateTo":
-            uni.navigateTo(callback);
+            uni.navigateTo(callback2);
             break;
           case "redirectTo":
-            uni.redirectTo(callback);
+            uni.redirectTo(callback2);
             break;
           case "reLaunch":
-            uni.reLaunch(callback);
+            uni.reLaunch(callback2);
             break;
           case "switchTab":
-            uni.switchTab(callback);
+            uni.switchTab(callback2);
             break;
           default:
-            uni.navigateTo(callback);
+            uni.navigateTo(callback2);
         }
       }
     }
   };
   function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     const _component_uni_badge = resolveEasycom(vue.resolveDynamicComponent("uni-badge"), __easycom_1$4);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass([{ "uni-list-item--disabled": $props.disabled }, "uni-list-item"]),
@@ -8391,7 +11231,7 @@ ${i3}
     },
     methods: {
       loadData(args1, args2) {
-        let callback = null;
+        let callback2 = null;
         let clear = false;
         if (typeof args1 === "object") {
           if (args1.clear) {
@@ -8406,12 +11246,12 @@ ${i3}
             this.paginationInternal.current = args1.current;
           }
           if (typeof args2 === "function") {
-            callback = args2;
+            callback2 = args2;
           }
         } else if (typeof args1 === "function") {
-          callback = args1;
+          callback2 = args1;
         }
-        return this._execLoadData(callback, clear);
+        return this._execLoadData(callback2, clear);
       },
       loadMore() {
         if (this._isEnded || this.loading) {
@@ -8608,7 +11448,7 @@ ${i3}
           this._execLoadDataFail(new Error(result.message));
         }
       },
-      _execLoadData(callback, clear) {
+      _execLoadData(callback2, clear) {
         if (this.loading) {
           return;
         }
@@ -8616,13 +11456,13 @@ ${i3}
         this.errorMessage = "";
         return this._getExec().then((res) => {
           this.loading = false;
-          this._execLoadDataSuccess(res.result, callback, clear);
+          this._execLoadDataSuccess(res.result, callback2, clear);
         }).catch((err) => {
           this.loading = false;
-          this._execLoadDataFail(err, callback);
+          this._execLoadDataFail(err, callback2);
         });
       },
-      _execLoadDataSuccess(result, callback, clear) {
+      _execLoadDataSuccess(result, callback2, clear) {
         const {
           data: data2,
           count
@@ -8633,7 +11473,7 @@ ${i3}
         if (this.getcount) {
           this.paginationInternal.count = count;
         }
-        callback && callback(data22, this._isEnded, this.paginationInternal);
+        callback2 && callback2(data22, this._isEnded, this.paginationInternal);
         this._dispatchEvent(events.load, data22);
         if (this.getone || this.pageData === pageMode.replace) {
           this.dataList = data22;
@@ -8645,9 +11485,9 @@ ${i3}
           }
         }
       },
-      _execLoadDataFail(err, callback) {
+      _execLoadDataFail(err, callback2) {
         this.errorMessage = err;
-        callback && callback();
+        callback2 && callback2();
         this.$emit(events.error, err);
         {
           console.error(err);
@@ -8741,7 +11581,7 @@ ${i3}
     show({
       list,
       cancelText
-    }, callback) {
+    }, callback2) {
       if (!list) {
         list = [{
           "img": "/static/sharemenu/wechatfriend.png",
@@ -8791,7 +11631,7 @@ ${i3}
       });
       nvMask.addEventListener("click", () => {
         this.hide();
-        callback({
+        callback2({
           event: "clickMask"
         });
       });
@@ -8880,7 +11720,7 @@ ${i3}
           } else {
             iClickIndex = iCol + 4;
           }
-          callback({
+          callback2({
             event: "clickMenu",
             index: iClickIndex
           });
@@ -8900,7 +11740,7 @@ ${i3}
       super();
       this.isShow = super.isShow;
     }
-    async show(param, callback) {
+    async show(param, callback2) {
       var menus = [];
       plus.share.getServices((services) => {
         services = services.filter((item) => item.nativeClient);
@@ -8914,7 +11754,7 @@ ${i3}
           list: menus,
           cancelText: param.cancelText
         }, (e2) => {
-          callback(e2);
+          callback2(e2);
           if (e2.event == "clickMenu") {
             if (typeof menus[e2.index]["share"] == "string") {
               this[menus[e2.index]["share"]](param);
@@ -10447,7 +13287,7 @@ ${i3}
     }
   };
   function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     const _component_uni_popup = resolveEasycom(vue.resolveDynamicComponent("uni-popup"), __easycom_1$2);
     return vue.openBlock(), vue.createElementBlock("view", null, [
       vue.createVNode(
@@ -11371,7 +14211,7 @@ ${i3}
   function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_sign_in = resolveEasycom(vue.resolveDynamicComponent("uni-sign-in"), __easycom_0$6);
     const _component_cloud_image = resolveEasycom(vue.resolveDynamicComponent("cloud-image"), __easycom_0$5);
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     const _component_uni_grid_item = resolveEasycom(vue.resolveDynamicComponent("uni-grid-item"), __easycom_3$3);
     const _component_uni_grid = resolveEasycom(vue.resolveDynamicComponent("uni-grid"), __easycom_4$2);
     const _component_uni_list_item = resolveEasycom(vue.resolveDynamicComponent("uni-list-item"), __easycom_0$8);
@@ -12057,7 +14897,7 @@ ${i3}
     }
   };
   function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_load_more = resolveEasycom(vue.resolveDynamicComponent("uni-load-more"), __easycom_0$b);
+    const _component_uni_load_more = resolveEasycom(vue.resolveDynamicComponent("uni-load-more"), __easycom_0$c);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -13199,35 +16039,35 @@ ${i3}
       /**
        * 重置画布
        */
-      resetCanvas(callback) {
+      resetCanvas(callback2) {
         this.templateOptions.canvasDisplay = false;
         this.$nextTick(() => {
           this.templateOptions.canvasDisplay = true;
           this.$nextTick(() => {
-            callback && callback();
+            callback2 && callback2();
           });
         });
       },
       /**
        * 绘制二维码
        */
-      async draw(callback = {}, isDrawDelegate = false) {
-        if (typeof callback.success != "function") {
-          callback.success = () => {
+      async draw(callback2 = {}, isDrawDelegate = false) {
+        if (typeof callback2.success != "function") {
+          callback2.success = () => {
           };
         }
-        if (typeof callback.fail != "function") {
-          callback.fail = () => {
+        if (typeof callback2.fail != "function") {
+          callback2.fail = () => {
           };
         }
-        if (typeof callback.complete != "function") {
-          callback.complete = () => {
+        if (typeof callback2.complete != "function") {
+          callback2.complete = () => {
           };
         }
         if (this.drawing) {
           if (!isDrawDelegate) {
             this.drawDelegate = () => {
-              this.draw(callback, true);
+              this.draw(callback2, true);
             };
             return;
           }
@@ -13238,10 +16078,10 @@ ${i3}
           formatAppLog("error", "at uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode.vue:405", "[uQRCode]: canvasId must be set!");
           this.isError = true;
           this.drawing = false;
-          callback.fail({
+          callback2.fail({
             errMsg: "[uQRCode]: canvasId must be set!"
           });
-          callback.complete({
+          callback2.complete({
             errMsg: "[uQRCode]: canvasId must be set!"
           });
           return;
@@ -13250,10 +16090,10 @@ ${i3}
           formatAppLog("error", "at uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode.vue:417", "[uQRCode]: value must be set!");
           this.isError = true;
           this.drawing = false;
-          callback.fail({
+          callback2.fail({
             errMsg: "[uQRCode]: value must be set!"
           });
-          callback.complete({
+          callback2.complete({
             errMsg: "[uQRCode]: value must be set!"
           });
           return;
@@ -13343,7 +16183,7 @@ ${i3}
               delegate();
             } else {
               this.drawing = false;
-              callback.success();
+              callback2.success();
             }
           }).catch((err) => {
             formatAppLog("log", "at uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode.vue:633", err);
@@ -13354,30 +16194,30 @@ ${i3}
             } else {
               this.drawing = false;
               this.isError = true;
-              callback.fail(err);
+              callback2.fail(err);
             }
           }).finally(() => {
-            callback.complete();
+            callback2.complete();
           });
         }, 300);
       },
       /**
        * 生成二维码
        */
-      make(callback = {}) {
+      make(callback2 = {}) {
         this.makeExecuted = true;
         this.makeing = true;
         this.isError = false;
-        if (typeof callback.success != "function") {
-          callback.success = () => {
+        if (typeof callback2.success != "function") {
+          callback2.success = () => {
           };
         }
-        if (typeof callback.fail != "function") {
-          callback.fail = () => {
+        if (typeof callback2.fail != "function") {
+          callback2.fail = () => {
           };
         }
-        if (typeof callback.complete != "function") {
-          callback.complete = () => {
+        if (typeof callback2.complete != "function") {
+          callback2.complete = () => {
           };
         }
         this.resetCanvas(() => {
@@ -13386,17 +16226,17 @@ ${i3}
             this.draw({
               success: () => {
                 setTimeout(() => {
-                  callback.success();
+                  callback2.success();
                   this.complete(true);
                 }, 300);
               },
               fail: (err) => {
-                callback.fail(err);
+                callback2.fail(err);
                 this.error = err;
                 this.complete(false, err.errMsg);
               },
               complete: () => {
-                callback.complete();
+                callback2.complete();
                 this.makeing = false;
               }
             });
@@ -13406,9 +16246,9 @@ ${i3}
       /**
        * 重新生成
        */
-      remake(callback) {
+      remake(callback2) {
         this.$emit("change");
-        this.make(callback);
+        this.make(callback2);
       },
       /**
        * 生成完成
@@ -13428,17 +16268,17 @@ ${i3}
       /**
        * 导出临时路径
        */
-      toTempFilePath(callback = {}) {
-        if (typeof callback.success != "function") {
-          callback.success = () => {
+      toTempFilePath(callback2 = {}) {
+        if (typeof callback2.success != "function") {
+          callback2.success = () => {
           };
         }
-        if (typeof callback.fail != "function") {
-          callback.fail = () => {
+        if (typeof callback2.fail != "function") {
+          callback2.fail = () => {
           };
         }
-        if (typeof callback.complete != "function") {
-          callback.complete = () => {
+        if (typeof callback2.complete != "function") {
+          callback2.complete = () => {
           };
         }
         if (!this.makeExecuted) {
@@ -13446,18 +16286,18 @@ ${i3}
           var err = {
             errMsg: "[uQRCode]: make() method has never been executed! please execute make() successfully before operating."
           };
-          callback.fail(err);
-          callback.complete(err);
+          callback2.fail(err);
+          callback2.complete(err);
           return;
         }
         if (this.isError) {
-          callback.fail(this.error);
-          callback.complete(this.error);
+          callback2.fail(this.error);
+          callback2.complete(this.error);
           return;
         }
         if (this.makeing) {
           this.toTempFilePathDelegate = () => {
-            this.toTempFilePath(callback);
+            this.toTempFilePath(callback2);
           };
           return;
         } else {
@@ -13475,13 +16315,13 @@ ${i3}
               destWidth: Number(this.templateOptions.size),
               destHeight: Number(this.templateOptions.size),
               success: (res) => {
-                callback.success(res);
+                callback2.success(res);
               },
               fail: (err2) => {
-                callback.fail(err2);
+                callback2.fail(err2);
               },
               complete: () => {
-                callback.complete();
+                callback2.complete();
               }
             },
             this
@@ -13491,17 +16331,17 @@ ${i3}
       /**
        * 保存
        */
-      save(callback = {}) {
-        if (typeof callback.success != "function") {
-          callback.success = () => {
+      save(callback2 = {}) {
+        if (typeof callback2.success != "function") {
+          callback2.success = () => {
           };
         }
-        if (typeof callback.fail != "function") {
-          callback.fail = () => {
+        if (typeof callback2.fail != "function") {
+          callback2.fail = () => {
           };
         }
-        if (typeof callback.complete != "function") {
-          callback.complete = () => {
+        if (typeof callback2.complete != "function") {
+          callback2.complete = () => {
           };
         }
         this.toTempFilePath({
@@ -13512,20 +16352,20 @@ ${i3}
               uni.saveImageToPhotosAlbum({
                 filePath: res.tempFilePath,
                 success: (res1) => {
-                  callback.success(res1);
+                  callback2.success(res1);
                 },
                 fail: (err1) => {
-                  callback.fail(err1);
+                  callback2.fail(err1);
                 },
                 complete: () => {
-                  callback.complete();
+                  callback2.complete();
                 }
               });
             }
           },
           fail: (err) => {
-            callback.fail(err);
-            callback.complete(err);
+            callback2.fail(err);
+            callback2.complete(err);
           }
         });
       },
@@ -16688,7 +19528,7 @@ ${i3}
     }
   };
   function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -17530,8 +20370,8 @@ ${i3}
        * @param {Array} keepitem 保留不参与校验的字段
        * @param {type} callback 方法回调
        */
-      validate(keepitem, callback) {
-        return this.checkAll(this.formData, keepitem, callback);
+      validate(keepitem, callback2) {
+        return this.checkAll(this.formData, keepitem, callback2);
       },
       /**
        * 外部调用方法
@@ -17539,7 +20379,7 @@ ${i3}
        * @param {Array|String} props 需要校验的字段
        * @param {Function} 回调函数
        */
-      validateField(props = [], callback) {
+      validateField(props = [], callback2) {
         props = [].concat(props);
         let invalidFields = {};
         this.childrens.forEach((item) => {
@@ -17550,7 +20390,7 @@ ${i3}
             });
           }
         });
-        return this.checkAll(invalidFields, [], callback);
+        return this.checkAll(invalidFields, [], callback2);
       },
       /**
        * 外部调用方法
@@ -17577,7 +20417,7 @@ ${i3}
        * @param {Array} keepitem 保留不参与校验的字段
        * @param {type} callback 方法回调
        */
-      submit(keepitem, callback, type) {
+      submit(keepitem, callback2, type) {
         for (let i2 in this.dataValue) {
           const itemData = this.childrens.find((v2) => v2.name === i2);
           if (itemData) {
@@ -17589,10 +20429,10 @@ ${i3}
         if (!type) {
           formatAppLog("warn", "at uni_modules/uni-forms/components/uni-forms/uni-forms.vue:289", "submit 方法即将废弃，请使用validate方法代替！");
         }
-        return this.checkAll(this.formData, keepitem, callback, "submit");
+        return this.checkAll(this.formData, keepitem, callback2, "submit");
       },
       // 校验所有
-      async checkAll(invalidFields, keepitem, callback, type) {
+      async checkAll(invalidFields, keepitem, callback2, type) {
         if (!this.validator)
           return;
         let childrens = [];
@@ -17602,13 +20442,13 @@ ${i3}
             childrens.push(item);
           }
         }
-        if (!callback && typeof keepitem === "function") {
-          callback = keepitem;
+        if (!callback2 && typeof keepitem === "function") {
+          callback2 = keepitem;
         }
         let promise;
-        if (!callback && typeof callback !== "function" && Promise) {
+        if (!callback2 && typeof callback2 !== "function" && Promise) {
           promise = new Promise((resolve, reject) => {
-            callback = function(valid, invalidFields2) {
+            callback2 = function(valid, invalidFields2) {
               !valid ? resolve(invalidFields2) : reject(valid);
             };
           });
@@ -17650,8 +20490,8 @@ ${i3}
         }
         let resetFormData = {};
         resetFormData = rawData(tempFormData, this.name);
-        callback && typeof callback === "function" && callback(results, resetFormData);
-        if (promise && callback) {
+        callback2 && typeof callback2 === "function" && callback2(results, resetFormData);
+        if (promise && callback2) {
           return promise;
         } else {
           return null;
@@ -18002,7 +20842,7 @@ ${i3}
   };
   function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_cloud_image = resolveEasycom(vue.resolveDynamicComponent("cloud-image"), __easycom_0$5);
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     return vue.openBlock(), vue.createElementBlock(
       "button",
       {
@@ -19480,12 +22320,12 @@ ${i3}
           });
         }
         let isAppExist = true;
-        await new Promise((callback) => {
+        await new Promise((callback2) => {
           plus.oauth.getServices((oauthServices) => {
             let index = oauthServices.findIndex((e2) => e2.id == type);
             if (index != -1) {
               isAppExist = oauthServices[index].nativeClient;
-              callback();
+              callback2();
             } else {
               return uni.showToast({
                 title: "The current device does not support this login, please choose another login method",
@@ -19969,7 +22809,7 @@ ${i3}
     }
   };
   function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$e);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$f);
     return vue.openBlock(), vue.createElementBlock("view", { class: "captcha-box" }, [
       vue.createElementVNode("view", { class: "captcha-img-box" }, [
         $data.loging ? (vue.openBlock(), vue.createBlock(_component_uni_icons, {
@@ -20889,10 +23729,10 @@ ${i3}
           errorMessage: ERROR.normal.noPwd
         },
         {
-          validateFunction: function(rule, value, data2, callback) {
+          validateFunction: function(rule, value, data2, callback2) {
             const checkRes = validPwd(value);
             if (checkRes !== true) {
-              callback(checkRes);
+              callback2(checkRes);
             }
             return true;
           }
@@ -20907,9 +23747,9 @@ ${i3}
             errorMessage: ERROR.normal.noRePwd
           },
           {
-            validateFunction: function(rule, value, data2, callback) {
+            validateFunction: function(rule, value, data2, callback2) {
               if (value != data2[pwdName]) {
-                callback(ERROR.normal.rePwdErr);
+                callback2(ERROR.normal.rePwdErr);
               }
               return true;
             }
@@ -20937,15 +23777,15 @@ ${i3}
           errorMessage: "Username length between {minLength} and {maxLength} characters"
         },
         {
-          validateFunction: function(rule, value, data2, callback) {
+          validateFunction: function(rule, value, data2, callback2) {
             if (/^1\d{10}$/.test(value) || /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(value)) {
-              callback("The username cannot be: mobile phone number or email address");
+              callback2("The username cannot be: mobile phone number or email address");
             }
             if (/^\d+$/.test(value)) {
-              callback("Username cannot be purely numeric");
+              callback2("Username cannot be purely numeric");
             }
             if (/[\u4E00-\u9FA5\uF900-\uFA2D]{1,}/.test(value)) {
-              callback("Username cannot contain Chinese characters");
+              callback2("Username cannot contain Chinese characters");
             }
             return true;
           }
@@ -20961,15 +23801,15 @@ ${i3}
           errorMessage: "Nickname length is between {minLength} and {maxLength} characters"
         },
         {
-          validateFunction: function(rule, value, data2, callback) {
+          validateFunction: function(rule, value, data2, callback2) {
             if (/^1\d{10}$/.test(value) || /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(value)) {
-              callback("Nickname cannot be: mobile phone number or email address");
+              callback2("Nickname cannot be: mobile phone number or email address");
             }
             if (/^\d+$/.test(value)) {
-              callback("Nickname cannot be purely numeric");
+              callback2("Nickname cannot be purely numeric");
             }
             if (/[\u4E00-\u9FA5\uF900-\uFA2D]{1,}/.test(value)) {
-              callback("Nickname cannot contain Chinese characters");
+              callback2("Nickname cannot contain Chinese characters");
             }
             return true;
           }
@@ -21283,9 +24123,9 @@ ${i3}
                 errorMessage: "Password must be between 6 and 20 digits"
               },
               {
-                validateFunction: function(rule, value, data2, callback) {
+                validateFunction: function(rule, value, data2, callback2) {
                   if (value != data2.password) {
-                    callback("The password entered twice is inconsistent");
+                    callback2("The password entered twice is inconsistent");
                   }
                   return true;
                 }
@@ -21938,15 +24778,15 @@ ${i3}
                 errorMessage: "Nickname length is between {minLength} and {maxLength} characters"
               },
               {
-                validateFunction: function(rule, value, data2, callback) {
+                validateFunction: function(rule, value, data2, callback2) {
                   if (/^1\d{10}$/.test(value) || /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(value)) {
-                    callback("Nickname cannot be: mobile phone number or email address");
+                    callback2("Nickname cannot be: mobile phone number or email address");
                   }
                   if (/^\d+$/.test(value)) {
-                    callback("Nickname cannot be purely numeric");
+                    callback2("Nickname cannot be purely numeric");
                   }
                   if (/[\u4E00-\u9FA5\uF900-\uFA2D]{1,}/.test(value)) {
-                    callback("Nickname cannot contain Chinese characters");
+                    callback2("Nickname cannot contain Chinese characters");
                   }
                   return true;
                 }
@@ -22626,6 +25466,9 @@ ${i3}
   const Uni_modulesUniIdPagesPagesUserinfoSetPwdSetPwd = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-e5e1f63f"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd.vue"]]);
   __definePage("pages/grid/grid", PagesGridGrid);
   __definePage("pages/gridmul/gridmul", PagesGridmulGridmul);
+  __definePage("pages/list/archived/archived", PagesListArchivedArchived);
+  __definePage("pages/list/all/all", PagesListAllAll);
+  __definePage("pages/list/delete/delete", PagesListDeleteDelete);
   __definePage("pages/list/detail", PagesListDetail);
   __definePage("pages/ucenter/ucenter", PagesUcenterUcenter);
   __definePage("pages/ucenter/settings/settings", PagesUcenterSettingsSettings);
@@ -22712,7 +25555,7 @@ ${i3}
               confirmText: "前往设置",
               success(e3) {
                 if (e3.confirm) {
-                  gotoAppPermissionSetting();
+                  gotoAppPermissionSetting2();
                 }
               }
             });
@@ -22723,7 +25566,7 @@ ${i3}
               confirmText: "前往设置",
               success(e3) {
                 if (e3.confirm) {
-                  gotoAppPermissionSetting();
+                  gotoAppPermissionSetting2();
                 }
               }
             });
@@ -22736,14 +25579,14 @@ ${i3}
             confirmText: "前往设置",
             success(e3) {
               if (e3.confirm) {
-                gotoAppPermissionSetting();
+                gotoAppPermissionSetting2();
               }
             }
           });
         }
       }
     });
-    function gotoAppPermissionSetting() {
+    function gotoAppPermissionSetting2() {
       if (uni.getSystemInfoSync().platform == "ios") {
         var UIApplication = plus.ios.import("UIApplication");
         var application2 = UIApplication.sharedApplication();
@@ -24902,126 +27745,6 @@ ${codeFrame}` : message);
         continue;
       }
       context.__numberFormatters.delete(id);
-    }
-  }
-  function getDevtoolsGlobalHook() {
-    return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
-  }
-  function getTarget() {
-    return typeof navigator !== "undefined" && typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {};
-  }
-  const isProxyAvailable = typeof Proxy === "function";
-  const HOOK_SETUP = "devtools-plugin:setup";
-  const HOOK_PLUGIN_SETTINGS_SET = "plugin:settings:set";
-  class ApiProxy {
-    constructor(plugin, hook) {
-      this.target = null;
-      this.targetQueue = [];
-      this.onQueue = [];
-      this.plugin = plugin;
-      this.hook = hook;
-      const defaultSettings = {};
-      if (plugin.settings) {
-        for (const id in plugin.settings) {
-          const item = plugin.settings[id];
-          defaultSettings[id] = item.defaultValue;
-        }
-      }
-      const localSettingsSaveId = `__vue-devtools-plugin-settings__${plugin.id}`;
-      let currentSettings = { ...defaultSettings };
-      try {
-        const raw = localStorage.getItem(localSettingsSaveId);
-        const data2 = JSON.parse(raw);
-        Object.assign(currentSettings, data2);
-      } catch (e2) {
-      }
-      this.fallbacks = {
-        getSettings() {
-          return currentSettings;
-        },
-        setSettings(value) {
-          try {
-            localStorage.setItem(localSettingsSaveId, JSON.stringify(value));
-          } catch (e2) {
-          }
-          currentSettings = value;
-        }
-      };
-      hook.on(HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
-        if (pluginId === this.plugin.id) {
-          this.fallbacks.setSettings(value);
-        }
-      });
-      this.proxiedOn = new Proxy({}, {
-        get: (_target, prop) => {
-          if (this.target) {
-            return this.target.on[prop];
-          } else {
-            return (...args) => {
-              this.onQueue.push({
-                method: prop,
-                args
-              });
-            };
-          }
-        }
-      });
-      this.proxiedTarget = new Proxy({}, {
-        get: (_target, prop) => {
-          if (this.target) {
-            return this.target[prop];
-          } else if (prop === "on") {
-            return this.proxiedOn;
-          } else if (Object.keys(this.fallbacks).includes(prop)) {
-            return (...args) => {
-              this.targetQueue.push({
-                method: prop,
-                args,
-                resolve: () => {
-                }
-              });
-              return this.fallbacks[prop](...args);
-            };
-          } else {
-            return (...args) => {
-              return new Promise((resolve) => {
-                this.targetQueue.push({
-                  method: prop,
-                  args,
-                  resolve
-                });
-              });
-            };
-          }
-        }
-      });
-    }
-    async setRealTarget(target) {
-      this.target = target;
-      for (const item of this.onQueue) {
-        this.target.on[item.method](...item.args);
-      }
-      for (const item of this.targetQueue) {
-        item.resolve(await this.target[item.method](...item.args));
-      }
-    }
-  }
-  function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
-    const target = getTarget();
-    const hook = getDevtoolsGlobalHook();
-    const enableProxy = isProxyAvailable && pluginDescriptor.enableEarlyProxy;
-    if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
-      hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);
-    } else {
-      const proxy = enableProxy ? new ApiProxy(pluginDescriptor, hook) : null;
-      const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
-      list.push({
-        pluginDescriptor,
-        setupFn,
-        proxy
-      });
-      if (proxy)
-        setupFn(proxy.proxiedTarget);
     }
   }
   /*!

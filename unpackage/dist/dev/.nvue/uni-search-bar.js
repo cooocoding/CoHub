@@ -82,6 +82,24 @@ const pages = [
     }
   },
   {
+    path: "pages/list/archived/archived",
+    style: {
+      navigationBarTitleText: "Archived"
+    }
+  },
+  {
+    path: "pages/list/all/all",
+    style: {
+      navigationBarTitleText: "All"
+    }
+  },
+  {
+    path: "pages/list/delete/delete",
+    style: {
+      navigationBarTitleText: "Recently Deleted Folder"
+    }
+  },
+  {
     path: "pages/list/detail",
     style: {
       "app-plus": {
@@ -634,7 +652,7 @@ class v {
 function I(e2) {
   return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
 }
-const S = true, b = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "172.19.160.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
+const S = true, b = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.9",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
 let O = "";
 try {
   O = "__UNI__8301740";

@@ -159,6 +159,24 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
       }
     },
     {
+      path: "pages/list/archived/archived",
+      style: {
+        navigationBarTitleText: "Archived"
+      }
+    },
+    {
+      path: "pages/list/all/all",
+      style: {
+        navigationBarTitleText: "All"
+      }
+    },
+    {
+      path: "pages/list/delete/delete",
+      style: {
+        navigationBarTitleText: "Recently Deleted Folder"
+      }
+    },
+    {
       path: "pages/list/detail",
       style: {
         "app-plus": {
@@ -725,7 +743,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
   var b = "app";
   var A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default);
   var P = b;
-  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "172.19.160.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
+  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.9",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
   var C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
   var O = "";
   try {
@@ -5354,7 +5372,7 @@ ${i3}
     block0(_sfc_main$4);
   if (typeof block1 === "function")
     block1(_sfc_main$4);
-  var __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4], ["styles", [_style_0$4]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.vue"]]);
+  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4], ["styles", [_style_0$4]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.vue"]]);
   var _style_0$3 = { "uni-collapse-item__title": { "": { "flexDirection": "row", "alignItems": "center", "transitionProperty": "borderBottomColor", "transitionDuration": 300 }, ".uni-collapse-item-border": { "borderBottomWidth": 1, "borderBottomStyle": "solid", "borderBottomColor": "#ebeef5" }, ".is-open": { "borderBottomColor": "rgba(0,0,0,0)" } }, "uni-collapse-item__title-wrap": { "": { "width": 100, "flex": 1 } }, "uni-collapse-item__title-box": { "": { "paddingTop": 0, "paddingRight": 15, "paddingBottom": 0, "paddingLeft": 15, "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "height": 48, "lineHeight": 48, "backgroundColor": "#ffffff", "color": "#303133", "fontSize": 13, "fontWeight": "500" } }, "uni-collapse-item__title-text": { ".uni-collapse-item__title-box.is-disabled ": { "color": "#999999" }, "": { "flex": 1, "fontSize": 14, "lines": 1, "overflow": "hidden", "textOverflow": "ellipsis" } }, "uni-collapse-item__title-img": { "": { "height": 22, "width": 22, "marginRight": 10 } }, "uni-collapse-item__title-arrow": { "": { "alignItems": "center", "justifyContent": "center", "width": 20, "height": 20, "marginRight": 10, "transform": "rotate(0deg)" } }, "uni-collapse-item__title-arrow-active": { "": { "transform": "rotate(-180deg)" } }, "uni-collapse-item__wrap": { "": { "backgroundColor": "#ffffff", "overflow": "hidden", "position": "relative", "height": 0 }, ".is--transition": { "transitionProperty": "height,borderBottomWidth", "transitionDuration": 300 } }, "uni-collapse-item__wrap-content": { "": { "position": "absolute", "fontSize": 13, "color": "#303133", "borderBottomColor": "rgba(0,0,0,0)", "borderBottomStyle": "solid", "borderBottomWidth": 0 }, ".uni-collapse-item--border": { "borderBottomWidth": 1, "borderBottomColor": "#ebeef5" }, ".open": { "position": "relative" } }, "uni-collapse-item--animation": { "": { "transitionProperty": "transform", "transitionDuration": 300, "transitionTimingFunction": "ease" } }, "@TRANSITION": { "uni-collapse-item__title": { "property": "borderBottomColor", "duration": 300 }, "uni-collapse-item__wrap": { "property": "height,borderBottomWidth", "duration": 300 }, "uni-collapse-item--animation": { "property": "transform", "duration": 300, "timingFunction": "ease" } } };
   var dom = weex.requireModule("dom");
   var _sfc_main$3 = {
@@ -5607,7 +5625,7 @@ ${i3}
       )
     ]);
   }
-  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["styles", [_style_0$3]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue"]]);
+  var __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["styles", [_style_0$3]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue"]]);
   var _style_0$2 = { "uni-collapse": { "": { "flex": 1, "flexDirection": "column", "backgroundColor": "#ffffff" } } };
   var _sfc_main$2 = {
     name: "uniCollapse",
@@ -5728,7 +5746,7 @@ ${i3}
       (0, import_vue2.renderSlot)(_ctx.$slots, "default")
     ]);
   }
-  var __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["styles", [_style_0$2]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue"]]);
+  var __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["styles", [_style_0$2]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue"]]);
   var _style_0$12 = { "uni-status-bar": { "": { "height": 20 } } };
   var _sfc_main$12 = {
     name: "UniStatusBar",
@@ -6073,28 +6091,17 @@ ${i3}
       });
     }
   };
-  var _style_02 = { "pages": { "": { "backgroundColor": "#F2F2F6" } }, "cmd-nav-bar-left-title": { "": { "fontWeight": "bold", "fontSize": 50 } }, "cmd-nav-bar": { "": { "fontSize": 50, "fontWeight": "bold" } }, "avatar": { "": { "width": "90rpx", "height": "90rpx", "marginLeft": "600rpx", "marginBottom": "20rpx" } }, "main": { "": { "justifyContent": "space-between", "flex": 1 } }, "title": { "": { "fontSize": 55, "fontWeight": "bold" } }, "info": { "": { "flexDirection": "row", "justifyContent": "space-between" } }, "author": { "": { "fontSize": 14, "color": "#ACACB6" } }, "last_modify_date": { "": { "fontSize": 14, "color": "#ACACB6" } }, "uni-search-box": { "": { "backgroundColor": "#F2F2F6", "position": "sticky", "height": 50, "top": 0, "left": 0 } }, "cover-search-bar": { "": { "height": 50, "position": "relative", "top": -50, "marginBottom": -50 } }, "button-container": { "": { "flexDirection": "row", "display": "flex", "justifyContent": "space-between", "paddingLeft": 13, "paddingRight": 13, "paddingBottom": 20, "paddingTop": 20, "flexWrap": "wrap", "position": "relative" } }, "big-button": { "": { "flex": 1, "width": 150, "height": 100, "backgroundColor": "#ffffff", "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "center", "borderRadius": 10, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginTop": 0, "marginRight": 8, "marginBottom": 0, "marginLeft": 8 } }, "button-image": { "": { "width": 36, "height": 36, "marginBottom": 13, "marginLeft": 12 } }, "button-text": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#8E8E92", "marginLeft": 16 } }, "button-number": { "": { "position": "absolute", "right": 13, "top": 22, "transform": "translateY(-50%)", "fontSize": 26, "fontWeight": "bold" } }, "swipe-item": { "": { "marginBottom": 10, "fontSize": 12 } }, "swipe-item-content": { "": { "width": 350, "height": 50, "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "backgroundColor": "#ffffff", "borderRadius": 10, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginBottom": 8, "marginLeft": 20, "justifyContent": "center", "fontSize": 12, "overflow": "hidden", "display": "flex", "alignItems": "flex-start" } }, "uni-swipe_button-group": { "": { "display": "flex", "boxSizing": "border-box", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": 8, "paddingBottom": 0, "paddingLeft": 8 } }, "uni-swipe_button": { "": { "width": 80, "height": 50, "lineHeight": 100, "textAlign": "center", "backgroundColor": "#f1f1f1", "color": "#333333", "fontSize": 12, "paddingTop": 0, "paddingRight": 16, "paddingBottom": 0, "paddingLeft": 16 } }, "item-left": { "": { "flexDirection": "row", "display": "flex", "alignItems": "flex-start" } }, "circle-image": { "": { "width": "40rpx", "height": "40rpx", "borderRadius": 50, "backgroundColor": "#eeeeee", "marginRight": "10rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "circle-image-icon": { "": { "width": "30rpx", "height": "30rpx" } }, "item-text": { "": { "flex": 1 } } };
-  var cdbRef;
+  var _style_02 = { "pages": { "": { "backgroundColor": "#F2F2F6" } }, "cmd-nav-bar-left-title": { "": { "fontWeight": "bold", "fontSize": 50 } }, "cmd-nav-bar": { "": { "fontSize": 50, "fontWeight": "bold" } }, "avatar": { "": { "width": "90rpx", "height": "90rpx", "marginLeft": "600rpx", "marginBottom": "20rpx" } }, "main": { "": { "justifyContent": "space-between", "flex": 1 } }, "title": { "": { "fontSize": 55, "fontWeight": "bold" } }, "info": { "": { "flexDirection": "row", "justifyContent": "space-between" } }, "author": { "": { "fontSize": 14, "color": "#ACACB6" } }, "last_modify_date": { "": { "fontSize": 14, "color": "#ACACB6" } }, "uni-search-box": { "": { "backgroundColor": "#F2F2F6", "position": "sticky", "height": 50, "top": 0, "left": 0 } }, "cover-search-bar": { "": { "height": 50, "position": "relative", "top": -50, "marginBottom": -50 } }, "button-container": { "": { "flexDirection": "row", "display": "flex", "justifyContent": "space-between", "paddingLeft": 13, "paddingRight": 13, "paddingBottom": 20, "paddingTop": 20, "flexWrap": "wrap", "position": "relative" } }, "big-button": { "": { "flex": 1, "width": 150, "height": 100, "backgroundColor": "#ffffff", "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "center", "borderRadius": 10, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginTop": 0, "marginRight": 8, "marginBottom": 0, "marginLeft": 8 } }, "button-image": { "": { "width": 36, "height": 36, "marginBottom": 13, "marginLeft": 12 } }, "button-text": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#8E8E92", "marginLeft": 16 } }, "button-number": { "": { "position": "absolute", "right": 13, "top": 22, "transform": "translateY(-50%)", "fontSize": 26, "fontWeight": "bold" } }, "swipe-item": { "": { "marginBottom": 10, "fontSize": 14, "height": 45, "marginLeft": -10 } }, "swipe-item-content": { "": { "width": 365, "height": 45, "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "backgroundColor": "#ffffff", "borderRadius": 8, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginBottom": 10, "justifyContent": "center", "fontSize": 14, "overflow": "hidden", "display": "flex", "alignItems": "flex-start" } }, "uni-swipe_button-group": { "": { "display": "flex", "boxSizing": "border-box", "justifyContent": "space-between", "marginLeft": 10, "fontSize": 12 } }, "uni-swipe_button": { "": { "width": 85, "height": 50, "lineHeight": 100, "textAlign": "center", "backgroundColor": "#f1f1f1", "color": "#333333", "fontSize": 12, "paddingTop": 0, "paddingRight": 16, "paddingBottom": 0, "paddingLeft": 16, "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { "": { "flexDirection": "row", "display": "flex", "alignItems": "flex-start" } }, "circle-image": { "": { "width": "40rpx", "height": "40rpx", "borderRadius": 50, "backgroundColor": "#eeeeee", "marginRight": "10rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "circle-image-icon": { "": { "width": "30rpx", "height": "30rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "item-text": { "": { "flex": 1, "fontSize": 12, "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "folder-header": { "": { "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "backgroundColor": "#F2F2F6", "display": "flex", "justifyContent": "space-between", "alignItems": "center", "flexDirection": "row" } }, "folder-title": { "": { "fontSize": 20, "fontWeight": "bold", "marginBottom": 8, "textAlign": "left", "flex": 1 } }, "add-button": { "": { "fontSize": 18, "color": "#007aff", "cursor": "pointer", "marginLeft": 10 } }, "folder-content": { "": { "backgroundColor": "#F2F2F6", "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderRadius": 10, "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.1)" } }, "collapse-wrapper": { "": { "marginLeft": 12, "width": 368, "borderRadius": 10 } }, "popup-container": { "": { "position": "fixed", "bottom": 0, "left": 0, "right": 0, "backgroundColor": "#F2F2F6", "borderTopLeftRadius": 10, "borderTopRightRadius": 10, "boxShadow": "0 -2px 8px rgba(0, 0, 0, 0.1)", "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "display": "flex", "flexDirection": "column" } }, "popup-header": { "": { "display": "flex", "justifyContent": "space-between", "marginBottom": 20, "alignItems": "center", "flexDirection": "row", "color": "#ffffff" } }, "popup-title": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#000000", "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "popup-buttons": { "": { "width": 60, "display": "flex", "justifyContent": "space-between", "alignItems": "center", "color": "#ffffff", "flexDirection": "row", "fontSize": 11 } }, "popup-button": { "": { "marginLeft": 10, "paddingTop": 10, "paddingRight": 20, "paddingBottom": 10, "paddingLeft": 20, "fontSize": 11, "borderRadius": 5, "cursor": "pointer", "height": 35, "width": 60, "color": "#ffffff" } }, "popup-button-cancel": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "popup-button-done": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "in": { "": { "flex": 1, "height": 50, "width": 350, "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderWidth": 1, "borderStyle": "solid", "borderColor": "#cccccc", "borderRadius": 10, "backgroundColor": "#ffffff", "marginBottom": 25, "fontSize": 15 } } };
   var gps = new Gps();
-  var db = Ws.database();
+  Ws.database();
   var _sfc_main2 = {
     components: {
       statusBar,
       cmdNavBar: __easycom_02
     },
     computed: {
-      inputPlaceholder(e2) {
-        if (uni.getStorageSync("CURRENT_LANG") == "en") {
-          return "Please enter the search content";
-        } else {
-          return "Quick Search";
-        }
-      },
-      colList() {
-        return [
-          db.collection("opendb-news-articles").where(this.where).field("avatar,title,last_modify_date,user_id").getTemp(),
-          db.collection("uni-id-users").field("_id,nickname").getTemp()
-        ];
+      inputPlaceholder() {
+        return uni.getStorageSync("CURRENT_LANG") === "en" ? "Please enter the search content" : "Quick Search";
       }
     },
     data() {
@@ -6104,9 +6111,9 @@ ${i3}
         showRefresh: false,
         listHight: 0,
         swipeOptions: [],
-        rightOptions: [
+        rightOptionsTemplate: [
           {
-            text: "",
+            text: "Edit",
             style: {
               backgroundColor: "#0C79FE",
               backgroundImage: "/static/pic/edit.png",
@@ -6115,7 +6122,7 @@ ${i3}
               width: "100%",
               margin: "0"
             },
-            click: (item) => this.handleEdit(item)
+            click: (folderType, folderIndex, itemIndex) => this.handleEdit(folderType, folderIndex, itemIndex)
           },
           {
             text: "Archived",
@@ -6123,7 +6130,7 @@ ${i3}
               backgroundColor: "#979797",
               color: "#FFFFFF"
             },
-            click: (item) => this.handleArchived(item)
+            click: (folderType, folderIndex, itemIndex) => this.handleArchived(folderType, folderIndex, itemIndex)
           },
           {
             text: "Delete",
@@ -6131,7 +6138,7 @@ ${i3}
               backgroundColor: "#FF3B30",
               color: "#FFFFFF"
             },
-            click: (item) => this.handleDelete(item)
+            click: (folderType, folderIndex, itemIndex) => this.handleDelete(folderType, folderIndex, itemIndex)
           }
         ],
         folders: [
@@ -6140,28 +6147,33 @@ ${i3}
             isExpanded: false,
             items: [
               { name: "Folder1", icon: "/static/pic/10.png" },
-              { name: "Folder2", icon: "/static/pic/10.png" },
-              { name: "Folder3", icon: "/static/pic/10.png" }
+              { name: "Folder2", icon: "/static/pic/10.png" }
             ]
-          },
+          }
+        ],
+        sharedFolders: [
           {
             name: "Shared Folders",
             isExpanded: false,
             items: [
-              { name: "Folder1", icon: "/static/pic/10.png" },
-              { name: "Folder2", icon: "/static/pic/10.png" },
-              { name: "Folder3", icon: "/static/pic/10.png" }
+              { name: "Shared Folder1", icon: "/static/pic/10.png" },
+              { name: "Shared Folder2", icon: "/static/pic/10.png" }
             ]
-          },
+          }
+        ],
+        utilities: [
           {
-            name: "Utililities",
+            name: "Utilities",
             isExpanded: false,
             items: [
               { name: "Recently Deleted", icon: "/static/pic/10.png" }
             ]
           }
-          // Add more folders as needed
-        ]
+        ],
+        showPopup: false,
+        newItemName: "",
+        currentFolderType: "",
+        currentFolderIndex: null
       };
     },
     watch: {
@@ -6189,15 +6201,20 @@ ${i3}
         });
       });
     },
+    onLoad() {
+      cdbRef = this;
+      this.listHight = uni.getSystemInfoSync().windowHeight - uni.upx2px(440);
+      this.getListData();
+    },
     methods: {
       goToAllInfoPage() {
         uni.navigateTo({
-          url: "/uni_modules/uni-id-pages/pages/userinfo/userinfo"
+          url: "/pages/list/all/all"
         });
       },
       goToArchivedInfoPage() {
         uni.navigateTo({
-          url: "/uni_modules/uni-id-pages/pages/userinfo/userinfo"
+          url: "/pages/list/archived/archived"
         });
       },
       navigateToGrid() {
@@ -6205,7 +6222,7 @@ ${i3}
           url: "/pages/grid/grid"
         });
       },
-      searchClick(e2) {
+      searchClick() {
         uni.hideKeyboard();
         uni.navigateTo({
           url: "/pages/list/search/search",
@@ -6221,41 +6238,82 @@ ${i3}
         }, () => {
           uni.stopPullDownRefresh();
           this.showRefresh = false;
-          formatAppLog("log", "at pages/list/list.nvue:246", "end");
         });
-        formatAppLog("log", "at pages/list/list.nvue:248", "refresh");
       },
       loadMore() {
         cdbRef.loadMore();
       },
       onqueryerror(e2) {
-        formatAppLog("error", "at pages/list/list.nvue:254", e2);
+        formatAppLog("error", "at pages/list/list.nvue:295", e2);
       },
       onpullingdown(e2) {
-        formatAppLog("log", "at pages/list/list.nvue:257", e2);
         this.showRefresh = true;
         if (e2.pullingDistance > 100) {
           this.refresh();
         }
+      },
+      handleCollapseItemClick(item) {
+        if (item.name === "Recently Deleted") {
+          uni.navigateTo({
+            url: "/pages/list/delete/delete"
+          });
+        }
+      },
+      openAddItemDialog(folderType, index) {
+        this.currentFolderType = folderType;
+        this.currentFolderIndex = index;
+        this.showPopup = true;
+      },
+      addItem() {
+        if (this.newItemName.trim() !== "") {
+          this[this.currentFolderType][this.currentFolderIndex].items.push({
+            name: this.newItemName,
+            icon: "/static/pic/10.png"
+          });
+          this.newItemName = "";
+          this.showPopup = false;
+        }
+      },
+      cancelAddItem() {
+        this.newItemName = "";
+        this.showPopup = false;
+      },
+      getListData() {
+        return __async(this, null, function* () {
+          const [err, res] = yield Ws.database().collection("opendb-news-articles").where(this.where).field("avatar,title,last_modify_date,user_id").get();
+          if (res) {
+            this.swipeOptions = res.result.data;
+          }
+        });
+      },
+      getRightOptions(folderType, folderIndex, itemIndex) {
+        return this.rightOptionsTemplate.map((option) => {
+          return __spreadProps(__spreadValues({}, option), {
+            click: () => option.click(folderType, folderIndex, itemIndex)
+          });
+        });
+      },
+      handleEdit(folderType, folderIndex, itemIndex) {
+        formatAppLog("log", "at pages/list/list.nvue:344", "Edit:", folderType, folderIndex, itemIndex);
+      },
+      handleArchived(folderType, folderIndex, itemIndex) {
+        formatAppLog("log", "at pages/list/list.nvue:348", "Archived:", folderType, folderIndex, itemIndex);
+      },
+      handleDelete(folderType, folderIndex, itemIndex) {
+        formatAppLog("log", "at pages/list/list.nvue:352", "Delete:", folderType, folderIndex, itemIndex);
+        this[folderType][folderIndex].items.splice(itemIndex, 1);
       }
-    },
-    handleEdit(item) {
-      formatAppLog("log", "at pages/list/list.nvue:266", "Edit:", item);
-    },
-    handleArchived(item) {
-      formatAppLog("log", "at pages/list/list.nvue:270", "Archived:", item);
-    },
-    handleDelete(item) {
-      formatAppLog("log", "at pages/list/list.nvue:274", "Delete:", item);
     }
   };
   function _sfc_render2(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_statusBar = (0, import_vue2.resolveComponent)("statusBar");
     const _component_cmd_nav_bar = resolveEasycom((0, import_vue2.resolveDynamicComponent)("cmd-nav-bar"), __easycom_02);
     const _component_uni_search_bar = resolveEasycom((0, import_vue2.resolveDynamicComponent)("uni-search-bar"), __easycom_1);
-    const _component_uni_swipe_action_item = resolveEasycom((0, import_vue2.resolveDynamicComponent)("uni-swipe-action-item"), __easycom_2);
-    const _component_uni_collapse_item = resolveEasycom((0, import_vue2.resolveDynamicComponent)("uni-collapse-item"), __easycom_3);
-    const _component_uni_collapse = resolveEasycom((0, import_vue2.resolveDynamicComponent)("uni-collapse"), __easycom_4);
+    const _component_uni_icons = resolveEasycom((0, import_vue2.resolveDynamicComponent)("uni-icons"), __easycom_0);
+    const _component_uni_swipe_action_item = resolveEasycom((0, import_vue2.resolveDynamicComponent)("uni-swipe-action-item"), __easycom_3);
+    const _component_uni_collapse_item = resolveEasycom((0, import_vue2.resolveDynamicComponent)("uni-collapse-item"), __easycom_4);
+    const _component_uni_collapse = resolveEasycom((0, import_vue2.resolveDynamicComponent)("uni-collapse"), __easycom_5);
+    const _component_button = (0, import_vue2.resolveComponent)("button");
     return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("scroll-view", {
       scrollY: true,
       showScrollbar: true,
@@ -6317,7 +6375,7 @@ ${i3}
             (0, import_vue2.createElementVNode)("u-text", { class: "button-number" }, "0")
           ])
         ]),
-        (0, import_vue2.createCommentVNode)("\u6587\u4EF6\u5939\u6298\u53E0"),
+        (0, import_vue2.createCommentVNode)(" \u6587\u4EF6\u5939\u6298\u53E0 "),
         (0, import_vue2.createElementVNode)("view", { class: "collapse-wrapper" }, [
           (0, import_vue2.createVNode)(_component_uni_collapse, null, {
             default: (0, import_vue2.withCtx)(() => [
@@ -6325,58 +6383,76 @@ ${i3}
                 import_vue2.Fragment,
                 null,
                 (0, import_vue2.renderList)($data.folders, (folder, index) => {
-                  return (0, import_vue2.openBlock)(), (0, import_vue2.createBlock)(_component_uni_collapse_item, {
-                    key: index,
-                    title: folder.name
-                  }, {
-                    default: (0, import_vue2.withCtx)(() => [
-                      (0, import_vue2.createElementVNode)("view", { class: "folder-content" }, [
-                        ((0, import_vue2.openBlock)(true), (0, import_vue2.createElementBlock)(
-                          import_vue2.Fragment,
-                          null,
-                          (0, import_vue2.renderList)(folder.items, (item, itemIndex) => {
-                            return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
-                              key: itemIndex,
-                              class: "swipe-item"
-                            }, [
-                              (0, import_vue2.createVNode)(_component_uni_swipe_action_item, { "right-options": $data.rightOptions }, {
-                                default: (0, import_vue2.withCtx)(() => [
-                                  (0, import_vue2.createElementVNode)("view", {
-                                    class: "swipe-item-content",
-                                    onClick: ($event) => $options.navigateToGrid(item)
-                                  }, [
-                                    (0, import_vue2.createElementVNode)("view", { class: "item-left" }, [
-                                      (0, import_vue2.createElementVNode)("view", { class: "circle-image" }, [
-                                        (0, import_vue2.createElementVNode)("u-image", {
-                                          class: "circle-image-icon",
-                                          src: item.icon
-                                        }, null, 8, ["src"])
-                                      ]),
-                                      (0, import_vue2.createElementVNode)("view", { class: "item-text" }, [
-                                        (0, import_vue2.createElementVNode)(
-                                          "u-text",
-                                          null,
-                                          (0, import_vue2.toDisplayString)(item.name),
-                                          1
-                                          /* TEXT */
-                                        )
-                                      ])
-                                    ])
-                                  ], 8, ["onClick"])
-                                ]),
-                                _: 2
-                                /* DYNAMIC */
-                              }, 1032, ["right-options"])
-                            ]);
-                          }),
-                          128
-                          /* KEYED_FRAGMENT */
-                        ))
-                      ])
+                  return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", { key: index }, [
+                    (0, import_vue2.createElementVNode)("view", { class: "folder-header" }, [
+                      (0, import_vue2.createElementVNode)(
+                        "u-text",
+                        { class: "folder-title" },
+                        (0, import_vue2.toDisplayString)(folder.name),
+                        1
+                        /* TEXT */
+                      ),
+                      (0, import_vue2.createVNode)(_component_uni_icons, {
+                        type: "plus",
+                        size: "30",
+                        class: "add-button",
+                        onClick: ($event) => $options.openAddItemDialog("folders", index)
+                      }, null, 8, ["onClick"])
                     ]),
-                    _: 2
-                    /* DYNAMIC */
-                  }, 1032, ["title"]);
+                    (0, import_vue2.createVNode)(_component_uni_collapse_item, {
+                      title: folder.name
+                    }, {
+                      default: (0, import_vue2.withCtx)(() => [
+                        (0, import_vue2.createElementVNode)("view", { class: "folder-content" }, [
+                          ((0, import_vue2.openBlock)(true), (0, import_vue2.createElementBlock)(
+                            import_vue2.Fragment,
+                            null,
+                            (0, import_vue2.renderList)(folder.items, (item, itemIndex) => {
+                              return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
+                                key: itemIndex,
+                                class: "swipe-item"
+                              }, [
+                                (0, import_vue2.createVNode)(_component_uni_swipe_action_item, {
+                                  "right-options": $options.getRightOptions("folders", index, itemIndex)
+                                }, {
+                                  default: (0, import_vue2.withCtx)(() => [
+                                    (0, import_vue2.createElementVNode)("view", {
+                                      class: "swipe-item-content",
+                                      onClick: ($event) => $options.navigateToGrid(item)
+                                    }, [
+                                      (0, import_vue2.createElementVNode)("view", { class: "item-left" }, [
+                                        (0, import_vue2.createElementVNode)("view", { class: "circle-image" }, [
+                                          (0, import_vue2.createElementVNode)("u-image", {
+                                            class: "circle-image-icon",
+                                            src: item.icon
+                                          }, null, 8, ["src"])
+                                        ]),
+                                        (0, import_vue2.createElementVNode)("view", { class: "item-text" }, [
+                                          (0, import_vue2.createElementVNode)(
+                                            "u-text",
+                                            null,
+                                            (0, import_vue2.toDisplayString)(item.name),
+                                            1
+                                            /* TEXT */
+                                          )
+                                        ])
+                                      ])
+                                    ], 8, ["onClick"])
+                                  ]),
+                                  _: 2
+                                  /* DYNAMIC */
+                                }, 1032, ["right-options"])
+                              ]);
+                            }),
+                            128
+                            /* KEYED_FRAGMENT */
+                          ))
+                        ])
+                      ]),
+                      _: 2
+                      /* DYNAMIC */
+                    }, 1032, ["title"])
+                  ]);
                 }),
                 128
                 /* KEYED_FRAGMENT */
@@ -6385,7 +6461,208 @@ ${i3}
             _: 1
             /* STABLE */
           })
-        ])
+        ]),
+        (0, import_vue2.createElementVNode)("view", { class: "collapse-wrapper" }, [
+          (0, import_vue2.createVNode)(_component_uni_collapse, null, {
+            default: (0, import_vue2.withCtx)(() => [
+              ((0, import_vue2.openBlock)(true), (0, import_vue2.createElementBlock)(
+                import_vue2.Fragment,
+                null,
+                (0, import_vue2.renderList)($data.sharedFolders, (folder, index) => {
+                  return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", { key: index }, [
+                    (0, import_vue2.createElementVNode)("view", { class: "folder-header" }, [
+                      (0, import_vue2.createElementVNode)(
+                        "u-text",
+                        { class: "folder-title" },
+                        (0, import_vue2.toDisplayString)(folder.name),
+                        1
+                        /* TEXT */
+                      ),
+                      (0, import_vue2.createVNode)(_component_uni_icons, {
+                        type: "plus",
+                        size: "30",
+                        class: "add-button",
+                        onClick: ($event) => $options.openAddItemDialog("sharedFolders", index)
+                      }, null, 8, ["onClick"])
+                    ]),
+                    (0, import_vue2.createVNode)(_component_uni_collapse_item, {
+                      title: folder.name
+                    }, {
+                      default: (0, import_vue2.withCtx)(() => [
+                        (0, import_vue2.createElementVNode)("view", { class: "folder-content" }, [
+                          ((0, import_vue2.openBlock)(true), (0, import_vue2.createElementBlock)(
+                            import_vue2.Fragment,
+                            null,
+                            (0, import_vue2.renderList)(folder.items, (item, itemIndex) => {
+                              return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
+                                key: itemIndex,
+                                class: "swipe-item"
+                              }, [
+                                (0, import_vue2.createVNode)(_component_uni_swipe_action_item, {
+                                  "right-options": $options.getRightOptions("sharedFolders", index, itemIndex)
+                                }, {
+                                  default: (0, import_vue2.withCtx)(() => [
+                                    (0, import_vue2.createElementVNode)("view", {
+                                      class: "swipe-item-content",
+                                      onClick: ($event) => $options.navigateToGrid(item)
+                                    }, [
+                                      (0, import_vue2.createElementVNode)("view", { class: "item-left" }, [
+                                        (0, import_vue2.createElementVNode)("view", { class: "circle-image" }, [
+                                          (0, import_vue2.createElementVNode)("u-image", {
+                                            class: "circle-image-icon",
+                                            src: item.icon
+                                          }, null, 8, ["src"])
+                                        ]),
+                                        (0, import_vue2.createElementVNode)("view", { class: "item-text" }, [
+                                          (0, import_vue2.createElementVNode)(
+                                            "u-text",
+                                            null,
+                                            (0, import_vue2.toDisplayString)(item.name),
+                                            1
+                                            /* TEXT */
+                                          )
+                                        ])
+                                      ])
+                                    ], 8, ["onClick"])
+                                  ]),
+                                  _: 2
+                                  /* DYNAMIC */
+                                }, 1032, ["right-options"])
+                              ]);
+                            }),
+                            128
+                            /* KEYED_FRAGMENT */
+                          ))
+                        ])
+                      ]),
+                      _: 2
+                      /* DYNAMIC */
+                    }, 1032, ["title"])
+                  ]);
+                }),
+                128
+                /* KEYED_FRAGMENT */
+              ))
+            ]),
+            _: 1
+            /* STABLE */
+          })
+        ]),
+        (0, import_vue2.createElementVNode)("view", { class: "collapse-wrapper" }, [
+          (0, import_vue2.createVNode)(_component_uni_collapse, null, {
+            default: (0, import_vue2.withCtx)(() => [
+              ((0, import_vue2.openBlock)(true), (0, import_vue2.createElementBlock)(
+                import_vue2.Fragment,
+                null,
+                (0, import_vue2.renderList)($data.utilities, (folder, index) => {
+                  return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", { key: index }, [
+                    (0, import_vue2.createElementVNode)("view", { class: "folder-header" }, [
+                      (0, import_vue2.createElementVNode)(
+                        "u-text",
+                        { class: "folder-title" },
+                        (0, import_vue2.toDisplayString)(folder.name),
+                        1
+                        /* TEXT */
+                      )
+                    ]),
+                    (0, import_vue2.createVNode)(_component_uni_collapse_item, {
+                      title: folder.name
+                    }, {
+                      default: (0, import_vue2.withCtx)(() => [
+                        (0, import_vue2.createElementVNode)("view", { class: "folder-content" }, [
+                          ((0, import_vue2.openBlock)(true), (0, import_vue2.createElementBlock)(
+                            import_vue2.Fragment,
+                            null,
+                            (0, import_vue2.renderList)(folder.items, (item, itemIndex) => {
+                              return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
+                                key: itemIndex,
+                                class: "swipe-item",
+                                onClick: ($event) => $options.handleCollapseItemClick(item)
+                              }, [
+                                (0, import_vue2.createVNode)(_component_uni_swipe_action_item, {
+                                  "right-options": $options.getRightOptions("utilities", index, itemIndex)
+                                }, {
+                                  default: (0, import_vue2.withCtx)(() => [
+                                    (0, import_vue2.createElementVNode)("view", {
+                                      class: "swipe-item-content",
+                                      onClick: ($event) => $options.navigateToGrid(item)
+                                    }, [
+                                      (0, import_vue2.createElementVNode)("view", { class: "item-left" }, [
+                                        (0, import_vue2.createElementVNode)("view", { class: "circle-image" }, [
+                                          (0, import_vue2.createElementVNode)("u-image", {
+                                            class: "circle-image-icon",
+                                            src: item.icon
+                                          }, null, 8, ["src"])
+                                        ]),
+                                        (0, import_vue2.createElementVNode)("view", { class: "item-text" }, [
+                                          (0, import_vue2.createElementVNode)(
+                                            "u-text",
+                                            null,
+                                            (0, import_vue2.toDisplayString)(item.name),
+                                            1
+                                            /* TEXT */
+                                          )
+                                        ])
+                                      ])
+                                    ], 8, ["onClick"])
+                                  ]),
+                                  _: 2
+                                  /* DYNAMIC */
+                                }, 1032, ["right-options"])
+                              ], 8, ["onClick"]);
+                            }),
+                            128
+                            /* KEYED_FRAGMENT */
+                          ))
+                        ])
+                      ]),
+                      _: 2
+                      /* DYNAMIC */
+                    }, 1032, ["title"])
+                  ]);
+                }),
+                128
+                /* KEYED_FRAGMENT */
+              ))
+            ]),
+            _: 1
+            /* STABLE */
+          })
+        ]),
+        $data.showPopup ? ((0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
+          key: 0,
+          class: "popup-container"
+        }, [
+          (0, import_vue2.createElementVNode)("view", { class: "popup-header" }, [
+            (0, import_vue2.createVNode)(_component_button, {
+              class: "popup-button popup-button-cancel",
+              onClick: $options.cancelAddItem
+            }, {
+              default: (0, import_vue2.withCtx)(() => [
+                (0, import_vue2.createTextVNode)("Cancel")
+              ]),
+              _: 1
+              /* STABLE */
+            }, 8, ["onClick"]),
+            (0, import_vue2.createElementVNode)("u-text", { class: "popup-title" }, "Add Item"),
+            (0, import_vue2.createVNode)(_component_button, {
+              class: "popup-button popup-button-done",
+              onClick: $options.addItem
+            }, {
+              default: (0, import_vue2.withCtx)(() => [
+                (0, import_vue2.createTextVNode)("Done")
+              ]),
+              _: 1
+              /* STABLE */
+            }, 8, ["onClick"])
+          ]),
+          (0, import_vue2.createElementVNode)("u-input", {
+            modelValue: $data.newItemName,
+            onInput: _cache[4] || (_cache[4] = ($event) => $data.newItemName = $event.detail.value),
+            placeholder: "Enter item name",
+            class: "in"
+          }, null, 40, ["modelValue"])
+        ])) : (0, import_vue2.createCommentVNode)("v-if", true)
       ])
     ]);
   }
