@@ -169,13 +169,13 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
       }
     },
     {
-      path: "pages/grid/grid",
+      path: "pages/list/grid/grid",
       style: {
         navigationStyle: "custom"
       }
     },
     {
-      path: "pages/gridmul/gridmul",
+      path: "pages/list/gridmul/gridmul",
       style: {
         navigationStyle: "custom"
       }
@@ -291,7 +291,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
       }
     },
     {
-      path: "pages/gridmul/friends/friends",
+      path: "pages/list/gridmul/friends/friends",
       style: {
         navigationBarTitleText: "Friends under the folder"
       }
@@ -432,18 +432,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
         iconPath: "static/tabbar/list.png",
         selectedIconPath: "static/tabbar/list_active.png",
         text: "list"
-      },
-      {
-        pagePath: "pages/grid/grid",
-        iconPath: "static/tabbar/grid.png",
-        selectedIconPath: "static/tabbar/grid_active.png",
-        text: "grid"
-      },
-      {
-        pagePath: "pages/gridmul/gridmul",
-        iconPath: "static/tabbar/grid.png",
-        selectedIconPath: "static/tabbar/grid_active.png",
-        text: "gridmul"
       },
       {
         pagePath: "pages/ucenter/ucenter",
@@ -771,7 +759,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
   var b = "app";
   var A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default);
   var P = b;
-  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.9",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
+  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.5",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
   var C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
   var O = "";
   try {

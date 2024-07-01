@@ -9,7 +9,7 @@
 			}
 		},
 		{
-			"path": "pages/grid/grid",
+			"path": "pages/list/grid/grid",
 			"style": {
 				//#ifndef MP
 				"navigationStyle": "custom"
@@ -17,7 +17,7 @@
 			}
 		}, 
 		{
-			"path": "pages/gridmul/gridmul",
+			"path": "pages/list/gridmul/gridmul",
 			"style": {
 				//#ifndef MP
 				"navigationStyle": "custom"
@@ -131,7 +131,7 @@
 			}
 		},
     {
-      "path": "pages/gridmul/friends/friends",
+      "path": "pages/list/gridmul/friends/friends",
       "style": {
         "navigationBarTitleText": "Friends under the folder"
       }
@@ -272,7 +272,7 @@
 		],
 		"current": 1
 	},
-	"tabBar": {
+	"tabBar": { 
 		"color": "#7A7E83",
 		"selectedColor": "#007AFF",
 		"borderStyle": "black",
@@ -282,16 +282,6 @@
 			"iconPath": "static/tabbar/list.png",
 			"selectedIconPath": "static/tabbar/list_active.png",
 			"text": "list"
-		}, {
-			"pagePath": "pages/grid/grid",
-			"iconPath": "static/tabbar/grid.png",
-			"selectedIconPath": "static/tabbar/grid_active.png",
-			"text": "grid"
-		},  {
-			"pagePath": "pages/gridmul/gridmul",
-			"iconPath": "static/tabbar/grid.png",
-			"selectedIconPath": "static/tabbar/grid_active.png",
-			"text": "gridmul"
 		}, {
 			"pagePath": "pages/ucenter/ucenter",
 			"iconPath": "static/tabbar/me.png",

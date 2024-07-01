@@ -205,7 +205,7 @@
 		methods: {
 			navigateToFriends() {
 			      uni.navigateTo({
-			        url: '/pages/gridmul/friends/friends'
+			        url: '/pages/list/gridmul/friends/friends'
 			      });
 			    },
 			handleClick(id) {

@@ -438,6 +438,7 @@
 	}
 
 	.goods-header-wrap {
+		margin-top: -10px;
 		display: flex;
 		align-items: center;
 		padding: 24rpx;

@@ -1567,7 +1567,7 @@ class Gps {
     return true;
   }
 }
-const _style_0 = { "pages": { "": { "backgroundColor": "#F2F2F6" } }, "cmd-nav-bar-left-title": { "": { "fontWeight": "bold", "fontSize": 50 } }, "cmd-nav-bar": { "": { "fontSize": 50, "fontWeight": "bold" } }, "avatar": { "": { "width": "90rpx", "height": "90rpx", "marginLeft": "600rpx", "marginBottom": "20rpx" } }, "main": { "": { "justifyContent": "space-between", "flex": 1 } }, "title": { "": { "fontSize": 55, "fontWeight": "bold" } }, "info": { "": { "flexDirection": "row", "justifyContent": "space-between" } }, "author": { "": { "fontSize": 14, "color": "#ACACB6" } }, "last_modify_date": { "": { "fontSize": 14, "color": "#ACACB6" } }, "uni-search-box": { "": { "backgroundColor": "#F2F2F6", "position": "sticky", "height": 50, "top": 0, "left": 0 } }, "cover-search-bar": { "": { "height": 50, "position": "relative", "top": -50, "marginBottom": -50 } }, "button-container": { "": { "flexDirection": "row", "display": "flex", "justifyContent": "space-between", "paddingLeft": 13, "paddingRight": 13, "paddingBottom": 20, "paddingTop": 20, "flexWrap": "wrap", "position": "relative" } }, "big-button": { "": { "flex": 1, "width": 150, "height": 100, "backgroundColor": "#ffffff", "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "center", "borderRadius": 10, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginTop": 0, "marginRight": 8, "marginBottom": 0, "marginLeft": 8 } }, "button-image": { "": { "width": 36, "height": 36, "marginBottom": 13, "marginLeft": 12 } }, "button-text": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#8E8E92", "marginLeft": 16 } }, "button-number": { "": { "position": "absolute", "right": 13, "top": 22, "transform": "translateY(-50%)", "fontSize": 26, "fontWeight": "bold" } }, "swipe-item": { "": { "marginBottom": 10, "fontSize": 14, "height": 45, "marginLeft": -10 } }, "swipe-item-content": { "": { "width": 365, "height": 45, "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "backgroundColor": "#ffffff", "borderRadius": 8, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginBottom": 10, "justifyContent": "center", "fontSize": 14, "overflow": "hidden", "display": "flex", "alignItems": "flex-start" } }, "uni-swipe_button-group": { "": { "display": "flex", "boxSizing": "border-box", "justifyContent": "space-between", "marginLeft": 10, "fontSize": 12 } }, "uni-swipe_button": { "": { "width": 85, "height": 50, "lineHeight": 100, "textAlign": "center", "backgroundColor": "#f1f1f1", "color": "#333333", "fontSize": 12, "paddingTop": 0, "paddingRight": 16, "paddingBottom": 0, "paddingLeft": 16, "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { "": { "flexDirection": "row", "display": "flex", "alignItems": "flex-start" } }, "circle-image": { "": { "width": "40rpx", "height": "40rpx", "borderRadius": 50, "backgroundColor": "#eeeeee", "marginRight": "10rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "circle-image-icon": { "": { "width": "30rpx", "height": "30rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "item-text": { "": { "flex": 1, "fontSize": 12, "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "folder-header": { "": { "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "backgroundColor": "#F2F2F6", "display": "flex", "justifyContent": "space-between", "alignItems": "center", "flexDirection": "row" } }, "folder-title": { "": { "fontSize": 20, "fontWeight": "bold", "marginBottom": 8, "textAlign": "left", "flex": 1 } }, "add-button": { "": { "fontSize": 18, "color": "#007aff", "cursor": "pointer", "marginLeft": 10 } }, "folder-content": { "": { "backgroundColor": "#F2F2F6", "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderRadius": 10, "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.1)" } }, "collapse-wrapper": { "": { "marginLeft": 12, "width": 368, "borderRadius": 10 } }, "popup-container": { "": { "position": "fixed", "bottom": 0, "left": 0, "right": 0, "backgroundColor": "#F2F2F6", "borderTopLeftRadius": 10, "borderTopRightRadius": 10, "boxShadow": "0 -2px 8px rgba(0, 0, 0, 0.1)", "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "display": "flex", "flexDirection": "column" } }, "popup-header": { "": { "display": "flex", "justifyContent": "space-between", "marginBottom": 20, "alignItems": "center", "flexDirection": "row", "color": "#ffffff" } }, "popup-title": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#000000", "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "popup-buttons": { "": { "width": 60, "display": "flex", "justifyContent": "space-between", "alignItems": "center", "color": "#ffffff", "flexDirection": "row", "fontSize": 11 } }, "popup-button": { "": { "marginLeft": 10, "paddingTop": 10, "paddingRight": 20, "paddingBottom": 10, "paddingLeft": 20, "fontSize": 11, "borderRadius": 5, "cursor": "pointer", "height": 35, "width": 60, "color": "#ffffff" } }, "popup-button-cancel": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "popup-button-done": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "in": { "": { "flex": 1, "height": 50, "width": 350, "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderWidth": 1, "borderStyle": "solid", "borderColor": "#cccccc", "borderRadius": 10, "backgroundColor": "#ffffff", "marginBottom": 25, "fontSize": 15 } } };
+const _style_0 = { "pages": { "": { "backgroundColor": "#F2F2F6" } }, "cmd-nav-bar-left-title": { "": { "fontWeight": "bold", "fontSize": 50 } }, "cmd-nav-bar": { "": { "fontSize": 50, "fontWeight": "bold" } }, "avatar": { "": { "width": "90rpx", "height": "90rpx", "marginLeft": "600rpx", "marginBottom": "20rpx" } }, "main": { "": { "justifyContent": "space-between", "flex": 1 } }, "title": { "": { "fontSize": 55, "fontWeight": "bold" } }, "info": { "": { "flexDirection": "row", "justifyContent": "space-between" } }, "author": { "": { "fontSize": 14, "color": "#ACACB6" } }, "last_modify_date": { "": { "fontSize": 14, "color": "#ACACB6" } }, "uni-search-box": { "": { "backgroundColor": "#F2F2F6", "position": "sticky", "height": 50, "top": 0, "left": 0 } }, "cover-search-bar": { "": { "height": 50, "position": "relative", "top": -50, "marginBottom": -50 } }, "button-container": { "": { "flexDirection": "row", "display": "flex", "justifyContent": "space-between", "paddingLeft": 13, "paddingRight": 13, "paddingBottom": 20, "paddingTop": 20, "flexWrap": "wrap", "position": "relative" } }, "big-button": { "": { "flex": 1, "width": 150, "height": 100, "backgroundColor": "#ffffff", "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "center", "borderRadius": 10, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginTop": 0, "marginRight": 8, "marginBottom": 0, "marginLeft": 8 } }, "button-image": { "": { "width": 36, "height": 36, "marginBottom": 13, "marginLeft": 12 } }, "button-text": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#8E8E92", "marginLeft": 16 } }, "button-number": { "": { "position": "absolute", "right": 13, "top": 22, "transform": "translateY(-50%)", "fontSize": 26, "fontWeight": "bold" } }, "swipe-item": { "": { "marginBottom": 10, "fontSize": 14, "height": 45, "marginLeft": -10 } }, "swipe-item-content": { "": { "width": 365, "height": 45, "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "backgroundColor": "#ffffff", "borderRadius": 8, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginBottom": 10, "justifyContent": "center", "fontSize": 14, "overflow": "hidden", "display": "flex", "alignItems": "flex-start" } }, "uni-swipe_button-group": { "": { "display": "flex", "boxSizing": "border-box", "justifyContent": "space-between", "marginLeft": 10, "fontSize": 12 } }, "uni-swipe_button": { "": { "width": 85, "height": 50, "lineHeight": 100, "textAlign": "center", "backgroundColor": "#f1f1f1", "color": "#333333", "fontSize": 12, "paddingTop": 0, "paddingRight": 16, "paddingBottom": 0, "paddingLeft": 16, "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { "": { "flexDirection": "row", "display": "flex", "alignItems": "flex-start" } }, "circle-image": { "": { "width": "40rpx", "height": "40rpx", "borderRadius": 50, "backgroundColor": "#eeeeee", "marginRight": "10rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "circle-image-icon": { "": { "width": "30rpx", "height": "30rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "item-text": { "": { "flex": 1, "fontSize": 12, "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "folder-header": { "": { "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "backgroundColor": "#F2F2F6", "display": "flex", "justifyContent": "space-between", "alignItems": "center", "flexDirection": "row" } }, "folder-title": { "": { "fontSize": 20, "fontWeight": "bold", "marginBottom": 8, "textAlign": "left", "flex": 1 } }, "add-button": { "": { "fontSize": 18, "color": "#007aff", "cursor": "pointer", "marginLeft": 10 } }, "folder-content": { "": { "backgroundColor": "#F2F2F6", "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderRadius": 10, "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.1)" } }, "collapse-wrapper": { "": { "marginLeft": 12, "width": 368, "borderRadius": 10 } }, "popup-container": { "": { "position": "fixed", "bottom": 0, "left": 0, "right": 0, "backgroundColor": "#F2F2F6", "borderTopLeftRadius": 10, "borderTopRightRadius": 10, "boxShadow": "0 -2px 8px rgba(0, 0, 0, 0.1)", "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "display": "flex", "flexDirection": "column" } }, "popup-header": { "": { "display": "flex", "justifyContent": "space-between", "marginBottom": 20, "alignItems": "center", "flexDirection": "row", "color": "#ffffff" } }, "popup-title": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#000000", "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "popup-buttons": { "": { "width": 60, "display": "flex", "justifyContent": "space-between", "alignItems": "center", "color": "#ffffff", "flexDirection": "row", "fontSize": 11 } }, "popup-button": { "": { "marginLeft": 10, "paddingTop": 10, "paddingRight": 20, "paddingBottom": 10, "paddingLeft": 20, "fontSize": 11, "borderRadius": 5, "cursor": "pointer", "height": 35, "width": 60, "color": "#ffffff" } }, "popup-button-cancel": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "popup-button-done": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "in": { "": { "flex": 1, "height": 50, "width": 350, "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderWidth": 1, "borderStyle": "solid", "borderColor": "#cccccc", "borderRadius": 10, "backgroundColor": "#ffffff", "marginBottom": 25, "fontSize": 15 } }, "color-picker": { "": { "width": 40, "height": 40, "marginTop": 5, "marginLeft": 10, "marginRight": 10, "cursor": "pointer", "display": "flex", "justifyContent": "center", "alignItems": "center", "backgroundColor": "#ffffff", "borderWidth": 1, "borderStyle": "solid", "borderColor": "#dddddd", "borderRadius": 5 } }, "color-options": { "": { "display": "flex", "justifyContent": "space-around", "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "backgroundColor": "#ffffff", "borderRadius": 5, "marginTop": 10, "flexDirection": "row" } }, "color-option": { "": { "width": 30, "height": 30, "borderRadius": 50, "cursor": "pointer" } }, "add-item-form": { "": { "flexDirection": "row" } } };
 const gps = new Gps();
 Ws.database();
 const _sfc_main = {
@@ -1622,8 +1622,8 @@ const _sfc_main = {
           name: "Folders",
           isExpanded: false,
           items: [
-            { name: "Folder1", icon: "/static/pic/10.png" },
-            { name: "Folder2", icon: "/static/pic/10.png" }
+            { name: "Folder", icon: "/static/pic/10.png" },
+            { name: "Folder", icon: "/static/pic/10.png" }
           ]
         }
       ],
@@ -1632,8 +1632,8 @@ const _sfc_main = {
           name: "Shared Folders",
           isExpanded: false,
           items: [
-            { name: "Shared Folder1", icon: "/static/pic/10.png" },
-            { name: "Shared Folder2", icon: "/static/pic/10.png" }
+            { name: "Shared Folder", icon: "/static/pic/10.png" },
+            { name: "Shared Folder", icon: "/static/pic/10.png" }
           ]
         }
       ],
@@ -1649,7 +1649,10 @@ const _sfc_main = {
       showPopup: false,
       newItemName: "",
       currentFolderType: "",
-      currentFolderIndex: null
+      currentFolderIndex: null,
+      showColorPicker: false,
+      selectedColor: "#F14C3C",
+      colors: ["#F14C3C", "#FFA033", "#F7CE45", "#5DC466", "#0C79FE", "#B67AD5", "#998667"]
     };
   },
   watch: {
@@ -1689,11 +1692,6 @@ const _sfc_main = {
         url: "/pages/list/archived/archived"
       });
     },
-    navigateToGrid() {
-      uni.navigateTo({
-        url: "/pages/grid/grid"
-      });
-    },
     searchClick() {
       uni.hideKeyboard();
       uni.navigateTo({
@@ -1716,7 +1714,7 @@ const _sfc_main = {
       cdbRef.loadMore();
     },
     onqueryerror(e) {
-      formatAppLog("error", "at pages/list/list.nvue:295", e);
+      formatAppLog("error", "at pages/list/list.nvue:299", e);
     },
     onpullingdown(e) {
       this.showRefresh = true;
@@ -1731,6 +1729,20 @@ const _sfc_main = {
         });
       }
     },
+    handleCollapseItemClickone(item) {
+      if (item.name === "Folder") {
+        uni.navigateTo({
+          url: "/pages/list/grid/grid"
+        });
+      }
+    },
+    handleCollapseItemClicktwo(item) {
+      if (item.name === "Shared Folder") {
+        uni.navigateTo({
+          url: "/pages/list/gridmul/gridmul"
+        });
+      }
+    },
     openAddItemDialog(folderType, index) {
       this.currentFolderType = folderType;
       this.currentFolderIndex = index;
@@ -1740,15 +1752,27 @@ const _sfc_main = {
       if (this.newItemName.trim() !== "") {
         this[this.currentFolderType][this.currentFolderIndex].items.push({
           name: this.newItemName,
-          icon: "/static/pic/10.png"
+          icon: this.getColorIcon(this.selectedColor)
         });
         this.newItemName = "";
+        this.selectedColor = this.colors[0];
         this.showPopup = false;
       }
     },
     cancelAddItem() {
       this.newItemName = "";
+      this.selectedColor = this.colors[0];
       this.showPopup = false;
+    },
+    toggleColorPicker() {
+      this.showColorPicker = !this.showColorPicker;
+    },
+    selectColor(color) {
+      this.selectedColor = color;
+      this.showColorPicker = false;
+    },
+    getColorIcon(color) {
+      return color;
     },
     async getListData() {
       const [err, res] = await Ws.database().collection("opendb-news-articles").where(this.where).field("avatar,title,last_modify_date,user_id").get();
@@ -1765,13 +1789,13 @@ const _sfc_main = {
       });
     },
     handleEdit(folderType, folderIndex, itemIndex) {
-      formatAppLog("log", "at pages/list/list.nvue:344", "Edit:", folderType, folderIndex, itemIndex);
+      formatAppLog("log", "at pages/list/list.nvue:376", "Edit:", folderType, folderIndex, itemIndex);
     },
     handleArchived(folderType, folderIndex, itemIndex) {
-      formatAppLog("log", "at pages/list/list.nvue:348", "Archived:", folderType, folderIndex, itemIndex);
+      formatAppLog("log", "at pages/list/list.nvue:380", "Archived:", folderType, folderIndex, itemIndex);
     },
     handleDelete(folderType, folderIndex, itemIndex) {
-      formatAppLog("log", "at pages/list/list.nvue:352", "Delete:", folderType, folderIndex, itemIndex);
+      formatAppLog("log", "at pages/list/list.nvue:384", "Delete:", folderType, folderIndex, itemIndex);
       this[folderType][folderIndex].items.splice(itemIndex, 1);
     }
   }
@@ -1881,16 +1905,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                           renderList(folder.items, (item, itemIndex) => {
                             return openBlock(), createElementBlock("view", {
                               key: itemIndex,
-                              class: "swipe-item"
+                              class: "swipe-item",
+                              onClick: ($event) => $options.handleCollapseItemClickone(item)
                             }, [
                               createVNode(_component_uni_swipe_action_item, {
                                 "right-options": $options.getRightOptions("folders", index, itemIndex)
                               }, {
                                 default: withCtx(() => [
-                                  createElementVNode("view", {
-                                    class: "swipe-item-content",
-                                    onClick: ($event) => $options.navigateToGrid(item)
-                                  }, [
+                                  createElementVNode("view", { class: "swipe-item-content" }, [
                                     createElementVNode("view", { class: "item-left" }, [
                                       createElementVNode("view", { class: "circle-image" }, [
                                         createElementVNode("u-image", {
@@ -1908,12 +1930,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                         )
                                       ])
                                     ])
-                                  ], 8, ["onClick"])
+                                  ])
                                 ]),
                                 _: 2
                                 /* DYNAMIC */
                               }, 1032, ["right-options"])
-                            ]);
+                            ], 8, ["onClick"]);
                           }),
                           128
                           /* KEYED_FRAGMENT */
@@ -1967,16 +1989,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                           renderList(folder.items, (item, itemIndex) => {
                             return openBlock(), createElementBlock("view", {
                               key: itemIndex,
-                              class: "swipe-item"
+                              class: "swipe-item",
+                              onClick: ($event) => $options.handleCollapseItemClicktwo(item)
                             }, [
                               createVNode(_component_uni_swipe_action_item, {
                                 "right-options": $options.getRightOptions("sharedFolders", index, itemIndex)
                               }, {
                                 default: withCtx(() => [
-                                  createElementVNode("view", {
-                                    class: "swipe-item-content",
-                                    onClick: ($event) => $options.navigateToGrid(item)
-                                  }, [
+                                  createElementVNode("view", { class: "swipe-item-content" }, [
                                     createElementVNode("view", { class: "item-left" }, [
                                       createElementVNode("view", { class: "circle-image" }, [
                                         createElementVNode("u-image", {
@@ -1994,12 +2014,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                         )
                                       ])
                                     ])
-                                  ], 8, ["onClick"])
+                                  ])
                                 ]),
                                 _: 2
                                 /* DYNAMIC */
                               }, 1032, ["right-options"])
-                            ]);
+                            ], 8, ["onClick"]);
                           }),
                           128
                           /* KEYED_FRAGMENT */
@@ -2054,10 +2074,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                 "right-options": $options.getRightOptions("utilities", index, itemIndex)
                               }, {
                                 default: withCtx(() => [
-                                  createElementVNode("view", {
-                                    class: "swipe-item-content",
-                                    onClick: ($event) => $options.navigateToGrid(item)
-                                  }, [
+                                  createElementVNode("view", { class: "swipe-item-content" }, [
                                     createElementVNode("view", { class: "item-left" }, [
                                       createElementVNode("view", { class: "circle-image" }, [
                                         createElementVNode("u-image", {
@@ -2075,7 +2092,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                         )
                                       ])
                                     ])
-                                  ], 8, ["onClick"])
+                                  ])
                                 ]),
                                 _: 2
                                 /* DYNAMIC */
@@ -2127,12 +2144,39 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             /* STABLE */
           }, 8, ["onClick"])
         ]),
-        createElementVNode("u-input", {
-          modelValue: $data.newItemName,
-          onInput: _cache[4] || (_cache[4] = ($event) => $data.newItemName = $event.detail.value),
-          placeholder: "Enter item name",
-          class: "in"
-        }, null, 40, ["modelValue"])
+        createElementVNode("view", { class: "add-item-form" }, [
+          createElementVNode("view", {
+            class: "color-picker",
+            onClick: _cache[4] || (_cache[4] = (...args) => $options.toggleColorPicker && $options.toggleColorPicker(...args))
+          }, [
+            createElementVNode("u-text", null, "🎨")
+          ]),
+          createElementVNode("u-input", {
+            modelValue: $data.newItemName,
+            onInput: _cache[5] || (_cache[5] = ($event) => $data.newItemName = $event.detail.value),
+            placeholder: "Enter item name",
+            class: "in"
+          }, null, 40, ["modelValue"])
+        ]),
+        $data.showColorPicker ? (openBlock(), createElementBlock("view", {
+          key: 0,
+          class: "color-options"
+        }, [
+          (openBlock(true), createElementBlock(
+            Fragment,
+            null,
+            renderList($data.colors, (color) => {
+              return openBlock(), createElementBlock("view", {
+                key: color,
+                style: normalizeStyle({ backgroundColor: color }),
+                class: "color-option",
+                onClick: ($event) => $options.selectColor(color)
+              }, null, 12, ["onClick"]);
+            }),
+            128
+            /* KEYED_FRAGMENT */
+          ))
+        ])) : createCommentVNode("v-if", true)
       ])) : createCommentVNode("v-if", true)
     ])
   ]);

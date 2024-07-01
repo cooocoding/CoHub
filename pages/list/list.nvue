@@ -46,9 +46,9 @@
 					</view>
 					<uni-collapse-item :title="folder.name">
 						<view class="folder-content">
-							<view v-for="(item, itemIndex) in folder.items" :key="itemIndex" class="swipe-item">
+							<view v-for="(item, itemIndex) in folder.items" :key="itemIndex" class="swipe-item" @click="handleCollapseItemClickone(item)">
 								<uni-swipe-action-item :right-options="getRightOptions('folders', index, itemIndex)">
-									<view class="swipe-item-content" @click="navigateToGrid(item)">
+									<view class="swipe-item-content" >
 										<view class="item-left">
 											<view class="circle-image">
 												<image class="circle-image-icon" :src="item.icon"></image>
@@ -73,9 +73,9 @@
 					</view>
 					<uni-collapse-item :title="folder.name">
 						<view class="folder-content">
-							<view v-for="(item, itemIndex) in folder.items" :key="itemIndex" class="swipe-item">
+							<view v-for="(item, itemIndex) in folder.items" :key="itemIndex" class="swipe-item" @click="handleCollapseItemClicktwo(item)">
 								<uni-swipe-action-item :right-options="getRightOptions('sharedFolders', index, itemIndex)">
-									<view class="swipe-item-content" @click="navigateToGrid(item)">
+									<view class="swipe-item-content" >
 										<view class="item-left">
 											<view class="circle-image">
 												<image class="circle-image-icon" :src="item.icon"></image>
@@ -101,7 +101,7 @@
 						<view class="folder-content">
 							<view v-for="(item, itemIndex) in folder.items" :key="itemIndex" class="swipe-item" @click="handleCollapseItemClick(item)">
 								<uni-swipe-action-item :right-options="getRightOptions('utilities', index, itemIndex)">
-									<view class="swipe-item-content" @click="navigateToGrid(item)">
+									<view class="swipe-item-content">
 										<view class="item-left">
 											<view class="circle-image">
 												<image class="circle-image-icon" :src="item.icon"></image>
@@ -123,7 +123,13 @@
 				<text class="popup-title">Add Item</text>
 				<button class="popup-button popup-button-done" @click="addItem">Done</button>
 			</view>
-			<input v-model="newItemName" placeholder="Enter item name" class="in"/>
+			<view class="add-item-form">
+				<view class="color-picker" @click="toggleColorPicker">🎨</view>
+				<input v-model="newItemName" placeholder="Enter item name" class="in"/>
+			</view>
+			<view v-if="showColorPicker" class="color-options">
+				<view v-for="color in colors" :key="color" :style="{ backgroundColor: color }" class="color-option" @click="selectColor(color)"></view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -187,8 +193,8 @@
 						name: 'Folders',
 						isExpanded: false,
 						items: [
-							{ name: 'Folder1', icon: '/static/pic/10.png' },
-							{ name: 'Folder2', icon: '/static/pic/10.png' }
+							{ name: 'Folder', icon: '/static/pic/10.png' },
+							{ name: 'Folder', icon: '/static/pic/10.png' }
 						]
 					}
 				],
@@ -197,8 +203,8 @@
 						name: 'Shared Folders',
 						isExpanded: false,
 						items: [
-							{ name: 'Shared Folder1', icon: '/static/pic/10.png' },
-							{ name: 'Shared Folder2', icon: '/static/pic/10.png' }
+							{ name: 'Shared Folder', icon: '/static/pic/10.png' },
+							{ name: 'Shared Folder', icon: '/static/pic/10.png' }
 						]
 					}
 				],
@@ -214,7 +220,10 @@
 				showPopup: false,
 				newItemName: "",
 				currentFolderType: "",
-				currentFolderIndex: null
+				currentFolderIndex: null,
+				showColorPicker: false,
+				selectedColor: '#F14C3C',
+				colors: ['#F14C3C', '#FFA033', '#F7CE45', '#5DC466', '#0C79FE', '#B67AD5', '#998667']
 			};
 		},
 
@@ -263,11 +272,6 @@
 					url: '/pages/list/archived/archived'
 				});
 			},
-			navigateToGrid() {
-				uni.navigateTo({
-					url: '/pages/grid/grid'
-				});
-			},
 			searchClick() {
 				uni.hideKeyboard();
 				uni.navigateTo({
@@ -307,6 +311,20 @@
 					});
 				}
 			},
+			handleCollapseItemClickone(item) {
+				if (item.name === 'Folder') {
+					uni.navigateTo({
+						url: '/pages/list/grid/grid'
+					});
+				}
+			},
+			handleCollapseItemClicktwo(item) {
+				if (item.name === 'Shared Folder') {
+					uni.navigateTo({
+						url: '/pages/list/gridmul/gridmul'
+					});
+				}
+			},
 			openAddItemDialog(folderType, index) {
 				this.currentFolderType = folderType;
 				this.currentFolderIndex = index;
@@ -316,15 +334,29 @@
 				if (this.newItemName.trim() !== "") {
 					this[this.currentFolderType][this.currentFolderIndex].items.push({
 						name: this.newItemName,
-						icon: '/static/pic/10.png'
+						icon: this.getColorIcon(this.selectedColor)
 					});
 					this.newItemName = "";
+					this.selectedColor = this.colors[0];
 					this.showPopup = false;
 				}
 			},
 			cancelAddItem() {
 				this.newItemName = "";
+				this.selectedColor = this.colors[0];
 				this.showPopup = false;
+			},
+			toggleColorPicker() {
+				this.showColorPicker = !this.showColorPicker;
+			},
+			selectColor(color) {
+				this.selectedColor = color;
+				this.showColorPicker = false;
+			},
+			getColorIcon(color) {
+				// 可以根据颜色生成相应的图标路径或base64图标
+				// 这里简单返回颜色字符串，实际可以返回颜色图标路径
+				return color;
 			},
 			async getListData() {
 				const [err, res] = await uniCloud.database().collection('opendb-news-articles').where(this.where).field('avatar,title,last_modify_date,user_id').get()
@@ -697,4 +729,39 @@
 	font-size: 15px;
 }
 
+.color-picker {
+  width:40px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.color-options {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+  flex-direction: row;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.add-item-form {
+	flex-direction: row;
+}
 </style>

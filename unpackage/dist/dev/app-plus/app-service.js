@@ -1476,13 +1476,13 @@ if (uni.restoreGlobal) {
       }
     },
     {
-      path: "pages/grid/grid",
+      path: "pages/list/grid/grid",
       style: {
         navigationStyle: "custom"
       }
     },
     {
-      path: "pages/gridmul/gridmul",
+      path: "pages/list/gridmul/gridmul",
       style: {
         navigationStyle: "custom"
       }
@@ -1598,7 +1598,7 @@ if (uni.restoreGlobal) {
       }
     },
     {
-      path: "pages/gridmul/friends/friends",
+      path: "pages/list/gridmul/friends/friends",
       style: {
         navigationBarTitleText: "Friends under the folder"
       }
@@ -1739,18 +1739,6 @@ if (uni.restoreGlobal) {
         iconPath: "static/tabbar/list.png",
         selectedIconPath: "static/tabbar/list_active.png",
         text: "list"
-      },
-      {
-        pagePath: "pages/grid/grid",
-        iconPath: "static/tabbar/grid.png",
-        selectedIconPath: "static/tabbar/grid_active.png",
-        text: "grid"
-      },
-      {
-        pagePath: "pages/gridmul/gridmul",
-        iconPath: "static/tabbar/grid.png",
-        selectedIconPath: "static/tabbar/grid_active.png",
-        text: "gridmul"
       },
       {
         pagePath: "pages/ucenter/ucenter",
@@ -2064,7 +2052,7 @@ if (uni.restoreGlobal) {
   function I(e2) {
     return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
   }
-  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.9",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
+  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.5",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
   let O = "";
   try {
     O = "__UNI__8301740";
@@ -5569,7 +5557,7 @@ ${i3}
         this.close();
       },
       addTag() {
-        formatAppLog("log", "at pages/grid/add.vue:159", "Add Tag:", this.inputValue);
+        formatAppLog("log", "at pages/list/grid/add.vue:159", "Add Tag:", this.inputValue);
         this.close();
       },
       onFocus() {
@@ -5782,7 +5770,7 @@ ${i3}
       ])
     ]);
   }
-  const Add = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__scopeId", "data-v-0b59ba63"], ["__file", "D:/project/CoHub/CoHub/pages/grid/add.vue"]]);
+  const Add = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__scopeId", "data-v-9df3086c"], ["__file", "D:/project/CoHub/CoHub/pages/list/grid/add.vue"]]);
   const _sfc_main$$ = {
     components: {
       CmdNavBar,
@@ -5861,7 +5849,7 @@ ${i3}
         }
       },
       addGoods() {
-        formatAppLog("log", "at pages/grid/grid.vue:210", "tap add new Collections");
+        formatAppLog("log", "at pages/list/grid/grid.vue:210", "tap add new Collections");
         this.$refs.addComponent.open();
       },
       startSwipe(event, id) {
@@ -5930,7 +5918,7 @@ ${i3}
       copyToClipboard(text) {
         if (navigator.clipboard) {
           navigator.clipboard.writeText(text).catch((err) => {
-            formatAppLog("error", "at pages/grid/grid.vue:279", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/list/grid/grid.vue:279", "Could not copy text: ", err);
           });
         } else {
           const textArea = document.createElement("textarea");
@@ -5942,7 +5930,7 @@ ${i3}
             document.execCommand("copy");
             document.body.removeChild(textArea);
           } catch (err) {
-            formatAppLog("error", "at pages/grid/grid.vue:291", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/list/grid/grid.vue:291", "Could not copy text: ", err);
           }
           document.body.removeChild(textArea);
         }
@@ -5951,10 +5939,10 @@ ${i3}
         this.isSharePopupVisible = false;
       },
       archiveSelected() {
-        formatAppLog("log", "at pages/grid/grid.vue:300", "Archive selected items", this.selectedItems);
+        formatAppLog("log", "at pages/list/grid/grid.vue:300", "Archive selected items", this.selectedItems);
       },
       deleteSelected() {
-        formatAppLog("log", "at pages/grid/grid.vue:303", "Delete selected items", this.selectedItems);
+        formatAppLog("log", "at pages/list/grid/grid.vue:303", "Delete selected items", this.selectedItems);
         this.goodsList = this.goodsList.filter((item) => !this.selectedItems.includes(item.id));
         this.selectedItems = [];
       },
@@ -6232,7 +6220,7 @@ ${i3}
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-22222d69"], ["__file", "D:/project/CoHub/CoHub/pages/grid/grid.vue"]]);
+  const PagesListGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-307aa608"], ["__file", "D:/project/CoHub/CoHub/pages/list/grid/grid.vue"]]);
   const _sfc_main$_ = {
     data() {
       return {
@@ -6312,7 +6300,7 @@ ${i3}
         this.close();
       },
       addTag() {
-        formatAppLog("log", "at pages/gridmul/addmul.vue:159", "Add Tag:", this.inputValue);
+        formatAppLog("log", "at pages/list/gridmul/addmul.vue:159", "Add Tag:", this.inputValue);
         this.close();
       },
       onFocus() {
@@ -6525,7 +6513,7 @@ ${i3}
       ])
     ]);
   }
-  const Addmul = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-09f3a83f"], ["__file", "D:/project/CoHub/CoHub/pages/gridmul/addmul.vue"]]);
+  const Addmul = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-820d2b8c"], ["__file", "D:/project/CoHub/CoHub/pages/list/gridmul/addmul.vue"]]);
   const _sfc_main$Z = {
     components: {
       CmdNavBar,
@@ -6592,7 +6580,7 @@ ${i3}
     methods: {
       navigateToFriends() {
         uni.navigateTo({
-          url: "/pages/gridmul/friends/friends"
+          url: "/pages/list/gridmul/friends/friends"
         });
       },
       handleClick(id) {
@@ -6617,7 +6605,7 @@ ${i3}
         }
       },
       addGoods() {
-        formatAppLog("log", "at pages/gridmul/gridmul.vue:233", "tap add new Collections");
+        formatAppLog("log", "at pages/list/gridmul/gridmul.vue:233", "tap add new Collections");
         this.$refs.addComponent.open();
       },
       startSwipe(event, id) {
@@ -6686,7 +6674,7 @@ ${i3}
       copyToClipboard(text) {
         if (navigator.clipboard) {
           navigator.clipboard.writeText(text).catch((err) => {
-            formatAppLog("error", "at pages/gridmul/gridmul.vue:302", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/list/gridmul/gridmul.vue:302", "Could not copy text: ", err);
           });
         } else {
           const textArea = document.createElement("textarea");
@@ -6698,7 +6686,7 @@ ${i3}
             document.execCommand("copy");
             document.body.removeChild(textArea);
           } catch (err) {
-            formatAppLog("error", "at pages/gridmul/gridmul.vue:314", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/list/gridmul/gridmul.vue:314", "Could not copy text: ", err);
           }
           document.body.removeChild(textArea);
         }
@@ -6707,10 +6695,10 @@ ${i3}
         this.isSharePopupVisible = false;
       },
       archiveSelected() {
-        formatAppLog("log", "at pages/gridmul/gridmul.vue:323", "Archive selected items", this.selectedItems);
+        formatAppLog("log", "at pages/list/gridmul/gridmul.vue:323", "Archive selected items", this.selectedItems);
       },
       deleteSelected() {
-        formatAppLog("log", "at pages/gridmul/gridmul.vue:326", "Delete selected items", this.selectedItems);
+        formatAppLog("log", "at pages/list/gridmul/gridmul.vue:326", "Delete selected items", this.selectedItems);
         this.goodsList = this.goodsList.filter((item) => !this.selectedItems.includes(item.id));
         this.selectedItems = [];
       },
@@ -7027,7 +7015,7 @@ ${i3}
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesGridmulGridmul = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__scopeId", "data-v-68e2f14e"], ["__file", "D:/project/CoHub/CoHub/pages/gridmul/gridmul.vue"]]);
+  const PagesListGridmulGridmul = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__scopeId", "data-v-cc688b2d"], ["__file", "D:/project/CoHub/CoHub/pages/list/gridmul/gridmul.vue"]]);
   let mpMixins = {};
   mpMixins = {
     data() {
@@ -17346,7 +17334,7 @@ ${i3}
       copyToClipboard(text) {
         if (navigator.clipboard) {
           navigator.clipboard.writeText(text).catch((err) => {
-            formatAppLog("error", "at pages/gridmul/friends/friends.vue:78", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/list/gridmul/friends/friends.vue:78", "Could not copy text: ", err);
           });
         } else {
           const textArea = document.createElement("textarea");
@@ -17358,7 +17346,7 @@ ${i3}
             document.execCommand("copy");
             document.body.removeChild(textArea);
           } catch (err) {
-            formatAppLog("error", "at pages/gridmul/friends/friends.vue:90", "Could not copy text: ", err);
+            formatAppLog("error", "at pages/list/gridmul/friends/friends.vue:90", "Could not copy text: ", err);
           }
           document.body.removeChild(textArea);
         }
@@ -17476,7 +17464,7 @@ ${i3}
       ])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const PagesGridmulFriendsFriends = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__file", "D:/project/CoHub/CoHub/pages/gridmul/friends/friends.vue"]]);
+  const PagesListGridmulFriendsFriends = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__file", "D:/project/CoHub/CoHub/pages/list/gridmul/friends/friends.vue"]]);
   const _sfc_main$v = {
     name: "uniFormsItem",
     options: {
@@ -25464,8 +25452,8 @@ ${i3}
     ]);
   }
   const Uni_modulesUniIdPagesPagesUserinfoSetPwdSetPwd = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-e5e1f63f"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd.vue"]]);
-  __definePage("pages/grid/grid", PagesGridGrid);
-  __definePage("pages/gridmul/gridmul", PagesGridmulGridmul);
+  __definePage("pages/list/grid/grid", PagesListGridGrid);
+  __definePage("pages/list/gridmul/gridmul", PagesListGridmulGridmul);
   __definePage("pages/list/archived/archived", PagesListArchivedArchived);
   __definePage("pages/list/all/all", PagesListAllAll);
   __definePage("pages/list/delete/delete", PagesListDeleteDelete);
@@ -25476,7 +25464,7 @@ ${i3}
   __definePage("pages/ucenter/about/about", PagesUcenterAboutAbout);
   __definePage("uni_modules/uni-upgrade-center-app/pages/upgrade-popup", Uni_modulesUniUpgradeCenterAppPagesUpgradePopup);
   __definePage("pages/ucenter/invite/invite", PagesUcenterInviteInvite);
-  __definePage("pages/gridmul/friends/friends", PagesGridmulFriendsFriends);
+  __definePage("pages/list/gridmul/friends/friends", PagesListGridmulFriendsFriends);
   __definePage("uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback", Uni_modulesUniFeedbackPagesOpendbFeedbackOpendbFeedback);
   __definePage("uni_modules/uni-id-pages/pages/userinfo/userinfo", Uni_modulesUniIdPagesPagesUserinfoUserinfo);
   __definePage("uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify", Uni_modulesUniIdPagesPagesUserinfoRealnameVerifyRealnameVerify);

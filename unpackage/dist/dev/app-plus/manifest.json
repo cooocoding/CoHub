@@ -124,18 +124,6 @@
           "text": "list"
         },
         {
-          "pagePath": "pages/grid/grid",
-          "iconPath": "/static/tabbar/grid.png",
-          "selectedIconPath": "/static/tabbar/grid_active.png",
-          "text": "grid"
-        },
-        {
-          "pagePath": "pages/gridmul/gridmul",
-          "iconPath": "/static/tabbar/grid.png",
-          "selectedIconPath": "/static/tabbar/grid_active.png",
-          "text": "gridmul"
-        },
-        {
           "pagePath": "pages/ucenter/ucenter",
           "iconPath": "/static/tabbar/me.png",
           "selectedIconPath": "/static/tabbar/me_active.png",

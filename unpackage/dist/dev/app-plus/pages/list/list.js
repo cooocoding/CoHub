@@ -141,13 +141,13 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
       }
     },
     {
-      path: "pages/grid/grid",
+      path: "pages/list/grid/grid",
       style: {
         navigationStyle: "custom"
       }
     },
     {
-      path: "pages/gridmul/gridmul",
+      path: "pages/list/gridmul/gridmul",
       style: {
         navigationStyle: "custom"
       }
@@ -263,7 +263,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
       }
     },
     {
-      path: "pages/gridmul/friends/friends",
+      path: "pages/list/gridmul/friends/friends",
       style: {
         navigationBarTitleText: "Friends under the folder"
       }
@@ -404,18 +404,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
         iconPath: "static/tabbar/list.png",
         selectedIconPath: "static/tabbar/list_active.png",
         text: "list"
-      },
-      {
-        pagePath: "pages/grid/grid",
-        iconPath: "static/tabbar/grid.png",
-        selectedIconPath: "static/tabbar/grid_active.png",
-        text: "grid"
-      },
-      {
-        pagePath: "pages/gridmul/gridmul",
-        iconPath: "static/tabbar/grid.png",
-        selectedIconPath: "static/tabbar/grid_active.png",
-        text: "gridmul"
       },
       {
         pagePath: "pages/ucenter/ucenter",
@@ -743,7 +731,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
   var b = "app";
   var A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default);
   var P = b;
-  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.9",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
+  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.5",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
   var C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
   var O = "";
   try {
@@ -6091,7 +6079,7 @@ ${i3}
       });
     }
   };
-  var _style_02 = { "pages": { "": { "backgroundColor": "#F2F2F6" } }, "cmd-nav-bar-left-title": { "": { "fontWeight": "bold", "fontSize": 50 } }, "cmd-nav-bar": { "": { "fontSize": 50, "fontWeight": "bold" } }, "avatar": { "": { "width": "90rpx", "height": "90rpx", "marginLeft": "600rpx", "marginBottom": "20rpx" } }, "main": { "": { "justifyContent": "space-between", "flex": 1 } }, "title": { "": { "fontSize": 55, "fontWeight": "bold" } }, "info": { "": { "flexDirection": "row", "justifyContent": "space-between" } }, "author": { "": { "fontSize": 14, "color": "#ACACB6" } }, "last_modify_date": { "": { "fontSize": 14, "color": "#ACACB6" } }, "uni-search-box": { "": { "backgroundColor": "#F2F2F6", "position": "sticky", "height": 50, "top": 0, "left": 0 } }, "cover-search-bar": { "": { "height": 50, "position": "relative", "top": -50, "marginBottom": -50 } }, "button-container": { "": { "flexDirection": "row", "display": "flex", "justifyContent": "space-between", "paddingLeft": 13, "paddingRight": 13, "paddingBottom": 20, "paddingTop": 20, "flexWrap": "wrap", "position": "relative" } }, "big-button": { "": { "flex": 1, "width": 150, "height": 100, "backgroundColor": "#ffffff", "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "center", "borderRadius": 10, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginTop": 0, "marginRight": 8, "marginBottom": 0, "marginLeft": 8 } }, "button-image": { "": { "width": 36, "height": 36, "marginBottom": 13, "marginLeft": 12 } }, "button-text": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#8E8E92", "marginLeft": 16 } }, "button-number": { "": { "position": "absolute", "right": 13, "top": 22, "transform": "translateY(-50%)", "fontSize": 26, "fontWeight": "bold" } }, "swipe-item": { "": { "marginBottom": 10, "fontSize": 14, "height": 45, "marginLeft": -10 } }, "swipe-item-content": { "": { "width": 365, "height": 45, "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "backgroundColor": "#ffffff", "borderRadius": 8, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginBottom": 10, "justifyContent": "center", "fontSize": 14, "overflow": "hidden", "display": "flex", "alignItems": "flex-start" } }, "uni-swipe_button-group": { "": { "display": "flex", "boxSizing": "border-box", "justifyContent": "space-between", "marginLeft": 10, "fontSize": 12 } }, "uni-swipe_button": { "": { "width": 85, "height": 50, "lineHeight": 100, "textAlign": "center", "backgroundColor": "#f1f1f1", "color": "#333333", "fontSize": 12, "paddingTop": 0, "paddingRight": 16, "paddingBottom": 0, "paddingLeft": 16, "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { "": { "flexDirection": "row", "display": "flex", "alignItems": "flex-start" } }, "circle-image": { "": { "width": "40rpx", "height": "40rpx", "borderRadius": 50, "backgroundColor": "#eeeeee", "marginRight": "10rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "circle-image-icon": { "": { "width": "30rpx", "height": "30rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "item-text": { "": { "flex": 1, "fontSize": 12, "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "folder-header": { "": { "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "backgroundColor": "#F2F2F6", "display": "flex", "justifyContent": "space-between", "alignItems": "center", "flexDirection": "row" } }, "folder-title": { "": { "fontSize": 20, "fontWeight": "bold", "marginBottom": 8, "textAlign": "left", "flex": 1 } }, "add-button": { "": { "fontSize": 18, "color": "#007aff", "cursor": "pointer", "marginLeft": 10 } }, "folder-content": { "": { "backgroundColor": "#F2F2F6", "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderRadius": 10, "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.1)" } }, "collapse-wrapper": { "": { "marginLeft": 12, "width": 368, "borderRadius": 10 } }, "popup-container": { "": { "position": "fixed", "bottom": 0, "left": 0, "right": 0, "backgroundColor": "#F2F2F6", "borderTopLeftRadius": 10, "borderTopRightRadius": 10, "boxShadow": "0 -2px 8px rgba(0, 0, 0, 0.1)", "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "display": "flex", "flexDirection": "column" } }, "popup-header": { "": { "display": "flex", "justifyContent": "space-between", "marginBottom": 20, "alignItems": "center", "flexDirection": "row", "color": "#ffffff" } }, "popup-title": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#000000", "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "popup-buttons": { "": { "width": 60, "display": "flex", "justifyContent": "space-between", "alignItems": "center", "color": "#ffffff", "flexDirection": "row", "fontSize": 11 } }, "popup-button": { "": { "marginLeft": 10, "paddingTop": 10, "paddingRight": 20, "paddingBottom": 10, "paddingLeft": 20, "fontSize": 11, "borderRadius": 5, "cursor": "pointer", "height": 35, "width": 60, "color": "#ffffff" } }, "popup-button-cancel": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "popup-button-done": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "in": { "": { "flex": 1, "height": 50, "width": 350, "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderWidth": 1, "borderStyle": "solid", "borderColor": "#cccccc", "borderRadius": 10, "backgroundColor": "#ffffff", "marginBottom": 25, "fontSize": 15 } } };
+  var _style_02 = { "pages": { "": { "backgroundColor": "#F2F2F6" } }, "cmd-nav-bar-left-title": { "": { "fontWeight": "bold", "fontSize": 50 } }, "cmd-nav-bar": { "": { "fontSize": 50, "fontWeight": "bold" } }, "avatar": { "": { "width": "90rpx", "height": "90rpx", "marginLeft": "600rpx", "marginBottom": "20rpx" } }, "main": { "": { "justifyContent": "space-between", "flex": 1 } }, "title": { "": { "fontSize": 55, "fontWeight": "bold" } }, "info": { "": { "flexDirection": "row", "justifyContent": "space-between" } }, "author": { "": { "fontSize": 14, "color": "#ACACB6" } }, "last_modify_date": { "": { "fontSize": 14, "color": "#ACACB6" } }, "uni-search-box": { "": { "backgroundColor": "#F2F2F6", "position": "sticky", "height": 50, "top": 0, "left": 0 } }, "cover-search-bar": { "": { "height": 50, "position": "relative", "top": -50, "marginBottom": -50 } }, "button-container": { "": { "flexDirection": "row", "display": "flex", "justifyContent": "space-between", "paddingLeft": 13, "paddingRight": 13, "paddingBottom": 20, "paddingTop": 20, "flexWrap": "wrap", "position": "relative" } }, "big-button": { "": { "flex": 1, "width": 150, "height": 100, "backgroundColor": "#ffffff", "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "center", "borderRadius": 10, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginTop": 0, "marginRight": 8, "marginBottom": 0, "marginLeft": 8 } }, "button-image": { "": { "width": 36, "height": 36, "marginBottom": 13, "marginLeft": 12 } }, "button-text": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#8E8E92", "marginLeft": 16 } }, "button-number": { "": { "position": "absolute", "right": 13, "top": 22, "transform": "translateY(-50%)", "fontSize": 26, "fontWeight": "bold" } }, "swipe-item": { "": { "marginBottom": 10, "fontSize": 14, "height": 45, "marginLeft": -10 } }, "swipe-item-content": { "": { "width": 365, "height": 45, "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "backgroundColor": "#ffffff", "borderRadius": 8, "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)", "marginBottom": 10, "justifyContent": "center", "fontSize": 14, "overflow": "hidden", "display": "flex", "alignItems": "flex-start" } }, "uni-swipe_button-group": { "": { "display": "flex", "boxSizing": "border-box", "justifyContent": "space-between", "marginLeft": 10, "fontSize": 12 } }, "uni-swipe_button": { "": { "width": 85, "height": 50, "lineHeight": 100, "textAlign": "center", "backgroundColor": "#f1f1f1", "color": "#333333", "fontSize": 12, "paddingTop": 0, "paddingRight": 16, "paddingBottom": 0, "paddingLeft": 16, "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { "": { "flexDirection": "row", "display": "flex", "alignItems": "flex-start" } }, "circle-image": { "": { "width": "40rpx", "height": "40rpx", "borderRadius": 50, "backgroundColor": "#eeeeee", "marginRight": "10rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "circle-image-icon": { "": { "width": "30rpx", "height": "30rpx", "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "item-text": { "": { "flex": 1, "fontSize": 12, "display": "flex", "justifyContent": "center", "alignItems": "center" } }, "folder-header": { "": { "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "backgroundColor": "#F2F2F6", "display": "flex", "justifyContent": "space-between", "alignItems": "center", "flexDirection": "row" } }, "folder-title": { "": { "fontSize": 20, "fontWeight": "bold", "marginBottom": 8, "textAlign": "left", "flex": 1 } }, "add-button": { "": { "fontSize": 18, "color": "#007aff", "cursor": "pointer", "marginLeft": 10 } }, "folder-content": { "": { "backgroundColor": "#F2F2F6", "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderRadius": 10, "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.1)" } }, "collapse-wrapper": { "": { "marginLeft": 12, "width": 368, "borderRadius": 10 } }, "popup-container": { "": { "position": "fixed", "bottom": 0, "left": 0, "right": 0, "backgroundColor": "#F2F2F6", "borderTopLeftRadius": 10, "borderTopRightRadius": 10, "boxShadow": "0 -2px 8px rgba(0, 0, 0, 0.1)", "paddingTop": 20, "paddingRight": 20, "paddingBottom": 20, "paddingLeft": 20, "display": "flex", "flexDirection": "column" } }, "popup-header": { "": { "display": "flex", "justifyContent": "space-between", "marginBottom": 20, "alignItems": "center", "flexDirection": "row", "color": "#ffffff" } }, "popup-title": { "": { "fontSize": 18, "fontWeight": "bold", "color": "#000000", "display": "flex", "alignItems": "center", "justifyContent": "space-between" } }, "popup-buttons": { "": { "width": 60, "display": "flex", "justifyContent": "space-between", "alignItems": "center", "color": "#ffffff", "flexDirection": "row", "fontSize": 11 } }, "popup-button": { "": { "marginLeft": 10, "paddingTop": 10, "paddingRight": 20, "paddingBottom": 10, "paddingLeft": 20, "fontSize": 11, "borderRadius": 5, "cursor": "pointer", "height": 35, "width": 60, "color": "#ffffff" } }, "popup-button-cancel": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "popup-button-done": { "": { "backgroundColor": "#007aff", "fontSize": 11, "color": "#ffffff" } }, "in": { "": { "flex": 1, "height": 50, "width": 350, "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "borderWidth": 1, "borderStyle": "solid", "borderColor": "#cccccc", "borderRadius": 10, "backgroundColor": "#ffffff", "marginBottom": 25, "fontSize": 15 } }, "color-picker": { "": { "width": 40, "height": 40, "marginTop": 5, "marginLeft": 10, "marginRight": 10, "cursor": "pointer", "display": "flex", "justifyContent": "center", "alignItems": "center", "backgroundColor": "#ffffff", "borderWidth": 1, "borderStyle": "solid", "borderColor": "#dddddd", "borderRadius": 5 } }, "color-options": { "": { "display": "flex", "justifyContent": "space-around", "paddingTop": 10, "paddingRight": 10, "paddingBottom": 10, "paddingLeft": 10, "backgroundColor": "#ffffff", "borderRadius": 5, "marginTop": 10, "flexDirection": "row" } }, "color-option": { "": { "width": 30, "height": 30, "borderRadius": 50, "cursor": "pointer" } }, "add-item-form": { "": { "flexDirection": "row" } } };
   var gps = new Gps();
   Ws.database();
   var _sfc_main2 = {
@@ -6146,8 +6134,8 @@ ${i3}
             name: "Folders",
             isExpanded: false,
             items: [
-              { name: "Folder1", icon: "/static/pic/10.png" },
-              { name: "Folder2", icon: "/static/pic/10.png" }
+              { name: "Folder", icon: "/static/pic/10.png" },
+              { name: "Folder", icon: "/static/pic/10.png" }
             ]
           }
         ],
@@ -6156,8 +6144,8 @@ ${i3}
             name: "Shared Folders",
             isExpanded: false,
             items: [
-              { name: "Shared Folder1", icon: "/static/pic/10.png" },
-              { name: "Shared Folder2", icon: "/static/pic/10.png" }
+              { name: "Shared Folder", icon: "/static/pic/10.png" },
+              { name: "Shared Folder", icon: "/static/pic/10.png" }
             ]
           }
         ],
@@ -6173,7 +6161,10 @@ ${i3}
         showPopup: false,
         newItemName: "",
         currentFolderType: "",
-        currentFolderIndex: null
+        currentFolderIndex: null,
+        showColorPicker: false,
+        selectedColor: "#F14C3C",
+        colors: ["#F14C3C", "#FFA033", "#F7CE45", "#5DC466", "#0C79FE", "#B67AD5", "#998667"]
       };
     },
     watch: {
@@ -6217,11 +6208,6 @@ ${i3}
           url: "/pages/list/archived/archived"
         });
       },
-      navigateToGrid() {
-        uni.navigateTo({
-          url: "/pages/grid/grid"
-        });
-      },
       searchClick() {
         uni.hideKeyboard();
         uni.navigateTo({
@@ -6244,7 +6230,7 @@ ${i3}
         cdbRef.loadMore();
       },
       onqueryerror(e2) {
-        formatAppLog("error", "at pages/list/list.nvue:295", e2);
+        formatAppLog("error", "at pages/list/list.nvue:299", e2);
       },
       onpullingdown(e2) {
         this.showRefresh = true;
@@ -6259,6 +6245,20 @@ ${i3}
           });
         }
       },
+      handleCollapseItemClickone(item) {
+        if (item.name === "Folder") {
+          uni.navigateTo({
+            url: "/pages/list/grid/grid"
+          });
+        }
+      },
+      handleCollapseItemClicktwo(item) {
+        if (item.name === "Shared Folder") {
+          uni.navigateTo({
+            url: "/pages/list/gridmul/gridmul"
+          });
+        }
+      },
       openAddItemDialog(folderType, index) {
         this.currentFolderType = folderType;
         this.currentFolderIndex = index;
@@ -6268,15 +6268,27 @@ ${i3}
         if (this.newItemName.trim() !== "") {
           this[this.currentFolderType][this.currentFolderIndex].items.push({
             name: this.newItemName,
-            icon: "/static/pic/10.png"
+            icon: this.getColorIcon(this.selectedColor)
           });
           this.newItemName = "";
+          this.selectedColor = this.colors[0];
           this.showPopup = false;
         }
       },
       cancelAddItem() {
         this.newItemName = "";
+        this.selectedColor = this.colors[0];
         this.showPopup = false;
+      },
+      toggleColorPicker() {
+        this.showColorPicker = !this.showColorPicker;
+      },
+      selectColor(color) {
+        this.selectedColor = color;
+        this.showColorPicker = false;
+      },
+      getColorIcon(color) {
+        return color;
       },
       getListData() {
         return __async(this, null, function* () {
@@ -6294,13 +6306,13 @@ ${i3}
         });
       },
       handleEdit(folderType, folderIndex, itemIndex) {
-        formatAppLog("log", "at pages/list/list.nvue:344", "Edit:", folderType, folderIndex, itemIndex);
+        formatAppLog("log", "at pages/list/list.nvue:376", "Edit:", folderType, folderIndex, itemIndex);
       },
       handleArchived(folderType, folderIndex, itemIndex) {
-        formatAppLog("log", "at pages/list/list.nvue:348", "Archived:", folderType, folderIndex, itemIndex);
+        formatAppLog("log", "at pages/list/list.nvue:380", "Archived:", folderType, folderIndex, itemIndex);
       },
       handleDelete(folderType, folderIndex, itemIndex) {
-        formatAppLog("log", "at pages/list/list.nvue:352", "Delete:", folderType, folderIndex, itemIndex);
+        formatAppLog("log", "at pages/list/list.nvue:384", "Delete:", folderType, folderIndex, itemIndex);
         this[folderType][folderIndex].items.splice(itemIndex, 1);
       }
     }
@@ -6410,16 +6422,14 @@ ${i3}
                             (0, import_vue2.renderList)(folder.items, (item, itemIndex) => {
                               return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
                                 key: itemIndex,
-                                class: "swipe-item"
+                                class: "swipe-item",
+                                onClick: ($event) => $options.handleCollapseItemClickone(item)
                               }, [
                                 (0, import_vue2.createVNode)(_component_uni_swipe_action_item, {
                                   "right-options": $options.getRightOptions("folders", index, itemIndex)
                                 }, {
                                   default: (0, import_vue2.withCtx)(() => [
-                                    (0, import_vue2.createElementVNode)("view", {
-                                      class: "swipe-item-content",
-                                      onClick: ($event) => $options.navigateToGrid(item)
-                                    }, [
+                                    (0, import_vue2.createElementVNode)("view", { class: "swipe-item-content" }, [
                                       (0, import_vue2.createElementVNode)("view", { class: "item-left" }, [
                                         (0, import_vue2.createElementVNode)("view", { class: "circle-image" }, [
                                           (0, import_vue2.createElementVNode)("u-image", {
@@ -6437,12 +6447,12 @@ ${i3}
                                           )
                                         ])
                                       ])
-                                    ], 8, ["onClick"])
+                                    ])
                                   ]),
                                   _: 2
                                   /* DYNAMIC */
                                 }, 1032, ["right-options"])
-                              ]);
+                              ], 8, ["onClick"]);
                             }),
                             128
                             /* KEYED_FRAGMENT */
@@ -6496,16 +6506,14 @@ ${i3}
                             (0, import_vue2.renderList)(folder.items, (item, itemIndex) => {
                               return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
                                 key: itemIndex,
-                                class: "swipe-item"
+                                class: "swipe-item",
+                                onClick: ($event) => $options.handleCollapseItemClicktwo(item)
                               }, [
                                 (0, import_vue2.createVNode)(_component_uni_swipe_action_item, {
                                   "right-options": $options.getRightOptions("sharedFolders", index, itemIndex)
                                 }, {
                                   default: (0, import_vue2.withCtx)(() => [
-                                    (0, import_vue2.createElementVNode)("view", {
-                                      class: "swipe-item-content",
-                                      onClick: ($event) => $options.navigateToGrid(item)
-                                    }, [
+                                    (0, import_vue2.createElementVNode)("view", { class: "swipe-item-content" }, [
                                       (0, import_vue2.createElementVNode)("view", { class: "item-left" }, [
                                         (0, import_vue2.createElementVNode)("view", { class: "circle-image" }, [
                                           (0, import_vue2.createElementVNode)("u-image", {
@@ -6523,12 +6531,12 @@ ${i3}
                                           )
                                         ])
                                       ])
-                                    ], 8, ["onClick"])
+                                    ])
                                   ]),
                                   _: 2
                                   /* DYNAMIC */
                                 }, 1032, ["right-options"])
-                              ]);
+                              ], 8, ["onClick"]);
                             }),
                             128
                             /* KEYED_FRAGMENT */
@@ -6583,10 +6591,7 @@ ${i3}
                                   "right-options": $options.getRightOptions("utilities", index, itemIndex)
                                 }, {
                                   default: (0, import_vue2.withCtx)(() => [
-                                    (0, import_vue2.createElementVNode)("view", {
-                                      class: "swipe-item-content",
-                                      onClick: ($event) => $options.navigateToGrid(item)
-                                    }, [
+                                    (0, import_vue2.createElementVNode)("view", { class: "swipe-item-content" }, [
                                       (0, import_vue2.createElementVNode)("view", { class: "item-left" }, [
                                         (0, import_vue2.createElementVNode)("view", { class: "circle-image" }, [
                                           (0, import_vue2.createElementVNode)("u-image", {
@@ -6604,7 +6609,7 @@ ${i3}
                                           )
                                         ])
                                       ])
-                                    ], 8, ["onClick"])
+                                    ])
                                   ]),
                                   _: 2
                                   /* DYNAMIC */
@@ -6656,12 +6661,39 @@ ${i3}
               /* STABLE */
             }, 8, ["onClick"])
           ]),
-          (0, import_vue2.createElementVNode)("u-input", {
-            modelValue: $data.newItemName,
-            onInput: _cache[4] || (_cache[4] = ($event) => $data.newItemName = $event.detail.value),
-            placeholder: "Enter item name",
-            class: "in"
-          }, null, 40, ["modelValue"])
+          (0, import_vue2.createElementVNode)("view", { class: "add-item-form" }, [
+            (0, import_vue2.createElementVNode)("view", {
+              class: "color-picker",
+              onClick: _cache[4] || (_cache[4] = (...args) => $options.toggleColorPicker && $options.toggleColorPicker(...args))
+            }, [
+              (0, import_vue2.createElementVNode)("u-text", null, "\u{1F3A8}")
+            ]),
+            (0, import_vue2.createElementVNode)("u-input", {
+              modelValue: $data.newItemName,
+              onInput: _cache[5] || (_cache[5] = ($event) => $data.newItemName = $event.detail.value),
+              placeholder: "Enter item name",
+              class: "in"
+            }, null, 40, ["modelValue"])
+          ]),
+          $data.showColorPicker ? ((0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
+            key: 0,
+            class: "color-options"
+          }, [
+            ((0, import_vue2.openBlock)(true), (0, import_vue2.createElementBlock)(
+              import_vue2.Fragment,
+              null,
+              (0, import_vue2.renderList)($data.colors, (color) => {
+                return (0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
+                  key: color,
+                  style: (0, import_vue2.normalizeStyle)({ backgroundColor: color }),
+                  class: "color-option",
+                  onClick: ($event) => $options.selectColor(color)
+                }, null, 12, ["onClick"]);
+              }),
+              128
+              /* KEYED_FRAGMENT */
+            ))
+          ])) : (0, import_vue2.createCommentVNode)("v-if", true)
         ])) : (0, import_vue2.createCommentVNode)("v-if", true)
       ])
     ]);
