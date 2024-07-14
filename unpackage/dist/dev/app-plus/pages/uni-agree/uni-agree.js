@@ -63,10 +63,10 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
     }
   });
 
-  // ../../../../../project/CoHub/CoHub/unpackage/dist/dev/.nvue/pages/uni-agree/uni-agree.js
+  // ../../../../CoHub/CoHub/unpackage/dist/dev/.nvue/pages/uni-agree/uni-agree.js
   var import_vue = __toESM(require_vue());
 
-  // ../../../../../project/CoHub/CoHub/unpackage/dist/dev/.nvue/_plugin-vue_export-helper.js
+  // ../../../../CoHub/CoHub/unpackage/dist/dev/.nvue/_plugin-vue_export-helper.js
   var _export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
@@ -75,7 +75,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
     return target;
   };
 
-  // ../../../../../project/CoHub/CoHub/unpackage/dist/dev/.nvue/pages/uni-agree/uni-agree.js
+  // ../../../../CoHub/CoHub/unpackage/dist/dev/.nvue/pages/uni-agree/uni-agree.js
   var config = {
     "h5": {
       "url": "https://uni-starter.dcloud.net.cn",
@@ -230,7 +230,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
       ])
     ]);
   }
-  var uniAgree = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "D:/project/CoHub/CoHub/pages/uni-agree/uni-agree.nvue"]]);
+  var uniAgree = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "D:/Download/CoHub/CoHub/pages/uni-agree/uni-agree.nvue"]]);
 
   // <stdin>
   var webview = plus.webview.currentWebview();

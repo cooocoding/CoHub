@@ -99,7 +99,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   }, $props.state.error ? common_vendor.e({
     b: $data.networkType == "none"
   }, $data.networkType == "none" ? {
-    c: common_assets._imports_0$1,
+    c: common_assets._imports_0$2,
     d: common_vendor.t($options.noNetwork),
     e: common_vendor.t($options.toSet),
     f: common_vendor.o((...args) => $options.openSettings && $options.openSettings(...args))
@@ -114,5 +114,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     j: common_vendor.o((...args) => $options.appear && $options.appear(...args))
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-740c4771"], ["__file", "D:/project/CoHub/CoHub/components/uni-load-state/uni-load-state.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-740c4771"], ["__file", "D:/Download/CoHub/CoHub/components/uni-load-state/uni-load-state.vue"]]);
 wx.createComponent(Component);

@@ -26,11 +26,11 @@ const _sfc_main = {
           rules: [
             {
               required: true,
-              errorMessage: "请输入手机号"
+              errorMessage: "Please enter phone number"
             },
             {
               pattern: /^1\d{10}$/,
-              errorMessage: "手机号码格式不正确"
+              errorMessage: "Mobile phone number format is incorrect"
             }
           ]
         },
@@ -38,11 +38,11 @@ const _sfc_main = {
           rules: [
             {
               required: true,
-              errorMessage: "请输入短信验证码"
+              errorMessage: "Please enter the SMS verification code"
             },
             {
               pattern: /^.{6}$/,
-              errorMessage: "请输入6位验证码"
+              errorMessage: "Please enter the 6-digit verification code"
             }
           ]
         },
@@ -50,11 +50,11 @@ const _sfc_main = {
           rules: [
             {
               required: true,
-              errorMessage: "请输入新密码"
+              errorMessage: "Please enter a new password"
             },
             {
               pattern: /^.{6,20}$/,
-              errorMessage: "密码为6 - 20位"
+              errorMessage: "Password must be between 6 and 20 digits"
             }
           ]
         },
@@ -62,16 +62,16 @@ const _sfc_main = {
           rules: [
             {
               required: true,
-              errorMessage: "请确认密码"
+              errorMessage: "Please confirm your password"
             },
             {
               pattern: /^.{6,20}$/,
-              errorMessage: "密码为6 - 20位"
+              errorMessage: "Password must be between 6 and 20 digits"
             },
             {
               validateFunction: function(rule, value, data, callback) {
                 if (value != data.password) {
-                  callback("两次输入密码不一致");
+                  callback("The password entered twice is inconsistent");
                 }
                 return true;
               }
@@ -190,13 +190,13 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       type: "number",
       inputBorder: false,
       maxlength: "11",
-      placeholder: "请输入手机号",
+      placeholder: "Please enter phone number",
       modelValue: $data.formData.phone
     }),
     e: common_vendor.p({
       name: "phone"
     }),
-    f: common_vendor.sr("shortCode", "a51a6410-4,a51a6410-3"),
+    f: common_vendor.sr("shortCode", "0050c723-4,0050c723-3"),
     g: common_vendor.o(($event) => $data.formData.code = $event),
     h: common_vendor.p({
       phone: $data.formData.phone,
@@ -212,7 +212,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusPassword,
       type: "password",
       inputBorder: false,
-      placeholder: "请输入新密码",
+      placeholder: "Please enter a new password",
       modelValue: $data.formData.password
     }),
     m: common_vendor.p({
@@ -224,7 +224,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusPassword2,
       type: "password",
       inputBorder: false,
-      placeholder: "请再次输入新密码",
+      placeholder: "Please enter a new password again",
       modelValue: $data.formData.password2
     }),
     q: common_vendor.p({
@@ -233,12 +233,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     r: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
     s: common_vendor.o((...args) => $options.retrieveByEmail && $options.retrieveByEmail(...args)),
     t: common_vendor.o((...args) => $options.backLogin && $options.backLogin(...args)),
-    v: common_vendor.sr("form", "a51a6410-0"),
+    v: common_vendor.sr("form", "0050c723-0"),
     w: common_vendor.p({
       value: $data.formData,
       ["err-show-type"]: "toast"
     }),
-    x: common_vendor.sr("popup", "a51a6410-9"),
+    x: common_vendor.sr("popup", "0050c723-9"),
     y: common_vendor.o($options.submit),
     z: common_vendor.o(($event) => $data.formData.captcha = $event),
     A: common_vendor.p({
@@ -247,5 +247,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/retrieve/retrieve.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/retrieve/retrieve.vue"]]);
 wx.createPage(MiniProgramPage);

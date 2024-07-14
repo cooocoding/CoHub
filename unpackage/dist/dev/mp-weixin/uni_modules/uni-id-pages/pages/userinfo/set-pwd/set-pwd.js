@@ -46,7 +46,7 @@ const _sfc_main = {
       if (!/^\d{6}$/.test(this.formData.code)) {
         this.$refs.smsCode.focusSmsCodeInput = true;
         return common_vendor.index.showToast({
-          title: "验证码格式不正确",
+          title: "Verification code format is incorrect",
           icon: "none"
         });
       }
@@ -57,7 +57,7 @@ const _sfc_main = {
           captcha: this.formData.captcha
         }).then((e) => {
           common_vendor.index.showModal({
-            content: "密码设置成功",
+            content: "Password set successfully",
             showCancel: false,
             success: () => {
               uni_modules_uniIdPages_common_store.mutations.loginBack({
@@ -114,7 +114,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusNewPassword,
       type: "password",
       inputBorder: false,
-      placeholder: "请输入密码",
+      placeholder: "Please enter the password",
       modelValue: $data.formData.newPassword
     }),
     e: common_vendor.p({
@@ -126,7 +126,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusNewPassword2,
       type: "password",
       inputBorder: false,
-      placeholder: "请再次输入新密码",
+      placeholder: "Please enter the password again",
       modelValue: $data.formData.newPassword2
     }),
     i: common_vendor.p({
@@ -158,5 +158,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e5e1f63f"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-e5e1f63f"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd.vue"]]);
 wx.createPage(MiniProgramPage);

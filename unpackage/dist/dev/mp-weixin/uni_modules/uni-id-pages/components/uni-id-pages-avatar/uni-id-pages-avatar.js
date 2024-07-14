@@ -57,7 +57,7 @@ const _sfc_main = {
       avatar_file.name = cloudPath;
       try {
         common_vendor.index.showLoading({
-          title: "更新中",
+          title: "Updating",
           mask: true
         });
         let {
@@ -117,5 +117,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     l: $props.height
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-avatar/uni-id-pages-avatar.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-avatar/uni-id-pages-avatar.vue"]]);
 wx.createComponent(Component);

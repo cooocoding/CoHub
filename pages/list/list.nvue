@@ -48,7 +48,7 @@
 						<view class="folder-content">
 							<view v-for="(item, itemIndex) in folder.items" :key="itemIndex" class="swipe-item" @click="handleCollapseItemClickone(item)">
 								<uni-swipe-action-item :right-options="getRightOptions('folders', index, itemIndex)">
-									<view class="swipe-item-content" >
+									<view class="swipe-item-content" @click="navigateToGrid(item)">
 										<view class="item-left">
 											<view class="circle-image">
 												<image class="circle-image-icon" :src="item.icon"></image>
@@ -75,7 +75,7 @@
 						<view class="folder-content">
 							<view v-for="(item, itemIndex) in folder.items" :key="itemIndex" class="swipe-item" @click="handleCollapseItemClicktwo(item)">
 								<uni-swipe-action-item :right-options="getRightOptions('sharedFolders', index, itemIndex)">
-									<view class="swipe-item-content" >
+									<view class="swipe-item-content" @click="navigateToGrid(item)">
 										<view class="item-left">
 											<view class="circle-image">
 												<image class="circle-image-icon" :src="item.icon"></image>
@@ -101,7 +101,7 @@
 						<view class="folder-content">
 							<view v-for="(item, itemIndex) in folder.items" :key="itemIndex" class="swipe-item" @click="handleCollapseItemClick(item)">
 								<uni-swipe-action-item :right-options="getRightOptions('utilities', index, itemIndex)">
-									<view class="swipe-item-content">
+									<view class="swipe-item-content" @click="navigateToGrid(item)">
 										<view class="item-left">
 											<view class="circle-image">
 												<image class="circle-image-icon" :src="item.icon"></image>
@@ -116,7 +116,8 @@
 				</view>
 			</uni-collapse>
 		</view>
-
+		
+		<!-- 新增文件夹弹窗 -->
 		<view v-if="showPopup" class="popup-container">
 			<view class="popup-header">
 				<button class="popup-button popup-button-cancel" @click="cancelAddItem">Cancel</button>
@@ -134,6 +135,7 @@
 	</view>
 </template>
 
+
 <script>
 	import statusBar from "@/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar";
 	import cmdNavBar from "@/components/cmd-nav-bar/cmd-nav-bar.vue";
@@ -147,8 +149,18 @@
 			cmdNavBar
 		},
 		computed: {
-			inputPlaceholder() {
-				return uni.getStorageSync('CURRENT_LANG') === "en" ? 'Please enter the search content' : 'Quick Search';
+			inputPlaceholder(e) {
+				if (uni.getStorageSync('CURRENT_LANG') == "en") {
+					return 'Please enter the search content'
+				} else {
+					return 'Quick Search'
+				}
+			},
+			colList(){
+				return [
+					db.collection('opendb-news-articles').where(this.where).field('avatar,title,last_modify_date,user_id').getTemp(),
+					db.collection('uni-id-users').field('_id,nickname').getTemp()
+				]
 			}
 		},
 		data() {
@@ -190,11 +202,11 @@
 				],
 				folders: [
 					{
-						name: 'Folders',
+						name: 'Personal Folders',
 						isExpanded: false,
 						items: [
-							{ name: 'Folder', icon: '/static/pic/10.png' },
-							{ name: 'Folder', icon: '/static/pic/10.png' }
+							{ name: 'Book List', icon: '/static/pic/clr.png' },
+							{ name: 'OOTD', icon: '/static/pic/clr2.png' }
 						]
 					}
 				],
@@ -203,8 +215,8 @@
 						name: 'Shared Folders',
 						isExpanded: false,
 						items: [
-							{ name: 'Shared Folder', icon: '/static/pic/10.png' },
-							{ name: 'Shared Folder', icon: '/static/pic/10.png' }
+							{ name: '8.23 Travel to Hong Kong', icon: '/static/pic/clr3.png' },
+							{ name: 'Learning materials', icon: '/static/pic/clr4.png' }
 						]
 					}
 				],
@@ -213,7 +225,7 @@
 						name: 'Utilities',
 						isExpanded: false,
 						items: [
-							{ name: 'Recently Deleted', icon: '/static/pic/10.png' }
+							{ name: 'Recently Deleted', icon: '/static/pic/clr5.png' }
 						]
 					}
 				],
@@ -254,6 +266,7 @@
 			let location = await gps.getLocation({
 				geocode: true
 			})
+			this.getFolders()
 			// #endif
 		},
 		onLoad() {
@@ -262,6 +275,29 @@
 			this.getListData()
 		},
 		methods: {
+			async getFolders(){
+				try {
+					const { data } = await uni.request({
+					  //url: 'http://127.0.0.1:8000/backend/profile/'+ JSON.parse(uni.getStorageSync('uni_id')) +'/folders/',
+					url: 'http://127.0.0.1:8000/backend/profile/6/folders/',
+					  method: 'GET',
+					  header: {
+						'content-type': 'application/json' // 默认值
+					  }
+					});
+					console.log(data);
+					if (data && data.response) {
+					  this.folders[0].items = response.item
+					} 
+				  } catch (error) {
+					console.error('登录失败:', error);
+					uni.showToast({
+					  title: '网络错误',
+					  icon: 'none',
+					  duration: 2000
+					});
+				  }
+			},
 			goToAllInfoPage() {
 				uni.navigateTo({
 					url: '/pages/list/all/all'
@@ -270,6 +306,11 @@
 			goToArchivedInfoPage() {
 				uni.navigateTo({
 					url: '/pages/list/archived/archived'
+				});
+			},
+			navigateToGrid() {
+				uni.navigateTo({
+					url: '/pages/grid/grid'
 				});
 			},
 			searchClick() {
@@ -311,31 +352,65 @@
 					});
 				}
 			},
-			handleCollapseItemClickone(item) {
+			handleCollapseItemClickone(item) {	
+				uni.navigateTo({
+					url: '/pages/list/grid/grid'
+				});
+				/*
 				if (item.name === 'Folder') {
 					uni.navigateTo({
 						url: '/pages/list/grid/grid'
 					});
 				}
+				*/
 			},
 			handleCollapseItemClicktwo(item) {
+				uni.navigateTo({
+					url: '/pages/list/gridmul/gridmul'
+				});
+				/*
 				if (item.name === 'Shared Folder') {
 					uni.navigateTo({
 						url: '/pages/list/gridmul/gridmul'
 					});
 				}
+				*/
 			},
 			openAddItemDialog(folderType, index) {
 				this.currentFolderType = folderType;
 				this.currentFolderIndex = index;
 				this.showPopup = true;
 			},
-			addItem() {
+			async addItem() {
 				if (this.newItemName.trim() !== "") {
-					this[this.currentFolderType][this.currentFolderIndex].items.push({
-						name: this.newItemName,
-						icon: this.getColorIcon(this.selectedColor)
-					});
+					// this[this.currentFolderType][this.currentFolderIndex].items.push({
+					// 	name: this.newItemName,
+					// 	icon: this.getColorIcon(this.selectedColor)
+					// });
+					
+					try {
+					    const { data } = await uni.request({
+					      url: 'http://127.0.0.1:8000/backend/profile/'+ JSON.parse(uni.getStorageSync('uni_id')) +'/folder/create/',
+					      method: 'POST',
+						  data: {
+							  	folderName: this.newItemName,
+							  	label: 'Yellow'
+						  },
+					      header: {
+					        'content-type': 'application/json' // 默认值
+					      }
+					    });
+						console.log(data);
+					    if (data && data.response) {
+						  this.getFolders()
+					    } 
+					  } catch (error) {
+					    uni.showToast({
+					      title: 'Network error',
+					      icon: 'none',
+					      duration: 2000
+					    });
+					  }
 					this.newItemName = "";
 					this.selectedColor = this.colors[0];
 					this.showPopup = false;
@@ -354,8 +429,6 @@
 				this.showColorPicker = false;
 			},
 			getColorIcon(color) {
-				// 可以根据颜色生成相应的图标路径或base64图标
-				// 这里简单返回颜色字符串，实际可以返回颜色图标路径
 				return color;
 			},
 			async getListData() {
@@ -368,21 +441,28 @@
 				return this.rightOptionsTemplate.map(option => {
 					return {
 						...option,
-						click: () => option.click(folderType, folderIndex, itemIndex)
+						click: () => this[option.click](folderType, folderIndex, itemIndex)
 					}
 				});
 			},
 			handleEdit(folderType, folderIndex, itemIndex) {
+				this.showPopup = true;
 				console.log('Edit:', folderType, folderIndex, itemIndex);
 				// Handle edit action here
+				// this[folderType][folderIndex].items.splice(itemIndex, 1);
 			},
 			handleArchived(folderType, folderIndex, itemIndex) {
 				console.log('Archived:', folderType, folderIndex, itemIndex);
 				// Handle archived action here
+				 this[folderType][folderIndex].items.splice(itemIndex, 1);
 			},
 			handleDelete(folderType, folderIndex, itemIndex) {
 				console.log('Delete:', folderType, folderIndex, itemIndex);
-				this[folderType][folderIndex].items.splice(itemIndex, 1);
+				
+				  const deletedItem = this[folderType][folderIndex].items.splice(itemIndex, 1)[0];
+				  if (this[folderType][folderIndex].items.length === 0) {
+				    this[folderType].splice(folderIndex, 1);
+				  }
 			}
 		},
 		// #ifndef APP-NVUE
@@ -450,7 +530,7 @@
 
   .uni-search-box {
     background-color: #F2F2F6;
-    position: sticky;
+    position: sticky; 
     height: 50px;
     top: 0;
     left: 0;

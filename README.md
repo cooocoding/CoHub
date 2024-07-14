@@ -3,6 +3,11 @@
 CoHub is a cross-platform collection software designed to help users easily manage and synchronize their collections across multiple devices. The front end of this project uses HBuilderX IDE for Vue.js and UniApp framework development, supporting multiple platforms, including WeChat mini programs, H5, App, etc.
 
 ## Features
+- Cross-Platform Support: Use CoHub on various platforms including WeChat mini programs, H5, and mobile apps.
+- Easy Collection Management: Organize and manage your collections with ease.
+- Synchronization: Synchronize your collections across multiple devices seamlessly.
+- User-Friendly Interface: Intuitive and easy-to-use interface for a better user experience.
+- Customizable: Personalize your collections and app settings to suit your needs.
 
 ## Install and run
 
@@ -20,12 +25,15 @@ git clone https://github.com/cooocoding/CoHub
 cd CoHub
 ```
 
-### Install dependencies
-
 
 ### Run the project
 
 Open the project directory in HBuilderX and select the platform you want to run on for debugging.
+
+1. Open HBuilderX.
+2. Click on "File" > "Open Directory" and select the CoHub project directory.
+3. Click on "Run" in the top menu.
+4. Select the target platform.
 
 
 ## Contribution Guidelines

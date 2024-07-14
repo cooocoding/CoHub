@@ -27,11 +27,11 @@ const _sfc_main = {
           rules: [
             {
               required: true,
-              errorMessage: "请输入邮箱"
+              errorMessage: "please input your email"
             },
             {
               format: "email",
-              errorMessage: "邮箱格式不正确"
+              errorMessage: "E-mail format is incorrect"
             }
           ]
         },
@@ -39,11 +39,11 @@ const _sfc_main = {
           rules: [
             {
               required: true,
-              errorMessage: "请输入邮箱验证码"
+              errorMessage: "Please enter the email verification code"
             },
             {
               pattern: /^.{6}$/,
-              errorMessage: "请输入6位验证码"
+              errorMessage: "Please enter the 6-digit verification code"
             }
           ]
         },
@@ -162,13 +162,13 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusEmail,
       disabled: $data.lock,
       inputBorder: false,
-      placeholder: "请输入邮箱",
+      placeholder: "Please input your email",
       modelValue: $data.formData.email
     }),
     e: common_vendor.p({
       name: "email"
     }),
-    f: common_vendor.sr("shortCode", "ba0d58ea-4,ba0d58ea-3"),
+    f: common_vendor.sr("shortCode", "9fcd0a80-4,9fcd0a80-3"),
     g: common_vendor.o(($event) => $data.formData.code = $event),
     h: common_vendor.p({
       email: $data.formData.email,
@@ -184,7 +184,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusPassword,
       type: "password",
       inputBorder: false,
-      placeholder: "请输入新密码",
+      placeholder: "Please enter a new password",
       modelValue: $data.formData.password
     }),
     m: common_vendor.p({
@@ -196,7 +196,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusPassword2,
       type: "password",
       inputBorder: false,
-      placeholder: "请再次输入新密码",
+      placeholder: "Please enter a new password again",
       modelValue: $data.formData.password2
     }),
     q: common_vendor.p({
@@ -205,12 +205,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     r: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
     s: common_vendor.o((...args) => $options.retrieveByPhone && $options.retrieveByPhone(...args)),
     t: common_vendor.o((...args) => $options.backLogin && $options.backLogin(...args)),
-    v: common_vendor.sr("form", "ba0d58ea-0"),
+    v: common_vendor.sr("form", "9fcd0a80-0"),
     w: common_vendor.p({
       value: $data.formData,
       ["err-show-type"]: "toast"
     }),
-    x: common_vendor.sr("popup", "ba0d58ea-9"),
+    x: common_vendor.sr("popup", "9fcd0a80-9"),
     y: common_vendor.o($options.submit),
     z: common_vendor.o(($event) => $data.formData.captcha = $event),
     A: common_vendor.p({
@@ -219,5 +219,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email.vue"]]);
 wx.createPage(MiniProgramPage);

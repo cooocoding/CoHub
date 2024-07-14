@@ -80,8 +80,8 @@ const _sfc_main = {
   computed: {
     innerText() {
       if (this.reverseNumber == 0)
-        return "获取邮箱验证码";
-      return "重新发送(" + this.reverseNumber + "s)";
+        return "Get email verification code";
+      return "Resend(" + this.reverseNumber + "s)";
     }
   },
   created() {
@@ -102,21 +102,21 @@ const _sfc_main = {
       if (this.captcha.length != 4) {
         this.$refs.captcha.focusCaptchaInput = true;
         return common_vendor.index.showToast({
-          title: "请先输入图形验证码",
+          title: "Please enter the graphic verification code first",
           icon: "none",
           duration: 3e3
         });
       }
       if (!this.email)
         return common_vendor.index.showToast({
-          title: "请输入邮箱",
+          title: "please input your email",
           icon: "none",
           duration: 3e3
         });
       let reg_email = /@/;
       if (!reg_email.test(this.email))
         return common_vendor.index.showToast({
-          title: "邮箱格式错误",
+          title: "Email format error",
           icon: "none",
           duration: 3e3
         });
@@ -134,7 +134,7 @@ const _sfc_main = {
         "captcha": this.captcha
       }).then((result) => {
         common_vendor.index.showToast({
-          title: "邮箱验证码发送成功",
+          title: "Email verification code sent successfully",
           icon: "none",
           duration: 3e3
         });
@@ -144,7 +144,7 @@ const _sfc_main = {
         if (e.code == "uni-id-invalid-mail-template") {
           this.modelValue = "123456";
           common_vendor.index.showToast({
-            title: "已启动测试模式,详情【控制台信息】",
+            title: "Test mode has been started, details [Console information]",
             icon: "none",
             duration: 3e3
           });
@@ -199,7 +199,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       type: "number",
       inputBorder: false,
       maxlength: "6",
-      placeholder: "请输入邮箱验证码",
+      placeholder: "Please enter the email verification code",
       modelValue: $data.modelValue
     }),
     g: common_vendor.t($options.innerText),
@@ -207,5 +207,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     i: common_vendor.o((...args) => _ctx.start && _ctx.start(...args))
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-bcd6b47b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-email-form/uni-id-pages-email-form.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-bcd6b47b"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-email-form/uni-id-pages-email-form.vue"]]);
 wx.createComponent(Component);

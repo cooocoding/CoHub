@@ -31,6 +31,7 @@
 		</view>
 		<!-- 悬浮登录方式组件 -->
 		<uni-id-pages-fab-login ref="uniFabLogin"></uni-id-pages-fab-login>
+		<button class="uni-btn" type="primary" @click="login">python登录</button>
 	</view>
 </template>
 
@@ -65,6 +66,50 @@
 			// #endif
 		},
 		methods: {
+			async login() {
+				try {
+				    const { data } = await uni.request({
+				      url: 'http://127.0.0.1:8000/login/', // 替换为你的实际登录API地址
+				      method: 'POST',
+					  sslVerify: false,
+				      data: {
+				        username: this.username,
+				        password: this.password
+				      },
+				      header: {
+				        'content-type': 'application/json' // 默认值
+				      }
+				    });
+					console.log(data);
+				    // 登录成功后的处理，例如保存token到本地存储
+				    if (data && data.user) {
+				      uni.setStorageSync('uni_id', data.user.profileId);
+				      uni.showToast({
+				        title: '登录成功',
+				        icon: 'success',
+				        duration: 2000
+				      });
+				      // 跳转到 pages/list/list.nvue 页面
+				      uni.switchTab({
+				        url: '/pages/list/list',
+						animationType: 'fade-in'
+				      });
+				    } else {
+				      uni.showToast({
+				        title: '登录失败',
+				        icon: 'none',
+				        duration: 2000
+				      });
+				    }
+				  } catch (error) {
+				    console.error('登录失败:', error);
+				    uni.showToast({
+				      title: '网络错误',
+				      icon: 'none',
+				      duration: 2000
+				    });
+				  }
+				},
 			// 页面跳转，找回密码
 			toRetrievePwd() {
 				let url = '/uni_modules/uni-id-pages/pages/retrieve/retrieve'

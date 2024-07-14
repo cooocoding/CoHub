@@ -25,7 +25,7 @@ __renderjsModules["5a1e922e"] = (() => {
     default: () => stdin_default
   });
 
-  // ../../../../../project/CoHub/CoHub/uni_modules/uni-swipe-action/components/uni-swipe-action-item/render.js
+  // ../../../../CoHub/CoHub/uni_modules/uni-swipe-action/components/uni-swipe-action-item/render.js
   var MIN_DISTANCE = 10;
   var render_default = {
     showWatch(newVal, oldVal, ownerInstance, instance, self) {

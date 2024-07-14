@@ -100,10 +100,10 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
     }
   });
 
-  // ../../../../../project/CoHub/CoHub/unpackage/dist/dev/.nvue/uni-search-bar.js
+  // ../../../../CoHub/CoHub/unpackage/dist/dev/.nvue/uni-search-bar.js
   var import_vue = __toESM(require_vue());
 
-  // ../../../../../project/CoHub/CoHub/unpackage/dist/dev/.nvue/_plugin-vue_export-helper.js
+  // ../../../../CoHub/CoHub/unpackage/dist/dev/.nvue/_plugin-vue_export-helper.js
   var _export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
@@ -112,7 +112,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
     return target;
   };
 
-  // ../../../../../project/CoHub/CoHub/unpackage/dist/dev/.nvue/uni-search-bar.js
+  // ../../../../CoHub/CoHub/unpackage/dist/dev/.nvue/uni-search-bar.js
   var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
   var hasOwn$1 = (val, key) => hasOwnProperty$1.call(val, key);
   var UNI_SSR = "__uniSSR";
@@ -759,8 +759,8 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
   var b = "app";
   var A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default);
   var P = b;
-  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.5",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
-  var C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
+  var T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.29.0.1",\n        "172.20.10.4",\n        "192.168.1.5",\n        "172.24.64.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n');
+  var C = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgxdwrzi6","spaceAppId":"2021004154616649","accessKey":"iMPGheIwD0SLH4Ix","secretKey":"2UolQdH3T1sdiqcj"}]') || [];
   var O = "";
   try {
     O = "__UNI__8301740";
@@ -4011,7 +4011,7 @@ ${i3}
       /* TEXT, STYLE */
     );
   }
-  var __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["styles", [_style_0$1]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  var __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["styles", [_style_0$1]], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
   var isObject = (val) => val !== null && typeof val === "object";
   var defaultDelimiters = ["{", "}"];
   var BaseFormatter = class {
@@ -4532,9 +4532,9 @@ ${i3}
       )) : (0, import_vue.createCommentVNode)("v-if", true)
     ]);
   }
-  var __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue"]]);
+  var __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue"]]);
 
-  // ../../../../../project/CoHub/CoHub/unpackage/dist/dev/.nvue/pages/list/search/search.js
+  // ../../../../CoHub/CoHub/unpackage/dist/dev/.nvue/pages/list/search/search.js
   var import_vue2 = __toESM(require_vue());
   var en2 = {
     "uniCloud.component.add.success": "Success",
@@ -5269,7 +5269,7 @@ ${i3}
       )) : (0, import_vue2.createCommentVNode)("v-if", true)
     ]);
   }
-  var __easycom_12 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["styles", [_style_0$3]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-badge/components/uni-badge/uni-badge.vue"]]);
+  var __easycom_12 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["styles", [_style_0$3]], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-badge/components/uni-badge/uni-badge.vue"]]);
   var _style_0$2 = { "uni-list-item": { "": { "fontSize": 16, "position": "relative", "justifyContent": "space-between", "alignItems": "center", "backgroundColor": "#ffffff", "flexDirection": "row" } }, "uni-list-item--disabled": { "": { "opacity": 0.3 } }, "uni-list-item--hover": { "": { "!backgroundColor": "#f1f1f1" } }, "uni-list-item__container": { "": { "position": "relative", "flexDirection": "row", "paddingTop": 12, "paddingRight": 15, "paddingBottom": 12, "paddingLeft": 15, "flex": 1, "overflow": "hidden" } }, "container--right": { "": { "paddingRight": 0 } }, "uni-list--border": { "": { "position": "absolute", "top": 0, "right": 0, "left": 0, "borderTopColor": "#e5e5e5", "borderTopStyle": "solid", "borderTopWidth": 0.5 } }, "uni-list-item__content": { "": { "paddingRight": 8, "flex": 1, "color": "#3b4144", "flexDirection": "column", "justifyContent": "space-between", "overflow": "hidden" } }, "uni-list-item__content--center": { "": { "justifyContent": "center" } }, "uni-list-item__content-title": { "": { "fontSize": 14, "color": "#3b4144", "overflow": "hidden" } }, "uni-list-item__content-note": { "": { "marginTop": "6rpx", "color": "#999999", "fontSize": 12, "overflow": "hidden" } }, "uni-list-item__extra": { "": { "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "uni-list-item__header": { "": { "flexDirection": "row", "alignItems": "center" } }, "uni-list-item__icon": { "": { "marginRight": "18rpx", "flexDirection": "row", "justifyContent": "center", "alignItems": "center" } }, "uni-list-item__icon-img": { "": { "height": 26, "width": 26, "marginRight": 10 } }, "uni-icon-wrapper": { "": { "alignItems": "center", "paddingTop": 0, "paddingRight": 10, "paddingBottom": 0, "paddingLeft": 10 } }, "flex--direction": { "": { "flexDirection": "column" } }, "uni-list--lg": { "": { "height": 40, "width": 40 } }, "uni-list--base": { "": { "height": 26, "width": 26 } }, "uni-list--sm": { "": { "height": 20, "width": 20 } }, "uni-list-item__extra-text": { "": { "color": "#999999", "fontSize": 12 } }, "uni-ellipsis-1": { "": { "lines": 1, "textOverflow": "ellipsis" } }, "uni-ellipsis-2": { "": { "lines": 2, "textOverflow": "ellipsis" } } };
   var _sfc_main$2 = {
     name: "UniListItem",
@@ -5640,7 +5640,7 @@ ${i3}
       ], 14, ["hoverClass"])
     ], 8, ["keepScrollPosition"]);
   }
-  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["styles", [_style_0$2]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue"]]);
+  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["styles", [_style_0$2]], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue"]]);
   var _style_0$12 = { "uni-list": { "": { "backgroundColor": "#ffffff", "position": "relative", "flexDirection": "column" } }, "uni-list--border": { "": { "position": "relative", "borderTopColor": "#e5e5e5", "borderTopStyle": "solid", "borderTopWidth": 0.5, "borderBottomColor": "#e5e5e5", "borderBottomStyle": "solid", "borderBottomWidth": 0.5, "zIndex": -1 } } };
   var _sfc_main$12 = {
     name: "uniList",
@@ -5702,7 +5702,7 @@ ${i3}
       (0, import_vue2.renderSlot)(_ctx.$slots, "default")
     ], 42, ["renderReverse", "enableBackToTop"]);
   }
-  var __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$12], ["styles", [_style_0$12]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list/uni-list.vue"]]);
+  var __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$12], ["styles", [_style_0$12]], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-list/components/uni-list/uni-list.vue"]]);
   var _style_02 = { "status-bar": { "": { "backgroundColor": "#ffffff" } }, "container": { "": { "flex": 1, "backgroundColor": "#f7f7f7" } }, "search-body": { "": { "backgroundColor": "#ffffff", "borderBottomRightRadius": 10, "borderBottomLeftRadius": 10 } }, "flex-center": { "": { "justifyContent": "center", "alignItems": "center" } }, "flex-row": { "": { "flexDirection": "row" } }, "uni-searchbar": { "": { "paddingLeft": 0 } }, "uni-searchbar__box": { "": { "borderWidth": 0 } }, "uni-input-placeholder": { "": { "fontSize": "28rpx" } }, "search-container": { "": { "height": 52, "flexDirection": "column", "justifyContent": "center", "alignItems": "center", "position": "relative", "backgroundColor": "#ffffff" } }, "search-container-bar": { "": { "flexDirection": "row", "justifyContent": "center", "alignItems": "center", "position": "absolute", "top": 0, "left": 0, "right": 0 } }, "search-associative": { "": { "position": "absolute", "top": 52, "left": 0, "right": 0, "bottom": 0, "backgroundColor": "#ffffff", "marginTop": "10rpx", "paddingLeft": "10rpx", "paddingRight": "10rpx" } }, "search-icons": { "": { "paddingTop": "16rpx", "paddingRight": "16rpx", "paddingBottom": "16rpx", "paddingLeft": "16rpx" } }, "word-display": { "": { "fontSize": "26rpx", "color": "#666666" } }, "word-container": { "": { "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "word-container_header": { "": { "height": "72rpx", "lineHeight": "72rpx", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "word-container_header-text": { "": { "color": "#3e3e3e", "fontSize": "30rpx", "fontWeight": "bold" } }, "word-container_body": { "": { "flexWrap": "wrap", "flexDirection": "row" } }, "word-container_body-text": { "": { "fontSize": "26rpx", "color": "#666666", "justifyContent": "center", "alignItems": "center", "backgroundColor": "#f6f6f6", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "marginTop": "20rpx", "marginRight": "30rpx", "marginBottom": 0, "marginLeft": 0, "borderRadius": "30rpx", "textAlign": "center" } }, "word-container_body-info": { "": { "flex": 1, "textAlign": "center", "fontSize": "26rpx", "color": "#808080", "marginTop": "20rpx" } } };
   var searchLogDbName = "opendb-search-log";
   var mallGoodsDbName = "opendb-news-articles";
@@ -6141,7 +6141,7 @@ ${i3}
       ])
     ]);
   }
-  var search = /* @__PURE__ */ _export_sfc(_sfc_main2, [["render", _sfc_render2], ["styles", [_style_02]], ["__file", "D:/project/CoHub/CoHub/pages/list/search/search.nvue"]]);
+  var search = /* @__PURE__ */ _export_sfc(_sfc_main2, [["render", _sfc_render2], ["styles", [_style_02]], ["__file", "D:/Download/CoHub/CoHub/pages/list/search/search.nvue"]]);
 
   // <stdin>
   var webview = plus.webview.currentWebview();

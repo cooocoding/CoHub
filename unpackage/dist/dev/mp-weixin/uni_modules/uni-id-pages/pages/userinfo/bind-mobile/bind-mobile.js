@@ -15,7 +15,7 @@ const _sfc_main = {
   },
   computed: {
     tipText() {
-      return `验证码已通过短信发送至 ${this.formData.mobile}。密码为6 - 20位`;
+      return `The verification code has been sent via SMS to ${this.formData.mobile}. Password must be between 6 and 20 digits`;
     }
   },
   onLoad(event) {
@@ -30,7 +30,7 @@ const _sfc_main = {
       if (!/^1\d{10}$/.test(this.formData.mobile)) {
         this.focusMobile = true;
         return common_vendor.index.showToast({
-          title: "手机号码格式不正确",
+          title: "Mobile phone number format is incorrect",
           icon: "none",
           duration: 3e3
         });
@@ -38,7 +38,7 @@ const _sfc_main = {
       if (!/^\d{6}$/.test(this.formData.code)) {
         this.$refs.smsForm.focusSmsCodeInput = true;
         return common_vendor.index.showToast({
-          title: "验证码格式不正确",
+          title: "Verification code format is incorrect",
           icon: "none",
           duration: 3e3
         });
@@ -87,10 +87,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       type: "number",
       inputBorder: false,
       maxlength: "11",
-      placeholder: "请输入手机号",
+      placeholder: "Please enter phone number",
       modelValue: $data.formData.mobile
     }),
-    e: common_vendor.sr("smsForm", "2bac1186-1"),
+    e: common_vendor.sr("smsForm", "3105860a-1"),
     f: common_vendor.o(($event) => $data.formData.code = $event),
     g: common_vendor.p({
       type: "bind-mobile-by-sms",
@@ -98,7 +98,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       modelValue: $data.formData.code
     }),
     h: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
-    i: common_vendor.sr("popup", "2bac1186-2"),
+    i: common_vendor.sr("popup", "3105860a-2"),
     j: common_vendor.o($options.submit),
     k: common_vendor.o(($event) => $data.formData.captcha = $event),
     l: common_vendor.p({
@@ -107,5 +107,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile.vue"]]);
 wx.createPage(MiniProgramPage);

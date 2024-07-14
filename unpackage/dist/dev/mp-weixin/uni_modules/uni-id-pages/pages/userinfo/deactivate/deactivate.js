@@ -12,13 +12,13 @@ const _sfc_main = {
     },
     nextStep() {
       common_vendor.index.showModal({
-        content: "已经仔细阅读注销提示，知晓可能带来的后果，并确认要注销",
+        content: "You have read the logout instructions carefully, know the possible consequences, and confirmed that you want to log out.",
         complete: (e) => {
           if (e.confirm) {
             const uniIdco = common_vendor.Ws.importObject("uni-id-co");
             uniIdco.closeAccount().then((e2) => {
               common_vendor.index.showToast({
-                title: "注销成功",
+                title: "Logout successful",
                 duration: 3e3
               });
               common_vendor.index.removeStorageSync("uni_id_token");
@@ -41,5 +41,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     b: common_vendor.o((...args) => $options.cancel && $options.cancel(...args))
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate.vue"]]);
 wx.createPage(MiniProgramPage);

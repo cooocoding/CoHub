@@ -142,14 +142,14 @@ if (!Math) {
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
-    a: common_assets._imports_0$2,
+    a: common_assets._imports_0$1,
     b: common_vendor.t($data.signInRes.days.length),
     c: common_vendor.t($data.signInRes.score),
     d: common_vendor.f($data.weekdays, (item, index, i0) => {
       return common_vendor.e({
         a: $data.signInRes.days.includes(item - 1)
       }, $data.signInRes.days.includes(item - 1) ? {
-        b: "1bbb38d3-1-" + i0 + ",1bbb38d3-0",
+        b: "9ac00f84-1-" + i0 + ",9ac00f84-0",
         c: common_vendor.p({
           color: "#FFFFFF",
           type: "checkmarkempty"
@@ -157,13 +157,13 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       } : common_vendor.e({
         d: item < $data.signInRes.n
       }, item < $data.signInRes.n ? {
-        e: "1bbb38d3-2-" + i0 + ",1bbb38d3-0",
+        e: "9ac00f84-2-" + i0 + ",9ac00f84-0",
         f: common_vendor.p({
           color: "#FFFFFF",
           type: "closeempty"
         })
       } : {
-        g: "1bbb38d3-3-" + i0 + ",1bbb38d3-0",
+        g: "9ac00f84-3-" + i0 + ",9ac00f84-0",
         h: common_vendor.p({
           type: "checkmarkempty",
           color: "#FFFFFF"
@@ -183,11 +183,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       size: "20",
       color: "#AAAAAA"
     }),
-    g: common_vendor.sr("popup", "1bbb38d3-0"),
+    g: common_vendor.sr("popup", "9ac00f84-0"),
     h: common_vendor.p({
       type: "center"
     })
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue"]]);
 wx.createComponent(Component);

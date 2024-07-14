@@ -1,19 +1,20 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const uni_modules_jsonGps_js_sdk_gps = require("../../uni_modules/json-gps/js_sdk/gps.js");
-let cdbRef;
 const statusBar = () => "../../uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.js";
+const cmdNavBar = () => "../../components/cmd-nav-bar/cmd-nav-bar.js";
 const gps = new uni_modules_jsonGps_js_sdk_gps.Gps(), db = common_vendor.Ws.database();
 const _sfc_main = {
   components: {
-    statusBar
+    statusBar,
+    cmdNavBar
   },
   computed: {
     inputPlaceholder(e) {
       if (common_vendor.index.getStorageSync("CURRENT_LANG") == "en") {
         return "Please enter the search content";
       } else {
-        return "请输入搜索内容";
+        return "Quick Search";
       }
     },
     colList() {
@@ -28,7 +29,74 @@ const _sfc_main = {
       where: '"article_status" == 1',
       keyword: "",
       showRefresh: false,
-      listHight: 0
+      listHight: 0,
+      swipeOptions: [],
+      rightOptionsTemplate: [
+        {
+          text: "Edit",
+          style: {
+            backgroundColor: "#0C79FE",
+            backgroundImage: "/static/pic/edit.png",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            width: "100%",
+            margin: "0"
+          },
+          click: (folderType, folderIndex, itemIndex) => this.handleEdit(folderType, folderIndex, itemIndex)
+        },
+        {
+          text: "Archived",
+          style: {
+            backgroundColor: "#979797",
+            color: "#FFFFFF"
+          },
+          click: (folderType, folderIndex, itemIndex) => this.handleArchived(folderType, folderIndex, itemIndex)
+        },
+        {
+          text: "Delete",
+          style: {
+            backgroundColor: "#FF3B30",
+            color: "#FFFFFF"
+          },
+          click: (folderType, folderIndex, itemIndex) => this.handleDelete(folderType, folderIndex, itemIndex)
+        }
+      ],
+      folders: [
+        {
+          name: "Personal Folders",
+          isExpanded: false,
+          items: [
+            { name: "Book List", icon: "/static/pic/clr.png" },
+            { name: "OOTD", icon: "/static/pic/clr2.png" }
+          ]
+        }
+      ],
+      sharedFolders: [
+        {
+          name: "Shared Folders",
+          isExpanded: false,
+          items: [
+            { name: "8.23 Travel to Hong Kong", icon: "/static/pic/clr3.png" },
+            { name: "Learning materials", icon: "/static/pic/clr4.png" }
+          ]
+        }
+      ],
+      utilities: [
+        {
+          name: "Utilities",
+          isExpanded: false,
+          items: [
+            { name: "Recently Deleted", icon: "/static/pic/clr5.png" }
+          ]
+        }
+      ],
+      showPopup: false,
+      newItemName: "",
+      currentFolderType: "",
+      currentFolderIndex: null,
+      showColorPicker: false,
+      selectedColor: "#F14C3C",
+      colors: ["#F14C3C", "#FFA033", "#F7CE45", "#5DC466", "#0C79FE", "#B67AD5", "#998667"]
     };
   },
   watch: {
@@ -51,9 +119,54 @@ const _sfc_main = {
     await gps.getLocation({
       geocode: true
     });
+    this.getFolders();
+  },
+  onLoad() {
+    cdbRef = this;
+    this.listHight = common_vendor.index.getSystemInfoSync().windowHeight - common_vendor.index.upx2px(440);
+    this.getListData();
   },
   methods: {
-    searchClick(e) {
+    async getFolders() {
+      try {
+        const { data } = await common_vendor.index.request({
+          //url: 'http://127.0.0.1:8000/backend/profile/'+ JSON.parse(uni.getStorageSync('uni_id')) +'/folders/',
+          url: "http://127.0.0.1:8000/backend/profile/6/folders/",
+          method: "GET",
+          header: {
+            "content-type": "application/json"
+            // 默认值
+          }
+        });
+        console.log(data);
+        if (data && data.response) {
+          this.folders[0].items = response.item;
+        }
+      } catch (error) {
+        console.error("登录失败:", error);
+        common_vendor.index.showToast({
+          title: "网络错误",
+          icon: "none",
+          duration: 2e3
+        });
+      }
+    },
+    goToAllInfoPage() {
+      common_vendor.index.navigateTo({
+        url: "/pages/list/all/all"
+      });
+    },
+    goToArchivedInfoPage() {
+      common_vendor.index.navigateTo({
+        url: "/pages/list/archived/archived"
+      });
+    },
+    navigateToGrid() {
+      common_vendor.index.navigateTo({
+        url: "/pages/grid/grid"
+      });
+    },
+    searchClick() {
       common_vendor.index.hideKeyboard();
       common_vendor.index.navigateTo({
         url: "/pages/list/search/search",
@@ -68,9 +181,7 @@ const _sfc_main = {
         clear: true
       }, () => {
         common_vendor.index.stopPullDownRefresh();
-        console.log("end");
       });
-      console.log("refresh");
     },
     loadMore() {
       cdbRef.loadMore();
@@ -79,10 +190,106 @@ const _sfc_main = {
       console.error(e);
     },
     onpullingdown(e) {
-      console.log(e);
       this.showRefresh = true;
       if (e.pullingDistance > 100) {
         this.refresh();
+      }
+    },
+    handleCollapseItemClick(item) {
+      if (item.name === "Recently Deleted") {
+        common_vendor.index.navigateTo({
+          url: "/pages/list/delete/delete"
+        });
+      }
+    },
+    handleCollapseItemClickone(item) {
+      common_vendor.index.navigateTo({
+        url: "/pages/list/grid/grid"
+      });
+    },
+    handleCollapseItemClicktwo(item) {
+      common_vendor.index.navigateTo({
+        url: "/pages/list/gridmul/gridmul"
+      });
+    },
+    openAddItemDialog(folderType, index) {
+      this.currentFolderType = folderType;
+      this.currentFolderIndex = index;
+      this.showPopup = true;
+    },
+    async addItem() {
+      if (this.newItemName.trim() !== "") {
+        try {
+          const { data } = await common_vendor.index.request({
+            url: "http://127.0.0.1:8000/backend/profile/" + JSON.parse(common_vendor.index.getStorageSync("uni_id")) + "/folder/create/",
+            method: "POST",
+            data: {
+              folderName: this.newItemName,
+              label: "Yellow"
+            },
+            header: {
+              "content-type": "application/json"
+              // 默认值
+            }
+          });
+          console.log(data);
+          if (data && data.response) {
+            this.getFolders();
+          }
+        } catch (error) {
+          common_vendor.index.showToast({
+            title: "Network error",
+            icon: "none",
+            duration: 2e3
+          });
+        }
+        this.newItemName = "";
+        this.selectedColor = this.colors[0];
+        this.showPopup = false;
+      }
+    },
+    cancelAddItem() {
+      this.newItemName = "";
+      this.selectedColor = this.colors[0];
+      this.showPopup = false;
+    },
+    toggleColorPicker() {
+      this.showColorPicker = !this.showColorPicker;
+    },
+    selectColor(color) {
+      this.selectedColor = color;
+      this.showColorPicker = false;
+    },
+    getColorIcon(color) {
+      return color;
+    },
+    async getListData() {
+      const [err, res] = await common_vendor.Ws.database().collection("opendb-news-articles").where(this.where).field("avatar,title,last_modify_date,user_id").get();
+      if (res) {
+        this.swipeOptions = res.result.data;
+      }
+    },
+    getRightOptions(folderType, folderIndex, itemIndex) {
+      return this.rightOptionsTemplate.map((option) => {
+        return {
+          ...option,
+          click: () => this[option.click](folderType, folderIndex, itemIndex)
+        };
+      });
+    },
+    handleEdit(folderType, folderIndex, itemIndex) {
+      this.showPopup = true;
+      console.log("Edit:", folderType, folderIndex, itemIndex);
+    },
+    handleArchived(folderType, folderIndex, itemIndex) {
+      console.log("Archived:", folderType, folderIndex, itemIndex);
+      this[folderType][folderIndex].items.splice(itemIndex, 1);
+    },
+    handleDelete(folderType, folderIndex, itemIndex) {
+      console.log("Delete:", folderType, folderIndex, itemIndex);
+      this[folderType][folderIndex].items.splice(itemIndex, 1)[0];
+      if (this[folderType][folderIndex].items.length === 0) {
+        this[folderType].splice(folderIndex, 1);
       }
     }
   },
@@ -95,94 +302,145 @@ const _sfc_main = {
 };
 if (!Array) {
   const _component_statusBar = common_vendor.resolveComponent("statusBar");
+  const _easycom_cmd_nav_bar2 = common_vendor.resolveComponent("cmd-nav-bar");
   const _easycom_uni_search_bar2 = common_vendor.resolveComponent("uni-search-bar");
-  const _easycom_uni_dateformat2 = common_vendor.resolveComponent("uni-dateformat");
-  const _easycom_uni_list_item2 = common_vendor.resolveComponent("uni-list-item");
-  const _easycom_uni_load_state2 = common_vendor.resolveComponent("uni-load-state");
-  const _easycom_uni_list2 = common_vendor.resolveComponent("uni-list");
-  const _easycom_unicloud_db2 = common_vendor.resolveComponent("unicloud-db");
-  (_component_statusBar + _easycom_uni_search_bar2 + _easycom_uni_dateformat2 + _easycom_uni_list_item2 + _easycom_uni_load_state2 + _easycom_uni_list2 + _easycom_unicloud_db2)();
+  const _easycom_uni_icons2 = common_vendor.resolveComponent("uni-icons");
+  const _easycom_uni_swipe_action_item2 = common_vendor.resolveComponent("uni-swipe-action-item");
+  const _easycom_uni_collapse_item2 = common_vendor.resolveComponent("uni-collapse-item");
+  const _easycom_uni_collapse2 = common_vendor.resolveComponent("uni-collapse");
+  (_component_statusBar + _easycom_cmd_nav_bar2 + _easycom_uni_search_bar2 + _easycom_uni_icons2 + _easycom_uni_swipe_action_item2 + _easycom_uni_collapse_item2 + _easycom_uni_collapse2)();
 }
+const _easycom_cmd_nav_bar = () => "../../components/cmd-nav-bar/cmd-nav-bar.js";
 const _easycom_uni_search_bar = () => "../../uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.js";
-const _easycom_uni_dateformat = () => "../../uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.js";
-const _easycom_uni_list_item = () => "../../uni_modules/uni-list/components/uni-list-item/uni-list-item.js";
-const _easycom_uni_load_state = () => "../../components/uni-load-state/uni-load-state.js";
-const _easycom_uni_list = () => "../../uni_modules/uni-list/components/uni-list/uni-list.js";
-const _easycom_unicloud_db = () => "../../node-modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db.js";
+const _easycom_uni_icons = () => "../../uni_modules/uni-icons/components/uni-icons/uni-icons.js";
+const _easycom_uni_swipe_action_item = () => "../../uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.js";
+const _easycom_uni_collapse_item = () => "../../uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.js";
+const _easycom_uni_collapse = () => "../../uni_modules/uni-collapse/components/uni-collapse/uni-collapse.js";
 if (!Math) {
-  (_easycom_uni_search_bar + _easycom_uni_dateformat + _easycom_uni_list_item + _easycom_uni_load_state + _easycom_uni_list + _easycom_unicloud_db)();
+  (_easycom_cmd_nav_bar + _easycom_uni_search_bar + _easycom_uni_icons + _easycom_uni_swipe_action_item + _easycom_uni_collapse_item + _easycom_uni_collapse)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return {
-    a: common_vendor.sr("searchBar", "96c6bf44-1"),
-    b: common_vendor.o(($event) => $data.keyword = $event),
-    c: common_vendor.p({
-      radius: "100",
+  return common_vendor.e({
+    a: common_vendor.p({
+      fixed: false,
+      leftTitle: "My Collection",
+      ["font-size"]: "30cm",
+      iconTwo: "add",
+      ["font-color"]: "#000",
+      ["background-color"]: "#fff",
+      fontWeight: "bold",
+      avatarUrl: "/static/pic/LeftAccessory.png"
+    }),
+    b: common_vendor.sr("searchBar", "96c6bf44-2"),
+    c: common_vendor.o(($event) => $data.keyword = $event),
+    d: common_vendor.p({
+      radius: "20",
       cancelButton: "none",
       disabled: true,
       placeholder: $options.inputPlaceholder,
       modelValue: $data.keyword
     }),
-    d: common_vendor.o((...args) => $options.searchClick && $options.searchClick(...args)),
-    e: common_vendor.w(({
-      data,
-      pagination,
-      hasMore,
-      loading,
-      error,
-      options
-    }, s0, i0) => {
+    e: common_vendor.o((...args) => $options.searchClick && $options.searchClick(...args)),
+    f: common_vendor.o((...args) => $options.goToAllInfoPage && $options.goToAllInfoPage(...args)),
+    g: common_vendor.o((...args) => $options.goToArchivedInfoPage && $options.goToArchivedInfoPage(...args)),
+    h: common_vendor.f($data.folders, (folder, index, i0) => {
       return {
-        a: common_vendor.f(data, (item, index, i1) => {
+        a: common_vendor.t(folder.name),
+        b: common_vendor.o(($event) => $options.openAddItemDialog("folders", index), index),
+        c: "96c6bf44-4-" + i0 + ",96c6bf44-3",
+        d: common_vendor.f(folder.items, (item, itemIndex, i1) => {
           return {
-            a: item.avatar,
-            b: common_vendor.t(item.title),
-            c: common_vendor.t(item.user_id[0] ? item.user_id[0].nickname : ""),
-            d: "96c6bf44-5-" + i0 + "-" + i1 + "," + ("96c6bf44-4-" + i0 + "-" + i1),
+            a: item.icon,
+            b: common_vendor.t(item.name),
+            c: common_vendor.o(($event) => $options.navigateToGrid(item), itemIndex),
+            d: "96c6bf44-6-" + i0 + "-" + i1 + "," + ("96c6bf44-5-" + i0),
             e: common_vendor.p({
-              date: item.last_modify_date,
-              format: "yyyy-MM-dd",
-              threshold: [6e4, 2592e6]
+              ["right-options"]: $options.getRightOptions("folders", index, itemIndex)
             }),
-            f: index,
-            g: "96c6bf44-4-" + i0 + "-" + i1 + "," + ("96c6bf44-3-" + i0),
-            h: common_vendor.p({
-              to: "/pages/list/detail?id=" + item._id + "&title=" + item.title
-            })
+            f: itemIndex,
+            g: common_vendor.o(($event) => $options.handleCollapseItemClickone(item), itemIndex)
           };
         }),
-        b: "96c6bf44-6-" + i0 + "," + ("96c6bf44-3-" + i0),
-        c: common_vendor.p({
-          state: {
-            data,
-            pagination,
-            hasMore,
-            loading,
-            error
-          }
+        e: "96c6bf44-5-" + i0 + ",96c6bf44-3",
+        f: common_vendor.p({
+          title: folder.name
         }),
-        d: "96c6bf44-3-" + i0 + ",96c6bf44-2",
-        e: i0,
-        f: s0
+        g: index
       };
-    }, {
-      name: "d",
-      path: "e",
-      vueId: "96c6bf44-2"
     }),
-    f: common_vendor.o($options.refresh),
-    g: common_vendor.o($options.loadMore),
-    h: $data.listHight,
     i: common_vendor.p({
-      border: false
+      type: "plus",
+      size: "30"
     }),
-    j: common_vendor.sr("udb", "96c6bf44-2"),
-    k: common_vendor.o($options.onqueryerror),
-    l: common_vendor.p({
-      collection: $options.colList,
-      ["page-size"]: 10
+    j: common_vendor.f($data.sharedFolders, (folder, index, i0) => {
+      return {
+        a: common_vendor.t(folder.name),
+        b: common_vendor.o(($event) => $options.openAddItemDialog("sharedFolders", index), index),
+        c: "96c6bf44-8-" + i0 + ",96c6bf44-7",
+        d: common_vendor.f(folder.items, (item, itemIndex, i1) => {
+          return {
+            a: item.icon,
+            b: common_vendor.t(item.name),
+            c: common_vendor.o(($event) => $options.navigateToGrid(item), itemIndex),
+            d: "96c6bf44-10-" + i0 + "-" + i1 + "," + ("96c6bf44-9-" + i0),
+            e: common_vendor.p({
+              ["right-options"]: $options.getRightOptions("sharedFolders", index, itemIndex)
+            }),
+            f: itemIndex,
+            g: common_vendor.o(($event) => $options.handleCollapseItemClicktwo(item), itemIndex)
+          };
+        }),
+        e: "96c6bf44-9-" + i0 + ",96c6bf44-7",
+        f: common_vendor.p({
+          title: folder.name
+        }),
+        g: index
+      };
+    }),
+    k: common_vendor.p({
+      type: "plus",
+      size: "30"
+    }),
+    l: common_vendor.f($data.utilities, (folder, index, i0) => {
+      return {
+        a: common_vendor.t(folder.name),
+        b: common_vendor.f(folder.items, (item, itemIndex, i1) => {
+          return {
+            a: item.icon,
+            b: common_vendor.t(item.name),
+            c: common_vendor.o(($event) => $options.navigateToGrid(item), itemIndex),
+            d: "96c6bf44-13-" + i0 + "-" + i1 + "," + ("96c6bf44-12-" + i0),
+            e: common_vendor.p({
+              ["right-options"]: $options.getRightOptions("utilities", index, itemIndex)
+            }),
+            f: itemIndex,
+            g: common_vendor.o(($event) => $options.handleCollapseItemClick(item), itemIndex)
+          };
+        }),
+        c: "96c6bf44-12-" + i0 + ",96c6bf44-11",
+        d: common_vendor.p({
+          title: folder.name
+        }),
+        e: index
+      };
+    }),
+    m: $data.showPopup
+  }, $data.showPopup ? common_vendor.e({
+    n: common_vendor.o((...args) => $options.cancelAddItem && $options.cancelAddItem(...args)),
+    o: common_vendor.o((...args) => $options.addItem && $options.addItem(...args)),
+    p: common_vendor.o((...args) => $options.toggleColorPicker && $options.toggleColorPicker(...args)),
+    q: $data.newItemName,
+    r: common_vendor.o(($event) => $data.newItemName = $event.detail.value),
+    s: $data.showColorPicker
+  }, $data.showColorPicker ? {
+    t: common_vendor.f($data.colors, (color, k0, i0) => {
+      return {
+        a: color,
+        b: color,
+        c: common_vendor.o(($event) => $options.selectColor(color), color)
+      };
     })
-  };
+  } : {}) : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-96c6bf44"], ["__file", "D:/project/CoHub/CoHub/pages/list/list.nvue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-96c6bf44"], ["__file", "D:/Download/CoHub/CoHub/pages/list/list.nvue"]]);
 wx.createPage(MiniProgramPage);

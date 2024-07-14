@@ -68,7 +68,7 @@ const _sfc_main = {
       if (!this.isPhone) {
         this.focusPhone = true;
         return common_vendor.index.showToast({
-          title: "手机号码格式不正确",
+          title: "Mobile phone number format is incorrect",
           icon: "none",
           duration: 3e3
         });
@@ -88,7 +88,7 @@ const _sfc_main = {
     },
     chooseArea() {
       common_vendor.index.showToast({
-        title: "暂不支持其他国家",
+        title: "Other countries are not supported yet",
         icon: "none",
         duration: 3e3
       });
@@ -132,7 +132,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       type: "number",
       inputBorder: false,
       maxlength: "11",
-      placeholder: "请输入手机号",
+      placeholder: "Please enter phone number",
       modelValue: $data.phone
     }),
     m: common_vendor.sr("agreements", "f1f87fcd-2"),
@@ -144,5 +144,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     p: common_vendor.sr("uniFabLogin", "f1f87fcd-3")
   });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-f1f87fcd"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-withoutpwd.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-f1f87fcd"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-withoutpwd.vue"]]);
 wx.createPage(MiniProgramPage);

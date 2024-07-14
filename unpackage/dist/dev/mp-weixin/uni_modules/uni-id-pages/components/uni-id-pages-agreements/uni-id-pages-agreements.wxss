@@ -43,7 +43,7 @@ view.data-v-40b82fe9 {
   flex-direction: row;
 }
 .text.data-v-40b82fe9 {
-  line-height: 26px;
+  line-height: 25px;
 }
 .agreement.data-v-40b82fe9 {
   color: #04498c;

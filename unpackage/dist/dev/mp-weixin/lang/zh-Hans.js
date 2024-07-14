@@ -1,6 +1,6 @@
 "use strict";
 const zhHans = {
-  tabbar: "列表,宫格,通讯录,我的",
+  tabbar: "列表,宫格,宫格多,我的",
   agreementsTitle: "用户服务协议,隐私政策",
   common: {
     wechatFriends: "微信好友",
@@ -45,6 +45,14 @@ const zhHans = {
   },
   grid: {
     grid: "宫格组件",
+    visibleToAll: "所有人可见",
+    invisibleToTourists: "游客不可见",
+    adminVisible: "管理员可见",
+    clickTip: "点击第",
+    clickTipGrid: "个宫格"
+  },
+  gridmul: {
+    gridmul: "宫格组件",
     visibleToAll: "所有人可见",
     invisibleToTourists: "游客不可见",
     adminVisible: "管理员可见",

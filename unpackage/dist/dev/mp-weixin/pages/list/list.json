@@ -3,11 +3,11 @@
   "navigationStyle": "custom",
   "usingComponents": {
     "status-bar": "../../uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar",
+    "cmd-nav-bar": "../../components/cmd-nav-bar/cmd-nav-bar",
     "uni-search-bar": "../../uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar",
-    "uni-dateformat": "../../uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat",
-    "uni-list-item": "../../uni_modules/uni-list/components/uni-list-item/uni-list-item",
-    "uni-load-state": "../../components/uni-load-state/uni-load-state",
-    "uni-list": "../../uni_modules/uni-list/components/uni-list/uni-list",
-    "unicloud-db": "../../node-modules/@dcloudio/uni-components/lib/unicloud-db/unicloud-db"
+    "uni-icons": "../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "uni-swipe-action-item": "../../uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item",
+    "uni-collapse-item": "../../uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item",
+    "uni-collapse": "../../uni_modules/uni-collapse/components/uni-collapse/uni-collapse"
   }
 }

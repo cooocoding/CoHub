@@ -76,7 +76,7 @@ page.data-v-b6546e32 {
   margin-bottom: 6px;
 }
 .uni-grid .text.data-v-b6546e32 {
-  font-size: 16px;
+  font-size: 20px;
   height: 25px;
   line-height: 25px;
   color: #817f82;

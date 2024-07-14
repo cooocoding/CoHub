@@ -44,7 +44,7 @@ const _sfc_main = {
       if (!this.certifyIdNext)
         return;
       return common_vendor.index.showModal({
-        content: "暂不支持实名认证",
+        content: "Real-name authentication is not supported yet",
         showCancel: false
       });
     },
@@ -56,7 +56,7 @@ const _sfc_main = {
       });
       try {
         common_vendor.index.showLoading({
-          title: "验证中...",
+          title: "Verifying...",
           mask: false
         });
         const res = await uniIdCo2.getFrvAuthResult({
@@ -67,10 +67,10 @@ const _sfc_main = {
           ...rest
         } = res;
         if (this.verifyFailContent) {
-          console.log(`[frv-debug] 客户端刷脸失败，由实人认证服务查询具体原因，原因：${this.verifyFailContent}`);
+          console.log(`[frv-debug] The client fails to scan the face. The real person authentication service will query the specific reason. The reason is:${this.verifyFailContent}`);
         }
         common_vendor.index.showModal({
-          content: "实名认证成功",
+          content: "Real-name authentication successful",
           showCancel: false,
           success: () => {
             uni_modules_uniIdPages_common_store.mutations.setUserInfo({
@@ -122,11 +122,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     a: $options.isCertify
   }, $options.isCertify ? {
     b: common_vendor.p({
-      title: "姓名",
+      title: "Name",
       rightText: $options.userInfo.realNameAuth.realName
     }),
     c: common_vendor.p({
-      title: "身份证号码",
+      title: "ID",
       rightText: $options.userInfo.realNameAuth.identity
     })
   } : common_vendor.e({
@@ -145,7 +145,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   }, $options.isDev ? {} : {}) : {
     l: common_vendor.o(($event) => $data.realName = $event),
     m: common_vendor.p({
-      placeholder: "姓名",
+      placeholder: "Name",
       clearable: false,
       modelValue: $data.realName
     }),
@@ -154,14 +154,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     o: common_vendor.o(($event) => $data.idCard = $event),
     p: common_vendor.p({
-      placeholder: "身份证号码",
+      placeholder: "ID",
       clearable: false,
       modelValue: $data.idCard
     }),
     q: common_vendor.p({
       name: "idCard"
     }),
-    r: common_vendor.sr("agreements", "b1254e48-8"),
+    r: common_vendor.sr("agreements", "442a3f51-8"),
     s: common_vendor.p({
       scope: "realNameVerify"
     }),
@@ -169,5 +169,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     v: common_vendor.o((...args) => $options.getCertifyId && $options.getCertifyId(...args))
   }));
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify.vue"]]);
 wx.createPage(MiniProgramPage);

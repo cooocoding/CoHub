@@ -15,11 +15,11 @@ const _sfc_main = {
       return [
         {
           url: serviceUrl,
-          title: "用户服务协议"
+          title: "User Services Agreement"
         },
         {
           url: privacyUrl,
-          title: "隐私政策条款"
+          title: "Privacy Policy Terms"
         }
       ];
     },
@@ -37,19 +37,19 @@ const _sfc_main = {
       servicesList: [
         {
           "id": "username",
-          "text": "账号登录",
+          "text": "Account login",
           "logo": "/uni_modules/uni-id-pages/static/login/uni-fab-login/user.png",
           "path": "/uni_modules/uni-id-pages/pages/login/login-withpwd"
         },
         {
           "id": "smsCode",
-          "text": "短信验证码",
+          "text": "SMS verification code",
           "logo": "/uni_modules/uni-id-pages/static/login/uni-fab-login/sms.png",
           "path": "/uni_modules/uni-id-pages/pages/login/login-withoutpwd?type=smsCode"
         },
         {
           "id": "weixin",
-          "text": "微信登录",
+          "text": "WeChat login",
           "logo": "/uni_modules/uni-id-pages/static/login/uni-fab-login/weixin.png"
         }
       ],
@@ -72,9 +72,9 @@ const _sfc_main = {
           // 文字颜色 默认值：#BBBBBB
           "termsColor": "#5496E3",
           //  协议文字颜色 默认值： #5496E3
-          "prefix": "我已阅读并同意",
+          "prefix": "I have read and agree",
           // 条款前的文案 默认值：“我已阅读并同意”
-          "suffix": "并使用本机号码登录",
+          "suffix": "and log in using your own number",
           // 条款后的文案 默认值：“并使用本机号码登录”
           "privacyItems": []
         }
@@ -154,7 +154,7 @@ const _sfc_main = {
           });
         }
       } else {
-        console.log("出乎意料的情况,path：" + path);
+        console.log("unexpected situation, path：" + path);
       }
     },
     async login_before(type, navigateBack = true, options = {}) {
@@ -171,7 +171,7 @@ const _sfc_main = {
         "douyin"
       ].includes(type)) {
         return common_vendor.index.showToast({
-          title: "该登录方式暂未实现，欢迎提交pr",
+          title: "This login method has not been implemented yet, welcome to submit pr",
           icon: "none",
           duration: 3e3
         });
@@ -181,7 +181,7 @@ const _sfc_main = {
         ["univerify", "apple"].includes(type)
       ) {
         return common_vendor.index.showToast({
-          title: "当前设备不支持此登录，请选择其他登录方式",
+          title: "The current device does not support this login, please choose another login method",
           icon: "none",
           duration: 3e3
         });
@@ -205,7 +205,7 @@ const _sfc_main = {
         let univerifyManager = common_vendor.index.getUniverifyManager();
         let clickAnotherButtons = false;
         let onButtonsClickFn = async (res) => {
-          console.log("点击了第三方登录，provider：", res, res.provider, this.univerifyStyle.buttons.list);
+          console.log("Clicked on third-party login，provider：", res, res.provider, this.univerifyStyle.buttons.list);
           clickAnotherButtons = true;
           let checkBoxState = await common_vendor.index.getCheckBoxState();
           this.agree = checkBoxState.state;
@@ -226,7 +226,7 @@ const _sfc_main = {
               }, 500);
             } else {
               common_vendor.index.showToast({
-                title: "你未同意隐私政策协议",
+                title: "You have not agreed to the Privacy Policy Agreement",
                 icon: "none",
                 duration: 3e3
               });
@@ -285,7 +285,7 @@ const _sfc_main = {
       });
       uniIdCo[action](params).then((result) => {
         common_vendor.index.showToast({
-          title: "登录成功",
+          title: "Login successfully",
           icon: "none",
           duration: 2e3
         });
@@ -293,7 +293,7 @@ const _sfc_main = {
       }).catch((e) => {
         common_vendor.index.showModal({
           content: e.message,
-          confirmText: "知道了",
+          confirmText: "Got",
           showCancel: false
         });
       }).finally((e) => {
@@ -334,5 +334,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login.vue"]]);
 wx.createComponent(Component);

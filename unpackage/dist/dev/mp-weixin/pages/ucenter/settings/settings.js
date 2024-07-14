@@ -37,6 +37,11 @@ const _sfc_main = {
   onShow() {
   },
   methods: {
+    goToUserInfoPage() {
+      common_vendor.index.navigateTo({
+        url: "/uni_modules/uni-id-pages/pages/userinfo/userinfo"
+      });
+    },
     async changeLoginState() {
       if (this.hasLogin) {
         await uni_modules_uniIdPages_common_store.mutations.logout();
@@ -194,57 +199,49 @@ if (!Math) {
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
     a: common_vendor.p({
-      title: _ctx.$t("settings.userInfo"),
       to: "/uni_modules/uni-id-pages/pages/userinfo/userinfo",
       link: "navigateTo"
     }),
-    b: $data.userInfo.mobile
+    b: common_vendor.o((...args) => $options.goToUserInfoPage && $options.goToUserInfoPage(...args)),
+    c: $data.userInfo.mobile
   }, $data.userInfo.mobile ? {
-    c: common_vendor.p({
+    d: common_vendor.p({
       title: _ctx.$t("settings.changePassword"),
       to: "/pages/ucenter/login-page/pwd-retrieve/pwd-retrieve?phoneNumber=" + $data.userInfo.mobile,
       link: "navigateTo"
     })
   } : {}, {
-    d: common_vendor.p({
+    e: common_vendor.p({
       border: false
     }),
-    e: $data.supportMode.includes("fingerPrint")
-  }, $data.supportMode.includes("fingerPrint") ? {
-    f: common_vendor.o(($event) => $options.startSoterAuthentication("fingerPrint")),
-    g: common_vendor.p({
-      title: _ctx.$t("settings.fingerPrint"),
-      link: true
-    })
-  } : {}, {
-    h: $data.supportMode.includes("facial")
+    f: $data.supportMode.includes("facial")
   }, $data.supportMode.includes("facial") ? {
-    i: common_vendor.o(($event) => $options.startSoterAuthentication("facial")),
-    j: common_vendor.p({
+    g: common_vendor.o(($event) => $options.startSoterAuthentication("facial")),
+    h: common_vendor.p({
       title: _ctx.$t("settings.facial"),
       link: true
     })
   } : {}, {
-    k: $options.i18nEnable
+    i: $options.i18nEnable
   }, $options.i18nEnable ? {
-    l: common_vendor.o($options.changeLanguage),
-    m: common_vendor.p({
+    j: common_vendor.o($options.changeLanguage),
+    k: common_vendor.p({
       title: _ctx.$t("settings.changeLanguage"),
       rightText: $data.currentLanguage,
       link: true
     })
   } : {}, {
-    n: common_vendor.p({
+    l: common_vendor.p({
       border: false
     }),
-    o: $options.hasLogin
+    m: $options.hasLogin
   }, $options.hasLogin ? {
-    p: common_vendor.t(_ctx.$t("settings.logOut"))
+    n: common_vendor.t(_ctx.$t("settings.logOut"))
   } : {
-    q: common_vendor.t(_ctx.$t("settings.login"))
+    o: common_vendor.t(_ctx.$t("settings.login"))
   }, {
-    r: common_vendor.o((...args) => $options.changeLoginState && $options.changeLoginState(...args))
+    p: common_vendor.o((...args) => $options.changeLoginState && $options.changeLoginState(...args))
   });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/settings/settings.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/pages/ucenter/settings/settings.vue"]]);
 wx.createPage(MiniProgramPage);

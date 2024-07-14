@@ -6,24 +6,6 @@ const db = common_vendor.Ws.database();
 const _sfc_main = {
   data() {
     return {
-      gridList: [
-        {
-          "text": this.$t("mine.showText"),
-          "icon": "chat"
-        },
-        {
-          "text": this.$t("mine.showText"),
-          "icon": "cloud-upload"
-        },
-        {
-          "text": this.$t("mine.showText"),
-          "icon": "contact"
-        },
-        {
-          "text": this.$t("mine.showText"),
-          "icon": "download"
-        }
-      ],
       ucenterList: [
         [
           {
@@ -219,7 +201,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     g: common_vendor.t(_ctx.$t("mine.notLogged"))
   }, {
     h: common_vendor.o((...args) => $options.toUserInfo && $options.toUserInfo(...args)),
-    i: common_vendor.f($data.gridList, (item, index, i0) => {
+    i: common_vendor.f(_ctx.gridList, (item, index, i0) => {
       return {
         a: "b6546e32-5-" + i0 + "," + ("b6546e32-4-" + i0),
         b: common_vendor.p({
@@ -269,5 +251,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-b6546e32"], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/ucenter.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-b6546e32"], ["__file", "D:/Download/CoHub/CoHub/pages/ucenter/ucenter.vue"]]);
 wx.createPage(MiniProgramPage);

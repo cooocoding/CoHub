@@ -59,23 +59,6 @@
 		// #endif
 		data() {
 			return {
-				gridList: [{
-						"text": this.$t('mine.showText'),
-						"icon": "chat"
-					},
-					{
-						"text": this.$t('mine.showText'),
-						"icon": "cloud-upload"
-					},
-					{
-						"text": this.$t('mine.showText'),
-						"icon": "contact"
-					},
-					{
-						"text": this.$t('mine.showText'),
-						"icon": "download"
-					}
-				],
 				ucenterList: [
 					[
 						// #ifdef APP-PLUS

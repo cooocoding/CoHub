@@ -18,11 +18,11 @@ const _sfc_main = {
     return {
       univerifyStyle: {
         authButton: {
-          "title": "本机号码一键绑定"
+          "title": "Bind local number with one click"
           // 授权按钮文案
         },
         otherLoginButton: {
-          "title": "其他号码绑定"
+          "title": "Bind local number"
         }
       },
       // userInfo: {
@@ -36,8 +36,8 @@ const _sfc_main = {
     };
   },
   async onShow() {
-    this.univerifyStyle.authButton.title = "本机号码一键绑定";
-    this.univerifyStyle.otherLoginButton.title = "其他号码绑定";
+    this.univerifyStyle.authButton.title = "Bind local number with one click";
+    this.univerifyStyle.otherLoginButton.title = "Bind other number";
   },
   async onLoad(e) {
     if (e.showLoginManage) {
@@ -133,7 +133,7 @@ const _sfc_main = {
             });
             if (res.errCode) {
               common_vendor.index.showToast({
-                title: res.errMsg || "绑定失败",
+                title: res.errMsg || "Binding failed",
                 duration: 3e3
               });
             }
@@ -179,20 +179,20 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     b: common_vendor.o(($event) => $options.setNickname("")),
     c: common_vendor.p({
-      title: "昵称",
-      rightText: $options.userInfo.nickname || "未设置",
+      title: "Nickname",
+      rightText: $options.userInfo.nickname || "Not set",
       link: true
     }),
     d: common_vendor.o($options.bindMobile),
     e: common_vendor.p({
-      title: "手机号",
-      rightText: $options.userInfo.mobile || "未绑定",
+      title: "Phone number",
+      rightText: $options.userInfo.mobile || "Not bined",
       link: true
     }),
     f: $options.userInfo.email
   }, $options.userInfo.email ? {
     g: common_vendor.p({
-      title: "电子邮箱",
+      title: "Mail address",
       rightText: $options.userInfo.email
     })
   } : {}, {
@@ -200,7 +200,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   }, $data.hasPwd ? {
     i: common_vendor.o($options.changePassword),
     j: common_vendor.p({
-      title: "修改密码",
+      title: "Change password",
       link: true
     })
   } : {}, {
@@ -209,8 +209,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       mode: "input",
       value: $options.userInfo.nickname,
       inputType: $data.setNicknameIng ? "nickname" : "text",
-      title: "设置昵称",
-      placeholder: "请输入要设置的昵称"
+      title: "Set nickname",
+      placeholder: "Please enter the nickname you want to set"
     }),
     m: common_vendor.sr("dialog", "0be2f605-6"),
     n: common_vendor.p({
@@ -227,5 +227,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     t: common_vendor.o((...args) => $options.login && $options.login(...args))
   }) : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-0be2f605"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/userinfo.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-0be2f605"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/userinfo.vue"]]);
 wx.createPage(MiniProgramPage);

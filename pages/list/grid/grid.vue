@@ -13,33 +13,21 @@
 			<view class="goods-header-item" :class="{'goods-header-item-action' : 1 == goodsNav}" >Folder Name</view>
 		</view> 
 
-	    <!-- 筛选 -->
-	    <view class="control-bar">
-		    <view class="control-button" :class="{ active: sortByLatest }" @click="toggleSortByLatest">
-			  <uni-icons type="refreshempty" size="20"></uni-icons>
-			      Latest
-		    </view>
-		    <view class="control-buttontext" :class="{ active: isListView }" @click="toggleView">
-				<uni-icons :type="isListView ? 'list' : 'tune'" size="20"></uni-icons>
-		            {{ isListView ? 'List' : 'Filter' }}
-	        </view>
-	    </view>
-		
 		<!-- 收藏页面 -->
 		<view 
-			v-for="(item, index) in sortedGoodsList" 
+			v-for="(item, index) in goodsList" 
 			:key="item.id"
 			class="goods-item-wrap"
 			:class="{'selected': selectedItems.includes(item.id)}"
 			@click="handleClick(item.id)"
 			@longpress="handleLongPress(item.id)"
 		  >
-			<image v-if="!isListView" :src="item.image" class="goods-image" />
+			<image :src="item.image" class="goods-image" />
 
 			<view class="goods-content-wrap">
 				<view class="goods-name">{{ item.name }}</view>
 
-				<view v-if="!isListView" class="goods-stock-wrap">
+				<view class="goods-stock-wrap">
 					<view class="goods-stock">Main contents extracted from the collection.</view>
 				</view>
 
@@ -137,7 +125,7 @@
 						image: "/static/pic/13.png",
 						name: "👋 Title for Collection 1",
 						tags: ["Tag1", "Tag2"],
-						date: "2021/01/09",
+						date: "2022/01/09",
 						link: "https://example.com/link1"
 					},
 					{
@@ -159,9 +147,7 @@
 				newTitle: '',
 				editingItemId: null,
 		        startX: 0,
-		        startY: 0,
-				sortByLatest: true,
-				isListView: false,
+		        startY: 0
 			}
 		},
 		onLoad() {
@@ -170,20 +156,8 @@
 	    computed: {
 	      isAnyItemSelected() {
 	        return this.selectedItems.length > 0;
-	      },
-	    
-		sortedGoodsList() {
-		  let sortedList = [...this.goodsList];
-		  if (this.sortByLatest) {
-			// 按日期倒序排序
-			sortedList.sort((a, b) => new Date(b.date) - new Date(a.date));
-		  } else {
-			// 按标题字母排序
-			sortedList.sort((a, b) => a.name.localeCompare(b.name));
-		  }
-		  return sortedList;
-		}
-	  },
+	      }
+	    },
 		methods: {
 			handleClick(id) {
 				if (this.isSelectionMode) {
@@ -306,61 +280,12 @@
 			},
 		    addItem(newItem) {
 		      this.goodsList.push(newItem);
-		    },
-		    toggleSortByLatest() {
-		      this.sortByLatest = !this.sortByLatest;
-		    },
-		    toggleView() {
-		      this.isListView = !this.isListView;
-		    },
+		    }
 		}
 	}
 </script>
 
 <style scoped>
-	.control-bar {
-	  width: 85%;
-      height: 14px;
-	  margin-left: 18px;
-	  margin-top: 10px;
-	  border-radius: 40rpx;
-	  background-color: #E4E4E5;
-	  display: flex;
-	  align-items: center;
-	  justify-content: space-between;
-	  padding: 12px;
-	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	}
-	.control-button {
-	  width: 95%;
-	  height: 14px;
-	  border-radius: 35rpx;
-	  font-size: 14px;
-	  cursor: pointer;
-	  padding: 8px 16px;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  background-color: #E4E4E5;
-	}
-	.control-button.active {
-	  background-color: #ffffff;
-	}
-	.control-buttontext {
-	  width: 95%;
-	  height: 14px;
-	  border-radius: 40rpx;
-	  font-size: 14px;
-	  cursor: pointer;
-	  padding: 8px 16px;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  background-color: #E4E4E5;
-	}
-	.control-buttontext.active {
-	  background-color: #E4E4E5;
-	}
 	.pages {
 		background-color: #F2F2F6;
 	}
@@ -438,7 +363,6 @@
 	}
 
 	.goods-header-wrap {
-		margin-top: -10px;
 		display: flex;
 		align-items: center;
 		padding: 24rpx;

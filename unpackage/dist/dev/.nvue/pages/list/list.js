@@ -59,7 +59,7 @@ function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     /* CLASS, STYLE */
   );
 }
-const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$6], ["styles", [_style_0$6]], ["__file", "D:/project/CoHub/CoHub/components/cmd-icon/cmd-icon.vue"]]);
+const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$6], ["styles", [_style_0$6]], ["__file", "D:/Download/CoHub/CoHub/components/cmd-icon/cmd-icon.vue"]]);
 const _style_0$5 = { "cmd-nav-bar-fixed": { "": { "position": "fixed", "top": 0, "left": 0, "right": 0, "zIndex": 1e3, "backgroundColor": "#ffffff" } }, "status-bar": { "": { "boxSizing": "border-box", "width": 80, "fontSize": 55, "marginBottom": "-3rpx", "backgroundColor": "rgba(0,0,0,0)" } }, "left-title": { "": { "fontWeight": "bold" } }, "cmd-nav-bar": { "": { "display": "flex", "alignItems": "center", "height": "120rpx", "lineHeight": "120rpx", "color": "#000000", "backgroundColor": "#ffffff", "boxShadow": "0 6rpx 6rpx -3rpx rgba(0, 0, 0, 0.2)" } }, "cmd-nav-bar-left": { "": { "flex": 1, "height": 100, "display": "flex", "fontSize": 55, "justifyContent": "flex-start", "fontWeight": "900", "paddingTop": 16, "paddingLeft": -150 } }, "cmd-nav-bar-title": { "": { "flex": 1, "height": 100, "display": "flex", "fontSize": 55, "justifyContent": "center", "fontWeight": "bold", "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "cmd-nav-bar-right": { "": { "flex": 1, "height": 100, "display": "flex", "fontSize": 55, "justifyContent": "flex-end", "marginRight": "30rpx" } }, "cmd-nav-bar-left-icon": { "": { "marginRight": "10rpx" } }, "cmd-nav-bar-left-title": { "": { "fontSize": 50, "fontWeight": "bold", "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "cmd-nav-bar-right-icon": { "": { "marginLeft": "20rpx", "fontWeight": "900" } }, "cmd-nav-bar-right-text": { "": { "marginLeft": "20rpx", "fontWeight": "900" } }, "cmd-nav-bar-avatar-container": { "": { "display": "flex" } }, "cmd-nav-bar-avatar": { "": { "width": "20rpx", "height": "20rpx", "borderRadius": 5, "marginLeft": "600rpx", "marginBottom": "20rpx" } } };
 const _sfc_main$5 = {
   name: "cmd-nav-bar",
@@ -372,7 +372,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     /* CLASS, STYLE */
   );
 }
-const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$5], ["styles", [_style_0$5]], ["__file", "D:/project/CoHub/CoHub/components/cmd-nav-bar/cmd-nav-bar.vue"]]);
+const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$5], ["styles", [_style_0$5]], ["__file", "D:/Download/CoHub/CoHub/components/cmd-nav-bar/cmd-nav-bar.vue"]]);
 let mpMixins = {};
 let bindIngXMixins = {};
 const BindingX = requireNativePlugin("bindingx");
@@ -853,7 +853,7 @@ if (typeof block0 === "function")
   block0(_sfc_main$4);
 if (typeof block1 === "function")
   block1(_sfc_main$4);
-const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4], ["styles", [_style_0$4]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.vue"]]);
+const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4], ["styles", [_style_0$4]], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.vue"]]);
 const _style_0$3 = { "uni-collapse-item__title": { "": { "flexDirection": "row", "alignItems": "center", "transitionProperty": "borderBottomColor", "transitionDuration": 300 }, ".uni-collapse-item-border": { "borderBottomWidth": 1, "borderBottomStyle": "solid", "borderBottomColor": "#ebeef5" }, ".is-open": { "borderBottomColor": "rgba(0,0,0,0)" } }, "uni-collapse-item__title-wrap": { "": { "width": 100, "flex": 1 } }, "uni-collapse-item__title-box": { "": { "paddingTop": 0, "paddingRight": 15, "paddingBottom": 0, "paddingLeft": 15, "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "height": 48, "lineHeight": 48, "backgroundColor": "#ffffff", "color": "#303133", "fontSize": 13, "fontWeight": "500" } }, "uni-collapse-item__title-text": { ".uni-collapse-item__title-box.is-disabled ": { "color": "#999999" }, "": { "flex": 1, "fontSize": 14, "lines": 1, "overflow": "hidden", "textOverflow": "ellipsis" } }, "uni-collapse-item__title-img": { "": { "height": 22, "width": 22, "marginRight": 10 } }, "uni-collapse-item__title-arrow": { "": { "alignItems": "center", "justifyContent": "center", "width": 20, "height": 20, "marginRight": 10, "transform": "rotate(0deg)" } }, "uni-collapse-item__title-arrow-active": { "": { "transform": "rotate(-180deg)" } }, "uni-collapse-item__wrap": { "": { "backgroundColor": "#ffffff", "overflow": "hidden", "position": "relative", "height": 0 }, ".is--transition": { "transitionProperty": "height,borderBottomWidth", "transitionDuration": 300 } }, "uni-collapse-item__wrap-content": { "": { "position": "absolute", "fontSize": 13, "color": "#303133", "borderBottomColor": "rgba(0,0,0,0)", "borderBottomStyle": "solid", "borderBottomWidth": 0 }, ".uni-collapse-item--border": { "borderBottomWidth": 1, "borderBottomColor": "#ebeef5" }, ".open": { "position": "relative" } }, "uni-collapse-item--animation": { "": { "transitionProperty": "transform", "transitionDuration": 300, "transitionTimingFunction": "ease" } }, "@TRANSITION": { "uni-collapse-item__title": { "property": "borderBottomColor", "duration": 300 }, "uni-collapse-item__wrap": { "property": "height,borderBottomWidth", "duration": 300 }, "uni-collapse-item--animation": { "property": "transform", "duration": 300, "timingFunction": "ease" } } };
 const dom = weex.requireModule("dom");
 const _sfc_main$3 = {
@@ -1106,7 +1106,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
     )
   ]);
 }
-const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["styles", [_style_0$3]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue"]]);
+const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["styles", [_style_0$3]], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue"]]);
 const _style_0$2 = { "uni-collapse": { "": { "flex": 1, "flexDirection": "column", "backgroundColor": "#ffffff" } } };
 const _sfc_main$2 = {
   name: "uniCollapse",
@@ -1227,7 +1227,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     renderSlot(_ctx.$slots, "default")
   ]);
 }
-const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["styles", [_style_0$2]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue"]]);
+const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["styles", [_style_0$2]], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue"]]);
 const _style_0$1 = { "uni-status-bar": { "": { "height": 20 } } };
 const _sfc_main$1 = {
   name: "UniStatusBar",
@@ -1252,7 +1252,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     /* STYLE */
   );
 }
-const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["styles", [_style_0$1]], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["styles", [_style_0$1]], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
 var isIos;
 isIos = plus.os.name == "iOS";
 function judgeIosPermissionPush() {
@@ -1598,7 +1598,7 @@ const _sfc_main = {
             width: "100%",
             margin: "0"
           },
-          click: (folderType, folderIndex, itemIndex) => this.handleEdit(folderType, folderIndex, itemIndex)
+          click: "handleEdit"
         },
         {
           text: "Archived",
@@ -1606,7 +1606,7 @@ const _sfc_main = {
             backgroundColor: "#979797",
             color: "#FFFFFF"
           },
-          click: (folderType, folderIndex, itemIndex) => this.handleArchived(folderType, folderIndex, itemIndex)
+          click: "handleArchived"
         },
         {
           text: "Delete",
@@ -1614,17 +1614,14 @@ const _sfc_main = {
             backgroundColor: "#FF3B30",
             color: "#FFFFFF"
           },
-          click: (folderType, folderIndex, itemIndex) => this.handleDelete(folderType, folderIndex, itemIndex)
+          click: "handleDelete"
         }
       ],
       folders: [
         {
           name: "Folders",
           isExpanded: false,
-          items: [
-            { name: "Folder", icon: "/static/pic/10.png" },
-            { name: "Folder", icon: "/static/pic/10.png" }
-          ]
+          items: []
         }
       ],
       sharedFolders: [
@@ -1675,6 +1672,7 @@ const _sfc_main = {
     await gps.getLocation({
       geocode: true
     });
+    this.getFolders();
   },
   onLoad() {
     cdbRef = this;
@@ -1682,6 +1680,29 @@ const _sfc_main = {
     this.getListData();
   },
   methods: {
+    async getFolders() {
+      try {
+        const { data } = await uni.request({
+          url: "https://172.20.10.14:8000/backend/profile/" + JSON.parse(uni.getStorageSync("uni_id")) + "/folders/",
+          method: "GET",
+          header: {
+            "content-type": "application/json"
+            // 默认值
+          }
+        });
+        formatAppLog("log", "at pages/list/list.nvue:272", data);
+        if (data && data.response) {
+          this.folders[0].items = response.item;
+        }
+      } catch (error) {
+        formatAppLog("error", "at pages/list/list.nvue:277", "登录失败:", error);
+        uni.showToast({
+          title: "网络错误",
+          icon: "none",
+          duration: 2e3
+        });
+      }
+    },
     goToAllInfoPage() {
       uni.navigateTo({
         url: "/pages/list/all/all"
@@ -1714,7 +1735,7 @@ const _sfc_main = {
       cdbRef.loadMore();
     },
     onqueryerror(e) {
-      formatAppLog("error", "at pages/list/list.nvue:299", e);
+      formatAppLog("error", "at pages/list/list.nvue:319", e);
     },
     onpullingdown(e) {
       this.showRefresh = true;
@@ -1748,12 +1769,32 @@ const _sfc_main = {
       this.currentFolderIndex = index;
       this.showPopup = true;
     },
-    addItem() {
+    async addItem() {
       if (this.newItemName.trim() !== "") {
-        this[this.currentFolderType][this.currentFolderIndex].items.push({
-          name: this.newItemName,
-          icon: this.getColorIcon(this.selectedColor)
-        });
+        try {
+          const { data } = await uni.request({
+            url: "http://127.0.0.1:8000/backend/profile/" + JSON.parse(uni.getStorageSync("uni_id")) + "/folder/create/",
+            method: "POST",
+            data: {
+              folderName: this.newItemName,
+              label: "Yellow"
+            },
+            header: {
+              "content-type": "application/json"
+              // 默认值
+            }
+          });
+          formatAppLog("log", "at pages/list/list.nvue:372", data);
+          if (data && data.response) {
+            this.getFolders();
+          }
+        } catch (error) {
+          uni.showToast({
+            title: "网络错误",
+            icon: "none",
+            duration: 2e3
+          });
+        }
         this.newItemName = "";
         this.selectedColor = this.colors[0];
         this.showPopup = false;
@@ -1784,18 +1825,18 @@ const _sfc_main = {
       return this.rightOptionsTemplate.map((option) => {
         return {
           ...option,
-          click: () => option.click(folderType, folderIndex, itemIndex)
+          click: () => this[option.click](folderType, folderIndex, itemIndex)
         };
       });
     },
     handleEdit(folderType, folderIndex, itemIndex) {
-      formatAppLog("log", "at pages/list/list.nvue:376", "Edit:", folderType, folderIndex, itemIndex);
+      formatAppLog("log", "at pages/list/list.nvue:420", "Edit:", folderType, folderIndex, itemIndex);
     },
     handleArchived(folderType, folderIndex, itemIndex) {
-      formatAppLog("log", "at pages/list/list.nvue:380", "Archived:", folderType, folderIndex, itemIndex);
+      formatAppLog("log", "at pages/list/list.nvue:424", "Archived:", folderType, folderIndex, itemIndex);
     },
     handleDelete(folderType, folderIndex, itemIndex) {
-      formatAppLog("log", "at pages/list/list.nvue:384", "Delete:", folderType, folderIndex, itemIndex);
+      formatAppLog("log", "at pages/list/list.nvue:428", "Delete:", folderType, folderIndex, itemIndex);
       this[folderType][folderIndex].items.splice(itemIndex, 1);
     }
   }
@@ -1883,7 +1924,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                     createElementVNode(
                       "u-text",
                       { class: "folder-title" },
-                      toDisplayString(folder.name),
+                      toDisplayString(folder.folderName),
                       1
                       /* TEXT */
                     ),
@@ -1895,7 +1936,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                     }, null, 8, ["onClick"])
                   ]),
                   createVNode(_component_uni_collapse_item, {
-                    title: folder.name
+                    title: folder.folderName
                   }, {
                     default: withCtx(() => [
                       createElementVNode("view", { class: "folder-content" }, [
@@ -2181,7 +2222,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-const list = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "D:/project/CoHub/CoHub/pages/list/list.nvue"]]);
+const list = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "D:/Download/CoHub/CoHub/pages/list/list.nvue"]]);
 export {
   list as default
 };

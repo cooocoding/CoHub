@@ -37,7 +37,7 @@ const _sfc_main = {
         if (this.formData.captcha.length != 4) {
           this.$refs.captcha.focusCaptchaInput = true;
           return common_vendor.index.showToast({
-            title: "请输入验证码",
+            title: "Please enter verification code",
             icon: "none",
             duration: 3e3
           });
@@ -101,7 +101,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     d: common_vendor.p({
       inputBorder: false,
       focus: $data.focusUsername,
-      placeholder: "请输入用户名",
+      placeholder: "Please enter user name",
       trim: "both",
       modelValue: $data.formData.username
     }),
@@ -114,7 +114,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     h: common_vendor.p({
       inputBorder: false,
       focus: $data.focusNickname,
-      placeholder: "请输入用户昵称",
+      placeholder: "Please enter user nickname",
       trim: "both",
       modelValue: $data.formData.nickname
     }),
@@ -127,7 +127,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       inputBorder: false,
       focus: $data.focusPassword,
       maxlength: "20",
-      placeholder: "请输入" + (_ctx.config.passwordStrength == "weak" ? "6" : "8") + "-16位密码",
+      placeholder: "Please input" + (_ctx.config.passwordStrength == "weak" ? "6" : "8") + "-16 digit password",
       type: "password",
       trim: "both",
       modelValue: $data.formData.password
@@ -143,7 +143,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     q: common_vendor.p({
       inputBorder: false,
       focus: $data.focusPassword2,
-      placeholder: "再次输入密码",
+      placeholder: "Enter password again",
       maxlength: "20",
       type: "password",
       trim: "both",
@@ -155,13 +155,13 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       required: true,
       modelValue: $data.formData.password2
     }),
-    t: common_vendor.sr("captcha", "c133bc50-10,c133bc50-9"),
+    t: common_vendor.sr("captcha", "1b77c9fa-10,1b77c9fa-9"),
     v: common_vendor.o(($event) => $data.formData.captcha = $event),
     w: common_vendor.p({
       scene: "register",
       modelValue: $data.formData.captcha
     }),
-    x: common_vendor.sr("agreements", "c133bc50-11,c133bc50-0"),
+    x: common_vendor.sr("agreements", "1b77c9fa-11,1b77c9fa-0"),
     y: common_vendor.p({
       scope: "register"
     }),
@@ -169,7 +169,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     A: common_vendor.o((...args) => $options.navigateBack && $options.navigateBack(...args)),
     B: common_vendor.o((...args) => $options.registerByEmail && $options.registerByEmail(...args)),
     C: common_vendor.o((...args) => $options.toLogin && $options.toLogin(...args)),
-    D: common_vendor.sr("form", "c133bc50-0"),
+    D: common_vendor.sr("form", "1b77c9fa-0"),
     E: common_vendor.p({
       value: $data.formData,
       rules: $data.rules,
@@ -178,5 +178,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/register/register.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/register/register.vue"]]);
 wx.createPage(MiniProgramPage);

@@ -7,8 +7,12 @@ const uni_modules_uniIdPages_init = require("./uni_modules/uni-id-pages/init.js"
 const lang_i18n = require("./lang/i18n.js");
 if (!Math) {
   "./pages/list/list.js";
-  "./pages/grid/grid.js";
+  "./pages/list/grid/grid.js";
+  "./pages/list/gridmul/gridmul.js";
   "./pages/list/search/search.js";
+  "./pages/list/archived/archived.js";
+  "./pages/list/all/all.js";
+  "./pages/list/delete/delete.js";
   "./pages/list/detail.js";
   "./pages/ucenter/ucenter.js";
   "./pages/uni-agree/uni-agree.js";
@@ -52,7 +56,7 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/project/CoHub/CoHub/App.vue"]]);
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/Download/CoHub/CoHub/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   app.use(lang_i18n.i18n);

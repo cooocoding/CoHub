@@ -4,15 +4,15 @@ const _sfc_main = {
   onLoad({ url, title }) {
     if (url.substring(0, 4) != "http") {
       common_vendor.index.showModal({
-        title: "错误",
-        content: '不是一个有效的网站链接,"' + url + '"',
+        title: "Error",
+        content: 'Not a valid website link,"' + url + '"',
         showCancel: false,
-        confirmText: "知道了",
+        confirmText: "OK",
         complete: () => {
           common_vendor.index.navigateBack();
         }
       });
-      title = "页面路径错误";
+      title = "Path error";
     } else {
       this.url = url;
     }
@@ -33,5 +33,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     b: $data.url
   } : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/common/webview/webview.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/common/webview/webview.vue"]]);
 wx.createPage(MiniProgramPage);

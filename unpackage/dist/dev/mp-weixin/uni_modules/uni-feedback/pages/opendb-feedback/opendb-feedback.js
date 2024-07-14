@@ -118,7 +118,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       label: "联系电话"
     }),
     m: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
-    n: common_vendor.sr("form", "22c152fe-0"),
+    n: common_vendor.sr("form", "061f2f28-0"),
     o: common_vendor.p({
       value: $data.formData,
       ["validate-trigger"]: "submit",
@@ -126,5 +126,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback.vue"]]);
 wx.createPage(MiniProgramPage);

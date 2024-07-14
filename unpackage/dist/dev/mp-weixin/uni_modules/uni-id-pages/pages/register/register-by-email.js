@@ -20,11 +20,11 @@ const _sfc_main = {
           rules: [
             {
               required: true,
-              errorMessage: "请输入邮箱"
+              errorMessage: "Please input your email"
             },
             {
               format: "email",
-              errorMessage: "邮箱格式不正确"
+              errorMessage: "E-mail format is incorrect"
             }
           ]
         },
@@ -33,35 +33,35 @@ const _sfc_main = {
             {
               minLength: 3,
               maxLength: 32,
-              errorMessage: "昵称长度在 {minLength} 到 {maxLength} 个字符"
+              errorMessage: "Nickname length is between {minLength} and {maxLength} characters"
             },
             {
               validateFunction: function(rule, value, data, callback) {
                 if (/^1\d{10}$/.test(value) || /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(value)) {
-                  callback("昵称不能是：手机号或邮箱");
+                  callback("Nickname cannot be: mobile phone number or email address");
                 }
                 if (/^\d+$/.test(value)) {
-                  callback("昵称不能为纯数字");
+                  callback("Nickname cannot be purely numeric");
                 }
                 if (/[\u4E00-\u9FA5\uF900-\uFA2D]{1,}/.test(value)) {
-                  callback("昵称不能包含中文");
+                  callback("Nickname cannot contain Chinese characters");
                 }
                 return true;
               }
             }
           ],
-          label: "昵称"
+          label: "Nickname"
         },
         ...uni_modules_uniIdPages_common_password.passwordMod.getPwdRules(),
         code: {
           rules: [
             {
               required: true,
-              errorMessage: "请输入邮箱验证码"
+              errorMessage: "Please enter the email verification code"
             },
             {
               pattern: /^.{6}$/,
-              errorMessage: "邮箱验证码不正确"
+              errorMessage: "Email verification code is incorrect"
             }
           ]
         }
@@ -146,7 +146,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     d: common_vendor.p({
       inputBorder: false,
       focus: $data.focusEmail,
-      placeholder: "请输入邮箱",
+      placeholder: "Please input your email",
       trim: "both",
       modelValue: $data.formData.email
     }),
@@ -159,7 +159,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     h: common_vendor.p({
       inputBorder: false,
       focus: $data.focusNickname,
-      placeholder: "请输入用户昵称",
+      placeholder: "Please enter user nickname",
       trim: "both",
       modelValue: $data.formData.nickname
     }),
@@ -172,7 +172,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       inputBorder: false,
       focus: $data.focusPassword,
       maxlength: "20",
-      placeholder: "请输入" + (_ctx.config.passwordStrength == "weak" ? "6" : "8") + "-16位密码",
+      placeholder: "Please input" + (_ctx.config.passwordStrength == "weak" ? "6" : "8") + "-16bit password",
       type: "password",
       trim: "both",
       modelValue: $data.formData.password
@@ -188,7 +188,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     q: common_vendor.p({
       inputBorder: false,
       focus: $data.focusPassword2,
-      placeholder: "再次输入密码",
+      placeholder: "Enter password again",
       maxlength: "20",
       type: "password",
       trim: "both",
@@ -200,7 +200,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       required: true,
       modelValue: $data.formData.password2
     }),
-    t: common_vendor.sr("shortCode", "7b5348aa-10,7b5348aa-9"),
+    t: common_vendor.sr("shortCode", "6112fa40-10,6112fa40-9"),
     v: common_vendor.o(($event) => $data.formData.code = $event),
     w: common_vendor.p({
       email: $data.formData.email,
@@ -210,7 +210,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     x: common_vendor.p({
       name: "code"
     }),
-    y: common_vendor.sr("agreements", "7b5348aa-11,7b5348aa-0"),
+    y: common_vendor.sr("agreements", "6112fa40-11,6112fa40-0"),
     z: common_vendor.p({
       scope: "register"
     }),
@@ -218,7 +218,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     B: common_vendor.o((...args) => $options.navigateBack && $options.navigateBack(...args)),
     C: common_vendor.o((...args) => $options.registerByUserName && $options.registerByUserName(...args)),
     D: common_vendor.o((...args) => $options.toLogin && $options.toLogin(...args)),
-    E: common_vendor.sr("form", "7b5348aa-0"),
+    E: common_vendor.sr("form", "6112fa40-0"),
     F: common_vendor.p({
       value: $data.formData,
       rules: $data.rules,
@@ -227,5 +227,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/register/register-by-email.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/register/register-by-email.vue"]]);
 wx.createPage(MiniProgramPage);

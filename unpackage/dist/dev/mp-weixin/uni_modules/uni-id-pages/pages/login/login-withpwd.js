@@ -22,6 +22,50 @@ const _sfc_main = {
   onShow() {
   },
   methods: {
+    async login() {
+      try {
+        const { data } = await common_vendor.index.request({
+          url: "http://127.0.0.1:8000/login/",
+          // 替换为你的实际登录API地址
+          method: "POST",
+          sslVerify: false,
+          data: {
+            username: this.username,
+            password: this.password
+          },
+          header: {
+            "content-type": "application/json"
+            // 默认值
+          }
+        });
+        console.log(data);
+        if (data && data.user) {
+          common_vendor.index.setStorageSync("uni_id", data.user.profileId);
+          common_vendor.index.showToast({
+            title: "登录成功",
+            icon: "success",
+            duration: 2e3
+          });
+          common_vendor.index.switchTab({
+            url: "/pages/list/list",
+            animationType: "fade-in"
+          });
+        } else {
+          common_vendor.index.showToast({
+            title: "登录失败",
+            icon: "none",
+            duration: 2e3
+          });
+        }
+      } catch (error) {
+        console.error("登录失败:", error);
+        common_vendor.index.showToast({
+          title: "网络错误",
+          icon: "none",
+          duration: 2e3
+        });
+      }
+    },
     // 页面跳转，找回密码
     toRetrievePwd() {
       let url = "/uni_modules/uni-id-pages/pages/retrieve/retrieve";
@@ -39,7 +83,7 @@ const _sfc_main = {
       if (!this.password.length) {
         this.focusPassword = true;
         return common_vendor.index.showToast({
-          title: "请输入密码",
+          title: "Please enter password",
           icon: "none",
           duration: 3e3
         });
@@ -47,7 +91,7 @@ const _sfc_main = {
       if (!this.username.length) {
         this.focusUsername = true;
         return common_vendor.index.showToast({
-          title: "请输入手机号/用户名/邮箱",
+          title: "Please enter your mobile phone number/username/email",
           icon: "none",
           duration: 3e3
         });
@@ -55,7 +99,7 @@ const _sfc_main = {
       if (this.needCaptcha && this.captcha.length != 4) {
         this.$refs.captcha.getImageCaptcha();
         return common_vendor.index.showToast({
-          title: "请输入验证码",
+          title: "please enter verification code",
           icon: "none",
           duration: 3e3
         });
@@ -121,7 +165,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     d: common_vendor.p({
       focus: $data.focusUsername,
       inputBorder: false,
-      placeholder: "请输入手机号/用户名/邮箱",
+      placeholder: "Please enter your mobile phone number/username/email",
       modelValue: $data.username
     }),
     e: common_vendor.p({
@@ -134,7 +178,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       clearable: true,
       type: "password",
       inputBorder: false,
-      placeholder: "请输入密码",
+      placeholder: "Please enter password",
       modelValue: $data.password
     }),
     i: common_vendor.p({
@@ -159,10 +203,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   }, !_ctx.config.isAdmin ? {
     r: common_vendor.o((...args) => $options.toRetrievePwd && $options.toRetrievePwd(...args))
   } : {}, {
-    s: common_vendor.t(_ctx.config.isAdmin ? "注册管理员账号" : "注册账号"),
+    s: common_vendor.t(_ctx.config.isAdmin ? "Register an administrator account" : "Register an account"),
     t: common_vendor.o((...args) => $options.toRegister && $options.toRegister(...args)),
-    v: common_vendor.sr("uniFabLogin", "58ed63b0-7")
+    v: common_vendor.sr("uniFabLogin", "58ed63b0-7"),
+    w: common_vendor.o((...args) => $options.login && $options.login(...args))
   });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-58ed63b0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-withpwd.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-58ed63b0"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-withpwd.vue"]]);
 wx.createPage(MiniProgramPage);

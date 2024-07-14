@@ -1,7 +1,7 @@
 "use strict";
 const common_vendor = require("../../../../common/vendor.js");
 const uni_modules_uniIdPages_config = require("../../config.js");
-let retryFun = () => console.log("为定义");
+let retryFun = () => console.log("To define");
 const _sfc_main = {
   name: "uni-agreements",
   computed: {
@@ -13,11 +13,11 @@ const _sfc_main = {
       return [
         {
           url: serviceUrl,
-          title: "用户服务协议"
+          title: "User Services Agreement"
         },
         {
           url: privacyUrl,
-          title: "隐私政策条款"
+          title: "Privacy Policy Terms"
         }
       ];
     }
@@ -119,7 +119,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     h: common_vendor.o($options.popupConfirm),
     i: common_vendor.p({
-      confirmText: "同意"
+      confirmText: "Agree"
     }),
     j: common_vendor.sr("popupAgreement", "40b82fe9-0"),
     k: common_vendor.p({
@@ -127,5 +127,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   } : {}) : {});
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-40b82fe9"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-40b82fe9"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements.vue"]]);
 wx.createComponent(Component);

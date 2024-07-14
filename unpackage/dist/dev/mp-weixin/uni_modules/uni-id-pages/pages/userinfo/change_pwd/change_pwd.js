@@ -22,11 +22,11 @@ const _sfc_main = {
           rules: [
             {
               required: true,
-              errorMessage: "请输入新密码"
+              errorMessage: "Please enter new password"
             },
             {
               pattern: /^.{6,20}$/,
-              errorMessage: "密码为6 - 20位"
+              errorMessage: "Password must be between 6 and 20 digits"
             }
           ]
         },
@@ -94,7 +94,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusOldPassword,
       type: "password",
       inputBorder: false,
-      placeholder: "请输入旧密码",
+      placeholder: "Please enter old password",
       modelValue: $data.formData.oldPassword
     }),
     e: common_vendor.p({
@@ -106,7 +106,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusNewPassword,
       type: "password",
       inputBorder: false,
-      placeholder: "请输入新密码",
+      placeholder: "Please enter new password",
       modelValue: $data.formData.newPassword
     }),
     i: common_vendor.p({
@@ -118,19 +118,19 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       focus: $data.focusNewPassword2,
       type: "password",
       inputBorder: false,
-      placeholder: "请再次输入新密码",
+      placeholder: "Please enter new password again",
       modelValue: $data.formData.newPassword2
     }),
     m: common_vendor.p({
       name: "newPassword2"
     }),
     n: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
-    o: common_vendor.sr("form", "424f3da0-0"),
+    o: common_vendor.sr("form", "30227b56-0"),
     p: common_vendor.p({
       value: $data.formData,
       ["err-show-type"]: "toast"
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd.vue"]]);
 wx.createPage(MiniProgramPage);

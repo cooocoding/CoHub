@@ -803,7 +803,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$f = /* @__PURE__ */ _export_sfc(_sfc_main$17, [["render", _sfc_render$16], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const __easycom_0$f = /* @__PURE__ */ _export_sfc(_sfc_main$17, [["render", _sfc_render$16], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
   const _sfc_main$16 = {
     name: "cmd-icon",
     props: {
@@ -859,7 +859,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$e = /* @__PURE__ */ _export_sfc(_sfc_main$16, [["render", _sfc_render$15], ["__scopeId", "data-v-7cd7d81f"], ["__file", "D:/project/CoHub/CoHub/components/cmd-icon/cmd-icon.vue"]]);
+  const __easycom_0$e = /* @__PURE__ */ _export_sfc(_sfc_main$16, [["render", _sfc_render$15], ["__scopeId", "data-v-7cd7d81f"], ["__file", "D:/Download/CoHub/CoHub/components/cmd-icon/cmd-icon.vue"]]);
   const _sfc_main$15 = {
     name: "cmd-nav-bar",
     components: {
@@ -1162,7 +1162,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const CmdNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$15, [["render", _sfc_render$14], ["__scopeId", "data-v-80f5af22"], ["__file", "D:/project/CoHub/CoHub/components/cmd-nav-bar/cmd-nav-bar.vue"]]);
+  const CmdNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$15, [["render", _sfc_render$14], ["__scopeId", "data-v-80f5af22"], ["__file", "D:/Download/CoHub/CoHub/components/cmd-nav-bar/cmd-nav-bar.vue"]]);
   const _sfc_main$14 = {
     name: "uniCombox",
     emits: ["input", "update:modelValue"],
@@ -1350,7 +1350,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_0$d = /* @__PURE__ */ _export_sfc(_sfc_main$14, [["render", _sfc_render$13], ["__scopeId", "data-v-e602780e"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-combox/components/uni-combox/uni-combox.vue"]]);
+  const __easycom_0$d = /* @__PURE__ */ _export_sfc(_sfc_main$14, [["render", _sfc_render$13], ["__scopeId", "data-v-e602780e"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-combox/components/uni-combox/uni-combox.vue"]]);
   const _sfc_main$13 = {
     name: "UniSection",
     emits: ["click"],
@@ -1467,7 +1467,7 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$13, [["render", _sfc_render$12], ["__scopeId", "data-v-637fd36b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-section/components/uni-section/uni-section.vue"]]);
+  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$13, [["render", _sfc_render$12], ["__scopeId", "data-v-637fd36b"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-section/components/uni-section/uni-section.vue"]]);
   const pages = [
     {
       path: "pages/list/list",
@@ -2052,7 +2052,7 @@ if (uni.restoreGlobal) {
   function I(e2) {
     return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
   }
-  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.20.10.4",\n        "192.168.1.5",\n        "172.29.0.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgsp7qld2","spaceAppId":"2021004147607081","accessKey":"7szJsx34lfrffFm4","secretKey":"tQJqWf68ROVKpH6U"}]') || [];
+  const S = true, b$1 = "app", A = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), P = b$1, T = I('{\n    "address": [\n        "127.0.0.1",\n        "26.26.26.1",\n        "172.29.0.1",\n        "172.20.10.4",\n        "192.168.1.5",\n        "172.24.64.1"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), C$1 = I('[{"provider":"alipay","spaceName":"cohub","spaceId":"env-00jxgxdwrzi6","spaceAppId":"2021004154616649","accessKey":"iMPGheIwD0SLH4Ix","secretKey":"2UolQdH3T1sdiqcj"}]') || [];
   let O = "";
   try {
     O = "__UNI__8301740";
@@ -4920,7 +4920,7 @@ ${i3}
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_0$c = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$11], ["__scopeId", "data-v-9245e42c"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-load-more/components/uni-load-more/uni-load-more.vue"]]);
+  const __easycom_0$c = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$11], ["__scopeId", "data-v-9245e42c"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-load-more/components/uni-load-more/uni-load-more.vue"]]);
   const _sfc_main$11 = {
     name: "uniDataChecklist",
     mixins: [Ws.mixinDatacom || {}],
@@ -5477,7 +5477,7 @@ ${i3}
       /* STYLE */
     );
   }
-  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["__scopeId", "data-v-2f788efd"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-data-checkbox/components/uni-data-checkbox/uni-data-checkbox.vue"]]);
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["__scopeId", "data-v-2f788efd"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-data-checkbox/components/uni-data-checkbox/uni-data-checkbox.vue"]]);
   const _sfc_main$10 = {
     data() {
       return {
@@ -5770,7 +5770,7 @@ ${i3}
       ])
     ]);
   }
-  const Add = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__scopeId", "data-v-9df3086c"], ["__file", "D:/project/CoHub/CoHub/pages/list/grid/add.vue"]]);
+  const Add = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["__scopeId", "data-v-9df3086c"], ["__file", "D:/Download/CoHub/CoHub/pages/list/grid/add.vue"]]);
   const _sfc_main$$ = {
     components: {
       CmdNavBar,
@@ -5946,7 +5946,8 @@ ${i3}
         this.goodsList = this.goodsList.filter((item) => !this.selectedItems.includes(item.id));
         this.selectedItems = [];
       },
-      addItem(newItem) {
+      async addItem(newItem) {
+        formatAppLog("log", "at pages/list/grid/grid.vue:308", newItem);
         this.goodsList.push(newItem);
       },
       toggleSortByLatest() {
@@ -6220,7 +6221,7 @@ ${i3}
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesListGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-307aa608"], ["__file", "D:/project/CoHub/CoHub/pages/list/grid/grid.vue"]]);
+  const PagesListGridGrid = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["__scopeId", "data-v-307aa608"], ["__file", "D:/Download/CoHub/CoHub/pages/list/grid/grid.vue"]]);
   const _sfc_main$_ = {
     data() {
       return {
@@ -6513,7 +6514,7 @@ ${i3}
       ])
     ]);
   }
-  const Addmul = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-820d2b8c"], ["__file", "D:/project/CoHub/CoHub/pages/list/gridmul/addmul.vue"]]);
+  const Addmul = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["__scopeId", "data-v-820d2b8c"], ["__file", "D:/Download/CoHub/CoHub/pages/list/gridmul/addmul.vue"]]);
   const _sfc_main$Z = {
     components: {
       CmdNavBar,
@@ -7015,7 +7016,7 @@ ${i3}
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesListGridmulGridmul = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__scopeId", "data-v-cc688b2d"], ["__file", "D:/project/CoHub/CoHub/pages/list/gridmul/gridmul.vue"]]);
+  const PagesListGridmulGridmul = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__scopeId", "data-v-cc688b2d"], ["__file", "D:/Download/CoHub/CoHub/pages/list/gridmul/gridmul.vue"]]);
   let mpMixins = {};
   mpMixins = {
     data() {
@@ -7257,7 +7258,7 @@ ${i3}
     block0(_sfc_main$Y);
   if (typeof block1 === "function")
     block1(_sfc_main$Y);
-  const __easycom_0$b = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__scopeId", "data-v-8ff2a577"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.vue"]]);
+  const __easycom_0$b = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__scopeId", "data-v-8ff2a577"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item.vue"]]);
   const _sfc_main$X = {
     name: "uniCollapseItem",
     props: {
@@ -7505,7 +7506,7 @@ ${i3}
       )
     ]);
   }
-  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["__scopeId", "data-v-3d2dde9f"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue"]]);
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["__scopeId", "data-v-3d2dde9f"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue"]]);
   const _sfc_main$W = {
     name: "uniCollapse",
     emits: ["change", "activeItem", "input", "update:modelValue"],
@@ -7622,7 +7623,7 @@ ${i3}
       vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ]);
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-3f050360"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue"]]);
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["__scopeId", "data-v-3f050360"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue"]]);
   const _sfc_main$V = {
     name: "UniStatusBar",
     data() {
@@ -7645,7 +7646,7 @@ ${i3}
       /* STYLE */
     );
   }
-  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-7920e3e0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["__scopeId", "data-v-7920e3e0"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
   function getDevtoolsGlobalHook() {
     return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
   }
@@ -9021,7 +9022,7 @@ ${i3}
         if (uni.getStorageSync("CURRENT_LANG") == "en") {
           return "Please enter the search content";
         } else {
-          return "Quick Search";
+          return "Quick Search1";
         }
       },
       colList() {
@@ -9243,7 +9244,7 @@ ${i3}
       })
     ]);
   }
-  const PagesListArchivedArchived = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-47587fad"], ["__file", "D:/project/CoHub/CoHub/pages/list/archived/archived.vue"]]);
+  const PagesListArchivedArchived = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["__scopeId", "data-v-47587fad"], ["__file", "D:/Download/CoHub/CoHub/pages/list/archived/archived.vue"]]);
   const _sfc_main$T = {
     components: {
       CmdNavBar
@@ -9652,7 +9653,7 @@ ${i3}
       ])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const PagesListAllAll = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-6d2a9a62"], ["__file", "D:/project/CoHub/CoHub/pages/list/all/all.vue"]]);
+  const PagesListAllAll = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["__scopeId", "data-v-6d2a9a62"], ["__file", "D:/Download/CoHub/CoHub/pages/list/all/all.vue"]]);
   const _sfc_main$S = {
     components: {
       CmdNavBar
@@ -9860,7 +9861,7 @@ ${i3}
       vue.createElementVNode("div", { class: "gray-background" })
     ]);
   }
-  const PagesListDeleteDelete = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-3d7be036"], ["__file", "D:/project/CoHub/CoHub/pages/list/delete/delete.vue"]]);
+  const PagesListDeleteDelete = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["__scopeId", "data-v-3d7be036"], ["__file", "D:/Download/CoHub/CoHub/pages/list/delete/delete.vue"]]);
   const getVal = (val) => typeof val === "number" ? val + "px" : val;
   const _sfc_main$R = {
     name: "UniNavBar",
@@ -10137,7 +10138,7 @@ ${i3}
       /* CLASS */
     );
   }
-  const __easycom_0$a = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-26544265"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
+  const __easycom_0$a = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["__scopeId", "data-v-26544265"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
   function pad(str, length = 2) {
     str += "";
     while (str.length < length) {
@@ -10405,7 +10406,7 @@ ${i3}
       /* TEXT */
     );
   }
-  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue"]]);
+  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue"]]);
   const _sfc_main$P = {
     name: "UniBadge",
     emits: ["click"],
@@ -10546,7 +10547,7 @@ ${i3}
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-c97cb896"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-badge/components/uni-badge/uni-badge.vue"]]);
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["__scopeId", "data-v-c97cb896"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-badge/components/uni-badge/uni-badge.vue"]]);
   const _sfc_main$O = {
     name: "UniListItem",
     emits: ["click", "switchChange"],
@@ -10913,7 +10914,7 @@ ${i3}
       })) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-c7524739"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue"]]);
+  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__scopeId", "data-v-c7524739"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue"]]);
   const _sfc_main$N = {
     name: "uniList",
     "mp-weixin": {
@@ -10973,7 +10974,7 @@ ${i3}
       })) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-c2f1266a"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-list/components/uni-list/uni-list.vue"]]);
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["__scopeId", "data-v-c2f1266a"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-list/components/uni-list/uni-list.vue"]]);
   const en$2 = {
     "uniCloud.component.add.success": "Success",
     "uniCloud.component.update.success": "Success",
@@ -12152,7 +12153,7 @@ ${i3}
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const PagesListDetail = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-495067d4"], ["__file", "D:/project/CoHub/CoHub/pages/list/detail.vue"]]);
+  const PagesListDetail = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["__scopeId", "data-v-495067d4"], ["__file", "D:/Download/CoHub/CoHub/pages/list/detail.vue"]]);
   class MPAnimation {
     constructor(options, _this) {
       this.options = options;
@@ -12529,7 +12530,7 @@ ${i3}
       [vue.vShow, $data.isShow]
     ]);
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-transition/components/uni-transition/uni-transition.vue"]]);
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-transition/components/uni-transition/uni-transition.vue"]]);
   const _sfc_main$J = {
     name: "uniPopup",
     components: {},
@@ -12940,7 +12941,7 @@ ${i3}
       /* CLASS */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-4dd3c44b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-popup/components/uni-popup/uni-popup.vue"]]);
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["__scopeId", "data-v-4dd3c44b"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-popup/components/uni-popup/uni-popup.vue"]]);
   const ADType = {
     RewardedVideo: "RewardedVideo",
     FullScreenVideo: "FullScreenVideo"
@@ -13388,7 +13389,7 @@ ${i3}
       )
     ]);
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-dc1d9ace"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue"]]);
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["__scopeId", "data-v-dc1d9ace"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue"]]);
   const _sfc_main$H = {
     name: "cloud-image",
     emits: ["click"],
@@ -13464,7 +13465,7 @@ ${i3}
       /* STYLE */
     );
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue"]]);
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue"]]);
   const _sfc_main$G = {
     name: "UniGridItem",
     inject: ["grid"],
@@ -13542,7 +13543,7 @@ ${i3}
       /* STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-7a807eb7"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue"]]);
+  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["__scopeId", "data-v-7a807eb7"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue"]]);
   const _sfc_main$F = {
     name: "UniGrid",
     emits: ["change"],
@@ -13625,7 +13626,7 @@ ${i3}
       ], 14, ["id"])
     ]);
   }
-  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-07acefee"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid/uni-grid.vue"]]);
+  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__scopeId", "data-v-07acefee"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-grid/components/uni-grid/uni-grid.vue"]]);
   function callCheckVersion() {
     return new Promise((resolve, reject) => {
       plus.runtime.getProperty(plus.runtime.appid, function(widgetInfo) {
@@ -14363,7 +14364,7 @@ ${i3}
       ))
     ]);
   }
-  const PagesUcenterUcenter = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-b6546e32"], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/ucenter.vue"]]);
+  const PagesUcenterUcenter = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__scopeId", "data-v-b6546e32"], ["__file", "D:/Download/CoHub/CoHub/pages/ucenter/ucenter.vue"]]);
   function isTurnedOnPush() {
     var isOn = void 0;
     try {
@@ -14775,7 +14776,7 @@ ${i3}
       ])
     ]);
   }
-  const PagesUcenterSettingsSettings = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/settings/settings.vue"]]);
+  const PagesUcenterSettingsSettings = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["__file", "D:/Download/CoHub/CoHub/pages/ucenter/settings/settings.vue"]]);
   const noData$1 = "No Data";
   const noNetwork$1 = "Network error";
   const toSet$1 = "Go to settings";
@@ -14941,7 +14942,7 @@ ${i3}
       /* NEED_HYDRATION */
     );
   }
-  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__scopeId", "data-v-740c4771"], ["__file", "D:/project/CoHub/CoHub/components/uni-load-state/uni-load-state.vue"]]);
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["__scopeId", "data-v-740c4771"], ["__file", "D:/Download/CoHub/CoHub/components/uni-load-state/uni-load-state.vue"]]);
   const _sfc_main$B = {
     data() {
       return {
@@ -15057,7 +15058,7 @@ ${i3}
       }, 8, ["where"])
     ]);
   }
-  const PagesUcenterReadNewsLogReadNewsLog = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/read-news-log/read-news-log.vue"]]);
+  const PagesUcenterReadNewsLogReadNewsLog = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["__file", "D:/Download/CoHub/CoHub/pages/ucenter/read-news-log/read-news-log.vue"]]);
   function o(o2) {
     this.mode = r.MODE_8BIT_BYTE, this.data = o2;
   }
@@ -16514,7 +16515,7 @@ ${i3}
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-42fcb7aa"], ["__file", "D:/project/CoHub/CoHub/uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode.vue"]]);
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["__scopeId", "data-v-42fcb7aa"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode.vue"]]);
   const uniShare = new UniShare();
   const _sfc_main$z = {
     components: {
@@ -16730,7 +16731,7 @@ ${i3}
       ])
     ]);
   }
-  const PagesUcenterAboutAbout = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-aa205f0f"], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/about/about.vue"]]);
+  const PagesUcenterAboutAbout = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["__scopeId", "data-v-aa205f0f"], ["__file", "D:/Download/CoHub/CoHub/pages/ucenter/about/about.vue"]]);
   const _imports_0$2 = "/assets/bg_top.84172c45.png";
   const _imports_1$1 = "/assets/app_update_close.91137466.png";
   const localFilePathKey = "UNI_ADMIN_UPGRADE_CENTER_LOCAL_FILE_PATH";
@@ -17169,7 +17170,7 @@ ${i3}
       ])
     ]);
   }
-  const Uni_modulesUniUpgradeCenterAppPagesUpgradePopup = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-upgrade-center-app/pages/upgrade-popup.vue"]]);
+  const Uni_modulesUniUpgradeCenterAppPagesUpgradePopup = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-upgrade-center-app/pages/upgrade-popup.vue"]]);
   const _imports_0$1 = "/static/h5/download-app/ios.png";
   const _imports_1 = "/static/h5/download-app/android.png";
   const _sfc_main$x = {
@@ -17303,7 +17304,7 @@ ${i3}
       ])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const PagesUcenterInviteInvite = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__file", "D:/project/CoHub/CoHub/pages/ucenter/invite/invite.vue"]]);
+  const PagesUcenterInviteInvite = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["__file", "D:/Download/CoHub/CoHub/pages/ucenter/invite/invite.vue"]]);
   const _sfc_main$w = {
     data() {
       return {
@@ -17464,7 +17465,7 @@ ${i3}
       ])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const PagesListGridmulFriendsFriends = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__file", "D:/project/CoHub/CoHub/pages/list/gridmul/friends/friends.vue"]]);
+  const PagesListGridmulFriendsFriends = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["__file", "D:/Download/CoHub/CoHub/pages/list/gridmul/friends/friends.vue"]]);
   const _sfc_main$v = {
     name: "uniFormsItem",
     options: {
@@ -17853,7 +17854,7 @@ ${i3}
       /* CLASS */
     );
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-462874dd"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.vue"]]);
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["__scopeId", "data-v-462874dd"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.vue"]]);
   const ERR_MSG_OK = "chooseAndUploadFile:ok";
   const ERR_MSG_FAIL = "chooseAndUploadFile:fail";
   function chooseImage(opts) {
@@ -18375,7 +18376,7 @@ ${i3}
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const uploadImage = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-bdfc07e0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-file-picker/components/uni-file-picker/upload-image.vue"]]);
+  const uploadImage = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["__scopeId", "data-v-bdfc07e0"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-file-picker/components/uni-file-picker/upload-image.vue"]]);
   const _sfc_main$t = {
     name: "uploadFile",
     emits: ["uploadFiles", "choose", "delFile"],
@@ -18594,7 +18595,7 @@ ${i3}
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const uploadFile = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-a54939c6"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-file-picker/components/uni-file-picker/upload-file.vue"]]);
+  const uploadFile = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["__scopeId", "data-v-a54939c6"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-file-picker/components/uni-file-picker/upload-file.vue"]]);
   const _sfc_main$s = {
     name: "uniFilePicker",
     components: {
@@ -19147,7 +19148,7 @@ ${i3}
       }, 8, ["readonly", "list-styles", "files-list", "showType", "delIcon", "onUploadFiles", "onChoose", "onDelFile"])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-6223573f"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker.vue"]]);
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__scopeId", "data-v-6223573f"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker.vue"]]);
   function obj2strClass(obj) {
     let classess = "";
     for (let key in obj) {
@@ -19640,7 +19641,7 @@ ${i3}
       /* CLASS, STYLE */
     );
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-09fd5285"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__scopeId", "data-v-09fd5285"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue"]]);
   var pattern = {
     email: /^\S+?@\S+?\.\S+?$/,
     idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
@@ -20508,7 +20509,7 @@ ${i3}
       ])
     ]);
   }
-  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-9a1e3c32"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["__scopeId", "data-v-9a1e3c32"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
   const validator = {
     "content": {
       "rules": [
@@ -20713,7 +20714,7 @@ ${i3}
       }, 8, ["value"])
     ]);
   }
-  const Uni_modulesUniFeedbackPagesOpendbFeedbackOpendbFeedback = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback.vue"]]);
+  const Uni_modulesUniFeedbackPagesOpendbFeedbackOpendbFeedback = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback.vue"]]);
   const _sfc_main$o = {
     data() {
       return {
@@ -20859,7 +20860,7 @@ ${i3}
       /* CLASS, STYLE, NEED_HYDRATION */
     );
   }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-a428f129"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-avatar/uni-id-pages-avatar.vue"]]);
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["__scopeId", "data-v-a428f129"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-avatar/uni-id-pages-avatar.vue"]]);
   const popup = {
     data() {
       return {};
@@ -21127,7 +21128,7 @@ ${i3}
       ])
     ]);
   }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__scopeId", "data-v-d78c88b7"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["__scopeId", "data-v-d78c88b7"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue"]]);
   const db$1 = Ws.database();
   db$1.collection("uni-id-users");
   const uniIdCo$a = Ws.importObject("uni-id-co");
@@ -21231,7 +21232,7 @@ ${i3}
       /* NEED_PATCH */
     );
   }
-  const __easycom_5$2 = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-e0127e04"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-bind-mobile/uni-id-pages-bind-mobile.vue"]]);
+  const __easycom_5$2 = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["__scopeId", "data-v-e0127e04"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-bind-mobile/uni-id-pages-bind-mobile.vue"]]);
   const uniIdCo$9 = Ws.importObject("uni-id-co");
   const _sfc_main$l = {
     computed: {
@@ -21502,7 +21503,7 @@ ${i3}
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const Uni_modulesUniIdPagesPagesUserinfoUserinfo = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-0be2f605"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/userinfo.vue"]]);
+  const Uni_modulesUniIdPagesPagesUserinfoUserinfo = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["__scopeId", "data-v-0be2f605"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/userinfo.vue"]]);
   let retryFun = () => formatAppLog("log", "at uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements.vue:34", "To define");
   const _sfc_main$k = {
     name: "uni-agreements",
@@ -21689,7 +21690,7 @@ ${i3}
       )) : vue.createCommentVNode("v-if", true)
     ])) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__scopeId", "data-v-40b82fe9"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements.vue"]]);
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__scopeId", "data-v-40b82fe9"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements.vue"]]);
   function checkIdCard(idCardNumber) {
     if (!idCardNumber || typeof idCardNumber !== "string" || idCardNumber.length !== 18)
       return false;
@@ -22080,7 +22081,7 @@ ${i3}
       ]))
     ]);
   }
-  const Uni_modulesUniIdPagesPagesUserinfoRealnameVerifyRealnameVerify = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify.vue"]]);
+  const Uni_modulesUniIdPagesPagesUserinfoRealnameVerifyRealnameVerify = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify.vue"]]);
   const _sfc_main$i = {
     computed: {
       agreements() {
@@ -22501,7 +22502,7 @@ ${i3}
       ])
     ]);
   }
-  const __easycom_5$1 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-c5c7cfa0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login.vue"]]);
+  const __easycom_5$1 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-c5c7cfa0"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login.vue"]]);
   let currentWebview;
   const _sfc_main$h = {
     mixins: [mixin],
@@ -22721,7 +22722,7 @@ ${i3}
       )
     ]);
   }
-  const Uni_modulesUniIdPagesPagesLoginLoginWithoutpwd = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-f1f87fcd"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-withoutpwd.vue"]]);
+  const Uni_modulesUniIdPagesPagesLoginLoginWithoutpwd = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-f1f87fcd"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-withoutpwd.vue"]]);
   const _sfc_main$g = {
     props: {
       modelValue: String,
@@ -22828,7 +22829,7 @@ ${i3}
       ])
     ]);
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-a00179ae"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-captcha/components/uni-captcha/uni-captcha.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-a00179ae"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-captcha/components/uni-captcha/uni-captcha.vue"]]);
   const uniIdCo$7 = Ws.importObject("uni-id-co", {
     errorOptions: {
       type: "toast"
@@ -22850,6 +22851,46 @@ ${i3}
     onShow() {
     },
     methods: {
+      async login() {
+        try {
+          const { data: data2 } = await uni.request({
+            url: "https://172.20.10.14:8000/login/",
+            // 替换为你的实际登录API地址
+            method: "POST",
+            sslVerify: false,
+            data: {
+              username: this.username,
+              password: this.password
+            },
+            header: {
+              "content-type": "application/json"
+              // 默认值
+            }
+          });
+          formatAppLog("log", "at uni_modules/uni-id-pages/pages/login/login-withpwd.vue:83", data2);
+          if (data2 && data2.user) {
+            uni.setStorageSync("uni_id", data2.user.profileId);
+            uni.showToast({
+              title: "登录成功",
+              icon: "success",
+              duration: 2e3
+            });
+          } else {
+            uni.showToast({
+              title: "登录失败",
+              icon: "none",
+              duration: 2e3
+            });
+          }
+        } catch (error2) {
+          formatAppLog("error", "at uni_modules/uni-id-pages/pages/login/login-withpwd.vue:100", "登录失败:", error2);
+          uni.showToast({
+            title: "网络错误",
+            icon: "none",
+            duration: 2e3
+          });
+        }
+      },
       // 页面跳转，找回密码
       toRetrievePwd() {
         let url = "/uni_modules/uni-id-pages/pages/retrieve/retrieve";
@@ -22917,7 +22958,7 @@ ${i3}
         uni.navigateTo({
           url: this.config.isAdmin ? "/uni_modules/uni-id-pages/pages/register/register-admin" : "/uni_modules/uni-id-pages/pages/register/register",
           fail(e2) {
-            formatAppLog("error", "at uni_modules/uni-id-pages/pages/login/login-withpwd.vue:142", e2);
+            formatAppLog("error", "at uni_modules/uni-id-pages/pages/login/login-withpwd.vue:182", e2);
           }
         });
       }
@@ -23026,10 +23067,15 @@ ${i3}
         null,
         512
         /* NEED_PATCH */
-      )
+      ),
+      vue.createElementVNode("button", {
+        class: "uni-btn",
+        type: "primary",
+        onClick: _cache[8] || (_cache[8] = (...args) => $options.login && $options.login(...args))
+      }, "python登录")
     ]);
   }
-  const Uni_modulesUniIdPagesPagesLoginLoginWithpwd = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-58ed63b0"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-withpwd.vue"]]);
+  const Uni_modulesUniIdPagesPagesLoginLoginWithpwd = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-58ed63b0"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-withpwd.vue"]]);
   const _sfc_main$e = {
     data() {
       return {};
@@ -23084,7 +23130,7 @@ ${i3}
       ])
     ]);
   }
-  const Uni_modulesUniIdPagesPagesUserinfoDeactivateDeactivate = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate.vue"]]);
+  const Uni_modulesUniIdPagesPagesUserinfoDeactivateDeactivate = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate.vue"]]);
   let mediaQueryObserver;
   const _sfc_main$d = {
     name: "UniMatchMedia",
@@ -23154,7 +23200,7 @@ ${i3}
       [vue.vShow, $data.matches]
     ]);
   }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-f88bfc48"], ["__file", "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-components/lib/uni-match-media/uni-match-media.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-9d785760"], ["__file", "D:/Download/HBuilderX.4.15.2024050802/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-components/lib/uni-match-media/uni-match-media.vue"]]);
   function debounce$1(func, wait) {
     let timer;
     wait = wait || 500;
@@ -23364,7 +23410,7 @@ ${i3}
       ])
     ]);
   }
-  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-4b649130"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-sms-form/uni-id-pages-sms-form.vue"]]);
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-4b649130"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-sms-form/uni-id-pages-sms-form.vue"]]);
   const _sfc_main$b = {
     data() {
       return {
@@ -23465,7 +23511,7 @@ ${i3}
       /* NEED_PATCH */
     );
   }
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-d021b99b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-d021b99b"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha.vue"]]);
   const _sfc_main$a = {
     data() {
       return {
@@ -23580,7 +23626,7 @@ ${i3}
       }, null, 8, ["onConfirm", "modelValue"])
     ]);
   }
-  const Uni_modulesUniIdPagesPagesUserinfoBindMobileBindMobile = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile.vue"]]);
+  const Uni_modulesUniIdPagesPagesUserinfoBindMobileBindMobile = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile.vue"]]);
   const _sfc_main$9 = {
     mixins: [mixin],
     data() {
@@ -23675,7 +23721,7 @@ ${i3}
       }, null, 8, ["onConfirm", "modelValue"])
     ]);
   }
-  const Uni_modulesUniIdPagesPagesLoginLoginSmscode = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-661d78f6"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-smscode.vue"]]);
+  const Uni_modulesUniIdPagesPagesLoginLoginSmscode = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-661d78f6"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-smscode.vue"]]);
   const { passwordStrength } = config;
   const passwordRules = {
     // 密码必须包含大小写字母、数字和特殊符号
@@ -24042,7 +24088,7 @@ ${i3}
       }, 8, ["value", "rules"])
     ]);
   }
-  const Uni_modulesUniIdPagesPagesRegisterRegister = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/register/register.vue"]]);
+  const Uni_modulesUniIdPagesPagesRegisterRegister = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/register/register.vue"]]);
   const uniIdCo$5 = Ws.importObject("uni-id-co", {
     errorOptions: {
       type: "toast"
@@ -24328,7 +24374,7 @@ ${i3}
       }, null, 8, ["onConfirm", "modelValue"])
     ]);
   }
-  const Uni_modulesUniIdPagesPagesRetrieveRetrieve = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/retrieve/retrieve.vue"]]);
+  const Uni_modulesUniIdPagesPagesRetrieveRetrieve = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/retrieve/retrieve.vue"]]);
   const _sfc_main$6 = {
     onLoad({ url, title }) {
       if (url.substring(0, 4) != "http") {
@@ -24363,7 +24409,7 @@ ${i3}
       }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const Uni_modulesUniIdPagesPagesCommonWebviewWebview = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/common/webview/webview.vue"]]);
+  const Uni_modulesUniIdPagesPagesCommonWebviewWebview = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/common/webview/webview.vue"]]);
   const uniIdCo$4 = Ws.importObject("uni-id-co", {
     customUI: true
   });
@@ -24517,7 +24563,7 @@ ${i3}
       }, 8, ["value"])
     ]);
   }
-  const Uni_modulesUniIdPagesPagesUserinfoChange_pwdChange_pwd = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd.vue"]]);
+  const Uni_modulesUniIdPagesPagesUserinfoChange_pwdChange_pwd = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd.vue"]]);
   function debounce(func, wait) {
     let timer;
     wait = wait || 500;
@@ -24732,7 +24778,7 @@ ${i3}
       ])
     ]);
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__scopeId", "data-v-bcd6b47b"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-email-form/uni-id-pages-email-form.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__scopeId", "data-v-bcd6b47b"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/components/uni-id-pages-email-form/uni-id-pages-email-form.vue"]]);
   const uniIdCo$3 = Ws.importObject("uni-id-co");
   const _sfc_main$3 = {
     mixins: [mixin],
@@ -25014,7 +25060,7 @@ ${i3}
       }, 8, ["value", "rules"])
     ]);
   }
-  const Uni_modulesUniIdPagesPagesRegisterRegisterByEmail = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/register/register-by-email.vue"]]);
+  const Uni_modulesUniIdPagesPagesRegisterRegisterByEmail = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/register/register-by-email.vue"]]);
   const uniIdCo$2 = Ws.importObject("uni-id-co", {
     errorOptions: {
       type: "toast"
@@ -25271,7 +25317,7 @@ ${i3}
       }, null, 8, ["onConfirm", "modelValue"])
     ]);
   }
-  const Uni_modulesUniIdPagesPagesRetrieveRetrieveByEmail = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email.vue"]]);
+  const Uni_modulesUniIdPagesPagesRetrieveRetrieveByEmail = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email.vue"]]);
   const uniIdCo$1 = Ws.importObject("uni-id-co", {
     customUI: true
   });
@@ -25451,7 +25497,7 @@ ${i3}
       }, null, 8, ["onConfirm", "modelValue"])
     ]);
   }
-  const Uni_modulesUniIdPagesPagesUserinfoSetPwdSetPwd = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-e5e1f63f"], ["__file", "D:/project/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd.vue"]]);
+  const Uni_modulesUniIdPagesPagesUserinfoSetPwdSetPwd = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-e5e1f63f"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd.vue"]]);
   __definePage("pages/list/grid/grid", PagesListGridGrid);
   __definePage("pages/list/gridmul/gridmul", PagesListGridmulGridmul);
   __definePage("pages/list/archived/archived", PagesListArchivedArchived);
@@ -25793,7 +25839,7 @@ ${i3}
       formatAppLog("log", "at App.vue:49", "App Hide");
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "D:/project/CoHub/CoHub/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "D:/Download/CoHub/CoHub/App.vue"]]);
   const langEn = {
     tabbar: "List,Grid,Gridmul,Mine",
     agreementsTitle: "User service agreement,Privacy policy",

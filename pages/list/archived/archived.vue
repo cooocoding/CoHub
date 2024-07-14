@@ -47,7 +47,7 @@
 				if (uni.getStorageSync('CURRENT_LANG') == "en") {
 					return 'Please enter the search content'
 				} else {
-					return 'Quick Search'
+					return 'Quick Search1'
 				}
 			},
 			colList(){

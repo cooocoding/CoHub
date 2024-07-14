@@ -154,7 +154,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-const uniAgree = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "D:/project/CoHub/CoHub/pages/uni-agree/uni-agree.nvue"]]);
+const uniAgree = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "D:/Download/CoHub/CoHub/pages/uni-agree/uni-agree.nvue"]]);
 export {
   uniAgree as default
 };
