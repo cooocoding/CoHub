@@ -65,20 +65,14 @@ const _sfc_main = {
         {
           name: "Personal Folders",
           isExpanded: false,
-          items: [
-            { name: "Book List", icon: "/static/pic/clr.png" },
-            { name: "OOTD", icon: "/static/pic/clr2.png" }
-          ]
+          items: []
         }
       ],
       sharedFolders: [
         {
           name: "Shared Folders",
           isExpanded: false,
-          items: [
-            { name: "8.23 Travel to Hong Kong", icon: "/static/pic/clr3.png" },
-            { name: "Learning materials", icon: "/static/pic/clr4.png" }
-          ]
+          items: []
         }
       ],
       utilities: [
@@ -86,7 +80,7 @@ const _sfc_main = {
           name: "Utilities",
           isExpanded: false,
           items: [
-            { name: "Recently Deleted", icon: "/static/pic/clr5.png" }
+            { name: "Recently Deleted" }
           ]
         }
       ],
@@ -120,6 +114,7 @@ const _sfc_main = {
       geocode: true
     });
     this.getFolders();
+    this.getSharedFolders();
   },
   onLoad() {
     cdbRef = this;
@@ -129,9 +124,10 @@ const _sfc_main = {
   methods: {
     async getFolders() {
       try {
+        const uni_id = JSON.parse(common_vendor.index.getStorageSync("uni_id"));
+        const url = `http://127.0.0.1:8000/backend/profile/${uni_id}/folders/`;
         const { data } = await common_vendor.index.request({
-          //url: 'http://127.0.0.1:8000/backend/profile/'+ JSON.parse(uni.getStorageSync('uni_id')) +'/folders/',
-          url: "http://127.0.0.1:8000/backend/profile/6/folders/",
+          url,
           method: "GET",
           header: {
             "content-type": "application/json"
@@ -139,17 +135,68 @@ const _sfc_main = {
           }
         });
         console.log(data);
-        if (data && data.response) {
-          this.folders[0].items = response.item;
+        if (data && data.items) {
+          const folderItems = data.items.map((item) => {
+            return {
+              name: item.folderName,
+              icon: this.getIconForLabel(item.label),
+              folderId: item.folderId
+            };
+          });
+          this.folders[0].items = folderItems;
         }
       } catch (error) {
-        console.error("登录失败:", error);
+        console.error("error:", error);
+        common_vendor.index.showToast({
+          title: "error",
+          icon: "none",
+          duration: 2e3
+        });
+      }
+    },
+    async getSharedFolders() {
+      try {
+        const uni_id = JSON.parse(common_vendor.index.getStorageSync("uni_id"));
+        const url = `http://127.0.0.1:8000/backend/profile/${uni_id}/sharefolders/`;
+        const { data } = await common_vendor.index.request({
+          url,
+          method: "GET",
+          header: {
+            "content-type": "application/json"
+            // 默认值
+          }
+        });
+        console.log(data);
+        if (data && data.items) {
+          const sharedFolderItems = data.items.map((item) => {
+            return {
+              name: item.folderName,
+              icon: this.getIconForLabel(item.label),
+              folderId: item.folderId
+            };
+          });
+          this.sharedFolders[0].items = sharedFolderItems;
+        }
+      } catch (error) {
+        console.error("获取共享文件夹失败:", error);
         common_vendor.index.showToast({
           title: "网络错误",
           icon: "none",
           duration: 2e3
         });
       }
+    },
+    getIconForLabel(label) {
+      const iconMapping = {
+        "Yellow": "/static/pic/clr5.png",
+        // 在这里添加其他 label 到 icon 的映射
+        "Red": "/static/pic/clr3.png",
+        "Blue": "/static/pic/clr.png",
+        "Green": "/static/pic/clr2.png",
+        "Purple": "/static/pic/clr6.png",
+        "Brown": "/static/pic/clr7.png"
+      };
+      return iconMapping[label] || "/static/pic/default.png";
     },
     goToAllInfoPage() {
       common_vendor.index.navigateTo({
@@ -442,5 +489,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   } : {}) : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-96c6bf44"], ["__file", "D:/Download/CoHub/CoHub/pages/list/list.nvue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-96c6bf44"], ["__file", "D:/Download/CoHub/CoHub_frontend/pages/list/list.nvue"]]);
 wx.createPage(MiniProgramPage);

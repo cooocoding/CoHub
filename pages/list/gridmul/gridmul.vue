@@ -143,29 +143,9 @@
 		data() {
 			return {
 		      friends: [
-		        { image: '/static/pic/LeftAccessory.png', name: 'Friend 1' },
-		        { image: '/static/pic/Ellipse 178.png', name: 'Friend 2' },
-		        { image: '/static/pic/Ellipse 177.png', name: 'Friend 3' },
-		        { image: '/static/pic/Ellipse 178.png', name: 'Friend 4' }
 		      ],
 		      friendsCount: 4,
-				goodsList: [{
-						id: 1,
-						image: "/static/pic/13.png",
-						name: "👋 Title for Collection 1",
-						tags: ["Tag1", "Tag2"],
-						date: "2021/01/09",
-						link: "https://example.com/link1"
-					},
-					{
-						id: 2,
-						image: "/static/pic/12.png",
-						name: "👋 Title for Collection 2",
-					    tags: ["Tag1", "Tag3"],
-						date: "2022/01/09",
-						link: "https://example.com/link2"
-
-					}
+				goodsList: [
 				],
 				goodsNav: 1,
 		        selectedItems: [],
@@ -183,9 +163,94 @@
 			}
 		},
 		onLoad() {
-
+			this.getAllGoods();
+			this.getSharedFolderUsers();
 		},
 	    computed: {
+    async getAllGoods() {
+        try {
+            // 从本地存储中获取 uni_id
+            const uni_id = JSON.parse(uni.getStorageSync('uni_id'));
+            
+            // 构建请求的 URL
+            const url = `http://127.0.0.1:8000/backend/profile/${uni_id}/all/`;
+
+            const { data } = await uni.request({
+                url: url,
+                method: 'GET',
+                header: {
+                    'content-type': 'application/json' // 默认值
+                }
+            });
+            console.log(data);
+            if (data && data.goodsList) {
+                const goodsList = data.goodsList.map(item => {
+                    return {
+                        id: item.id,
+                        image: item.image,
+                        name: item.name,
+                        tags: item.tags,
+                        date: item.date,
+                        link: item.link
+                    };
+                });
+                this.goodsList = goodsList;
+            }
+        } catch (error) {
+            console.error('error:', error);
+            uni.showToast({
+                title: 'network error',
+                icon: 'none',
+                duration: 2000
+            });
+        }
+    },
+    async getSharedFolderUsers() {
+        try {
+            const uni_id = JSON.parse(uni.getStorageSync('uni_id'));
+            const folderUrl = `http://127.0.0.1:8000/backend/profile/${uni_id}/folders/`;
+            
+            // 首先获取共享文件夹信息，找到 owner 变量
+            const folderResponse = await uni.request({
+                url: folderUrl,
+                method: 'GET',
+                header: {
+                    'content-type': 'application/json'
+                }
+            });
+
+            const folderData = folderResponse.data;
+            if (folderData && folderData.items && folderData.items.length > 0) {
+                const owner = folderData.items[0].owner;  // 假设只取第一个文件夹的 owner
+                const sharedFolderUrl = `http://127.0.0.1:8000/backend/sharedfolder/${owner}/users/`;
+
+                // 然后用 owner 变量获取共享文件夹中的用户信息
+                const { data } = await uni.request({
+                    url: sharedFolderUrl,
+                    method: 'GET',
+                    header: {
+                        'content-type': 'application/json'
+                    }
+                });
+
+                if (data && data.friends) {
+                    const friends = data.friends.map(friend => ({
+                        image: friend.image,
+                        name: friend.name
+                    }));
+                    this.friends = friends;
+                    this.friendsCount = friends.length;
+                }
+            }
+        } catch (error) {
+            console.error('failed:', error);
+            uni.showToast({
+                title: 'network error',
+                icon: 'none',
+                duration: 2000
+            });
+        }
+    },
 	      isAnyItemSelected() {
 	        return this.selectedItems.length > 0;
 	      },

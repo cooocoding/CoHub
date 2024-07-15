@@ -72,7 +72,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         a: common_vendor.f(data, (item, index, i1) => {
           return {
             a: common_vendor.t(item.title),
-            b: "352490cb-3-" + i0 + "-" + i1 + "," + ("352490cb-2-" + i0 + "-" + i1),
+            b: "427eddc4-3-" + i0 + "-" + i1 + "," + ("427eddc4-2-" + i0 + "-" + i1),
             c: common_vendor.p({
               date: $data.readNewsLog[index].last_time,
               format: "yyyy-MM-dd hh:mm",
@@ -80,11 +80,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             }),
             d: index,
             e: common_vendor.o(($event) => $options.handleItemClick(item), index),
-            f: "352490cb-2-" + i0 + "-" + i1 + "," + ("352490cb-1-" + i0)
+            f: "427eddc4-2-" + i0 + "-" + i1 + "," + ("427eddc4-1-" + i0)
           };
         }),
-        b: "352490cb-1-" + i0 + ",352490cb-0",
-        c: "352490cb-4-" + i0 + ",352490cb-0",
+        b: "427eddc4-1-" + i0 + ",427eddc4-0",
+        c: "427eddc4-4-" + i0 + ",427eddc4-0",
         d: common_vendor.p({
           state: {
             data,
@@ -100,13 +100,13 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }, {
       name: "d",
       path: "a",
-      vueId: "352490cb-0"
+      vueId: "427eddc4-0"
     }),
     b: common_vendor.p({
       clickable: true
     }),
     c: common_vendor.o($options.refreshData),
-    d: common_vendor.sr("udb", "352490cb-0"),
+    d: common_vendor.sr("udb", "427eddc4-0"),
     e: common_vendor.o(($event) => $data.isLoading == false),
     f: common_vendor.o(($event) => $data.isLoading == false),
     g: common_vendor.p({
@@ -117,5 +117,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/pages/ucenter/read-news-log/read-news-log.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub_frontend/pages/ucenter/read-news-log/read-news-log.vue"]]);
 wx.createPage(MiniProgramPage);

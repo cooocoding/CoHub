@@ -89,5 +89,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-661d78f6"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-smscode.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-661d78f6"], ["__file", "D:/Download/CoHub/CoHub_frontend/uni_modules/uni-id-pages/pages/login/login-smscode.vue"]]);
 wx.createPage(MiniProgramPage);

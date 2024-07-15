@@ -163,141 +163,197 @@
 				]
 			}
 		},
-		data() {
-			return {
-				where: '"article_status" == 1',
-				keyword: "",
-				showRefresh: false,
-				listHight: 0,
-				swipeOptions: [],
-				rightOptionsTemplate: [
-					{
-						text: 'Edit',
-						style: {
-							backgroundColor: '#0C79FE',
-							backgroundImage: '/static/pic/edit.png',
-							backgroundSize: 'cover',
-							backgroundRepeat: 'no-repeat',
-							width: '100%',
-							margin: '0'
-						},
-						click: (folderType, folderIndex, itemIndex) => this.handleEdit(folderType, folderIndex, itemIndex)
-					},
-					{
-						text: 'Archived',
-						style: {
-							backgroundColor: '#979797',
-							color: '#FFFFFF'
-						},
-						click: (folderType, folderIndex, itemIndex) => this.handleArchived(folderType, folderIndex, itemIndex)
-					},
-					{
-						text: 'Delete',
-						style: {
-							backgroundColor: '#FF3B30',
-							color: '#FFFFFF'
-						},
-						click: (folderType, folderIndex, itemIndex) => this.handleDelete(folderType, folderIndex, itemIndex)
-					}
-				],
-				folders: [
-					{
-						name: 'Personal Folders',
-						isExpanded: false,
-						items: [
-							{ name: 'Book List', icon: '/static/pic/clr.png' },
-							{ name: 'OOTD', icon: '/static/pic/clr2.png' }
-						]
-					}
-				],
-				sharedFolders: [
-					{
-						name: 'Shared Folders',
-						isExpanded: false,
-						items: [
-							{ name: '8.23 Travel to Hong Kong', icon: '/static/pic/clr3.png' },
-							{ name: 'Learning materials', icon: '/static/pic/clr4.png' }
-						]
-					}
-				],
-				utilities: [
-					{
-						name: 'Utilities',
-						isExpanded: false,
-						items: [
-							{ name: 'Recently Deleted', icon: '/static/pic/clr5.png' }
-						]
-					}
-				],
-				showPopup: false,
-				newItemName: "",
-				currentFolderType: "",
-				currentFolderIndex: null,
-				showColorPicker: false,
-				selectedColor: '#F14C3C',
-				colors: ['#F14C3C', '#FFA033', '#F7CE45', '#5DC466', '#0C79FE', '#B67AD5', '#998667']
-			};
-		},
+data() {
+    return {
+        where: '"article_status" == 1',
+        keyword: "",
+        showRefresh: false,
+        listHight: 0,
+        swipeOptions: [],
+        rightOptionsTemplate: [
+            {
+                text: 'Edit',
+                style: {
+                    backgroundColor: '#0C79FE',
+                    backgroundImage: '/static/pic/edit.png',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    width: '100%',
+                    margin: '0'
+                },
+                click: (folderType, folderIndex, itemIndex) => this.handleEdit(folderType, folderIndex, itemIndex)
+            },
+            {
+                text: 'Archived',
+                style: {
+                    backgroundColor: '#979797',
+                    color: '#FFFFFF'
+                },
+                click: (folderType, folderIndex, itemIndex) => this.handleArchived(folderType, folderIndex, itemIndex)
+            },
+            {
+                text: 'Delete',
+                style: {
+                    backgroundColor: '#FF3B30',
+                    color: '#FFFFFF'
+                },
+                click: (folderType, folderIndex, itemIndex) => this.handleDelete(folderType, folderIndex, itemIndex)
+            }
+        ],
+        folders: [
+            {
+                name: 'Personal Folders',
+                isExpanded: false,
+                items: []
+            }
+        ],
+        sharedFolders: [
+            {
+                name: 'Shared Folders',
+                isExpanded: false,
+                items: []
+            }
+        ],
+        utilities: [
+            {
+                name: 'Utilities',
+                isExpanded: false,
+                items: [
+                    { name: 'Recently Deleted' }
+                ]
+            }
+        ],
+        showPopup: false,
+        newItemName: "",
+        currentFolderType: "",
+        currentFolderIndex: null,
+        showColorPicker: false,
+        selectedColor: '#F14C3C',
+        colors: ['#F14C3C', '#FFA033', '#F7CE45', '#5DC466', '#0C79FE', '#B67AD5', '#998667']
+    };
+},
 
-	  watch: {
-			keyword(keyword, oldValue) {
-				let where = '"article_status" == 1 '
-				if (keyword) {
-					this.where = where + `&& /${keyword}/.test(title)`;
-				} else {
-					this.where = where;
-				}
-			}
-		},
-		async onReady() {
-			// #ifdef APP-NVUE
-			/* 可用窗口高度 - 搜索框高 - 状态栏高 */
-			this.listHight = uni.getSystemInfoSync().windowHeight - uni.getSystemInfoSync().statusBarHeight - 50 + 'px';
-			// #endif
-			// #ifndef APP-NVUE
-			this.listHight = 'auto'
-			// #endif
-			cdbRef = this.$refs.udb
-		},
-		async onShow() {
-			this.keyword = getApp().globalData.searchText
-			getApp().globalData.searchText = ''
-			// #ifndef H5
-			let location = await gps.getLocation({
-				geocode: true
-			})
-			this.getFolders()
-			// #endif
-		},
-		onLoad() {
-			cdbRef = this
-			this.listHight = uni.getSystemInfoSync().windowHeight - uni.upx2px(440)
-			this.getListData()
-		},
-		methods: {
-			async getFolders(){
-				try {
-					const { data } = await uni.request({
-					  //url: 'http://127.0.0.1:8000/backend/profile/'+ JSON.parse(uni.getStorageSync('uni_id')) +'/folders/',
-					url: 'http://127.0.0.1:8000/backend/profile/6/folders/',
-					  method: 'GET',
-					  header: {
-						'content-type': 'application/json' // 默认值
-					  }
-					});
-					console.log(data);
-					if (data && data.response) {
-					  this.folders[0].items = response.item
-					} 
-				  } catch (error) {
-					console.error('登录失败:', error);
-					uni.showToast({
-					  title: '网络错误',
-					  icon: 'none',
-					  duration: 2000
-					});
-				  }
-			},
+watch: {
+    keyword(keyword, oldValue) {
+        let where = '"article_status" == 1 ';
+        if (keyword) {
+            this.where = where + `&& /${keyword}/.test(title)`;
+        } else {
+            this.where = where;
+        }
+    }
+},
+async onReady() {
+    // #ifdef APP-NVUE
+    /* 可用窗口高度 - 搜索框高 - 状态栏高 */
+    this.listHight = uni.getSystemInfoSync().windowHeight - uni.getSystemInfoSync().statusBarHeight - 50 + 'px';
+    // #endif
+    // #ifndef APP-NVUE
+    this.listHight = 'auto'
+    // #endif
+    cdbRef = this.$refs.udb
+},
+async onShow() {
+    this.keyword = getApp().globalData.searchText
+    getApp().globalData.searchText = ''
+    // #ifndef H5
+    let location = await gps.getLocation({
+        geocode: true
+    })
+    this.getFolders()
+    this.getSharedFolders()  // 加载共享文件夹数据
+    // #endif
+},
+onLoad() {
+    cdbRef = this
+    this.listHight = uni.getSystemInfoSync().windowHeight - uni.upx2px(440)
+    this.getListData()
+},
+methods: {
+    async getFolders() {
+        try {
+            // 从本地存储中获取 uni_id
+            const uni_id = JSON.parse(uni.getStorageSync('uni_id'));
+            
+            // 构建请求的 URL
+            const url = `http://127.0.0.1:8000/backend/profile/${uni_id}/folders/`;
+
+            const { data } = await uni.request({
+                url: url,
+                method: 'GET',
+                header: {
+                    'content-type': 'application/json' // 默认值
+                }
+            });
+            console.log(data);
+            if (data && data.items) {
+                const folderItems = data.items.map(item => {
+                    return {
+                        name: item.folderName,
+                        icon: this.getIconForLabel(item.label),
+						folderId: item.folderId
+                    };
+                });
+                this.folders[0].items = folderItems;
+            }
+        } catch (error) {
+            console.error('error:', error);
+            uni.showToast({
+                title: 'error',
+                icon: 'none',
+                duration: 2000
+            });
+        }
+    },
+
+    async getSharedFolders() {
+        try {
+            // 从本地存储中获取 uni_id
+            const uni_id = JSON.parse(uni.getStorageSync('uni_id'));
+            
+            // 构建请求的 URL
+            const url = `http://127.0.0.1:8000/backend/profile/${uni_id}/sharefolders/`;
+
+            const { data } = await uni.request({
+                url: url,
+                method: 'GET',
+                header: {
+                    'content-type': 'application/json' // 默认值
+                }
+            });
+            console.log(data);
+            if (data && data.items) {
+                const sharedFolderItems = data.items.map(item => {
+                    return {
+                        name: item.folderName,
+                        icon: this.getIconForLabel(item.label),
+						folderId: item.folderId
+                    };
+                });
+                this.sharedFolders[0].items = sharedFolderItems;
+            }
+        } catch (error) {
+            console.error('获取共享文件夹失败:', error);
+            uni.showToast({
+                title: '网络错误',
+                icon: 'none',
+                duration: 2000
+            });
+        }
+    },
+
+    getIconForLabel(label) {
+        
+        const iconMapping = {
+            'Yellow': '/static/pic/clr5.png',  // 在这里添加其他 label 到 icon 的映射
+            'Red': '/static/pic/clr3.png',
+            'Blue': '/static/pic/clr.png',
+            'Green': '/static/pic/clr2.png',
+            'Purple': '/static/pic/clr6.png',
+            'Brown': '/static/pic/clr7.png',
+        };
+        return iconMapping[label] || '/static/pic/default.png'; // 如果没有找到 label 对应的 icon，使用默认图标
+    },
 			goToAllInfoPage() {
 				uni.navigateTo({
 					url: '/pages/list/all/all'

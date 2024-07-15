@@ -82,23 +82,7 @@
 		},
 		data() {
 			return {
-				goodsList: [{
-						id: 1,
-						image: "/static/pic/13.png",
-						name: "👋 Title for Collection 1",
-						tags: ["Tag1", "Tag2"],
-						date: "2022/01/09",
-						link: "https://example.com/link1"
-					},
-					{
-						id: 2,
-						image: "/static/pic/12.png",
-						name: "👋 Title for Collection 2",
-					    tags: ["Tag1", "Tag3"],
-						date: "2022/01/09",
-						link: "https://example.com/link2"
-
-					}
+				goodsList: [
 				],
 				goodsNav: 1,
 		        selectedItems: [],
@@ -113,7 +97,7 @@
 			}
 		},
 		onLoad() {
-
+          this.getAllGoods();
 		},
 	    computed: {
 	      isAnyItemSelected() {
@@ -121,6 +105,44 @@
 	      }
 	    },
 		methods: {
+    async getAllGoods() {
+        try {
+            // 从本地存储中获取 uni_id
+            const uni_id = JSON.parse(uni.getStorageSync('uni_id'));
+            
+            // 构建请求的 URL
+            const url = `http://127.0.0.1:8000/backend/profile/${uni_id}/del/`;
+
+            const { data } = await uni.request({
+                url: url,
+                method: 'GET',
+                header: {
+                    'content-type': 'application/json' // 默认值
+                }
+            });
+            console.log(data);
+            if (data && data.goodsList) {
+                const goodsList = data.goodsList.map(item => {
+                    return {
+                        id: item.id,
+                        image: "/static/pic/13.png",
+                        name: item.name,
+                        tags: item.tags,
+                        date: item.date,
+                        link: item.link
+                    };
+                });
+                this.goodsList = goodsList;
+            }
+        } catch (error) {
+            console.error('error:', error);
+            uni.showToast({
+                title: 'network error',
+                icon: 'none',
+                duration: 2000
+            });
+        }
+    },
 			handleClick(id) {
 				if (this.isSelectionMode) {
 				    this.toggleSelectItem(id);

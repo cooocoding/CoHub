@@ -56,7 +56,7 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/Download/CoHub/CoHub/App.vue"]]);
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/Download/CoHub/CoHub_frontend/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   app.use(lang_i18n.i18n);

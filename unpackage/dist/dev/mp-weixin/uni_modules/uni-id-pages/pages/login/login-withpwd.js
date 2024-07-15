@@ -198,16 +198,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     o: common_vendor.p({
       scope: "login"
     }),
-    p: common_vendor.o((...args) => $options.pwdLogin && $options.pwdLogin(...args)),
-    q: !_ctx.config.isAdmin
+    p: !_ctx.config.isAdmin
   }, !_ctx.config.isAdmin ? {
-    r: common_vendor.o((...args) => $options.toRetrievePwd && $options.toRetrievePwd(...args))
+    q: common_vendor.o((...args) => $options.toRetrievePwd && $options.toRetrievePwd(...args))
   } : {}, {
-    s: common_vendor.t(_ctx.config.isAdmin ? "Register an administrator account" : "Register an account"),
-    t: common_vendor.o((...args) => $options.toRegister && $options.toRegister(...args)),
-    v: common_vendor.sr("uniFabLogin", "58ed63b0-7"),
-    w: common_vendor.o((...args) => $options.login && $options.login(...args))
+    r: common_vendor.t(_ctx.config.isAdmin ? "Register an administrator account" : "Register an account"),
+    s: common_vendor.o((...args) => $options.toRegister && $options.toRegister(...args)),
+    t: common_vendor.sr("uniFabLogin", "58ed63b0-7"),
+    v: common_vendor.o((...args) => $options.login && $options.login(...args))
   });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-58ed63b0"], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/login/login-withpwd.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-58ed63b0"], ["__file", "D:/Download/CoHub/CoHub_frontend/uni_modules/uni-id-pages/pages/login/login-withpwd.vue"]]);
 wx.createPage(MiniProgramPage);

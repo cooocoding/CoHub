@@ -19,7 +19,6 @@
 		<uni-captcha v-if="needCaptcha" focus ref="captcha" scene="login-by-pwd" v-model="captcha" />
 		<!-- 带选择框的隐私政策协议组件 -->
 		<uni-id-pages-agreements scope="login" ref="agreements"></uni-id-pages-agreements>
-		<button class="uni-btn" type="primary" @click="pwdLogin">Login</button>
 		<!-- 忘记密码 -->
 		<view class="link-box">
 			<view v-if="!config.isAdmin">
@@ -31,7 +30,7 @@
 		</view>
 		<!-- 悬浮登录方式组件 -->
 		<uni-id-pages-fab-login ref="uniFabLogin"></uni-id-pages-fab-login>
-		<button class="uni-btn" type="primary" @click="login">python登录</button>
+		<button class="uni-btn" type="primary" @click="login">Login</button>
 	</view>
 </template>
 

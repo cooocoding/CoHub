@@ -90,7 +90,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Please enter phone number",
       modelValue: $data.formData.mobile
     }),
-    e: common_vendor.sr("smsForm", "3105860a-1"),
+    e: common_vendor.sr("smsForm", "422ded0e-1"),
     f: common_vendor.o(($event) => $data.formData.code = $event),
     g: common_vendor.p({
       type: "bind-mobile-by-sms",
@@ -98,7 +98,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       modelValue: $data.formData.code
     }),
     h: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
-    i: common_vendor.sr("popup", "3105860a-2"),
+    i: common_vendor.sr("popup", "422ded0e-2"),
     j: common_vendor.o($options.submit),
     k: common_vendor.o(($event) => $data.formData.captcha = $event),
     l: common_vendor.p({
@@ -107,5 +107,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/Download/CoHub/CoHub_frontend/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile.vue"]]);
 wx.createPage(MiniProgramPage);

@@ -333,5 +333,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   } : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-aaa8ea53"], ["__file", "D:/Download/CoHub/CoHub/pages/list/search/search.nvue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-aaa8ea53"], ["__file", "D:/Download/CoHub/CoHub_frontend/pages/list/search/search.nvue"]]);
 wx.createPage(MiniProgramPage);

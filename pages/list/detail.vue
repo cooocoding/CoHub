@@ -83,7 +83,7 @@
 				// 查询字段，多个字段用 , 分割
 				field: 'user_id.nickname,user_id._id,avatar,excerpt,last_modify_date,comment_count,like_count,title,content',
 				formData: {
-					noData: '<p style="text-align:center;color:#666">详情加载中...</p>'
+					noData: '<p style="text-align:center;color:#666">Loading...</p>'
 				}
 			}
 		},

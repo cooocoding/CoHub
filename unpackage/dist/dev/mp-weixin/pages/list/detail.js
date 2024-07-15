@@ -12,7 +12,7 @@ const _sfc_main = {
       // 查询字段，多个字段用 , 分割
       field: "user_id.nickname,user_id._id,avatar,excerpt,last_modify_date,comment_count,like_count,title,content",
       formData: {
-        noData: '<p style="text-align:center;color:#666">详情加载中...</p>'
+        noData: '<p style="text-align:center;color:#666">Loading...</p>'
       }
     };
   },
@@ -182,5 +182,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-495067d4"], ["__file", "D:/Download/CoHub/CoHub/pages/list/detail.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-495067d4"], ["__file", "D:/Download/CoHub/CoHub_frontend/pages/list/detail.vue"]]);
 wx.createPage(MiniProgramPage);
